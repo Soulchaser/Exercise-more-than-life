@@ -28,6 +28,7 @@
 		5498ECB51C48E20600A7D99E /* share_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5498ECAD1C48E20600A7D99E /* share_selected.png */; };
 		5498ECB61C48E20600A7D99E /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 5498ECAE1C48E20600A7D99E /* share.png */; };
 		5498ECB81C48E3D700A7D99E /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 5498ECB71C48E3D700A7D99E /* person.png */; };
+		C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21FE6CA1C4923F100D71330 /* UserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,8 @@
 		5498ECAD1C48E20600A7D99E /* share_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_selected.png; sourceTree = "<group>"; };
 		5498ECAE1C48E20600A7D99E /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		5498ECB71C48E3D700A7D99E /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		C21FE6C91C4923F100D71330 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		C21FE6CA1C4923F100D71330 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,7 @@
 		5498EC881C48D0E700A7D99E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C21FE6C81C49239100D71330 /* User */,
 				5498EC941C48D27B00A7D99E /* DisplayViewController.h */,
 				5498EC951C48D27B00A7D99E /* DisplayViewController.m */,
 				5498EC971C48D41900A7D99E /* GroupActivityViewController.h */,
@@ -228,6 +232,15 @@
 			children = (
 			);
 			path = TheThird;
+			sourceTree = "<group>";
+		};
+		C21FE6C81C49239100D71330 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C21FE6C91C4923F100D71330 /* UserViewController.h */,
+				C21FE6CA1C4923F100D71330 /* UserViewController.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +329,7 @@
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
 				5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */,
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
+				C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 			);
