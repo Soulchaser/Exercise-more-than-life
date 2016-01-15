@@ -1,0 +1,22 @@
+//
+//  teamWorkPCH.pch
+//  teamWork
+//
+//  Created by hanxiaolong on 16/1/15.
+//  Copyright © 2016年 hanxiaolong. All rights reserved.
+//
+
+#ifndef teamWorkPCH_pch
+#define teamWorkPCH_pch
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "APPHeader.h"
+#import "KEYHeader.h"
+#import "THRHeader.h"
+#import "URLHeader.h"
+
+
+#endif /* teamWorkPCH_pch */
