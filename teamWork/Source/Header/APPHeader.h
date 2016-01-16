@@ -19,4 +19,15 @@
 //用户类
 #import "YYUserModel.h"
 
+
+//屏幕宽度
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+//屏幕高度
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+//打印
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define DLog(...)
+#endif
 #endif
