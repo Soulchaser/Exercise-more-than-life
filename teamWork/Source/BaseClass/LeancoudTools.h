@@ -18,7 +18,7 @@ typedef void (^yyResultPassBlock)(BOOL succeed,NSError *error);
 -(void)userRegist:(yyResultPassBlock)result;
 //修改密码
 -(void)userChangePassword:(yyResultPassBlock)result;
-//重置密码
+//忘记密码 进行重置
 -(void)userResetPassword:(yyResultPassBlock)result;
 
 
