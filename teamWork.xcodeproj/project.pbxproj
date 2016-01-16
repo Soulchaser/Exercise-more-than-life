@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5498EC6F1C48CE2400A7D99E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC6E1C48CE2400A7D99E /* main.m */; };
-		5498EC721C48CE2400A7D99E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC711C48CE2400A7D99E /* AppDelegate.m */; };
 		5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC761C48CE2400A7D99E /* Main.storyboard */; };
 		5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC791C48CE2400A7D99E /* Assets.xcassets */; };
 		5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC7B1C48CE2400A7D99E /* LaunchScreen.storyboard */; };
@@ -28,14 +27,15 @@
 		5498ECB51C48E20600A7D99E /* share_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5498ECAD1C48E20600A7D99E /* share_selected.png */; };
 		5498ECB61C48E20600A7D99E /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 5498ECAE1C48E20600A7D99E /* share.png */; };
 		5498ECB81C48E3D700A7D99E /* person.png in Resources */ = {isa = PBXBuildFile; fileRef = 5498ECB71C48E3D700A7D99E /* person.png */; };
+		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
+		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
+		C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD31C49D1B400202881 /* LeancoudTools.m */; };
 		C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21FE6CA1C4923F100D71330 /* UserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5498EC6A1C48CE2400A7D99E /* teamWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teamWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5498EC6E1C48CE2400A7D99E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5498EC701C48CE2400A7D99E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5498EC711C48CE2400A7D99E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		5498EC771C48CE2400A7D99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5498EC791C48CE2400A7D99E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5498EC7C1C48CE2400A7D99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,6 +66,12 @@
 		5498ECAD1C48E20600A7D99E /* share_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_selected.png; sourceTree = "<group>"; };
 		5498ECAE1C48E20600A7D99E /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		5498ECB71C48E3D700A7D99E /* person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person.png; sourceTree = "<group>"; };
+		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C2034DCC1C49CC9900202881 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C2034DCF1C49CD6100202881 /* YYUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYUserModel.h; sourceTree = "<group>"; };
+		C2034DD01C49CD6100202881 /* YYUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYUserModel.m; sourceTree = "<group>"; };
+		C2034DD21C49D1B400202881 /* LeancoudTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeancoudTools.h; sourceTree = "<group>"; };
+		C2034DD31C49D1B400202881 /* LeancoudTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeancoudTools.m; sourceTree = "<group>"; };
 		C21FE6C91C4923F100D71330 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		C21FE6CA1C4923F100D71330 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				5498EC841C48D0E700A7D99E /* Source */,
-				5498EC701C48CE2400A7D99E /* AppDelegate.h */,
-				5498EC711C48CE2400A7D99E /* AppDelegate.m */,
 				5498EC761C48CE2400A7D99E /* Main.storyboard */,
 				5498EC791C48CE2400A7D99E /* Assets.xcassets */,
 				5498EC7B1C48CE2400A7D99E /* LaunchScreen.storyboard */,
@@ -138,6 +142,8 @@
 		5498EC851C48D0E700A7D99E /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				C2034DCB1C49CC9900202881 /* AppDelegate.h */,
+				C2034DCC1C49CC9900202881 /* AppDelegate.m */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -145,6 +151,8 @@
 		5498EC861C48D0E700A7D99E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				C2034DD21C49D1B400202881 /* LeancoudTools.h */,
+				C2034DD31C49D1B400202881 /* LeancoudTools.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -180,6 +188,7 @@
 		5498EC891C48D0E700A7D99E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C2034DCE1C49CD4600202881 /* User */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +241,15 @@
 			children = (
 			);
 			path = TheThird;
+			sourceTree = "<group>";
+		};
+		C2034DCE1C49CD4600202881 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C2034DCF1C49CD6100202881 /* YYUserModel.h */,
+				C2034DD01C49CD6100202881 /* YYUserModel.m */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		C21FE6C81C49239100D71330 /* User */ = {
@@ -324,12 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5498EC721C48CE2400A7D99E /* AppDelegate.m in Sources */,
 				5498EC9C1C48D48500A7D99E /* TrackLoggingViewController.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
+				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */,
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
+				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
 				C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */,
+				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 			);

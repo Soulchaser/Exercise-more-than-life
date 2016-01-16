@@ -14,4 +14,8 @@
 #import "ShareViewController.h"
 #import "FriendsViewController.h"
 
+
+//用户类
+#import "YYUserModel.h"
+
 #endif
