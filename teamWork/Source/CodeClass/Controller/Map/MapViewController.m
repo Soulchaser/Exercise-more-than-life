@@ -23,12 +23,22 @@
     
     self.mapView = [[MAMapView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
     self.mapView.delegate = self;
+    self.mapView.mapType = MAMapTypeStandard;
     [self.view addSubview:self.mapView];
     
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(50, 50, 50, 50)];
+    button.backgroundColor = [UIColor redColor];
+    [button addTarget:self action:@selector(buttonAction) forControlEvents:UIControlEventTouchUpInside];
+    //[[UIApplication sharedApplication].delegate.window addSubview:button];
+    //[[UIApplication sharedApplication].delegate.window bringSubviewToFront:button];
     
+    [self.mapView addSubview:button];
 }
 
-
+-(void)buttonAction
+{
+    self.mapView.mapType = MAMapTypeSatellite;
+}
 
 
 

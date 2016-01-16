@@ -1,13 +1,20 @@
 PODS:
   - AMap2DMap (3.2.0)
   - AMapSearch (3.2.0)
+  - AVOSCloud (3.2.0)
+  - AVOSCloudIM (3.2.0):
+    - AVOSCloud
 
 DEPENDENCIES:
   - AMap2DMap
   - AMapSearch
+  - AVOSCloud
+  - AVOSCloudIM
 
 SPEC CHECKSUMS:
   AMap2DMap: 02c73a3e55ac033e3b0b8ec35d3d21ffcac5aae3
   AMapSearch: a885f0702578a441a22cb66fa74f8918c6d19e6f
+  AVOSCloud: 798551ac6cbf541b8436ce94800e2e59a042b670
+  AVOSCloudIM: 082f0268a22253fd6ad70ec4e4dfd686b36a7308
 
 COCOAPODS: 0.39.0

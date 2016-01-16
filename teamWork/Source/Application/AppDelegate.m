@@ -64,8 +64,8 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
-    [self.window setRootViewController:[MapViewController new]];*/
-    return YES;
+    [self.window setRootViewController:[MapViewController new]];
+    return YES;*/
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
