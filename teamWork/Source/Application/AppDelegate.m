@@ -65,6 +65,7 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     [self.window setRootViewController:[MapViewController new]];
+
     return YES;
 }
 
