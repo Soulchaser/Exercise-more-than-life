@@ -8,5 +8,5 @@
 
 #ifndef Project_KEYHeader_h
 #define Project_KEYHeader_h
-
+#define KamapKey @"167efac67a57821f301737e8a402544c"
 #endif

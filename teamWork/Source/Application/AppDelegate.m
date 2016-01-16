@@ -17,7 +17,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+
+   
     //信息展示界面
     DisplayViewController *dispVC = [[DisplayViewController alloc]init];
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
@@ -59,7 +60,11 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     [self.window setRootViewController:tabBC];
-    
+    /*
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window makeKeyAndVisible];
+    [self.window setRootViewController:[MapViewController new]];*/
     return YES;
 }
 

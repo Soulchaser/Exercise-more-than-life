@@ -13,7 +13,8 @@
 #import "TrackLoggingViewController.h"
 #import "ShareViewController.h"
 #import "FriendsViewController.h"
-
+//地图控制器
+#import "MapViewController.h"
 
 //用户类
 #import "YYUserModel.h"

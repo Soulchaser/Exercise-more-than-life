@@ -8,5 +8,6 @@
 
 #ifndef Project_IMPHeader_h
 #define Project_IMPHeader_h
-
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 #endif
