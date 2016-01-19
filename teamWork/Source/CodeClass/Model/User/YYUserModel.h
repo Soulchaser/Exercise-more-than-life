@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-//用户信息model(存储在leancoud上)
+//用户信息model(存储在leancoud上)  用户登陆时, 用邮箱+密码登陆  昵称用来展示
 @interface YYUserModel : NSObject
-@property(strong,nonatomic)NSString *userName;//用户名
+@property(strong,nonatomic)NSString *userName;//昵称
 @property(strong,nonatomic)NSString *password;//密码
 @property(strong,nonatomic)NSString *email;//邮箱
 @property(strong,nonatomic)NSString *gender;//性别
