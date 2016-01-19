@@ -34,6 +34,14 @@
 		5498EC9C1C48D48500A7D99E /* TrackLoggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9B1C48D48500A7D99E /* TrackLoggingViewController.m */; };
 		5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9E1C48D4C900A7D99E /* ShareViewController.m */; };
 		5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498ECA11C48D4F400A7D99E /* FriendsViewController.m */; };
+		54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */; };
+		54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AF9A1C4DD51900D79478 /* PointWithDistanceAnn.m */; };
+		54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B241C4C8CD2001D20D9 /* altitude_selected.png */; };
+		54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B251C4C8CD2001D20D9 /* altitude.png */; };
+		54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */; };
+		54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2C1C4CD6E1001D20D9 /* distance.png */; };
+		54D26B331C4CDA12001D20D9 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B321C4CDA12001D20D9 /* point.png */; };
+		54D26B401C4D1875001D20D9 /* DistanceCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D26B3F1C4D1875001D20D9 /* DistanceCalloutView.m */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
@@ -83,6 +91,17 @@
 		5498EC9E1C48D4C900A7D99E /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		5498ECA01C48D4F400A7D99E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		5498ECA11C48D4F400A7D99E /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		54B3AF961C4DD3BB00D79478 /* PointWithDistanceAnnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointWithDistanceAnnView.h; sourceTree = "<group>"; };
+		54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointWithDistanceAnnView.m; sourceTree = "<group>"; };
+		54B3AF991C4DD51900D79478 /* PointWithDistanceAnn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointWithDistanceAnn.h; sourceTree = "<group>"; };
+		54B3AF9A1C4DD51900D79478 /* PointWithDistanceAnn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointWithDistanceAnn.m; sourceTree = "<group>"; };
+		54D26B241C4C8CD2001D20D9 /* altitude_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altitude_selected.png; sourceTree = "<group>"; };
+		54D26B251C4C8CD2001D20D9 /* altitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altitude.png; sourceTree = "<group>"; };
+		54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance_selected.png; sourceTree = "<group>"; };
+		54D26B2C1C4CD6E1001D20D9 /* distance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance.png; sourceTree = "<group>"; };
+		54D26B321C4CDA12001D20D9 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
+		54D26B3E1C4D1875001D20D9 /* DistanceCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistanceCalloutView.h; sourceTree = "<group>"; };
+		54D26B3F1C4D1875001D20D9 /* DistanceCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistanceCalloutView.m; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +138,11 @@
 		540D98FC1C4A64380027EF2F /* mapView */ = {
 			isa = PBXGroup;
 			children = (
+				54D26B321C4CDA12001D20D9 /* point.png */,
+				54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */,
+				54D26B2C1C4CD6E1001D20D9 /* distance.png */,
+				54D26B241C4C8CD2001D20D9 /* altitude_selected.png */,
+				54D26B251C4C8CD2001D20D9 /* altitude.png */,
 				540D98FD1C4A64380027EF2F /* daohang.png */,
 				540D98FE1C4A64380027EF2F /* daohang_selected.png */,
 				540D98FF1C4A64380027EF2F /* group.png */,
@@ -244,6 +268,7 @@
 		5498EC891C48D0E700A7D99E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				54D26B3A1C4CEDAB001D20D9 /* Map */,
 				C2034DCE1C49CD4600202881 /* User */,
 			);
 			path = Model;
@@ -252,6 +277,8 @@
 		5498EC8A1C48D0E700A7D99E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				54D26B3E1C4D1875001D20D9 /* DistanceCalloutView.h */,
+				54D26B3F1C4D1875001D20D9 /* DistanceCalloutView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -287,6 +314,17 @@
 			children = (
 			);
 			path = TheThird;
+			sourceTree = "<group>";
+		};
+		54D26B3A1C4CEDAB001D20D9 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				54B3AF961C4DD3BB00D79478 /* PointWithDistanceAnnView.h */,
+				54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */,
+				54B3AF991C4DD51900D79478 /* PointWithDistanceAnn.h */,
+				54B3AF9A1C4DD51900D79478 /* PointWithDistanceAnn.m */,
+			);
+			path = Map;
 			sourceTree = "<group>";
 		};
 		7B9768A9AE9E5614914AA432 /* Pods */ = {
@@ -358,6 +396,11 @@
 				TargetAttributes = {
 					5498EC691C48CE2400A7D99E = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -385,19 +428,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				540D99141C4A64380027EF2F /* jia.png in Resources */,
+				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
 				540D99121C4A64380027EF2F /* haoyou-selected.png in Resources */,
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
 				540D991A1C4A64380027EF2F /* person.png in Resources */,
+				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
 				540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */,
 				540D99181C4A64380027EF2F /* news.png in Resources */,
 				5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */,
+				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
+				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
 				540D99171C4A64380027EF2F /* jian_selected.png in Resources */,
+				54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */,
 				540D99111C4A64380027EF2F /* group_select.png in Resources */,
 				5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */,
 				540D991C1C4A64380027EF2F /* share_selected.png in Resources */,
@@ -462,6 +510,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */,
+				54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */,
 				5498EC9C1C48D48500A7D99E /* TrackLoggingViewController.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
@@ -469,6 +519,7 @@
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
 				C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */,
+				54D26B401C4D1875001D20D9 /* DistanceCalloutView.m in Sources */,
 				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
