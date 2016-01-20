@@ -20,6 +20,8 @@
 #import "PointWithDistanceAnnView.h"
 //自制的带统计距离的大头针类
 #import "PointWithDistanceAnn.h"
+//地图界面用来显示运动信息的视图
+#import "MapMoveInfoView.h"
 //用户类
 #import "YYUserModel.h"
 

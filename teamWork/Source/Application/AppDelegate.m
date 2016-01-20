@@ -64,7 +64,8 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
-    [self.window setRootViewController:[MapViewController new]];
+    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
+    [self.window setRootViewController:rootNC];
 
     return YES;
 }
