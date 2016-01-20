@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-#define kFloatButtonWihth ([UIScreen mainScreen].bounds.size.width/10.0)
+#define kFloatButtonWidth ([UIScreen mainScreen].bounds.size.width/10.0)
 @interface MapViewController ()<MAMapViewDelegate>
 //地图视图
 @property(strong,nonatomic)MAMapView *mapView;
@@ -23,6 +23,8 @@
 @property(strong,nonatomic)NSMutableArray *distanceAnnArray;
 //用来存放测距状态在两点之间覆盖物（连线）
 @property(strong,nonatomic)NSMutableArray *distancePolylineArray;
+//用来显示运动信息的视图
+@property(strong,nonatomic)MapMoveInfoView *moveInfoView;
 @end
 
 @implementation MapViewController
@@ -30,6 +32,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if ([self performSelector:@selector(setEdgesForExtendedLayout:)])
+    {
+        [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    }
     
     //设置高德地图的APIKEY
     [MAMapServices sharedServices].apiKey = KamapKey;
@@ -38,24 +44,28 @@
    //默认不开启测距模式
     self.distanceFlag = NO;
     [self drawView];
-    //设置初始的地图缩放级别
-    self.zoomLevel = self.mapView.zoomLevel;
+
     //YES 为打开定位，NO为关闭定位
     self.mapView.showsUserLocation = YES;
+    //
+    [self.mapView setZoomLevel:15 animated:YES];
+    
+    //指南针是否显示，no为不显示
+    //self.mapView.showsCompass= NO;
+    //设置指南针位置
+    self.mapView.compassOrigin= CGPointMake(kFloatButtonWidth*0.5,kScreenHeight*0.15);
     //追踪用户的location与heading更新
     self.mapView.userTrackingMode = MAUserTrackingModeFollowWithHeading;
     //后台持续定位的能力
     self.mapView.pausesLocationUpdatesAutomatically = NO;
-    
-    self.mapView.allowsBackgroundLocationUpdates = YES;//iOS9以上系统必须配置
-    
-    
+
+    self.mapView.allowsBackgroundLocationUpdates = YES;//iOS9以上系统必须配
 }
 //绘制界面
 -(void)drawView
 {
     //提示信息Label
-    self.promptLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kFloatButtonWihth*3, kFloatButtonWihth)];
+    self.promptLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kFloatButtonWidth*3, kFloatButtonWidth)];
     self.promptLabel.center = CGPointMake(kScreenWidth/2, [UIScreen mainScreen].bounds.size.height*0.8);
     self.promptLabel.textAlignment = NSTextAlignmentCenter;
     self.promptLabel.layer.masksToBounds = YES;
@@ -76,13 +86,12 @@
     //设置比例尺位置
     self.mapView.scaleOrigin= CGPointMake(_mapView.scaleOrigin.x, [UIScreen mainScreen].bounds.size.height-22);
     //设置高德地图LOGO位置
-    _mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.bounds)-55, CGRectGetHeight(self.view.bounds)-22);
+    self.mapView.logoCenter = CGPointMake(CGRectGetWidth(self.view.bounds)-55, CGRectGetHeight(self.view.bounds)-22);
     [self.view addSubview:self.mapView];
     
-
     
     //地图样式切换button
-    UIButton *mapTypeButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWihth*1.5,kScreenHeight*0.2 , kFloatButtonWihth, kFloatButtonWihth)];
+    UIButton *mapTypeButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5,kScreenHeight*0.1 , kFloatButtonWidth, kFloatButtonWidth)];
     [mapTypeButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     mapTypeButton.backgroundColor = [UIColor whiteColor];
     [mapTypeButton setImage:[UIImage imageNamed:@"weixing"] forState:UIControlStateNormal];
@@ -90,7 +99,7 @@
     mapTypeButton.tag = 1001;
  
     //获取位置的高度
-    UIButton *mapAltitudeButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWihth*1.5,kScreenHeight*0.3 , kFloatButtonWihth, kFloatButtonWihth)];
+    UIButton *mapAltitudeButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5,kScreenHeight*0.2 , kFloatButtonWidth, kFloatButtonWidth)];
     [mapAltitudeButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     mapAltitudeButton.backgroundColor = [UIColor whiteColor];
     [mapAltitudeButton setImage:[UIImage imageNamed:@"altitude"] forState:UIControlStateNormal];
@@ -99,7 +108,7 @@
     mapAltitudeButton.tag = 1002;
   
     //获取位置的距离
-    UIButton *mapDistanceButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWihth*1.5,kScreenHeight*0.4 , kFloatButtonWihth, kFloatButtonWihth)];
+    UIButton *mapDistanceButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5,kScreenHeight*0.3 , kFloatButtonWidth, kFloatButtonWidth)];
     [mapDistanceButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     mapDistanceButton.backgroundColor = [UIColor whiteColor];
     [mapDistanceButton setImage:[UIImage imageNamed:@"distance"] forState:UIControlStateNormal];
@@ -108,7 +117,7 @@
     mapDistanceButton.tag = 1003;
     
     //地图放大Button
-    UIButton *mapZoomInButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWihth*1.5, kScreenHeight*0.8, kFloatButtonWihth, kFloatButtonWihth)];
+    UIButton *mapZoomInButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5, kScreenHeight*0.7, kFloatButtonWidth, kFloatButtonWidth)];
     [mapZoomInButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
    // mapZoomInButton.backgroundColor = [UIColor whiteColor];
     [mapZoomInButton setImage:[UIImage imageNamed:@"jia"] forState:UIControlStateNormal];
@@ -117,7 +126,7 @@
     mapZoomInButton.tag = 1004;
     
     //地图缩小Button
-    UIButton *mapZoomOutButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWihth*1.5, kScreenHeight*0.8+kFloatButtonWihth, kFloatButtonWihth, kFloatButtonWihth)];
+    UIButton *mapZoomOutButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5, kScreenHeight*0.7+kFloatButtonWidth, kFloatButtonWidth, kFloatButtonWidth)];
     [mapZoomOutButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
   //  mapZoomOutButton.backgroundColor = [UIColor whiteColor];
     [mapZoomOutButton setImage:[UIImage imageNamed:@"jian"] forState:UIControlStateNormal];
@@ -126,7 +135,13 @@
     mapZoomOutButton.tag = 1005;
 
     
+    //运动信息显示视图
+    self.moveInfoView = [[MapMoveInfoView alloc]initWithFrame:CGRectMake(kFloatButtonWidth*0.5,kScreenHeight*0.01 , kScreenWidth-kFloatButtonWidth, kFloatButtonWidth*1.5)];
     
+    
+    
+    
+    [self.mapView addSubview:self.moveInfoView];
     [self.mapView addSubview:mapZoomOutButton];
     [self.mapView addSubview:mapZoomInButton];
     [self.mapView addSubview:mapTypeButton];
@@ -196,6 +211,7 @@
             break;
             //地图放大
         case 1004:
+            self.zoomLevel = self.mapView.zoomLevel;
             //最大是19，所以当前值只要比18小就可再加一
             if (self.zoomLevel <= 18)
             {
@@ -208,8 +224,10 @@
             }
             //设置地图缩放率
             [self.mapView setZoomLevel:self.zoomLevel animated:YES];
+            self.mapView.zoomLevel = self.zoomLevel;
             break;
         case 1005:
+            self.zoomLevel = self.mapView.zoomLevel;
             if (self.zoomLevel >= 4)
             {
                 self.zoomLevel -= 1;
@@ -219,12 +237,14 @@
                 self.zoomLevel = 3;
             }
             [self.mapView setZoomLevel:self.zoomLevel animated:YES];
+            self.mapView.zoomLevel = self.zoomLevel;
             break;
             
         default:
             break;
     }
 }
+
 
 #pragma mark -------屏幕点击事件--------
 
@@ -291,6 +311,7 @@
      //   DLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
     }
 }
+
 //添加大头针
 - (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
@@ -305,7 +326,7 @@
         pre.image = [UIImage imageNamed:@"location.png"];
         pre.lineWidth = 3;
         pre.lineDashPattern = @[@6, @3];
-        
+        pre.showsHeadingIndicator = YES;
         [self.mapView updateUserLocationRepresentation:pre];
         
          view.calloutOffset = CGPointMake(0, 0);
@@ -315,6 +336,7 @@
     
     
 }
+
 //定义大头针
 -(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
 {
@@ -377,10 +399,6 @@
 }
 
 
-
-
-
-
 //提示信息从屏幕上逐渐消失的动画
 -(void)AnimationOfDisappearing:(NSString *)str
 {
@@ -399,9 +417,6 @@
     }];
 }
 
-
-
-
 //懒加载，初始化使用
 -(NSMutableArray *)distanceAnnArray
 {
@@ -419,6 +434,7 @@
     }
     return _distancePolylineArray;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 
