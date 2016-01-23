@@ -11,4 +11,6 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AVOSCloud.h>
+//三方自定义segmented
+#import "NYSegmentedControl.h"
 #endif
