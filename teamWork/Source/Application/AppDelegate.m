@@ -17,10 +17,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-
-   /*
+    
+    
     //信息展示界面
-    DisplayViewController *dispVC = [[DisplayViewController alloc]init];
+    //    DisplayViewController *dispVC = [[DisplayViewController alloc]init];
+    //    UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
+    
+    YDWMViewController *dispVC = [[YDWMViewController alloc]init];
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
     
     //组团界面
@@ -45,7 +48,7 @@
     
     UITabBarController *tabBC = [[UITabBarController alloc]init];
     tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
-   // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
+    // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
     tabBC.selectedIndex = 2;
     
     //    //tabBar字体选中颜色
@@ -60,13 +63,13 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     [self.window setRootViewController:tabBC];
-    */
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window makeKeyAndVisible];
-    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
-    [self.window setRootViewController:rootNC];
-
+    
+    //    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    //    [self.window setBackgroundColor:[UIColor whiteColor]];
+    //    [self.window makeKeyAndVisible];
+    //    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
+    //    [self.window setRootViewController:rootNC];
+    
     return YES;
 }
 

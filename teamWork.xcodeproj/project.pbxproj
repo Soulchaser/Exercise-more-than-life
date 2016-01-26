@@ -29,7 +29,6 @@
 		5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC761C48CE2400A7D99E /* Main.storyboard */; };
 		5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC791C48CE2400A7D99E /* Assets.xcassets */; };
 		5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC7B1C48CE2400A7D99E /* LaunchScreen.storyboard */; };
-		5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC951C48D27B00A7D99E /* DisplayViewController.m */; };
 		5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC981C48D41900A7D99E /* GroupActivityViewController.m */; };
 		5498EC9C1C48D48500A7D99E /* TrackLoggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9B1C48D48500A7D99E /* TrackLoggingViewController.m */; };
 		5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9E1C48D4C900A7D99E /* ShareViewController.m */; };
@@ -47,7 +46,21 @@
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
 		C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD31C49D1B400202881 /* LeancoudTools.m */; };
+		C21C97571C55C58800741661 /* YDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C97551C55C58800741661 /* YDWeatherViewController.m */; };
+		C21C975D1C55CA5D00741661 /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C975B1C55CA5D00741661 /* WeatherCollectionViewCell.m */; };
+		C21C975E1C55CA5D00741661 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21C975C1C55CA5D00741661 /* WeatherCollectionViewCell.xib */; };
+		C21C976C1C56105E00741661 /* AddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C976B1C56105E00741661 /* AddTableViewController.m */; };
+		C21C976F1C56273200741661 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C976E1C56273200741661 /* SettingViewController.m */; };
+		C21C97731C5642F600741661 /* YDWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C97721C5642F600741661 /* YDWeatherModel.m */; };
 		C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21FE6CA1C4923F100D71330 /* UserViewController.m */; };
+		C26AB5041C51D32600D8FD96 /* JianfeiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB4FD1C51D32600D8FD96 /* JianfeiTableViewController.m */; };
+		C26AB5051C51D32600D8FD96 /* NanxingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB4FF1C51D32600D8FD96 /* NanxingTableViewController.m */; };
+		C26AB5061C51D32600D8FD96 /* SecretTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5011C51D32600D8FD96 /* SecretTableViewController.m */; };
+		C26AB5071C51D32600D8FD96 /* WomenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5031C51D32600D8FD96 /* WomenTableViewController.m */; };
+		C26AB50A1C51D55700D8FD96 /* YDWMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5091C51D55700D8FD96 /* YDWMViewController.m */; };
+		C26AB50E1C51DAB300D8FD96 /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB50D1C51DAB300D8FD96 /* DogModel.m */; };
+		C26AB5111C51DB9600D8FD96 /* YDGetDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5101C51DB9600D8FD96 /* YDGetDataTools.m */; };
+		C26AB5371C52653F00D8FD96 /* YDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5361C52653F00D8FD96 /* YDTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +95,6 @@
 		5498EC8F1C48D0E700A7D99E /* THRHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = THRHeader.h; sourceTree = "<group>"; };
 		5498EC901C48D0E700A7D99E /* URLHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHeader.h; sourceTree = "<group>"; };
 		5498EC931C48D10B00A7D99E /* teamWorkPCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = teamWorkPCH.pch; sourceTree = "<group>"; };
-		5498EC941C48D27B00A7D99E /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
-		5498EC951C48D27B00A7D99E /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
 		5498EC971C48D41900A7D99E /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
 		5498EC981C48D41900A7D99E /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
 		5498EC9A1C48D48500A7D99E /* TrackLoggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackLoggingViewController.h; sourceTree = "<group>"; };
@@ -113,8 +124,35 @@
 		C2034DD01C49CD6100202881 /* YYUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYUserModel.m; sourceTree = "<group>"; };
 		C2034DD21C49D1B400202881 /* LeancoudTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeancoudTools.h; sourceTree = "<group>"; };
 		C2034DD31C49D1B400202881 /* LeancoudTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeancoudTools.m; sourceTree = "<group>"; };
+		C21C97541C55C58800741661 /* YDWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWeatherViewController.h; sourceTree = "<group>"; };
+		C21C97551C55C58800741661 /* YDWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDWeatherViewController.m; sourceTree = "<group>"; };
+		C21C975A1C55CA5D00741661 /* WeatherCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionViewCell.h; sourceTree = "<group>"; };
+		C21C975B1C55CA5D00741661 /* WeatherCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherCollectionViewCell.m; sourceTree = "<group>"; };
+		C21C975C1C55CA5D00741661 /* WeatherCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCollectionViewCell.xib; sourceTree = "<group>"; };
+		C21C976A1C56105E00741661 /* AddTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddTableViewController.h; sourceTree = "<group>"; };
+		C21C976B1C56105E00741661 /* AddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTableViewController.m; sourceTree = "<group>"; };
+		C21C976D1C56273200741661 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		C21C976E1C56273200741661 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C21C97711C5642F600741661 /* YDWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWeatherModel.h; sourceTree = "<group>"; };
+		C21C97721C5642F600741661 /* YDWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDWeatherModel.m; sourceTree = "<group>"; };
 		C21FE6C91C4923F100D71330 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		C21FE6CA1C4923F100D71330 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		C26AB4FC1C51D32600D8FD96 /* JianfeiTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JianfeiTableViewController.h; sourceTree = "<group>"; };
+		C26AB4FD1C51D32600D8FD96 /* JianfeiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JianfeiTableViewController.m; sourceTree = "<group>"; };
+		C26AB4FE1C51D32600D8FD96 /* NanxingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NanxingTableViewController.h; sourceTree = "<group>"; };
+		C26AB4FF1C51D32600D8FD96 /* NanxingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NanxingTableViewController.m; sourceTree = "<group>"; };
+		C26AB5001C51D32600D8FD96 /* SecretTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecretTableViewController.h; sourceTree = "<group>"; };
+		C26AB5011C51D32600D8FD96 /* SecretTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecretTableViewController.m; sourceTree = "<group>"; };
+		C26AB5021C51D32600D8FD96 /* WomenTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WomenTableViewController.h; sourceTree = "<group>"; };
+		C26AB5031C51D32600D8FD96 /* WomenTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WomenTableViewController.m; sourceTree = "<group>"; };
+		C26AB5081C51D55700D8FD96 /* YDWMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWMViewController.h; sourceTree = "<group>"; };
+		C26AB5091C51D55700D8FD96 /* YDWMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDWMViewController.m; sourceTree = "<group>"; };
+		C26AB50C1C51DAB300D8FD96 /* DogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DogModel.h; sourceTree = "<group>"; };
+		C26AB50D1C51DAB300D8FD96 /* DogModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DogModel.m; sourceTree = "<group>"; };
+		C26AB50F1C51DB9600D8FD96 /* YDGetDataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDGetDataTools.h; sourceTree = "<group>"; };
+		C26AB5101C51DB9600D8FD96 /* YDGetDataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDGetDataTools.m; sourceTree = "<group>"; };
+		C26AB5351C52653F00D8FD96 /* YDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDTableViewController.h; sourceTree = "<group>"; };
+		C26AB5361C52653F00D8FD96 /* YDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +273,8 @@
 			children = (
 				C2034DD21C49D1B400202881 /* LeancoudTools.h */,
 				C2034DD31C49D1B400202881 /* LeancoudTools.m */,
+				C26AB50F1C51DB9600D8FD96 /* YDGetDataTools.h */,
+				C26AB5101C51DB9600D8FD96 /* YDGetDataTools.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -252,10 +292,14 @@
 		5498EC881C48D0E700A7D99E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C21C975F1C560CD100741661 /* WeatherAdd */,
+				C21C97601C560CD100741661 /* WeatherSetting */,
 				540D98EC1C49ECD80027EF2F /* Map */,
 				C21FE6C81C49239100D71330 /* User */,
-				5498EC941C48D27B00A7D99E /* DisplayViewController.h */,
-				5498EC951C48D27B00A7D99E /* DisplayViewController.m */,
+				C26AB5081C51D55700D8FD96 /* YDWMViewController.h */,
+				C26AB5091C51D55700D8FD96 /* YDWMViewController.m */,
+				C21C97541C55C58800741661 /* YDWeatherViewController.h */,
+				C21C97551C55C58800741661 /* YDWeatherViewController.m */,
 				5498EC971C48D41900A7D99E /* GroupActivityViewController.h */,
 				5498EC981C48D41900A7D99E /* GroupActivityViewController.m */,
 				5498EC9A1C48D48500A7D99E /* TrackLoggingViewController.h */,
@@ -264,6 +308,8 @@
 				5498EC9E1C48D4C900A7D99E /* ShareViewController.m */,
 				5498ECA01C48D4F400A7D99E /* FriendsViewController.h */,
 				5498ECA11C48D4F400A7D99E /* FriendsViewController.m */,
+				C26AB5351C52653F00D8FD96 /* YDTableViewController.h */,
+				C26AB5361C52653F00D8FD96 /* YDTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +317,8 @@
 		5498EC891C48D0E700A7D99E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C21C97701C5642DE00741661 /* YDWeatherModel */,
+				C26AB50B1C51DAB300D8FD96 /* YDNewsList */,
 				54D26B3A1C4CEDAB001D20D9 /* Map */,
 				C2034DCE1C49CD4600202881 /* User */,
 			);
@@ -280,6 +328,8 @@
 		5498EC8A1C48D0E700A7D99E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C21C97591C55CA3A00741661 /* WeatherCollectionCell */,
+				C26AB4FB1C51D2FB00D8FD96 /* newsList */,
 				54B3AF9F1C4E256500D79478 /* map */,
 			);
 			path = View;
@@ -366,6 +416,43 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		C21C97591C55CA3A00741661 /* WeatherCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C21C975A1C55CA5D00741661 /* WeatherCollectionViewCell.h */,
+				C21C975B1C55CA5D00741661 /* WeatherCollectionViewCell.m */,
+				C21C975C1C55CA5D00741661 /* WeatherCollectionViewCell.xib */,
+			);
+			path = WeatherCollectionCell;
+			sourceTree = "<group>";
+		};
+		C21C975F1C560CD100741661 /* WeatherAdd */ = {
+			isa = PBXGroup;
+			children = (
+				C21C976A1C56105E00741661 /* AddTableViewController.h */,
+				C21C976B1C56105E00741661 /* AddTableViewController.m */,
+			);
+			path = WeatherAdd;
+			sourceTree = "<group>";
+		};
+		C21C97601C560CD100741661 /* WeatherSetting */ = {
+			isa = PBXGroup;
+			children = (
+				C21C976D1C56273200741661 /* SettingViewController.h */,
+				C21C976E1C56273200741661 /* SettingViewController.m */,
+			);
+			path = WeatherSetting;
+			sourceTree = "<group>";
+		};
+		C21C97701C5642DE00741661 /* YDWeatherModel */ = {
+			isa = PBXGroup;
+			children = (
+				C21C97711C5642F600741661 /* YDWeatherModel.h */,
+				C21C97721C5642F600741661 /* YDWeatherModel.m */,
+			);
+			path = YDWeatherModel;
+			sourceTree = "<group>";
+		};
 		C21FE6C81C49239100D71330 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,6 +460,30 @@
 				C21FE6CA1C4923F100D71330 /* UserViewController.m */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		C26AB4FB1C51D2FB00D8FD96 /* newsList */ = {
+			isa = PBXGroup;
+			children = (
+				C26AB4FC1C51D32600D8FD96 /* JianfeiTableViewController.h */,
+				C26AB4FD1C51D32600D8FD96 /* JianfeiTableViewController.m */,
+				C26AB4FE1C51D32600D8FD96 /* NanxingTableViewController.h */,
+				C26AB4FF1C51D32600D8FD96 /* NanxingTableViewController.m */,
+				C26AB5021C51D32600D8FD96 /* WomenTableViewController.h */,
+				C26AB5031C51D32600D8FD96 /* WomenTableViewController.m */,
+				C26AB5001C51D32600D8FD96 /* SecretTableViewController.h */,
+				C26AB5011C51D32600D8FD96 /* SecretTableViewController.m */,
+			);
+			path = newsList;
+			sourceTree = "<group>";
+		};
+		C26AB50B1C51DAB300D8FD96 /* YDNewsList */ = {
+			isa = PBXGroup;
+			children = (
+				C26AB50C1C51DAB300D8FD96 /* DogModel.h */,
+				C26AB50D1C51DAB300D8FD96 /* DogModel.m */,
+			);
+			path = YDNewsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,6 +555,7 @@
 				540D99141C4A64380027EF2F /* jia.png in Resources */,
 				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
+				C21C975E1C55CA5D00741661 /* WeatherCollectionViewCell.xib in Resources */,
 				540D99121C4A64380027EF2F /* haoyou-selected.png in Resources */,
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
@@ -525,20 +637,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */,
+				C26AB5051C51D32600D8FD96 /* NanxingTableViewController.m in Sources */,
 				54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */,
+				C21C976C1C56105E00741661 /* AddTableViewController.m in Sources */,
 				54B3AFA41C4E256500D79478 /* DistanceCalloutView.m in Sources */,
 				54B3AFA81C4E268000D79478 /* MapMoveInfoView.m in Sources */,
+				C21C975D1C55CA5D00741661 /* WeatherCollectionViewCell.m in Sources */,
+				C26AB5061C51D32600D8FD96 /* SecretTableViewController.m in Sources */,
+				C26AB5041C51D32600D8FD96 /* JianfeiTableViewController.m in Sources */,
 				5498EC9C1C48D48500A7D99E /* TrackLoggingViewController.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */,
-				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
 				C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */,
+				C21C976F1C56273200741661 /* SettingViewController.m in Sources */,
 				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
+				C26AB50A1C51D55700D8FD96 /* YDWMViewController.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
+				C26AB5371C52653F00D8FD96 /* YDTableViewController.m in Sources */,
+				C26AB5111C51DB9600D8FD96 /* YDGetDataTools.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 				540D98EF1C49ECD80027EF2F /* MapViewController.m in Sources */,
+				C26AB5071C51D32600D8FD96 /* WomenTableViewController.m in Sources */,
+				C21C97571C55C58800741661 /* YDWeatherViewController.m in Sources */,
+				C21C97731C5642F600741661 /* YDWeatherModel.m in Sources */,
+				C26AB50E1C51DAB300D8FD96 /* DogModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

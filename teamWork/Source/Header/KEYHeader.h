@@ -9,4 +9,9 @@
 #ifndef Project_KEYHeader_h
 #define Project_KEYHeader_h
 #define KamapKey @"167efac67a57821f301737e8a402544c"
+
+#pragma mark ------------我的百度*天狗健康知识*APIKey------------
+
+#define kApiKey @"2914a9e8c533799c98515dbba2834624"
+
 #endif

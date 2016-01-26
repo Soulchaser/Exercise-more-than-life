@@ -8,7 +8,9 @@
 
 #ifndef Project_APPHeader_h
 #define Project_APPHeader_h
-#import "DisplayViewController.h"
+
+#import "YDWMViewController.h"
+
 #import "GroupActivityViewController.h"
 #import "TrackLoggingViewController.h"
 #import "ShareViewController.h"
@@ -22,6 +24,10 @@
 #import "PointWithDistanceAnn.h"
 //地图界面用来显示运动信息的视图
 #import "MapMoveInfoView.h"
+
+#pragma mark ------------Model------------
+//资讯类
+#import "DogModel.h"
 //用户类
 #import "YYUserModel.h"
 
@@ -32,6 +38,25 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 //屏幕高度
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#pragma mark ------------YDD*资讯类头文件------------
+#import "JianfeiTableViewController.h"
+#import "NanxingTableViewController.h"
+#import "WomenTableViewController.h"
+#import "SecretTableViewController.h"
+
+#pragma mark ------------重用标识符------------
+//减肥瘦身-loseWight
+static NSString * const LWID = @"JianfeiTableViewCellReuseIdentifier";
+//男性健康-manHealth
+static NSString * const MHID = @"NanxingTableViewCellReuseIdentifier";
+//女性健康-womenHealth
+static NSString * const WHID = @"WomenTableViewCellReuseIdentifier";
+//私密生活-secretLife
+static NSString * const SLID = @"SecretTableViewCellReuseIdentifier";
+
+#pragma mark ------------GetDataTools*单例工具*------------
+#import "YDGetDataTools.h"
 
 //打印
 #ifdef DEBUG

@@ -11,4 +11,10 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AVOSCloud.h>
+//WMPageController
+#import <WMPageController.h>
+
+#pragma mark ------------刷新组件*MJRefresh*------------
+#import <MJRefresh.h>
+
 #endif
