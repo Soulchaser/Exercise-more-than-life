@@ -7,112 +7,120 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FC3FFD1782731BA9AE887A973DCAEC2 /* BFNavigationBarDrawer.h in Headers */ = {isa = PBXBuildFile; fileRef = 613F429530F259F8C402044987DCCF99 /* BFNavigationBarDrawer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		30EB65EFF6CC38571DE4DC7EE6467D14 /* BFNavigationBarDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A253B8D8B132A7B362EC2E332B682CC /* BFNavigationBarDrawer-dummy.m */; };
-		49597560BBF825580A334B716264523A /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
-		4E37CBCA0A3CC03A9BC58D40BBD63BD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		5C21D88F012408A2FA6B025A42E34BEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		792C31D273F14350565A036293E55CC7 /* BFNavigationBarDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C78C753E4790FDD3E7F8869722B6D12 /* BFNavigationBarDrawer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1AC82CD6A3CA06E74674E6C846DD19A2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		1F5B14772859ED4E26FE440C5B6779A2 /* NYSegmentIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6E7FCBAC32C5916C51C222B9C2700C /* NYSegmentIndicator.m */; };
+		2B5018847DD4BC8389CD2F749645798D /* NYSegmentIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = DF0813E31727BA7A2397E0CB8A966A07 /* NYSegmentIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		377EC458E0E1B17904336E35F4CB3E3A /* NYSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = E0C9D7199D52E0487EACBD33BBD3F052 /* NYSegmentedControl.m */; };
+		4E70F1D86701DAFD5D708EE8D47E3176 /* NYSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = D6EBE6C77C9095C5D71B96EE0DC83AA4 /* NYSegment.m */; };
+		6204F94C386C64B450C0AF0BAB5725A7 /* NYSegmentLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB0CB9205FAAAAAF2088DFE0505EF69 /* NYSegmentLabel.m */; };
+		78D8430C3364219303F439D442EA035A /* NYSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 30DFF3E2109601766100B73330B2B6A0 /* NYSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B77387B3FA6AB6FA9A4237D49D01948 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		8FABEFC73B23E6A1562B36C96D71E3BE /* NYSegment.h in Headers */ = {isa = PBXBuildFile; fileRef = 74F1F72AE0BFF39BF5E5979159D6AE79 /* NYSegment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		975C252DB3D0CAB53E8E244158496983 /* NYSegmentLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = B947FF55106FEEE33517C88BDC4FFF73 /* NYSegmentLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B56F2B58A7967644AE30ACA9BE65BCB6 /* NYSegmentedControl-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF830C13B85C853C5D178A6E7D862E1 /* NYSegmentedControl-dummy.m */; };
+		F9D447FAA417C5EEB61A3FD4D3573A8C /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C09A5AA7B5E6FCDA66EEDDF126C1593 /* PBXContainerItemProxy */ = {
+		22DB52975000FE7692562E8C5C19101D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B87BA8141ECCCC243703F096F814CC5C;
-			remoteInfo = BFNavigationBarDrawer;
+			remoteGlobalIDString = 9C5DC53E2A6CFCEAE071A0699254C101;
+			remoteInfo = NYSegmentedControl;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06DB9146EC83238DA9A2D458FAB6FD88 /* AVObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AVObject+Subclass.h"; sourceTree = "<group>"; };
-		0D0E84D6926C13CA8C2D88706563CBC8 /* AVIMConversationUpdateBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMConversationUpdateBuilder.h; sourceTree = "<group>"; };
-		0D3E25B65D65895A3AEE9EE09FBB7AFD /* BFNavigationBarDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BFNavigationBarDrawer-prefix.pch"; sourceTree = "<group>"; };
+		0581AAA1BA039D05E4C6D44DDF4F04A6 /* AVIMConversationUpdateBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMConversationUpdateBuilder.h; sourceTree = "<group>"; };
+		05A6ACB764742C568EC1C20C602272DC /* AVObject+Subclass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AVObject+Subclass.h"; sourceTree = "<group>"; };
+		0603F8C490B907E59C2A2BDB82FA8920 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
+		0ABE976287B05B4F89ED6C649E983530 /* AVStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVStatus.h; sourceTree = "<group>"; };
 		10834806BD7B412BC24F347361FA2C8E /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		108EC9944C3734BF07ADC7C49EE6DA2A /* AVSearchQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSearchQuery.h; sourceTree = "<group>"; };
-		13034D507AE745D518727BB7FD76F2BA /* AVSaveOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSaveOption.h; sourceTree = "<group>"; };
-		13D3BEC024BBE9A435432F55A3647C57 /* AVIMLocationMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMLocationMessage.h; sourceTree = "<group>"; };
-		1A6DE0A54878A36029FAA663F3F81802 /* AVIMConversationQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMConversationQuery.h; sourceTree = "<group>"; };
-		1C78C753E4790FDD3E7F8869722B6D12 /* BFNavigationBarDrawer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BFNavigationBarDrawer.m; path = BFNavigationBarDrawer/BFNavigationBarDrawer.m; sourceTree = "<group>"; };
-		24BA29BCF5525B816E253B156C445814 /* AVSearchSortBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSearchSortBuilder.h; sourceTree = "<group>"; };
+		17AB66A273F2629FF7354C26A074D20D /* AVRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVRole.h; sourceTree = "<group>"; };
+		1E1E1CD0A248ACD29615B5AAF07F8769 /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		2045CF4EBC21DBAA00E686E790B882ED /* AVIMLocationMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMLocationMessage.h; sourceTree = "<group>"; };
+		234756CD93C301600DFD2E84D622ECAD /* AVIMUserOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMUserOptions.h; sourceTree = "<group>"; };
+		242D3C4A2F2C32793302D0760CE0D5B8 /* AVSearchSortBuilder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSearchSortBuilder.h; sourceTree = "<group>"; };
+		251871D7D200AC5F897BE1DFBFA9FDDB /* AVIMSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMSignature.h; sourceTree = "<group>"; };
 		272643F56613CA0D336AE3DBF19DC404 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		2AB9C3A7EA781F50991FDAF04ED5A963 /* AVUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVUser.h; sourceTree = "<group>"; };
+		28AAEE5E83EDCE64F8657DDE68509E6F /* AVOSCloudIM.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVOSCloudIM.h; sourceTree = "<group>"; };
+		2A1D70205FDF7245F60AE16E84E2CBDD /* AVPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVPush.h; sourceTree = "<group>"; };
+		2BEEA2598DD7D1F2E3CE9603EABF2CAB /* AVGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVGeoPoint.h; sourceTree = "<group>"; };
+		2D93B719AD5D3E1A038F4E868A849124 /* AVACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVACL.h; sourceTree = "<group>"; };
+		2FC380846B4977D9F841B265BC068562 /* AVAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAnonymousUtils.h; sourceTree = "<group>"; };
+		30DFF3E2109601766100B73330B2B6A0 /* NYSegmentedControl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYSegmentedControl.h; path = NYSegmentedControl/NYSegmentedControl.h; sourceTree = "<group>"; };
+		32DCA4DF02D993EF9F61AED43A8A2CD1 /* AVHistoryMessageQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVHistoryMessageQuery.h; sourceTree = "<group>"; };
+		339D9F48BC3D44D18CC3C4FF6F05D808 /* AVAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAnalytics.h; sourceTree = "<group>"; };
+		358398D80303B7117766A5BEB58B4327 /* AVIMFileMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMFileMessage.h; sourceTree = "<group>"; };
 		37DB56D75062CC75FCB0966E1C6E8A8E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		386CF474BDBAC482B3B263C16883E5D6 /* AVCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCloud.h; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3F44727156A047FC80BB8EBB839614F9 /* AVInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVInstallation.h; sourceTree = "<group>"; };
-		41D50C2E82EE5D053D07C356346BF38B /* AVGeoPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVGeoPoint.h; sourceTree = "<group>"; };
-		478992B851FE3B0E23C99D6608F98985 /* AVHistoryMessageQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVHistoryMessageQuery.h; sourceTree = "<group>"; };
-		49DEAEED5FC5BB6D37189892C8300793 /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
-		4A253B8D8B132A7B362EC2E332B682CC /* BFNavigationBarDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BFNavigationBarDrawer-dummy.m"; sourceTree = "<group>"; };
-		4DF6D6EA11FD196FB9C78D4EEBD8B2D2 /* libBFNavigationBarDrawer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBFNavigationBarDrawer.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E3A833B8925E66B6E04666F19369205 /* AVIMVideoMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMVideoMessage.h; sourceTree = "<group>"; };
+		401BDBC750897340A63E5D1798131619 /* AVGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVGroup.h; sourceTree = "<group>"; };
+		45167DAF510F49AD9AF6479FB65229A1 /* libAVOSCloud.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAVOSCloud.a; sourceTree = "<group>"; };
+		4C3875FA5670B6B1D8C81E956EB4262E /* libNYSegmentedControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libNYSegmentedControl.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D95152A9A0348D2DD83F6E3D15E39F5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		505AA78CAE1632BE84B88DC281D68DD2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5400F158DF22A1B30F562DBB177177C7 /* AVFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVFile.h; sourceTree = "<group>"; };
-		5C10CA462C03946E672DF0D9F79AEC9B /* AVMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVMessage.h; sourceTree = "<group>"; };
-		5DE376B017A2F3B3936F75666AC15922 /* AVHistoryMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVHistoryMessage.h; sourceTree = "<group>"; };
-		6046F18EDF3B9A4067BB3F0F3800143C /* AVIMTypedMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMTypedMessage.h; sourceTree = "<group>"; };
-		613F429530F259F8C402044987DCCF99 /* BFNavigationBarDrawer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BFNavigationBarDrawer.h; path = BFNavigationBarDrawer/BFNavigationBarDrawer.h; sourceTree = "<group>"; };
+		53CD9F101882554B2503C597BE2738C5 /* AVIMTextMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMTextMessage.h; sourceTree = "<group>"; };
+		5F3051E53A33BB29DAAC5B0F1011580A /* AVSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSignature.h; sourceTree = "<group>"; };
 		6911BECA35E7518D864239B7E898EEF3 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		699302974C2FC46D6F61E346D5F826FD /* AVRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVRelation.h; sourceTree = "<group>"; };
-		69EA68E7EFC2256EBB38914BB321F662 /* AVIMAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMAvailability.h; sourceTree = "<group>"; };
-		6B39F8609355602BF28937CB57BFFD7A /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
-		6DE068B71C54BE187789B1F66B4A649A /* AVObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVObject.h; sourceTree = "<group>"; };
-		6E0B6034C1EC8D82727B3E793F97A2F5 /* libAVOSCloudIM.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAVOSCloudIM.a; sourceTree = "<group>"; };
-		6F2F7909170AD92600CF292BB0611800 /* AVStatus.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVStatus.h; sourceTree = "<group>"; };
-		6FFD4434C386C3968718846882AD60FC /* AVRole.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVRole.h; sourceTree = "<group>"; };
-		70C3D2364168D1CB8853251615ABF817 /* AVGroup.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVGroup.h; sourceTree = "<group>"; };
-		73BBE97DDF87B7FF253CC49AFEFE0ACE /* AVSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSignature.h; sourceTree = "<group>"; };
-		74DA1E6DE4227221887E9BF29D38711B /* AVIMImageMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMImageMessage.h; sourceTree = "<group>"; };
-		77708530F74B6C3B386EE61B5EC0E95E /* AVCloudQueryResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCloudQueryResult.h; sourceTree = "<group>"; };
-		8621F4BE6F5AEAD4D245B989176A8563 /* AVIMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMMessage.h; sourceTree = "<group>"; };
-		872C1DB989360641B043A4F2AD012E2C /* AVQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVQuery.h; sourceTree = "<group>"; };
-		8E3444C31E86BD5AE8B38AF2439DB70C /* AVCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCloud.h; sourceTree = "<group>"; };
-		8ECA63532AE6CEAD90351B995933FA35 /* AVIMFileMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMFileMessage.h; sourceTree = "<group>"; };
-		8EFBB33AEA87313B2084975FD874C904 /* AVAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAnalytics.h; sourceTree = "<group>"; };
-		90CBFC4F7FCD502A0C03811BF8A2200B /* AVIMUserOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMUserOptions.h; sourceTree = "<group>"; };
+		694E2A9C336790B321232AF94BB9843D /* AVOSCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVOSCloud.h; sourceTree = "<group>"; };
+		6D6E7FCBAC32C5916C51C222B9C2700C /* NYSegmentIndicator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYSegmentIndicator.m; path = NYSegmentedControl/NYSegmentIndicator.m; sourceTree = "<group>"; };
+		6ED01DBAAC16AE4FE36A5A1015BE0B04 /* AVSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
+		74F1F72AE0BFF39BF5E5979159D6AE79 /* NYSegment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYSegment.h; path = NYSegmentedControl/NYSegment.h; sourceTree = "<group>"; };
+		772D590D1808A6565E88A0D41AA80DFD /* AVIMTypedMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMTypedMessage.h; sourceTree = "<group>"; };
+		789ADE886EA813724F05FEFA1C12E7B4 /* NYSegmentedControl.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NYSegmentedControl.xcconfig; sourceTree = "<group>"; };
+		893796296CA490510050460865203FE9 /* AVSearchQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSearchQuery.h; sourceTree = "<group>"; };
+		8DA1D50F1DD3E5036ED00825066B056E /* AVIMCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMCommon.h; sourceTree = "<group>"; };
+		8FB9B258446DE6053456BD30B2DA4C56 /* AVRelation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVRelation.h; sourceTree = "<group>"; };
+		928DC7CD1C7049D7D52140660C8C7497 /* libAVOSCloudIM.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAVOSCloudIM.a; sourceTree = "<group>"; };
 		98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		9D05AC737DC24D8D2922131A0044BC76 /* AVAnonymousUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAnonymousUtils.h; sourceTree = "<group>"; };
-		9DE0E9922ABC365995EE128FD2EADA83 /* AVIMTextMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMTextMessage.h; sourceTree = "<group>"; };
-		9F4261E92A87DA80D24BEE98DB836708 /* AVAvailability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVAvailability.h; sourceTree = "<group>"; };
+		99CF9E063446E68C0172A619D760E830 /* AVObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVObject.h; sourceTree = "<group>"; };
+		9B066620FCD4069698B6B8B697610665 /* AVUser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVUser.h; sourceTree = "<group>"; };
+		9B140E19192F535A295570C163139ABC /* AMap.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = MAMapKit.framework/Versions/3.2.0.163b642/Resources/AMap.bundle; sourceTree = "<group>"; };
 		A1A36D34413696BE466E2CA0AFF194DA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		A57CF68E4117DBB388AD120D41046B0C /* AVSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSession.h; sourceTree = "<group>"; };
-		A8C97AD48563BF574A3B2EA0BCAB99BF /* AVLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVLogger.h; sourceTree = "<group>"; };
-		AFD51D1831C5350018ED73FED6B9C831 /* AVIMAudioMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMAudioMessage.h; sourceTree = "<group>"; };
-		B007AD9FF585E5A0F089844E30590E85 /* BFNavigationBarDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BFNavigationBarDrawer.xcconfig; sourceTree = "<group>"; };
-		B395B8B906252568D0E7D04200050576 /* AVOSCloudIM.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVOSCloudIM.h; sourceTree = "<group>"; };
-		B46329424C6CE4E73DA9F7FAE002C600 /* AVPush.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVPush.h; sourceTree = "<group>"; };
+		A2209A7BC1ACED60CA69995C7A5999A7 /* AVInstallation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVInstallation.h; sourceTree = "<group>"; };
+		A6A09E74C9D2C90069095F15576D1D9D /* AVFile.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVFile.h; sourceTree = "<group>"; };
+		AAE6C421F1067E044829542C028A377E /* AVIMAudioMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMAudioMessage.h; sourceTree = "<group>"; };
+		AEB0CB9205FAAAAAF2088DFE0505EF69 /* NYSegmentLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYSegmentLabel.m; path = NYSegmentedControl/NYSegmentLabel.m; sourceTree = "<group>"; };
+		B112751E303F7AB4E8BCF600727C030A /* AVIMImageMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMImageMessage.h; sourceTree = "<group>"; };
+		B537606ECF4506579D3481862C1B4C37 /* AVSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSubclassing.h; sourceTree = "<group>"; };
+		B5AE84B003DAC5AAC8546AEA76E5A9ED /* AVCloudQueryResult.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVCloudQueryResult.h; sourceTree = "<group>"; };
+		B947FF55106FEEE33517C88BDC4FFF73 /* NYSegmentLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYSegmentLabel.h; path = NYSegmentedControl/NYSegmentLabel.h; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		CF49C5CD43CA0B8F262E81FD2E8B8BDE /* AVIMClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMClient.h; sourceTree = "<group>"; };
-		D87DD6DFB5375A37A97D84D53B1CE9DE /* AVFileQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVFileQuery.h; sourceTree = "<group>"; };
-		DAA526D16C8FFEBFAE976642AC6ACAC6 /* AMap.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = MAMapKit.framework/AMap.bundle; sourceTree = "<group>"; };
-		E017070B4BD95BA2741E1B8EBAA13834 /* AVSubclassing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVSubclassing.h; sourceTree = "<group>"; };
-		E04449B6F342FAAD945DC84F441AC958 /* AVIMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMConversation.h; sourceTree = "<group>"; };
-		E2C34D922AC64E6EAEC07D9206ABA028 /* AVACL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVACL.h; sourceTree = "<group>"; };
-		E2CB186EFF8EF9628EFA2AC9745C5B3E /* AVConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVConstants.h; sourceTree = "<group>"; };
-		EA7B91D504CDCD1B6073BE6815B666F1 /* AVOSCloud.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVOSCloud.h; sourceTree = "<group>"; };
-		EC616D5810B7215DCA3F71EE65517FF2 /* AVIMSignature.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMSignature.h; sourceTree = "<group>"; };
-		EF66BCB243B6FA7585F3975DAB6F9647 /* libAVOSCloud.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libAVOSCloud.a; sourceTree = "<group>"; };
-		F290A27DFEDB37F56B6BFE25F8DE4643 /* AVIMCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMCommon.h; sourceTree = "<group>"; };
-		F33DEA878D85EE6C34136AB72DB458AB /* AVIMClientOpenOption.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMClientOpenOption.h; sourceTree = "<group>"; };
-		F6EFFB6BCBD831E526CD391316A66313 /* AVIMKeyedConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMKeyedConversation.h; sourceTree = "<group>"; };
+		BFA6FE68EB51457BF5EC2DC089939B37 /* AVIMMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMMessage.h; sourceTree = "<group>"; };
+		BFB419D6958D0C3F714267EF3F4D3D4A /* AVMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVMessage.h; sourceTree = "<group>"; };
+		C607781C2E7DC7511AF3C0F1791CA4B2 /* AVIMVideoMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMVideoMessage.h; sourceTree = "<group>"; };
+		C7C2F638051BFE5FC88A6A02E6EC0920 /* AVIMClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMClient.h; sourceTree = "<group>"; };
+		C8D4FBA84335334454628AC60E2DD2B0 /* AVHistoryMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVHistoryMessage.h; sourceTree = "<group>"; };
+		CFA113D774A91FC16435BD34054ACF82 /* AVConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVConstants.h; sourceTree = "<group>"; };
+		D085400C0AD9AC11EE17CA85743C8549 /* NYSegmentedControl-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NYSegmentedControl-prefix.pch"; sourceTree = "<group>"; };
+		D1E60A864BAFBF631E662E141169CB9D /* AVIMConversationQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMConversationQuery.h; sourceTree = "<group>"; };
+		D6EBE6C77C9095C5D71B96EE0DC83AA4 /* NYSegment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYSegment.m; path = NYSegmentedControl/NYSegment.m; sourceTree = "<group>"; };
+		D7B97AFE7408A9F8CDA494C31ACBB22C /* AVIMKeyedConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMKeyedConversation.h; sourceTree = "<group>"; };
+		DA5592296EEF5B53F29F179356236D60 /* AVIMConversation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVIMConversation.h; sourceTree = "<group>"; };
+		DCF830C13B85C853C5D178A6E7D862E1 /* NYSegmentedControl-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NYSegmentedControl-dummy.m"; sourceTree = "<group>"; };
+		DF0813E31727BA7A2397E0CB8A966A07 /* NYSegmentIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NYSegmentIndicator.h; path = NYSegmentedControl/NYSegmentIndicator.h; sourceTree = "<group>"; };
+		E0C9D7199D52E0487EACBD33BBD3F052 /* NYSegmentedControl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NYSegmentedControl.m; path = NYSegmentedControl/NYSegmentedControl.m; sourceTree = "<group>"; };
+		E8C53FCE397A39FC873144BCE50588C7 /* AVFileQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVFileQuery.h; sourceTree = "<group>"; };
+		F53C6761335B3D0D2EEE94E0B0D737FB /* AVQuery.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVQuery.h; sourceTree = "<group>"; };
+		FD88BBC152EF56B385E09E473A1A0547 /* AVLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AVLogger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		41FBAC509C443F137212009453108406 /* Frameworks */ = {
+		89719322EA7EE69898FE7CE035A5FE24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C21D88F012408A2FA6B025A42E34BEB /* Foundation.framework in Frameworks */,
+				1AC82CD6A3CA06E74674E6C846DD19A2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61FAC7BD5E94F82239FA20A7ABA24767 /* Frameworks */ = {
+		FA22095B25981C6EE68AA992D4FA5C84 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E37CBCA0A3CC03A9BC58D40BBD63BD6 /* Foundation.framework in Frameworks */,
+				8B77387B3FA6AB6FA9A4237D49D01948 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,127 +135,91 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		208CD182B18AB324B2A805F04DF2009B /* AVOSCloudIM */ = {
+		0E2426A756A216D2701C000D7094E946 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AFD51D1831C5350018ED73FED6B9C831 /* AVIMAudioMessage.h */,
-				69EA68E7EFC2256EBB38914BB321F662 /* AVIMAvailability.h */,
-				CF49C5CD43CA0B8F262E81FD2E8B8BDE /* AVIMClient.h */,
-				F33DEA878D85EE6C34136AB72DB458AB /* AVIMClientOpenOption.h */,
-				F290A27DFEDB37F56B6BFE25F8DE4643 /* AVIMCommon.h */,
-				E04449B6F342FAAD945DC84F441AC958 /* AVIMConversation.h */,
-				1A6DE0A54878A36029FAA663F3F81802 /* AVIMConversationQuery.h */,
-				0D0E84D6926C13CA8C2D88706563CBC8 /* AVIMConversationUpdateBuilder.h */,
-				8ECA63532AE6CEAD90351B995933FA35 /* AVIMFileMessage.h */,
-				74DA1E6DE4227221887E9BF29D38711B /* AVIMImageMessage.h */,
-				F6EFFB6BCBD831E526CD391316A66313 /* AVIMKeyedConversation.h */,
-				13D3BEC024BBE9A435432F55A3647C57 /* AVIMLocationMessage.h */,
-				8621F4BE6F5AEAD4D245B989176A8563 /* AVIMMessage.h */,
-				EC616D5810B7215DCA3F71EE65517FF2 /* AVIMSignature.h */,
-				9DE0E9922ABC365995EE128FD2EADA83 /* AVIMTextMessage.h */,
-				6046F18EDF3B9A4067BB3F0F3800143C /* AVIMTypedMessage.h */,
-				90CBFC4F7FCD502A0C03811BF8A2200B /* AVIMUserOptions.h */,
-				4E3A833B8925E66B6E04666F19369205 /* AVIMVideoMessage.h */,
-				B395B8B906252568D0E7D04200050576 /* AVOSCloudIM.h */,
-				2B9014CECE1A9C3C91FB4FC11ED89116 /* Frameworks */,
-			);
-			path = AVOSCloudIM;
-			sourceTree = "<group>";
-		};
-		2B9014CECE1A9C3C91FB4FC11ED89116 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6E0B6034C1EC8D82727B3E793F97A2F5 /* libAVOSCloudIM.a */,
+				1E1E1CD0A248ACD29615B5AAF07F8769 /* AMapSearchKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		31A53A2C9415CC7D24416F11321436F0 /* AVOSCloud */ = {
+		100CFD4E46AAE98AE5BAFA9A3E756BCC /* AMapSearch */ = {
 			isa = PBXGroup;
 			children = (
-				E2C34D922AC64E6EAEC07D9206ABA028 /* AVACL.h */,
-				8EFBB33AEA87313B2084975FD874C904 /* AVAnalytics.h */,
-				9D05AC737DC24D8D2922131A0044BC76 /* AVAnonymousUtils.h */,
-				9F4261E92A87DA80D24BEE98DB836708 /* AVAvailability.h */,
-				8E3444C31E86BD5AE8B38AF2439DB70C /* AVCloud.h */,
-				77708530F74B6C3B386EE61B5EC0E95E /* AVCloudQueryResult.h */,
-				E2CB186EFF8EF9628EFA2AC9745C5B3E /* AVConstants.h */,
-				5400F158DF22A1B30F562DBB177177C7 /* AVFile.h */,
-				D87DD6DFB5375A37A97D84D53B1CE9DE /* AVFileQuery.h */,
-				41D50C2E82EE5D053D07C356346BF38B /* AVGeoPoint.h */,
-				70C3D2364168D1CB8853251615ABF817 /* AVGroup.h */,
-				5DE376B017A2F3B3936F75666AC15922 /* AVHistoryMessage.h */,
-				478992B851FE3B0E23C99D6608F98985 /* AVHistoryMessageQuery.h */,
-				3F44727156A047FC80BB8EBB839614F9 /* AVInstallation.h */,
-				A8C97AD48563BF574A3B2EA0BCAB99BF /* AVLogger.h */,
-				5C10CA462C03946E672DF0D9F79AEC9B /* AVMessage.h */,
-				6DE068B71C54BE187789B1F66B4A649A /* AVObject.h */,
-				06DB9146EC83238DA9A2D458FAB6FD88 /* AVObject+Subclass.h */,
-				EA7B91D504CDCD1B6073BE6815B666F1 /* AVOSCloud.h */,
-				B46329424C6CE4E73DA9F7FAE002C600 /* AVPush.h */,
-				872C1DB989360641B043A4F2AD012E2C /* AVQuery.h */,
-				699302974C2FC46D6F61E346D5F826FD /* AVRelation.h */,
-				6FFD4434C386C3968718846882AD60FC /* AVRole.h */,
-				13034D507AE745D518727BB7FD76F2BA /* AVSaveOption.h */,
-				108EC9944C3734BF07ADC7C49EE6DA2A /* AVSearchQuery.h */,
-				24BA29BCF5525B816E253B156C445814 /* AVSearchSortBuilder.h */,
-				A57CF68E4117DBB388AD120D41046B0C /* AVSession.h */,
-				73BBE97DDF87B7FF253CC49AFEFE0ACE /* AVSignature.h */,
-				6F2F7909170AD92600CF292BB0611800 /* AVStatus.h */,
-				E017070B4BD95BA2741E1B8EBAA13834 /* AVSubclassing.h */,
-				2AB9C3A7EA781F50991FDAF04ED5A963 /* AVUser.h */,
-				4BCCEFFA1FA3F049FBCB2C0F4B799F1B /* Frameworks */,
+				0E2426A756A216D2701C000D7094E946 /* Frameworks */,
+			);
+			path = AMapSearch;
+			sourceTree = "<group>";
+		};
+		22B41114F51EEA3DEFCD3CD4D6BC901F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				928DC7CD1C7049D7D52140660C8C7497 /* libAVOSCloudIM.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		276591A02C31594A36720F6AF3A439F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C3875FA5670B6B1D8C81E956EB4262E /* libNYSegmentedControl.a */,
+				4D95152A9A0348D2DD83F6E3D15E39F5 /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		333CE14576F674A53B3B0EC993645149 /* AMap2DMap */ = {
+			isa = PBXGroup;
+			children = (
+				F21AC3A6B69C0D39A8C1E5C8063C6927 /* Frameworks */,
+				34CFCE32D4875EB40747F3432493E37F /* Resources */,
+			);
+			path = AMap2DMap;
+			sourceTree = "<group>";
+		};
+		34CFCE32D4875EB40747F3432493E37F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B140E19192F535A295570C163139ABC /* AMap.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		38E09520FD9A9A753D16B6AD9D1A6223 /* AVOSCloud */ = {
+			isa = PBXGroup;
+			children = (
+				2D93B719AD5D3E1A038F4E868A849124 /* AVACL.h */,
+				339D9F48BC3D44D18CC3C4FF6F05D808 /* AVAnalytics.h */,
+				2FC380846B4977D9F841B265BC068562 /* AVAnonymousUtils.h */,
+				386CF474BDBAC482B3B263C16883E5D6 /* AVCloud.h */,
+				B5AE84B003DAC5AAC8546AEA76E5A9ED /* AVCloudQueryResult.h */,
+				CFA113D774A91FC16435BD34054ACF82 /* AVConstants.h */,
+				A6A09E74C9D2C90069095F15576D1D9D /* AVFile.h */,
+				E8C53FCE397A39FC873144BCE50588C7 /* AVFileQuery.h */,
+				2BEEA2598DD7D1F2E3CE9603EABF2CAB /* AVGeoPoint.h */,
+				401BDBC750897340A63E5D1798131619 /* AVGroup.h */,
+				C8D4FBA84335334454628AC60E2DD2B0 /* AVHistoryMessage.h */,
+				32DCA4DF02D993EF9F61AED43A8A2CD1 /* AVHistoryMessageQuery.h */,
+				A2209A7BC1ACED60CA69995C7A5999A7 /* AVInstallation.h */,
+				FD88BBC152EF56B385E09E473A1A0547 /* AVLogger.h */,
+				BFB419D6958D0C3F714267EF3F4D3D4A /* AVMessage.h */,
+				99CF9E063446E68C0172A619D760E830 /* AVObject.h */,
+				05A6ACB764742C568EC1C20C602272DC /* AVObject+Subclass.h */,
+				694E2A9C336790B321232AF94BB9843D /* AVOSCloud.h */,
+				2A1D70205FDF7245F60AE16E84E2CBDD /* AVPush.h */,
+				F53C6761335B3D0D2EEE94E0B0D737FB /* AVQuery.h */,
+				8FB9B258446DE6053456BD30B2DA4C56 /* AVRelation.h */,
+				17AB66A273F2629FF7354C26A074D20D /* AVRole.h */,
+				893796296CA490510050460865203FE9 /* AVSearchQuery.h */,
+				242D3C4A2F2C32793302D0760CE0D5B8 /* AVSearchSortBuilder.h */,
+				6ED01DBAAC16AE4FE36A5A1015BE0B04 /* AVSession.h */,
+				5F3051E53A33BB29DAAC5B0F1011580A /* AVSignature.h */,
+				0ABE976287B05B4F89ED6C649E983530 /* AVStatus.h */,
+				B537606ECF4506579D3481862C1B4C37 /* AVSubclassing.h */,
+				9B066620FCD4069698B6B8B697610665 /* AVUser.h */,
+				BA11124EE691119DF2DF79E90068E4B2 /* Frameworks */,
 			);
 			path = AVOSCloud;
-			sourceTree = "<group>";
-		};
-		385CF7A8C8192CA6F3BBF9AAB9E1A146 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B007AD9FF585E5A0F089844E30590E85 /* BFNavigationBarDrawer.xcconfig */,
-				4A253B8D8B132A7B362EC2E332B682CC /* BFNavigationBarDrawer-dummy.m */,
-				0D3E25B65D65895A3AEE9EE09FBB7AFD /* BFNavigationBarDrawer-prefix.pch */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/BFNavigationBarDrawer";
-			sourceTree = "<group>";
-		};
-		4BCCEFFA1FA3F049FBCB2C0F4B799F1B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EF66BCB243B6FA7585F3975DAB6F9647 /* libAVOSCloud.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5293F60F66D6C5A4CDAD88E0CADE5D6A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D3CE4B26E651BBB2F0F878C88E7DB512 /* AMap2DMap */,
-				C9BAF3B96075A4A0E03E67FC097F9383 /* AMapSearch */,
-				31A53A2C9415CC7D24416F11321436F0 /* AVOSCloud */,
-				208CD182B18AB324B2A805F04DF2009B /* AVOSCloudIM */,
-				6EC5886449C467FA052FCB7AEE5FAAE9 /* BFNavigationBarDrawer */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		6790CC111DFD481BDA74B211138AD93B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				49DEAEED5FC5BB6D37189892C8300793 /* MAMapKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6EC5886449C467FA052FCB7AEE5FAAE9 /* BFNavigationBarDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				613F429530F259F8C402044987DCCF99 /* BFNavigationBarDrawer.h */,
-				1C78C753E4790FDD3E7F8869722B6D12 /* BFNavigationBarDrawer.m */,
-				385CF7A8C8192CA6F3BBF9AAB9E1A146 /* Support Files */,
-			);
-			path = BFNavigationBarDrawer;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -255,27 +227,26 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5293F60F66D6C5A4CDAD88E0CADE5D6A /* Pods */,
-				B22B68673F72DAFDB70EA34FB6DCA2D9 /* Products */,
+				DA082AA9496615C57051D77210258916 /* Pods */,
+				276591A02C31594A36720F6AF3A439F9 /* Products */,
 				037C0CA694176A3C0915F62C9D20B3E6 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A7865E1BD3BF0DD562246454279FE92B /* Resources */ = {
+		A8F125304934049BC819A3DF20B72064 /* NYSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				DAA526D16C8FFEBFAE976642AC6ACAC6 /* AMap.bundle */,
+				74F1F72AE0BFF39BF5E5979159D6AE79 /* NYSegment.h */,
+				D6EBE6C77C9095C5D71B96EE0DC83AA4 /* NYSegment.m */,
+				30DFF3E2109601766100B73330B2B6A0 /* NYSegmentedControl.h */,
+				E0C9D7199D52E0487EACBD33BBD3F052 /* NYSegmentedControl.m */,
+				DF0813E31727BA7A2397E0CB8A966A07 /* NYSegmentIndicator.h */,
+				6D6E7FCBAC32C5916C51C222B9C2700C /* NYSegmentIndicator.m */,
+				B947FF55106FEEE33517C88BDC4FFF73 /* NYSegmentLabel.h */,
+				AEB0CB9205FAAAAAF2088DFE0505EF69 /* NYSegmentLabel.m */,
+				B83E47CE7E380706550AA6482C71C9B1 /* Support Files */,
 			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		B22B68673F72DAFDB70EA34FB6DCA2D9 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4DF6D6EA11FD196FB9C78D4EEBD8B2D2 /* libBFNavigationBarDrawer.a */,
-				505AA78CAE1632BE84B88DC281D68DD2 /* libPods.a */,
-			);
-			name = Products;
+			path = NYSegmentedControl;
 			sourceTree = "<group>";
 		};
 		B3D1D13E0C6553800746CB8FD61CF946 /* Pods */ = {
@@ -291,6 +262,25 @@
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		B83E47CE7E380706550AA6482C71C9B1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				789ADE886EA813724F05FEFA1C12E7B4 /* NYSegmentedControl.xcconfig */,
+				DCF830C13B85C853C5D178A6E7D862E1 /* NYSegmentedControl-dummy.m */,
+				D085400C0AD9AC11EE17CA85743C8549 /* NYSegmentedControl-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/NYSegmentedControl";
+			sourceTree = "<group>";
+		};
+		BA11124EE691119DF2DF79E90068E4B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45167DAF510F49AD9AF6479FB65229A1 /* libAVOSCloud.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -309,27 +299,47 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C9BAF3B96075A4A0E03E67FC097F9383 /* AMapSearch */ = {
+		C6645035579947F23B224722913D3482 /* AVOSCloudIM */ = {
 			isa = PBXGroup;
 			children = (
-				D791D73C42D9567971276C33719F9D6D /* Frameworks */,
+				AAE6C421F1067E044829542C028A377E /* AVIMAudioMessage.h */,
+				C7C2F638051BFE5FC88A6A02E6EC0920 /* AVIMClient.h */,
+				8DA1D50F1DD3E5036ED00825066B056E /* AVIMCommon.h */,
+				DA5592296EEF5B53F29F179356236D60 /* AVIMConversation.h */,
+				D1E60A864BAFBF631E662E141169CB9D /* AVIMConversationQuery.h */,
+				0581AAA1BA039D05E4C6D44DDF4F04A6 /* AVIMConversationUpdateBuilder.h */,
+				358398D80303B7117766A5BEB58B4327 /* AVIMFileMessage.h */,
+				B112751E303F7AB4E8BCF600727C030A /* AVIMImageMessage.h */,
+				D7B97AFE7408A9F8CDA494C31ACBB22C /* AVIMKeyedConversation.h */,
+				2045CF4EBC21DBAA00E686E790B882ED /* AVIMLocationMessage.h */,
+				BFA6FE68EB51457BF5EC2DC089939B37 /* AVIMMessage.h */,
+				251871D7D200AC5F897BE1DFBFA9FDDB /* AVIMSignature.h */,
+				53CD9F101882554B2503C597BE2738C5 /* AVIMTextMessage.h */,
+				772D590D1808A6565E88A0D41AA80DFD /* AVIMTypedMessage.h */,
+				234756CD93C301600DFD2E84D622ECAD /* AVIMUserOptions.h */,
+				C607781C2E7DC7511AF3C0F1791CA4B2 /* AVIMVideoMessage.h */,
+				28AAEE5E83EDCE64F8657DDE68509E6F /* AVOSCloudIM.h */,
+				22B41114F51EEA3DEFCD3CD4D6BC901F /* Frameworks */,
 			);
-			path = AMapSearch;
+			path = AVOSCloudIM;
 			sourceTree = "<group>";
 		};
-		D3CE4B26E651BBB2F0F878C88E7DB512 /* AMap2DMap */ = {
+		DA082AA9496615C57051D77210258916 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6790CC111DFD481BDA74B211138AD93B /* Frameworks */,
-				A7865E1BD3BF0DD562246454279FE92B /* Resources */,
+				333CE14576F674A53B3B0EC993645149 /* AMap2DMap */,
+				100CFD4E46AAE98AE5BAFA9A3E756BCC /* AMapSearch */,
+				38E09520FD9A9A753D16B6AD9D1A6223 /* AVOSCloud */,
+				C6645035579947F23B224722913D3482 /* AVOSCloudIM */,
+				A8F125304934049BC819A3DF20B72064 /* NYSegmentedControl */,
 			);
-			path = AMap2DMap;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		D791D73C42D9567971276C33719F9D6D /* Frameworks */ = {
+		F21AC3A6B69C0D39A8C1E5C8063C6927 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6B39F8609355602BF28937CB57BFFD7A /* AMapSearchKit.framework */,
+				0603F8C490B907E59C2A2BDB82FA8920 /* MAMapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -337,49 +347,52 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		852EB065047C40BE9D8568BA5101F3E7 /* Headers */ = {
+		147B31A576446A95BFAA2031A61BDFCE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FC3FFD1782731BA9AE887A973DCAEC2 /* BFNavigationBarDrawer.h in Headers */,
+				8FABEFC73B23E6A1562B36C96D71E3BE /* NYSegment.h in Headers */,
+				78D8430C3364219303F439D442EA035A /* NYSegmentedControl.h in Headers */,
+				2B5018847DD4BC8389CD2F749645798D /* NYSegmentIndicator.h in Headers */,
+				975C252DB3D0CAB53E8E244158496983 /* NYSegmentLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		077AA6D623380518E75F1413414BF9BE /* Pods */ = {
+		5D5E6A4F1A59FD5E1871CAB2F8838A86 /* Pods */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E2013FF124D34E40C05BBA3E5A83AB82 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildConfigurationList = 31CD94ACB2AFEB42694A3CB0F770CF2D /* Build configuration list for PBXNativeTarget "Pods" */;
 			buildPhases = (
-				5A00025FBC53DECA8E14387330E44145 /* Sources */,
-				61FAC7BD5E94F82239FA20A7ABA24767 /* Frameworks */,
+				7C4AE385428C30B31B8BC191F8FC9408 /* Sources */,
+				FA22095B25981C6EE68AA992D4FA5C84 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C93C655D52B5A5AD23E9A6F2AA83779F /* PBXTargetDependency */,
+				67B109F6608087A34D64907FDBAAF801 /* PBXTargetDependency */,
 			);
 			name = Pods;
 			productName = Pods;
-			productReference = 505AA78CAE1632BE84B88DC281D68DD2 /* libPods.a */;
+			productReference = 4D95152A9A0348D2DD83F6E3D15E39F5 /* libPods.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		B87BA8141ECCCC243703F096F814CC5C /* BFNavigationBarDrawer */ = {
+		9C5DC53E2A6CFCEAE071A0699254C101 /* NYSegmentedControl */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9639F8CC951053D14889C5A6C35107B1 /* Build configuration list for PBXNativeTarget "BFNavigationBarDrawer" */;
+			buildConfigurationList = D0A2F416FE62665BC8678BDEC439BBC8 /* Build configuration list for PBXNativeTarget "NYSegmentedControl" */;
 			buildPhases = (
-				19BEF3940FEA534A43D37B762D3DB491 /* Sources */,
-				41FBAC509C443F137212009453108406 /* Frameworks */,
-				852EB065047C40BE9D8568BA5101F3E7 /* Headers */,
+				B48969F8F8C8DEFE1955C43EBFFC64AB /* Sources */,
+				89719322EA7EE69898FE7CE035A5FE24 /* Frameworks */,
+				147B31A576446A95BFAA2031A61BDFCE /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BFNavigationBarDrawer;
-			productName = BFNavigationBarDrawer;
-			productReference = 4DF6D6EA11FD196FB9C78D4EEBD8B2D2 /* libBFNavigationBarDrawer.a */;
+			name = NYSegmentedControl;
+			productName = NYSegmentedControl;
+			productReference = 4C3875FA5670B6B1D8C81E956EB4262E /* libNYSegmentedControl.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -399,47 +412,67 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B22B68673F72DAFDB70EA34FB6DCA2D9 /* Products */;
+			productRefGroup = 276591A02C31594A36720F6AF3A439F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B87BA8141ECCCC243703F096F814CC5C /* BFNavigationBarDrawer */,
-				077AA6D623380518E75F1413414BF9BE /* Pods */,
+				9C5DC53E2A6CFCEAE071A0699254C101 /* NYSegmentedControl */,
+				5D5E6A4F1A59FD5E1871CAB2F8838A86 /* Pods */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		19BEF3940FEA534A43D37B762D3DB491 /* Sources */ = {
+		7C4AE385428C30B31B8BC191F8FC9408 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30EB65EFF6CC38571DE4DC7EE6467D14 /* BFNavigationBarDrawer-dummy.m in Sources */,
-				792C31D273F14350565A036293E55CC7 /* BFNavigationBarDrawer.m in Sources */,
+				F9D447FAA417C5EEB61A3FD4D3573A8C /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A00025FBC53DECA8E14387330E44145 /* Sources */ = {
+		B48969F8F8C8DEFE1955C43EBFFC64AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49597560BBF825580A334B716264523A /* Pods-dummy.m in Sources */,
+				4E70F1D86701DAFD5D708EE8D47E3176 /* NYSegment.m in Sources */,
+				B56F2B58A7967644AE30ACA9BE65BCB6 /* NYSegmentedControl-dummy.m in Sources */,
+				377EC458E0E1B17904336E35F4CB3E3A /* NYSegmentedControl.m in Sources */,
+				1F5B14772859ED4E26FE440C5B6779A2 /* NYSegmentIndicator.m in Sources */,
+				6204F94C386C64B450C0AF0BAB5725A7 /* NYSegmentLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C93C655D52B5A5AD23E9A6F2AA83779F /* PBXTargetDependency */ = {
+		67B109F6608087A34D64907FDBAAF801 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = BFNavigationBarDrawer;
-			target = B87BA8141ECCCC243703F096F814CC5C /* BFNavigationBarDrawer */;
-			targetProxy = 3C09A5AA7B5E6FCDA66EEDDF126C1593 /* PBXContainerItemProxy */;
+			name = NYSegmentedControl;
+			target = 9C5DC53E2A6CFCEAE071A0699254C101 /* NYSegmentedControl */;
+			targetProxy = 22DB52975000FE7692562E8C5C19101D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1CE50CC5F8ADCAD21A6503DEEA40433F /* Release */ = {
+		227BABF2EEC86B51AAACB859DC6157EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4F1A6A660A43617155D7A62DE84A77F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 98C98CDFB3F20F2925F6CD1F141BB14F /* Pods.release.xcconfig */;
 			buildSettings = {
@@ -456,14 +489,14 @@
 			};
 			name = Release;
 		};
-		5B4C2B2B4CE72BA0E1FEBCB404920D3F /* Debug */ = {
+		7C3C9AE22516EC46778A402DA25BA7B8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B007AD9FF585E5A0F089844E30590E85 /* BFNavigationBarDrawer.xcconfig */;
+			baseConfigurationReference = 789ADE886EA813724F05FEFA1C12E7B4 /* NYSegmentedControl.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BFNavigationBarDrawer/BFNavigationBarDrawer-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/NYSegmentedControl/NYSegmentedControl-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PRIVATE_HEADERS_FOLDER_PATH = "";
@@ -472,24 +505,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
-		};
-		66E078BBC8264C74B6CB3946FFE57D3C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4E762F23EC34ED4A6FF3312D84E33A40 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
+			name = Release;
 		};
 		C074F63C9EE7CB4D8C618390A32CEC35 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -530,6 +546,24 @@
 			};
 			name = Debug;
 		};
+		DD8085E979ED2FF0596A547F05F3C2AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 789ADE886EA813724F05FEFA1C12E7B4 /* NYSegmentedControl.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/NYSegmentedControl/NYSegmentedControl-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		E43846B588E1892F3093F3B7082B6DFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -564,24 +598,6 @@
 			};
 			name = Release;
 		};
-		EB176470AA5039AC7B2C8BAFB53BEAAB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B007AD9FF585E5A0F089844E30590E85 /* BFNavigationBarDrawer.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/BFNavigationBarDrawer/BFNavigationBarDrawer-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -594,20 +610,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9639F8CC951053D14889C5A6C35107B1 /* Build configuration list for PBXNativeTarget "BFNavigationBarDrawer" */ = {
+		31CD94ACB2AFEB42694A3CB0F770CF2D /* Build configuration list for PBXNativeTarget "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5B4C2B2B4CE72BA0E1FEBCB404920D3F /* Debug */,
-				EB176470AA5039AC7B2C8BAFB53BEAAB /* Release */,
+				227BABF2EEC86B51AAACB859DC6157EC /* Debug */,
+				4F1A6A660A43617155D7A62DE84A77F4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E2013FF124D34E40C05BBA3E5A83AB82 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		D0A2F416FE62665BC8678BDEC439BBC8 /* Build configuration list for PBXNativeTarget "NYSegmentedControl" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				66E078BBC8264C74B6CB3946FFE57D3C /* Debug */,
-				1CE50CC5F8ADCAD21A6503DEEA40433F /* Release */,
+				DD8085E979ED2FF0596A547F05F3C2AA /* Debug */,
+				7C3C9AE22516EC46778A402DA25BA7B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

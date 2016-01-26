@@ -42,7 +42,7 @@
  */
 + (AVGeoPoint *)geoPointWithLatitude:(double)latitude longitude:(double)longitude;
 
-#if AV_IOS_ONLY
+#if AVOS_IOS_ONLY
 /*!
  Fetches the user's current location and returns a new AVGeoPoint object via the
  provided block.

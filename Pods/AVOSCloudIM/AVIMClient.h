@@ -14,8 +14,6 @@
 @class AVIMMessage;
 @class AVIMTypedMessage;
 @class AVIMConversationQuery;
-@class AVIMClientOpenOption;
-
 @protocol AVIMClientDelegate;
 
 typedef NS_ENUM(NSUInteger, AVIMClientStatus) {
@@ -63,16 +61,10 @@ typedef NS_OPTIONS(uint64_t, AVIMConversationOption) {
 @property (nonatomic, readonly, copy) NSString *clientId;
 
 /**
- * Tag of current client.
- * @brief If tag is not nil and "default", offline mechanism is enabled.
- * @discussion If one client id login on two different devices, previous opened client will be gone offline by later opened client.
- */
-@property (nonatomic, readonly, copy) NSString *tag;
-
-/**
  *  The connecting status of the current client.
  */
 @property (nonatomic, readonly, assign) AVIMClientStatus status;
+@property (nonatomic, readonly, copy) NSString *tag;
 
 /**
  * 控制是否打开历史消息查询的本地缓存功能,默认开启
@@ -125,12 +117,24 @@ typedef NS_OPTIONS(uint64_t, AVIMConversationOption) {
 - (void)openWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
- * Open client with option.
- * @param option   Option to open client.
- * @param callback Callback for openning client.
- * @brief Open client with option of which the properties will override client's default option.
+ 开启某个账户的聊天
+ @param clientId - 操作发起人的 id，以后使用该账户的所有聊天行为，都由此人发起。
+ @param callback － 聊天开启之后的回调
+ @return None.
  */
-- (void)openWithOption:(AVIMClientOpenOption *)option callback:(AVIMBooleanResultBlock)callback;
+- (void)openWithClientId:(NSString *)clientId
+                callback:(AVIMBooleanResultBlock)callback;
+
+/*!
+ * 开启某个账户的聊天。
+ * @param clientId 操作发起人的 id，以后使用该账户的所有聊天行为，都由此人发起。
+ * @param callback 聊天开启之后的回调。
+ * @param tag 单点登录的 tag，如果为 nil 或 "default" 表示允许多点登录，否则会把当前在线的且 tag 相同的其他设备踢下线。
+ * @return None.
+ */
+- (void)openWithClientId:(NSString *)clientId
+                     tag:(NSString *)tag
+                callback:(AVIMBooleanResultBlock)callback;
 
 /*!
  结束某个账户的聊天
@@ -286,16 +290,5 @@ typedef NS_OPTIONS(uint64_t, AVIMConversationOption) {
  @param error 错误信息。
  */
 - (void)client:(AVIMClient *)client didOfflineWithError:(NSError *)error;
-
-@end
-
-@interface AVIMClient (AVDeprecated)
-
-- (void)openWithClientId:(NSString *)clientId
-                callback:(AVIMBooleanResultBlock)callback AVIM_DEPRECATED("Deprecated in AVOSCloudIM SDK 3.1.7.2. Use -[AVIMClient openWithOption:callback:] instead.");
-
-- (void)openWithClientId:(NSString *)clientId
-                     tag:(NSString *)tag
-                callback:(AVIMBooleanResultBlock)callback AVIM_DEPRECATED("Deprecated in AVOSCloudIM SDK 3.1.7.2. Use -[AVIMClient openWithOption:callback:] instead.");
 
 @end

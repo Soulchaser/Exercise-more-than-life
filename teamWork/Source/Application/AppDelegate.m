@@ -20,7 +20,7 @@
 
    
     //信息展示界面
-    DisplayViewController *dispVC = [[DisplayViewController alloc]init];
+    DisplayViewController *dispVC = [DisplayViewController shareDisplayViewController];
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
     
     //组团界面
@@ -29,38 +29,53 @@
     
     //行程记录
     TrackLoggingViewController *trackVC = [[TrackLoggingViewController alloc]init];
-    TrackNaviController *trackNC = [[TrackNaviController alloc]initWithRootViewController:trackVC];
-
+    UINavigationController *trackNC = [[UINavigationController alloc]initWithRootViewController:trackVC];
+    
     //分享界面
     ShareViewController *shareVC = [[ShareViewController alloc]init];
     UINavigationController *shareNC = [[UINavigationController alloc]initWithRootViewController:shareVC];
+    
+    
     
     //好友界面
     FriendsViewController *friendsVC = [[FriendsViewController alloc]init];
     UINavigationController *friendsNC = [[UINavigationController alloc]initWithRootViewController:friendsVC];
     
-    UITabBarController *tabBC = [[UITabBarController alloc]init];
-    tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
+    
+    
+    self.tabBC = [[UITabBarController alloc]init];
+    self.tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
    // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
-    tabBC.selectedIndex = 2;
+    self.tabBC.selectedIndex = 2;
     
     //    //tabBar字体选中颜色
-    tabBC.tabBar.tintColor = [UIColor orangeColor];
+    self.tabBC.tabBar.tintColor = [UIColor orangeColor];
     //    //tabBar颜色
-    tabBC.tabBar.barTintColor = [UIColor greenColor];
+    self.tabBC.tabBar.barTintColor = [UIColor greenColor];
     
     
-    tabBC.tabBar.barStyle = UIBarStyleDefault;
+    self.tabBC.tabBar.barStyle = UIBarStyleDefault;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
-    [self.window setRootViewController:tabBC];
-   
+    [self.window setRootViewController:self.tabBC];
+    /*
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window makeKeyAndVisible];
+    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
+    [self.window setRootViewController:rootNC];
+     */
     
+    //leancoud配置
+    // applicationId 即 App Id，clientKey 是 App Key
+    //如果使用美国站点，请加上这行代码 [AVOSCloud useAVCloudUS];
+    [AVOSCloud setApplicationId:@"NveC96jd47RocSo5OU0rjxwy-gzGzoHsz"
+                      clientKey:@"cOsXhUabVYK7w4y8274uz9xK"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

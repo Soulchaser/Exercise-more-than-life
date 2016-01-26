@@ -11,10 +11,6 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AVOSCloud.h>
-//多播代理
-#import "GCDMulticastDelegate.h"
-//拉出菜单
-#import "UPStackMenu.h"
-//导航栏按钮弹出菜单
-#import <BFNavigationBarDrawer.h>
+//三方自定义segmented
+#import "NYSegmentedControl.h"
 #endif
