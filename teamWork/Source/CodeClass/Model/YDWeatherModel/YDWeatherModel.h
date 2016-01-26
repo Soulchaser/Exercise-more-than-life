@@ -12,30 +12,40 @@
 #pragma mark ------------基本信息------------
 @interface YDWeatherModel : NSObject
 
+// !!!:日期可以通过获取本机的时间然后加24
+
 @property(strong,nonatomic) NSString * city;//basic-基本信息-城市名
 
-//now
+@end
+#pragma mark ------------实况代码------------
+@interface nowModel : NSObject
+
 @property(strong,nonatomic) NSString * code;//now-实况天气-天气代码
 
 @property(strong,nonatomic) NSString * txt;//now-实况天气-天气状况描述
 
-//aqi
+@end
+
+#pragma mark ------------空气质量------------
+
+@interface AqiModel : NSObject
+
 @property(strong,nonatomic) NSString * aqi;//aqi空气质量-city-aqi空气质量指数
 
 @property(strong,nonatomic) NSString * qlty;//空气质量级别
 
-//forecast
-@property(strong,nonatomic) NSMutableArray * array;
-
 @end
 
-@interface YDmodelForecast : NSObject
+#pragma mark ------------天气预报------------
 
-@property(strong,nonatomic) NSString * code_d;//天气状况
+@interface ForecastModel : NSObject
+
+@property(strong,nonatomic) NSString * cond;//天气状况
 
 @property(strong,nonatomic) NSString * date;//预报日期
 
 @end
+
 
 
 

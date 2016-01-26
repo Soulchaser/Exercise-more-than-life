@@ -11,31 +11,32 @@
 //#import "DisplayViewController.h"
 //YDD资讯跳转控制器
 #import "YDWMViewController.h"
-#import "YDWeatherViewController.h"
 #import "GroupActivityViewController.h"
+#import "TrackNaviController.h"
 #import "TrackLoggingViewController.h"
 #import "ShareViewController.h"
 #import "FriendsViewController.h"
 #import <MapKit/MapKit.h>
-//地图控制器
-#import "MapViewController.h"
+//地图用导航视图
+//#import "MapNavigationViewController.h"
 //自制的带统计距离的大头针样式
 #import "PointWithDistanceAnnView.h"
 //自制的带统计距离的大头针类
 #import "PointWithDistanceAnn.h"
 //地图界面用来显示运动信息的视图
 #import "MapMoveInfoView.h"
-
+//GPS定位类
+#import "MapGPSLocation.h"
+//运动数据记录类
+#import "MovementInfo.h"
+#import "SportInfoView.h"
+//自定义的地图视图
+#import "MapView.h"
 #pragma mark ------------Model------------
 //资讯类
 #import "DogModel.h"
-//天气类
-#import "YDWeatherModel.h"
 //用户类
 #import "YYUserModel.h"
-
-#pragma mark ------------GetDataTools------------
-#define kGD [YDGetDataTools sharedGetData]
 
 //Leancoud用户工具类
 #import "LeancoudTools.h"

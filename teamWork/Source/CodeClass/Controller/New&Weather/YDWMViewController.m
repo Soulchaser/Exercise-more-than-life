@@ -7,11 +7,13 @@
 //
 
 #import "YDWMViewController.h"
+#import "YDWeatherViewController.h"
 
 @interface YDWMViewController ()
 
-@property(strong,nonatomic) YDWeatherViewController * WeatherVC;
 @property(strong,nonatomic) NYSegmentedControl * segmentedControl;
+
+@property(strong,nonatomic) YDWeatherViewController * WeatherVC;
 
 @property(strong,nonatomic) NSArray * exampleViews;
 
@@ -26,6 +28,7 @@
         
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"健康资讯" image:[UIImage imageNamed:@"news"] selectedImage:[UIImage imageNamed:@"news_selected"]];
         
+        
     }
     return self;
 }
@@ -35,9 +38,10 @@
 {
     self = [super init];
     if (self) {
-        self.titles = @[@"减肥瘦身", @"男性健康", @"女性保养",@"私密生活"];
+        self.titles = @[@"减肥瘦身", @"男性健康",@"天气", @"女性保养",@"私密生活"];
         self.viewControllerClasses = @[[JianfeiTableViewController class],
                                        [NanxingTableViewController class],
+                                       [YDWeatherViewController class],
                                        [WomenTableViewController class],
                                        [SecretTableViewController class]
                                        ];
@@ -74,6 +78,8 @@
     //添加为子控制器
 //    [self addChildViewController:self.WeatherVC];
 
+    
+    
 }
 
 -(void)segmentSelected

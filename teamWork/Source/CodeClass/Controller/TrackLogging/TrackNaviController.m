@@ -1,32 +1,24 @@
 //
-//  TrackLoggingViewController.m
+//  TrackNaviController.m
 //  teamWork
 //
-//  Created by hanxiaolong on 16/1/15.
+//  Created by hanxiaolong on 16/1/25.
 //  Copyright © 2016年 hanxiaolong. All rights reserved.
 //
 
-#import "TrackLoggingViewController.h"
+#import "TrackNaviController.h"
 
-@interface TrackLoggingViewController ()
+@interface TrackNaviController ()
 
 @end
 
-@implementation TrackLoggingViewController
-
--(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        
-        self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"跟你走" image:[UIImage imageNamed:@"daohang"] selectedImage:[UIImage imageNamed:@"daohang_selected"]];
-       
-    }
-    return self;
-}
+@implementation TrackNaviController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     self.view.backgroundColor = [UIColor orangeColor];
+    self.navigationBar.barTintColor = [UIColor blackColor];
+    
+    [self shouldAutorotate];
     // Do any additional setup after loading the view.
 }
 
@@ -34,7 +26,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+//设置是否支持横屏，no是不支持
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
 /*
 #pragma mark - Navigation
 
