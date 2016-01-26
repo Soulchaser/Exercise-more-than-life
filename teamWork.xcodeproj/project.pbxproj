@@ -62,6 +62,8 @@
 		C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */; };
 		C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */; };
 		C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */; };
+		C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F74AB21C56678E00197D7D /* AvatarsourceType.m */; };
+		C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -150,6 +152,9 @@
 		C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPasswordVC__Three.xib; sourceTree = "<group>"; };
 		C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
 		C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
+		C2F74AB11C56678E00197D7D /* AvatarsourceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarsourceType.h; sourceTree = "<group>"; };
+		C2F74AB21C56678E00197D7D /* AvatarsourceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarsourceType.m; sourceTree = "<group>"; };
+		C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsourceType.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -435,6 +440,9 @@
 				C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */,
 				C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */,
 				C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */,
+				C2F74AB11C56678E00197D7D /* AvatarsourceType.h */,
+				C2F74AB21C56678E00197D7D /* AvatarsourceType.m */,
+				C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -523,6 +531,7 @@
 				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
+				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
 				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
@@ -606,6 +615,7 @@
 				C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */,
 				C204BC081C4F2FCB0085BE48 /* UserViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
+				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
 				C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */,
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
 				5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */,
