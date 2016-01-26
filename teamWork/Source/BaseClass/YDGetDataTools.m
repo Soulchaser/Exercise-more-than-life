@@ -30,27 +30,4 @@
     return _BasicArray;
 }
 
--(NSMutableArray *)NowArray
-{
-    if (!_NowArray) {
-        _NowArray = [NSMutableArray array];
-    }
-    return _NowArray;
-}
-
--(NSMutableArray *)AqiArray
-{
-    if (!_AqiArray) {
-        _AqiArray = [NSMutableArray array];
-    }
-    return _AqiArray;
-}
--(NSMutableArray *)daily_forecastArray
-{
-    if (!_daily_forecastArray) {
-        _daily_forecastArray = [NSMutableArray array];
-    }
-    return _daily_forecastArray;
-}
-
 @end

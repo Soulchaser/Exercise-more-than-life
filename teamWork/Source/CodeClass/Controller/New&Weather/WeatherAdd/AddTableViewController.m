@@ -24,14 +24,17 @@
 {
     if (!_resultArray) {
         _resultArray = [NSMutableArray array];
+    }else
+    {
+        //保证结果数组每次搜索都显示本次搜索内容
+        _resultArray = nil;
     }
     return _resultArray;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    //初始化UISearchBar
     UISearchBar * bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-100, 64)];
     
     bar.backgroundColor = [UIColor redColor];
@@ -43,18 +46,11 @@
     bar.showsSearchResultsButton = YES;
     
     bar.keyboardType = UIKeyboardTypeDefault;
-    bar.placeholder = @"请键入城市拼音如'beijing'";
+    bar.placeholder = @"请键入想要添加的城市拼音如'beijing'";
     self.tableView.tableHeaderView = bar;
-    
-    UIButton * button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
-    [button addTarget:self action:@selector(button:) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:@"点击" forState:UIControlStateNormal];
     
     //注册
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
-    
-    
-    
     
 }
 
@@ -64,33 +60,28 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)button:(UIButton *)sender
-{
-    [self makeData];
-}
-
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
-    NSLog(@"lalala");
+    DLog(@"点击开始搜索");
     return YES;
 }
 
 -(BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
 {
-    NSLog(@"完成编辑");
+    DLog(@"完成编辑");
     return YES;
 }
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
 {
-    NSLog(@"编辑结束调用");
+    DLog(@"编辑结束调用");
 }
 // !!!:实时输出,显示键入的文本
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
     
     self.searchText = searchText;
-    NSLog(@"%@",self.searchText);
+//    DLog(@"%@",self.searchText);
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
@@ -98,7 +89,7 @@
     
     [self makeData];
     
-    NSLog(@"点击搜索调用此方法");
+    DLog(@"点击搜索调用此方法");
 }
 
 -(void)makeData
@@ -113,45 +104,36 @@
         
         NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         
-        NSLog(@"%@",dict[@"HeWeather data service 3.0"][0][@"basic"][@"city"]);
-        
-        //
         NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
+        //写入文件
+//        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
         
-        NSLog(@"%lu",dataArray.count);
+        DLog(@"%lu",dataArray.count);
         
         for (NSDictionary * dict in dataArray) {
             //Basic部分
-            for (NSDictionary * basicDic in dict[@"basic"]) {
-                
-                YDWeatherModel * model = [[YDWeatherModel alloc] init];
-                [model setValuesForKeysWithDictionary:basicDic];
-                
-                [[YDGetDataTools sharedGetData].BasicArray addObject:model];
-
-            }
+            YDWeatherModel * model = [[YDWeatherModel alloc] init];
+            model.city = dict[@"basic"][@"city"];
             //"Now"部分
-            for (NSDictionary * NowDic in dict[@"now"]) {
-                
-                nowModel * model = [[nowModel alloc] init];
-                [model setValuesForKeysWithDictionary:NowDic];
-                [[YDGetDataTools sharedGetData].NowArray addObject:model];
-            }
+            model.code = dict[@"now"][@"cond"][@"code"];
+            model.txt = dict[@"now"][@"cond"][@"txt"];
+            
             //"aqi"部分
-            for (NSDictionary * aqiDic in dict[@"aqi"]) {
-                AqiModel * model = [[AqiModel alloc] init];
-                [model setValuesForKeysWithDictionary:aqiDic];
-                [[YDGetDataTools sharedGetData].AqiArray addObject:model];
-            }
+            model.aqi = dict[@"aqi"][@"city"][@"aqi"];
+            model.qlty = dict[@"aqi"][@"city"][@"qlty"];
             //@"forecast"部分
             for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
-                ForecastModel * model = [[ForecastModel alloc] init];
-                [model setValuesForKeysWithDictionary:forecastDic];
-                [[YDGetDataTools sharedGetData].daily_forecastArray addObject:model];
+                
+                YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
+                modelF.code_d = forecastDic[@"cond"][@"code_d"];
+                modelF.date = forecastDic[@"date"];
+                [model.array addObject:modelF];
             }
+            //添加到结果数组中
+            [self.resultArray addObject:model];
             
         }
-        NSLog(@"%@",[YDGetDataTools sharedGetData].BasicArray);
+        DLog(@"%@",self.resultArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -173,20 +155,29 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
 
-    return self.resultArray.count;
+    return kGD.BasicArray.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+
+    YDWeatherModel * model = kGD.BasicArray[indexPath.row];
     
-    
-    cell.textLabel.text = self.resultArray[indexPath.row];
+    cell.textLabel.text = model.city;
     
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    YDWeatherModel * model = self.resultArray[indexPath.row];
+    [kGD.BasicArray addObject:model];
+    
 }
 
 /*

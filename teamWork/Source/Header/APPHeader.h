@@ -11,6 +11,7 @@
 //#import "DisplayViewController.h"
 //YDD资讯跳转控制器
 #import "YDWMViewController.h"
+#import "YDWeatherViewController.h"
 #import "GroupActivityViewController.h"
 #import "TrackLoggingViewController.h"
 #import "ShareViewController.h"
@@ -28,8 +29,13 @@
 #pragma mark ------------Model------------
 //资讯类
 #import "DogModel.h"
+//天气类
+#import "YDWeatherModel.h"
 //用户类
 #import "YYUserModel.h"
+
+#pragma mark ------------GetDataTools------------
+#define kGD [YDGetDataTools sharedGetData]
 
 //Leancoud用户工具类
 #import "LeancoudTools.h"
