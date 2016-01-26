@@ -11,6 +11,15 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AVOSCloud.h>
+//三方自定义控制器
+#import <WMPageController.h>
+//明杰刷新
+#import <MJRefresh.h>
 //三方自定义segmented
 #import "NYSegmentedControl.h"
+//多播代理
+#import "GCDMulticastDelegate.h"
+//导航栏按钮弹出菜单
+#import <BFNavigationBarDrawer.h>
+
 #endif

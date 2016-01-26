@@ -125,7 +125,7 @@
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
-    image = [UtilMethod];
+
     
     //获取图片路径
     self.headerImage.image = image;

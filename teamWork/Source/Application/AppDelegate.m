@@ -20,7 +20,7 @@
 
    
     //信息展示界面
-    DisplayViewController *dispVC = [DisplayViewController shareDisplayViewController];
+    YDWMViewController *dispVC = [YDWMViewController new];
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
     
     //组团界面
@@ -29,8 +29,8 @@
     
     //行程记录
     TrackLoggingViewController *trackVC = [[TrackLoggingViewController alloc]init];
-    UINavigationController *trackNC = [[UINavigationController alloc]initWithRootViewController:trackVC];
-    
+    TrackNaviController *trackNC = [[TrackNaviController alloc]initWithRootViewController:trackVC];
+
     //分享界面
     ShareViewController *shareVC = [[ShareViewController alloc]init];
     UINavigationController *shareNC = [[UINavigationController alloc]initWithRootViewController:shareVC];

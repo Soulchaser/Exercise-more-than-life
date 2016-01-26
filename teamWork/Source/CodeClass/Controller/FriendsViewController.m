@@ -18,10 +18,24 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"好友" image:[UIImage imageNamed:@"haoyou"] selectedImage:[UIImage imageNamed:@"haoyou-selected"]];
+        
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"person"] style:UIBarButtonItemStylePlain target:self action:@selector(MyselfInfoAction:)];
   
     }
     return self;
 }
+
+//用户界面
+-(void)MyselfInfoAction:(UIBarButtonItem *)sender
+{
+    //将User.storyboard作为入口
+    UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+    UIViewController *entranceVC = [user instantiateInitialViewController];
+    //让window的rootViewController指向该控制器
+    [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
