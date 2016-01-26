@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>BFNavigationBarDrawer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -12,7 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1469924FC52F60B0068FA24EEFCB3EFC</key>
+		<key>077AA6D623380518E75F1413414BF9BE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B87BA8141ECCCC243703F096F814CC5C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

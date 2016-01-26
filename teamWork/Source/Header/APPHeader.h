@@ -10,21 +10,30 @@
 #define Project_APPHeader_h
 #import "DisplayViewController.h"
 #import "GroupActivityViewController.h"
+#import "TrackNaviController.h"
 #import "TrackLoggingViewController.h"
 #import "ShareViewController.h"
 #import "FriendsViewController.h"
 #import <MapKit/MapKit.h>
 //地图控制器
 #import "MapViewController.h"
+//地图用导航视图
+#import "MapNavigationViewController.h"
 //自制的带统计距离的大头针样式
 #import "PointWithDistanceAnnView.h"
 //自制的带统计距离的大头针类
 #import "PointWithDistanceAnn.h"
 //地图界面用来显示运动信息的视图
 #import "MapMoveInfoView.h"
+//GPS定位类
+#import "MapGPSLocation.h"
+//运动数据记录类
+#import "MovementInfo.h"
+#import "SportInfoView.h"
+//自定义的地图视图
+#import "MapView.h"
 //用户类
 #import "YYUserModel.h"
-
 //自制气泡
 #import "DistanceCalloutView.h"
 

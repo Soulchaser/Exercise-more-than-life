@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
-   /*
+   
     //信息展示界面
     DisplayViewController *dispVC = [[DisplayViewController alloc]init];
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
@@ -29,19 +29,15 @@
     
     //行程记录
     TrackLoggingViewController *trackVC = [[TrackLoggingViewController alloc]init];
-    UINavigationController *trackNC = [[UINavigationController alloc]initWithRootViewController:trackVC];
-    
+    TrackNaviController *trackNC = [[TrackNaviController alloc]initWithRootViewController:trackVC];
+
     //分享界面
     ShareViewController *shareVC = [[ShareViewController alloc]init];
     UINavigationController *shareNC = [[UINavigationController alloc]initWithRootViewController:shareVC];
     
-    
-    
     //好友界面
     FriendsViewController *friendsVC = [[FriendsViewController alloc]init];
     UINavigationController *friendsNC = [[UINavigationController alloc]initWithRootViewController:friendsVC];
-    
-    
     
     UITabBarController *tabBC = [[UITabBarController alloc]init];
     tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
@@ -60,15 +56,11 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     [self.window setRootViewController:tabBC];
-    */
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window makeKeyAndVisible];
-    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
-    [self.window setRootViewController:rootNC];
-
+   
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapGPSLocation.h"
+@class MAMapView;
+@interface MapViewController : UIViewController<MapGPSLocationDelegate>
 
-@interface MapViewController : UIViewController
-
+@property(assign,nonatomic)CGFloat totleDistance;
+//地图视图
+@property(strong,nonatomic)MAMapView *mapView;
 @end

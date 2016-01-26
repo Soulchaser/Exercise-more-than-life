@@ -78,7 +78,6 @@
 
 - (void)initSubViews
 {
-    // 添加标题，即商户名
     self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.titleLabel.font = [UIFont boldSystemFontOfSize:8];

@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TrackLoggingViewController : UIViewController
-
+typedef NS_ENUM(NSInteger, SportModel) {
+    walkModel,
+    runModel ,
+    rideModel
+};
 @end
