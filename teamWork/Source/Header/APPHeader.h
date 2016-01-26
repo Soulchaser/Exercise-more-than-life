@@ -18,6 +18,7 @@
 #import "ShareViewController.h"
 #import "FriendsViewController.h"
 #import <MapKit/MapKit.h>
+#import <WebKit/WebKit.h>
 //地图用导航视图
 //#import "MapNavigationViewController.h"
 //自制的带统计距离的大头针样式
@@ -36,6 +37,8 @@
 #pragma mark ------------Model------------
 //资讯类
 #import "DogModel.h"
+//资讯类详情
+#import "DetailModel.h"
 //用户类
 #import "YYUserModel.h"
 
@@ -58,6 +61,7 @@
 #import "NanxingTableViewController.h"
 #import "WomenTableViewController.h"
 #import "SecretTableViewController.h"
+#import "DetailViewController.h"
 
 #pragma mark ------------重用标识符------------
 //减肥瘦身-loseWight
