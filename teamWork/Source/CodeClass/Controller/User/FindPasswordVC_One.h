@@ -1,13 +1,13 @@
 //
-//  UserViewController.h
+//  FindPasswordVC_One.h
 //  teamWork
 //
-//  Created by lanou3g on 16/1/20.
+//  Created by lanou3g on 16/1/22.
 //  Copyright © 2016年 hanxiaolong. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UserViewController : UIViewController
+@interface FindPasswordVC_One : UIViewController
 
 @end

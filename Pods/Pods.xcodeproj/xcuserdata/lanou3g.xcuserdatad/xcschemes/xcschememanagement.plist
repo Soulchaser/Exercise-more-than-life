@@ -4,11 +4,14 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+<<<<<<< HEAD
 		<key>MJRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
+=======
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 		<key>NYSegmentedControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -18,31 +21,41 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+<<<<<<< HEAD
 		</dict>
 		<key>WMPageController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+=======
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+<<<<<<< HEAD
 		<key>32593B79A1B831438F9FBF5556485A2F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+=======
+		<key>5D5E6A4F1A59FD5E1871CAB2F8838A86</key>
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>9C5DC53E2A6CFCEAE071A0699254C101</key>
+<<<<<<< HEAD
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>FB529B6DFF8BAB8C8318DAAD5E27BD50</key>
+=======
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 		<dict>
 			<key>primary</key>
 			<true/>

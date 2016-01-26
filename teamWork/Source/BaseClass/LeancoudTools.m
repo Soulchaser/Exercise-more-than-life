@@ -9,6 +9,25 @@
 #import "LeancoudTools.h"
 
 @implementation LeancoudTools
++(instancetype)shareLeancoudTools{
+    static LeancoudTools *handler = nil;
+    if (handler == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            handler = [LeancoudTools new];
+        });
+    }
+    return handler;
+}
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 #pragma mark ------ 邮箱用户------------------
 //重写用户model的setter方法
 -(void)setModel:(YYUserModel *)model{
@@ -101,7 +120,7 @@
 
 //用户登陆(手机号码+密码)
 -(void)userLoginByPhone:(yyResultPassBlock)result{
-    [AVUser logInWithMobilePhoneNumberInBackground:self.model_Phone.phone password:self.model_Phone.password block:^(AVUser *user, NSError *error) {
+    [AVUser logInWithMobilePhoneNumberInBackground:self.model_Phone.userName password:self.model_Phone.password block:^(AVUser *user, NSError *error) {
         //用户存在 登陆成功
         if (user != nil) {
             result(YES,nil);
@@ -127,7 +146,7 @@
 }
 //短信验证
 -(void)userLoginBySMSCode:(NSString *)smsCode resultBlock:(yyResultPassBlock)result{
-    [AVUser logInWithMobilePhoneNumberInBackground:self.model_Phone.phone smsCode:smsCode block:^(AVUser *user, NSError *error) {
+    [AVUser logInWithMobilePhoneNumberInBackground:self.model_Phone.userName smsCode:smsCode block:^(AVUser *user, NSError *error) {
         if (user != nil) {
             //用户验证成功
             result(YES,nil);
@@ -142,9 +161,10 @@
 //用户注册
 -(void)userRegisterByPhone:(yyResultPassBlock)result{
     AVUser *user = [AVUser user];
-    user.username = self.model_Phone.userName;
+    user.username = self.model_Phone.phone;
     user.password = self.model_Phone.password;
     user.mobilePhoneNumber = self.model_Phone.phone;
+    
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             //信息无误,接收短信验证码
@@ -175,14 +195,14 @@
             //短信发送成功
             result(YES,nil);
         }else {
-            //短信发送失败
+            //短信发送失败.
             result(NO,error);
         }
     }];
 }
 //验证
--(void)userResetBySMSCode:(NSString *)smsCode resultBlock:(yyResultPassBlock)result{
-    [AVUser resetPasswordWithSmsCode:smsCode newPassword:@"" block:^(BOOL succeeded, NSError *error) {
+-(void)userResetBySMSCode:(NSString *)smsCode andNewPassword:(NSString *)newPassword resultBlock:(yyResultPassBlock)result{
+    [AVUser resetPasswordWithSmsCode:smsCode newPassword:newPassword block:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             //密码修改成功
             result(YES,nil);

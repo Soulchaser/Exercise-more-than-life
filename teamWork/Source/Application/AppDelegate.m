@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+<<<<<<< HEAD
     
     
     //信息展示界面
@@ -24,6 +25,12 @@
     //    UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
     
     YDWMViewController *dispVC = [[YDWMViewController alloc]init];
+=======
+
+   
+    //信息展示界面
+    DisplayViewController *dispVC = [DisplayViewController shareDisplayViewController];
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
     
     //组团界面
@@ -46,22 +53,30 @@
     
     
     
+<<<<<<< HEAD
     UITabBarController *tabBC = [[UITabBarController alloc]init];
     tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
     // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
     tabBC.selectedIndex = 2;
+=======
+    self.tabBC = [[UITabBarController alloc]init];
+    self.tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
+   // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
+    self.tabBC.selectedIndex = 2;
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
     
     //    //tabBar字体选中颜色
-    tabBC.tabBar.tintColor = [UIColor orangeColor];
+    self.tabBC.tabBar.tintColor = [UIColor orangeColor];
     //    //tabBar颜色
-    tabBC.tabBar.barTintColor = [UIColor greenColor];
+    self.tabBC.tabBar.barTintColor = [UIColor greenColor];
     
     
-    tabBC.tabBar.barStyle = UIBarStyleDefault;
+    self.tabBC.tabBar.barStyle = UIBarStyleDefault;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
+<<<<<<< HEAD
     [self.window setRootViewController:tabBC];
     
     //    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -70,6 +85,23 @@
     //    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
     //    [self.window setRootViewController:rootNC];
     
+=======
+    [self.window setRootViewController:self.tabBC];
+    /*
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window makeKeyAndVisible];
+    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
+    [self.window setRootViewController:rootNC];
+     */
+    
+    //leancoud配置
+    // applicationId 即 App Id，clientKey 是 App Key
+    //如果使用美国站点，请加上这行代码 [AVOSCloud useAVCloudUS];
+    [AVOSCloud setApplicationId:@"NveC96jd47RocSo5OU0rjxwy-gzGzoHsz"
+                      clientKey:@"cOsXhUabVYK7w4y8274uz9xK"];
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
     return YES;
 }
 

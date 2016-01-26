@@ -4,26 +4,38 @@ PODS:
   - AVOSCloud (3.2.0)
   - AVOSCloudIM (3.2.0):
     - AVOSCloud
+<<<<<<< HEAD
   - MJRefresh (3.1.0)
   - NYSegmentedControl (1.0.7)
   - WMPageController (1.3.5)
+=======
+  - NYSegmentedControl (1.0.7)
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 
 DEPENDENCIES:
   - AMap2DMap
   - AMapSearch
   - AVOSCloud
   - AVOSCloudIM
+<<<<<<< HEAD
   - MJRefresh (~> 3.1.0)
   - NYSegmentedControl (~> 1.0.7)
   - WMPageController (~> 1.3.5)
+=======
+  - NYSegmentedControl (~> 1.0.7)
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 
 SPEC CHECKSUMS:
   AMap2DMap: 02c73a3e55ac033e3b0b8ec35d3d21ffcac5aae3
   AMapSearch: a885f0702578a441a22cb66fa74f8918c6d19e6f
   AVOSCloud: 798551ac6cbf541b8436ce94800e2e59a042b670
   AVOSCloudIM: 082f0268a22253fd6ad70ec4e4dfd686b36a7308
+<<<<<<< HEAD
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   NYSegmentedControl: 55b4f9eb652767cae9799623ec3e49e50029ef47
   WMPageController: 49ee075622e3a053b6ea702334d2fc7fd2c95161
+=======
+  NYSegmentedControl: 55b4f9eb652767cae9799623ec3e49e50029ef47
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 
 COCOAPODS: 0.39.0

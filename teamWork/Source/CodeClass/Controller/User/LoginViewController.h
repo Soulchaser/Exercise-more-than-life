@@ -1,5 +1,5 @@
 //
-//  UserViewController.h
+//  LoginViewController.h
 //  teamWork
 //
 //  Created by lanou3g on 16/1/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserViewController : UIViewController
+@interface LoginViewController : UIViewController
 
 @end

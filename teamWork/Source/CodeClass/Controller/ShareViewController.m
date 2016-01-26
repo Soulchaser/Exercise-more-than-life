@@ -24,14 +24,11 @@
     return self;
 }
 
--(void)MyselfInfoAction:(UIBarButtonItem *)sender
-{
-    
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //self.navigationController.navigationItem.title = @"足迹分享";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"person"] style:UIBarButtonItemStylePlain target:self action:@selector(MyselfInfoAction:)];
+    
     
     
     

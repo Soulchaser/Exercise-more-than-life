@@ -46,6 +46,7 @@
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
 		C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD31C49D1B400202881 /* LeancoudTools.m */; };
+<<<<<<< HEAD
 		C21C97571C55C58800741661 /* YDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C97551C55C58800741661 /* YDWeatherViewController.m */; };
 		C21C975D1C55CA5D00741661 /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C975B1C55CA5D00741661 /* WeatherCollectionViewCell.m */; };
 		C21C975E1C55CA5D00741661 /* WeatherCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21C975C1C55CA5D00741661 /* WeatherCollectionViewCell.xib */; };
@@ -61,6 +62,25 @@
 		C26AB50E1C51DAB300D8FD96 /* DogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB50D1C51DAB300D8FD96 /* DogModel.m */; };
 		C26AB5111C51DB9600D8FD96 /* YDGetDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5101C51DB9600D8FD96 /* YDGetDataTools.m */; };
 		C26AB5371C52653F00D8FD96 /* YDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C26AB5361C52653F00D8FD96 /* YDTableViewController.m */; };
+=======
+		C204BC051C4F1A5B0085BE48 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C204BC041C4F1A5B0085BE48 /* User.storyboard */; };
+		C204BC081C4F2FCB0085BE48 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C204BC071C4F2FCB0085BE48 /* UserViewController.m */; };
+		C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C204BC0A1C4F33D60085BE48 /* LoginViewController.m */; };
+		C204BC101C4F73DB0085BE48 /* iconfont-yonghu.png in Resources */ = {isa = PBXBuildFile; fileRef = C204BC0F1C4F73DB0085BE48 /* iconfont-yonghu.png */; };
+		C204BC121C4F74AF0085BE48 /* iconfont-mima.png in Resources */ = {isa = PBXBuildFile; fileRef = C204BC111C4F74AF0085BE48 /* iconfont-mima.png */; };
+		C204BC161C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = C204BC141C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png */; };
+		C204BC181C4FA3DF0085BE48 /* iconfont-yansebiankuang.png in Resources */ = {isa = PBXBuildFile; fileRef = C204BC171C4FA3DF0085BE48 /* iconfont-yansebiankuang.png */; };
+		C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C204BC1A1C4FA4620085BE48 /* RegisterViewController.m */; };
+		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
+		C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */; };
+		C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */; };
+		C2A6B8B01C5202AA006CF6BD /* FindPasswordVC_Tow.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AF1C5202AA006CF6BD /* FindPasswordVC_Tow.m */; };
+		C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */; };
+		C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */; };
+		C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */; };
+		C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F74AB21C56678E00197D7D /* AvatarsourceType.m */; };
+		C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */; };
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +144,7 @@
 		C2034DD01C49CD6100202881 /* YYUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYUserModel.m; sourceTree = "<group>"; };
 		C2034DD21C49D1B400202881 /* LeancoudTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeancoudTools.h; sourceTree = "<group>"; };
 		C2034DD31C49D1B400202881 /* LeancoudTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeancoudTools.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		C21C97541C55C58800741661 /* YDWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWeatherViewController.h; sourceTree = "<group>"; };
 		C21C97551C55C58800741661 /* YDWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDWeatherViewController.m; sourceTree = "<group>"; };
 		C21C975A1C55CA5D00741661 /* WeatherCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherCollectionViewCell.h; sourceTree = "<group>"; };
@@ -153,6 +174,34 @@
 		C26AB5101C51DB9600D8FD96 /* YDGetDataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDGetDataTools.m; sourceTree = "<group>"; };
 		C26AB5351C52653F00D8FD96 /* YDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDTableViewController.h; sourceTree = "<group>"; };
 		C26AB5361C52653F00D8FD96 /* YDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDTableViewController.m; sourceTree = "<group>"; };
+=======
+		C204BC041C4F1A5B0085BE48 /* User.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		C204BC061C4F2FCB0085BE48 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		C204BC071C4F2FCB0085BE48 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		C204BC091C4F33D60085BE48 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		C204BC0A1C4F33D60085BE48 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		C204BC0F1C4F73DB0085BE48 /* iconfont-yonghu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-yonghu.png"; sourceTree = "<group>"; };
+		C204BC111C4F74AF0085BE48 /* iconfont-mima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-mima.png"; sourceTree = "<group>"; };
+		C204BC141C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-quedinggouxuanxuanxiang.png"; sourceTree = "<group>"; };
+		C204BC171C4FA3DF0085BE48 /* iconfont-yansebiankuang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-yansebiankuang.png"; sourceTree = "<group>"; };
+		C204BC191C4FA4610085BE48 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		C204BC1A1C4FA4620085BE48 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
+		C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
+		C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
+		C2A6B8AB1C52029D006CF6BD /* FindPasswordVC_One.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPasswordVC_One.h; sourceTree = "<group>"; };
+		C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPasswordVC_One.m; sourceTree = "<group>"; };
+		C2A6B8AE1C5202AA006CF6BD /* FindPasswordVC_Tow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPasswordVC_Tow.h; sourceTree = "<group>"; };
+		C2A6B8AF1C5202AA006CF6BD /* FindPasswordVC_Tow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPasswordVC_Tow.m; sourceTree = "<group>"; };
+		C2A6B8DA1C525C8C006CF6BD /* FindPasswordVC__Three.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPasswordVC__Three.h; sourceTree = "<group>"; };
+		C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPasswordVC__Three.m; sourceTree = "<group>"; };
+		C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPasswordVC__Three.xib; sourceTree = "<group>"; };
+		C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
+		C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
+		C2F74AB11C56678E00197D7D /* AvatarsourceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarsourceType.h; sourceTree = "<group>"; };
+		C2F74AB21C56678E00197D7D /* AvatarsourceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarsourceType.m; sourceTree = "<group>"; };
+		C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsourceType.xib; sourceTree = "<group>"; };
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,8 +322,13 @@
 			children = (
 				C2034DD21C49D1B400202881 /* LeancoudTools.h */,
 				C2034DD31C49D1B400202881 /* LeancoudTools.m */,
+<<<<<<< HEAD
 				C26AB50F1C51DB9600D8FD96 /* YDGetDataTools.h */,
 				C26AB5101C51DB9600D8FD96 /* YDGetDataTools.m */,
+=======
+				C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */,
+				C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */,
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -356,6 +410,7 @@
 		5498EC911C48D0E700A7D99E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C204BC0C1C4F726E0085BE48 /* User */,
 				540D98FC1C4A64380027EF2F /* mapView */,
 			);
 			path = Resources;
@@ -416,6 +471,7 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		C21C97591C55CA3A00741661 /* WeatherCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,13 +507,42 @@
 				C21C97721C5642F600741661 /* YDWeatherModel.m */,
 			);
 			path = YDWeatherModel;
+=======
+		C204BC0C1C4F726E0085BE48 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				C204BC0F1C4F73DB0085BE48 /* iconfont-yonghu.png */,
+				C204BC111C4F74AF0085BE48 /* iconfont-mima.png */,
+				C204BC141C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png */,
+				C204BC171C4FA3DF0085BE48 /* iconfont-yansebiankuang.png */,
+			);
+			path = User;
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 			sourceTree = "<group>";
 		};
 		C21FE6C81C49239100D71330 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				C21FE6C91C4923F100D71330 /* UserViewController.h */,
-				C21FE6CA1C4923F100D71330 /* UserViewController.m */,
+				C204BC041C4F1A5B0085BE48 /* User.storyboard */,
+				C204BC061C4F2FCB0085BE48 /* UserViewController.h */,
+				C204BC071C4F2FCB0085BE48 /* UserViewController.m */,
+				C204BC091C4F33D60085BE48 /* LoginViewController.h */,
+				C204BC0A1C4F33D60085BE48 /* LoginViewController.m */,
+				C204BC191C4FA4610085BE48 /* RegisterViewController.h */,
+				C204BC1A1C4FA4620085BE48 /* RegisterViewController.m */,
+				C2A6B8AB1C52029D006CF6BD /* FindPasswordVC_One.h */,
+				C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */,
+				C2A6B8AE1C5202AA006CF6BD /* FindPasswordVC_Tow.h */,
+				C2A6B8AF1C5202AA006CF6BD /* FindPasswordVC_Tow.m */,
+				C2A6B8DA1C525C8C006CF6BD /* FindPasswordVC__Three.h */,
+				C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */,
+				C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */,
+				C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */,
+				C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */,
+				C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */,
+				C2F74AB11C56678E00197D7D /* AvatarsourceType.h */,
+				C2F74AB21C56678E00197D7D /* AvatarsourceType.m */,
+				C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -560,20 +645,28 @@
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
 				540D991A1C4A64380027EF2F /* person.png in Resources */,
+				C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */,
 				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
 				540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */,
 				540D99181C4A64380027EF2F /* news.png in Resources */,
+				C204BC101C4F73DB0085BE48 /* iconfont-yonghu.png in Resources */,
 				5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */,
+				C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */,
+				C204BC051C4F1A5B0085BE48 /* User.storyboard in Resources */,
 				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
+				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
 				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
 				540D99171C4A64380027EF2F /* jian_selected.png in Resources */,
 				54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */,
+				C204BC121C4F74AF0085BE48 /* iconfont-mima.png in Resources */,
 				540D99111C4A64380027EF2F /* group_select.png in Resources */,
+				C204BC181C4FA3DF0085BE48 /* iconfont-yansebiankuang.png in Resources */,
 				5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */,
+				C204BC161C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png in Resources */,
 				540D991C1C4A64380027EF2F /* share_selected.png in Resources */,
 				540D99151C4A64380027EF2F /* jia_selected.png in Resources */,
 				540D99131C4A64380027EF2F /* haoyou.png in Resources */,
@@ -637,7 +730,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */,
+<<<<<<< HEAD
 				C26AB5051C51D32600D8FD96 /* NanxingTableViewController.m in Sources */,
+=======
+				C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */,
+				C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */,
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 				54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */,
 				C21C976C1C56105E00741661 /* AddTableViewController.m in Sources */,
 				54B3AFA41C4E256500D79478 /* DistanceCalloutView.m in Sources */,
@@ -647,11 +745,20 @@
 				C26AB5041C51D32600D8FD96 /* JianfeiTableViewController.m in Sources */,
 				5498EC9C1C48D48500A7D99E /* TrackLoggingViewController.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
+				C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */,
+				C204BC081C4F2FCB0085BE48 /* UserViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
+				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
+				C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */,
+				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
 				5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
+<<<<<<< HEAD
 				C21FE6CB1C4923F100D71330 /* UserViewController.m in Sources */,
 				C21C976F1C56273200741661 /* SettingViewController.m in Sources */,
+=======
+				C2A6B8B01C5202AA006CF6BD /* FindPasswordVC_Tow.m in Sources */,
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
 				C26AB50A1C51D55700D8FD96 /* YDWMViewController.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
@@ -659,10 +766,14 @@
 				C26AB5111C51DB9600D8FD96 /* YDGetDataTools.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 				540D98EF1C49ECD80027EF2F /* MapViewController.m in Sources */,
+<<<<<<< HEAD
 				C26AB5071C51D32600D8FD96 /* WomenTableViewController.m in Sources */,
 				C21C97571C55C58800741661 /* YDWeatherViewController.m in Sources */,
 				C21C97731C5642F600741661 /* YDWeatherModel.m in Sources */,
 				C26AB50E1C51DAB300D8FD96 /* DogModel.m in Sources */,
+=======
+				C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */,
+>>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

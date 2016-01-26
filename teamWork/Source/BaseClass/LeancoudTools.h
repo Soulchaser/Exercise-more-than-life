@@ -11,6 +11,8 @@
 //传出登陆结果
 typedef void (^yyResultPassBlock)(BOOL succeed,NSError *error);
 @interface LeancoudTools : NSObject
++(instancetype)shareLeancoudTools;
+
 #pragma mark -----以下为邮箱验证---------
 //传入用户model
 @property(strong,nonatomic)YYUserModel *model;
@@ -46,7 +48,7 @@ typedef void (^yyResultPassBlock)(BOOL succeed,NSError *error);
 //根据手机号发送验证码
 -(void)userResetPasswordWithPhone:(NSString *)phone resultBlock:(yyResultPassBlock)result;
 //验证
--(void)userResetBySMSCode:(NSString *)smsCode resultBlock:(yyResultPassBlock)result;
+-(void)userResetBySMSCode:(NSString *)smsCode andNewPassword:(NSString *)newPassword resultBlock:(yyResultPassBlock)result;
 
 #pragma mark --- 匿名用户(匿名评论时使用) ---------
 -(void)anonymousUserLogin;
