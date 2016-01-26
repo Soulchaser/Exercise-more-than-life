@@ -10,6 +10,7 @@
 #define Project_APPHeader_h
 //#import "DisplayViewController.h"
 //YDD资讯跳转控制器
+#import "YDWeatherViewController.h"
 #import "YDWMViewController.h"
 #import "GroupActivityViewController.h"
 #import "TrackNaviController.h"
