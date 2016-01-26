@@ -4,19 +4,11 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-<<<<<<< HEAD
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-=======
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-<<<<<<< HEAD
-            scope = "0"
-            stopOnStyle = "0">
-=======
             filePath = "teamWork/Source/CodeClass/Controller/User/LoginViewController.m"
             timestampString = "475414500.002779"
             startingColumnNumber = "9223372036854775807"
@@ -57,23 +49,6 @@
             endingLineNumber = "43"
             landmarkName = "-initWithNibName:bundle:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "teamWork/Source/CodeClass/Controller/User/UserInfoViewController.m"
-            timestampString = "475426951.372901"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
-            landmarkType = "5">
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

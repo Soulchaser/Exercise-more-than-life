@@ -21,12 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-<<<<<<< HEAD
-    
-
-    
-=======
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 }
 -(void)viewDidAppear:(BOOL)animated{
     //检测当前用户

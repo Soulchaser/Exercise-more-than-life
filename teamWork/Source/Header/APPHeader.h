@@ -8,9 +8,9 @@
 
 #ifndef Project_APPHeader_h
 #define Project_APPHeader_h
-
+//#import "DisplayViewController.h"
+//YDD资讯跳转控制器
 #import "YDWMViewController.h"
-
 #import "GroupActivityViewController.h"
 #import "TrackLoggingViewController.h"
 #import "ShareViewController.h"
@@ -30,6 +30,7 @@
 #import "DogModel.h"
 //用户类
 #import "YYUserModel.h"
+
 //Leancoud用户工具类
 #import "LeancoudTools.h"
 //button类目,添加一个方法使button点击后显示倒计时(n秒内无法再次点击)

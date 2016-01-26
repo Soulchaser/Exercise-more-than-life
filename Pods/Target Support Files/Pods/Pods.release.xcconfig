@@ -1,15 +1,8 @@
 ARCHS = $(ARCHS_STANDARD)
 FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/AMap2DMap" "${PODS_ROOT}/AMapSearch"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-<<<<<<< HEAD
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AMap2DMap" "${PODS_ROOT}/Headers/Public/AMapSearch" "${PODS_ROOT}/Headers/Public/AVOSCloud" "${PODS_ROOT}/Headers/Public/AVOSCloudIM" "${PODS_ROOT}/Headers/Public/MJRefresh" "${PODS_ROOT}/Headers/Public/NYSegmentedControl" "${PODS_ROOT}/Headers/Public/WMPageController"
 LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/AVOSCloud" $(inherited) "${PODS_ROOT}/AVOSCloudIM"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AMap2DMap" -isystem "${PODS_ROOT}/Headers/Public/AMapSearch" -isystem "${PODS_ROOT}/Headers/Public/AVOSCloud" -isystem "${PODS_ROOT}/Headers/Public/AVOSCloudIM" -isystem "${PODS_ROOT}/Headers/Public/MJRefresh" -isystem "${PODS_ROOT}/Headers/Public/NYSegmentedControl" -isystem "${PODS_ROOT}/Headers/Public/WMPageController"
 OTHER_LDFLAGS = $(inherited) -ObjC -l"AVOSCloud" -l"AVOSCloudIM" -l"MJRefresh" -l"NYSegmentedControl" -l"WMPageController" -l"icucore" -l"sqlite3" -l"stdc++.6.0.9" -l"z" -framework "AMapSearchKit" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreTelephony" -framework "Foundation" -framework "MAMapKit" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
-=======
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AMap2DMap" "${PODS_ROOT}/Headers/Public/AMapSearch" "${PODS_ROOT}/Headers/Public/AVOSCloud" "${PODS_ROOT}/Headers/Public/AVOSCloudIM" "${PODS_ROOT}/Headers/Public/NYSegmentedControl"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/AVOSCloud" $(inherited) "${PODS_ROOT}/AVOSCloudIM"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AMap2DMap" -isystem "${PODS_ROOT}/Headers/Public/AMapSearch" -isystem "${PODS_ROOT}/Headers/Public/AVOSCloud" -isystem "${PODS_ROOT}/Headers/Public/AVOSCloudIM" -isystem "${PODS_ROOT}/Headers/Public/NYSegmentedControl"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"AVOSCloud" -l"AVOSCloudIM" -l"NYSegmentedControl" -l"icucore" -l"sqlite3" -l"stdc++.6.0.9" -l"z" -framework "AMapSearchKit" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreTelephony" -framework "MAMapKit" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration"
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 PODS_ROOT = ${SRCROOT}/Pods

@@ -7,7 +7,6 @@
 //
 
 #import "YDWMViewController.h"
-#import <NYSegmentedControl.h>
 #import "YDWeatherViewController.h"
 
 @interface YDWMViewController ()
@@ -16,7 +15,6 @@
 
 @property(strong,nonatomic) YDWeatherViewController * WeatherVC;
 
-//
 @property(strong,nonatomic) NSArray * exampleViews;
 
 @property(strong,nonatomic) UIView * visibleExampleView;

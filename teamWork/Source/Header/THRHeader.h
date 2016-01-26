@@ -11,15 +11,10 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AVOSCloud.h>
-<<<<<<< HEAD
-//WMPageController
+//三方自定义控制器
 #import <WMPageController.h>
-
-#pragma mark ------------刷新组件*MJRefresh*------------
+//明杰刷新
 #import <MJRefresh.h>
-
-=======
 //三方自定义segmented
 #import "NYSegmentedControl.h"
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
 #endif

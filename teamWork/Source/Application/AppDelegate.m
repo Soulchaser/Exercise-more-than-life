@@ -17,20 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-<<<<<<< HEAD
-    
-    
-    //信息展示界面
-    //    DisplayViewController *dispVC = [[DisplayViewController alloc]init];
-    //    UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
-    
-    YDWMViewController *dispVC = [[YDWMViewController alloc]init];
-=======
 
    
     //信息展示界面
-    DisplayViewController *dispVC = [DisplayViewController shareDisplayViewController];
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
+    YDWMViewController *dispVC = [YDWMViewController new];
     UINavigationController *dispNC = [[UINavigationController alloc]initWithRootViewController:dispVC];
     
     //组团界面
@@ -53,17 +43,10 @@
     
     
     
-<<<<<<< HEAD
-    UITabBarController *tabBC = [[UITabBarController alloc]init];
-    tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
-    // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
-    tabBC.selectedIndex = 2;
-=======
     self.tabBC = [[UITabBarController alloc]init];
     self.tabBC.viewControllers = @[dispNC,groupNC,trackNC,shareNC,friendsNC];
    // tabBC.viewControllers = @[dispVC,groupVC,trackVC,shareVC,friendsVC];
     self.tabBC.selectedIndex = 2;
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
     
     //    //tabBar字体选中颜色
     self.tabBC.tabBar.tintColor = [UIColor orangeColor];
@@ -76,16 +59,6 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
-<<<<<<< HEAD
-    [self.window setRootViewController:tabBC];
-    
-    //    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    //    [self.window setBackgroundColor:[UIColor whiteColor]];
-    //    [self.window makeKeyAndVisible];
-    //    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
-    //    [self.window setRootViewController:rootNC];
-    
-=======
     [self.window setRootViewController:self.tabBC];
     /*
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -101,7 +74,6 @@
     [AVOSCloud setApplicationId:@"NveC96jd47RocSo5OU0rjxwy-gzGzoHsz"
                       clientKey:@"cOsXhUabVYK7w4y8274uz9xK"];
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
->>>>>>> 4cb81522133430929d3d89ec838cb923e019527f
     return YES;
 }
 

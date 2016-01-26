@@ -8,6 +8,7 @@
 
 #import "UserInfoViewController.h"
 #import "AvatarsourceType.h"
+
 @interface UserInfoViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 //头像
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
@@ -29,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *email;
 //地址
 @property (weak, nonatomic) IBOutlet UITextField *address;
+
 
 @end
 
@@ -120,11 +122,22 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     //此处info有六个类型
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+    }
+
+    
     //获取图片路径
     self.headerImage.image = image;
     self.avatarData = UIImagePNGRepresentation(image);
+    
+    
+    
 }
-
++ (UIImage*)imageWithImageSimple:(UIImage*)image scaledToSize:(CGSize)newSize{
+    
+    return image;
+}
 //性别设置为男
 - (IBAction)genderBoyAction:(id)sender {
     [self.gender_Boy setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -145,11 +158,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.headerImage.layer.cornerRadius = self.headerImage.frame.size.width/2;
+    //头像切圆
+    self.headerImage.layer.cornerRadius = self.headerImage.frame.size.height/2;
     self.headerImage.layer.masksToBounds = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(headerImageAction)];
     [self.headerImage addGestureRecognizer:tap];
     self.headerImage.userInteractionEnabled = YES;
+    
 
 }
 -(void)viewWillAppear:(BOOL)animated{
@@ -158,6 +173,14 @@
     self.signature.text = [currentUser objectForKey:@"signature"];
     self.email.text = currentUser.email;
     self.address.text = [currentUser objectForKey:@"address"];
+    self.gender = [currentUser objectForKey:@"gender"];
+    if ([self.gender isEqualToString:@"男"]) {
+        [self.gender_Boy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.gender_Girl setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    }else {
+        [self.gender_Boy setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [self.gender_Girl setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    }
     //头像
     AVFile *avatarFile = [currentUser objectForKey:@"avatar"];
     NSData *avatarData = [avatarFile getData];
