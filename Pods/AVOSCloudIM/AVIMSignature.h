@@ -16,12 +16,12 @@
 @property (nonatomic, strong) NSString *signature;
 
 /**
- *  Timestamp used to contruct signature.
+ *  Timestamp used to construct signature.
  */
 @property (nonatomic) int64_t timestamp;
 
 /**
- *  Nonce string used to contruct signature
+ *  Nonce string used to construct signature
  */
 @property (nonatomic, strong) NSString *nonce;
 
@@ -45,6 +45,7 @@
             "add": 表示邀请自己或其他人加入对话
             "remove": 表示从对话中踢出部分人
  @attention 这里的 action 并不对应签名中的 action 常量，详细的签名方法请参考文档：https://leancloud.cn/docs/realtime_v2.html#%E5%BC%80%E5%90%AF%E5%AF%B9%E8%AF%9D%E7%AD%BE%E5%90%8D
+
  @param clientIds － 操作目标的 id 列表
  @return 一个 AVIMSignature 签名对象.
  */

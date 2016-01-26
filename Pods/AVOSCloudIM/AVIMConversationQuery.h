@@ -39,6 +39,20 @@ extern NSString *const kAVIMKeyConversationId;
 @property (nonatomic) NSTimeInterval cacheMaxAge;
 
 /*!
+ * Build an query that is the OR of the passed in queries.
+ * @param queries The list of queries to OR together.
+ * @return an query that is the OR of the passed in queries.
+ */
++ (instancetype)orQueryWithSubqueries:(NSArray<AVIMConversationQuery *> *)queries;
+
+/*!
+ * Build an query that is the AND of the passed in queries.
+ * @param queries The list of queries to AND together.
+ * @return an query that is the AND of the passed in queries.
+ */
++ (instancetype)andQueryWithSubqueries:(NSArray<AVIMConversationQuery *> *)queries;
+
+/*!
  添加等于条件
  @param key 添加条件的 key
  @param object 需要等于的 object

@@ -23,15 +23,52 @@ typedef enum : int8_t {
 
 @interface AVIMMessage : NSObject <NSCopying, NSCoding>
 
-@property (nonatomic, readonly) AVIMMessageIOType ioType; // 表示接收和发出的消息
-@property (nonatomic, assign) AVIMMessageStatus status;   // 表示消息状态
-@property (nonatomic, strong) NSString *messageId;        // 消息 id
-@property (nonatomic, strong) NSString *clientId;         // 消息发送/接收方 id
-@property (nonatomic, strong) NSString *conversationId;   // 消息所属对话的 id
-@property (nonatomic, strong) NSString *content;          // 消息文本
-@property (nonatomic, assign) int64_t sendTimestamp;      // 发送时间（精确到毫秒）
-@property (nonatomic, assign) int64_t deliveredTimestamp; // 接收时间（精确到毫秒）
-@property (nonatomic, readonly) BOOL transient;           // 是否是暂态消息
+/*!
+ * 表示接收和发出的消息
+ */
+@property (nonatomic, readonly, assign) AVIMMessageIOType ioType;
+
+/*!
+ * 表示消息状态
+ */
+@property (nonatomic, readonly, assign) AVIMMessageStatus status;
+
+/*!
+ * 消息 id
+ */
+@property (nonatomic, readonly, copy) NSString *messageId;
+
+/*!
+ * 消息发送/接收方 id
+ */
+@property (nonatomic, readonly, copy) NSString *clientId;
+
+/*!
+ * 消息所属对话的 id
+ */
+@property (nonatomic, readonly, copy) NSString *conversationId;
+
+/*!
+ * 消息文本
+ */
+@property (nonatomic, copy) NSString *content;
+
+/*!
+ * 发送时间（精确到毫秒）
+ */
+@property (nonatomic, assign) int64_t sendTimestamp;
+
+/*!
+ * 接收时间（精确到毫秒）
+ */
+@property (nonatomic, assign) int64_t deliveredTimestamp;
+
+/*!
+ * 是否是暂态消息
+ */
+@property (nonatomic, readonly, assign) BOOL transient;
+
+- (NSString *)payload;
 
 /*!
  创建文本消息。

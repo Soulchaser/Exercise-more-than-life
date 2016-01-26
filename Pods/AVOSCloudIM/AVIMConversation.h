@@ -27,6 +27,11 @@ enum : AVIMMessageSendOption {
 @interface AVIMConversation : NSObject
 
 /**
+ *  The ID of the client which the conversation belongs to.
+ */
+@property (nonatomic, strong, readonly) NSString     *clientId;
+
+/**
  *  The ID of the conversation.
  */
 @property (nonatomic, strong, readonly) NSString     *conversationId;

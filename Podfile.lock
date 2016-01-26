@@ -1,8 +1,8 @@
 PODS:
-  - AMap2DMap (3.2.0)
+  - AMap2DMap (3.3.0)
   - AMapSearch (3.2.0)
-  - AVOSCloud (3.2.0)
-  - AVOSCloudIM (3.2.0):
+  - AVOSCloud (3.2.2)
+  - AVOSCloudIM (3.2.2):
     - AVOSCloud
   - BFNavigationBarDrawer (1.0.2)
 
@@ -14,10 +14,10 @@ DEPENDENCIES:
   - BFNavigationBarDrawer
 
 SPEC CHECKSUMS:
-  AMap2DMap: 02c73a3e55ac033e3b0b8ec35d3d21ffcac5aae3
+  AMap2DMap: e53461cdc345375e514579db17dbd721ff9ed9eb
   AMapSearch: a885f0702578a441a22cb66fa74f8918c6d19e6f
-  AVOSCloud: 798551ac6cbf541b8436ce94800e2e59a042b670
-  AVOSCloudIM: 082f0268a22253fd6ad70ec4e4dfd686b36a7308
+  AVOSCloud: 73eb3e7b772b84998df5fb104813c17b39b25cf3
+  AVOSCloudIM: 3cb536dae7cecb2ae6eab5da3ef2663c6561ab39
   BFNavigationBarDrawer: 7114305b2eb64f796aeee63029a037e30bf37a93
 
 COCOAPODS: 0.39.0
