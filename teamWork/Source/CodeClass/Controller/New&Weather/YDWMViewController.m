@@ -43,7 +43,10 @@
                                        [WomenTableViewController class],
                                        [SecretTableViewController class]
                                        ];
-        
+        self.titleSizeNormal = 15;
+        self.titleColorSelected = [UIColor blackColor];
+        self.titleColorNormal = [UIColor grayColor];
+        self.menuItemWidth = 80;
     }
     return self;
 }

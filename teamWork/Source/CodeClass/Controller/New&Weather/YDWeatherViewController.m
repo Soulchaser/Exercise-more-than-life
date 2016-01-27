@@ -158,10 +158,10 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     cell.TDATForecastLLabel.text = Fmodel_3.min;
 
     //大大
-    cell.FDFNForecastDateLabel.text = [kGD weekdayStringFromDate:Fmodel_1.date];
-    cell.FDFNForecastCondTxtLabel.text = Fmodel_1.txt_d;
-    cell.FDFNForecastHLabel.text = Fmodel_1.max;
-    cell.FDFNForecastLLabel.text = Fmodel_1.min;
+    cell.FDFNForecastDateLabel.text = [kGD weekdayStringFromDate:Fmodel_4.date];
+    cell.FDFNForecastCondTxtLabel.text = Fmodel_4.txt_d;
+    cell.FDFNForecastHLabel.text = Fmodel_4.max;
+    cell.FDFNForecastLLabel.text = Fmodel_4.min;
 
     
     return cell;
