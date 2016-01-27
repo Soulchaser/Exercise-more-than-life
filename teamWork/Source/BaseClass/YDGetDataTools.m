@@ -30,12 +30,12 @@
     return _BasicArray;
 }
 
--(NSMutableArray *)NowArray
+-(NSMutableArray *)TempArray
 {
-    if (!_NowArray) {
-        _NowArray = [NSMutableArray array];
+    if (!_TempArray) {
+        _TempArray = [NSMutableArray array];
     }
-    return _NowArray;
+    return _TempArray;
 }
 
 -(NSMutableArray *)AqiArray

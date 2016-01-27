@@ -8,7 +8,7 @@
 
 #import "YDWeatherViewController.h"
 #import "WeatherCollectionViewCell.h"
-@interface YDWeatherViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,YDWeatherDelegate>
+@interface YDWeatherViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 
 
@@ -40,6 +40,15 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (kGD.BasicArray.count == 0) {
+        AddTableViewController * addVC = [AddTableViewController new];
+        UINavigationController * addNC = [[UINavigationController alloc] initWithRootViewController:addVC];
+        [self.navigationController presentViewController:addNC animated:YES completion:nil];
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -57,25 +66,17 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     //滑动方向(默认是竖向滑动)
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-//    flowLayout.
-    
-    
     [self.view addSubview:collectionView];
-    
     
     collectionView.delegate = self;
     collectionView.dataSource = self;
-    
-    
     
     //注册cell
     [collectionView registerNib:[UINib nibWithNibName:@"WeatherCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:WeatherCollectionViewCellID];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
 }
-
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -84,7 +85,7 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return 3;
+    return kGD.BasicArray.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -92,6 +93,13 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     WeatherCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:WeatherCollectionViewCellID forIndexPath:indexPath];
     
     cell.MainWeatherImgView.backgroundColor = [UIColor redColor];
+    
+    YDWeatherModel * model = kGD.BasicArray[indexPath.row];
+    
+    cell.AQILabel.text = [NSString stringWithFormat:@"%@~%@",model.aqi,model.qlty];
+    cell.CurrentCityLabel.text = model.city;
+    
+    
     
     return cell;
     

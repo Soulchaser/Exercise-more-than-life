@@ -39,6 +39,10 @@
 #import "DogModel.h"
 //资讯类详情
 #import "DetailModel.h"
+
+#import "YDWeatherModel.h"
+
+
 //用户类
 #import "YYUserModel.h"
 
@@ -51,6 +55,9 @@
 //自制气泡
 #import "DistanceCalloutView.h"
 
+#pragma mark ------------YDD宏------------
+#define kGD [YDGetDataTools sharedGetData]
+#define errorString @"请检查您键入的拼音是否正确..."
 //屏幕宽度
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 //屏幕高度
@@ -62,6 +69,8 @@
 #import "WomenTableViewController.h"
 #import "SecretTableViewController.h"
 #import "DetailViewController.h"
+#import "AddTableViewController.h"
+#import "SettingViewController.h"
 
 #pragma mark ------------重用标识符------------
 //减肥瘦身-loseWight
