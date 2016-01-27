@@ -52,6 +52,7 @@
 		5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC981C48D41900A7D99E /* GroupActivityViewController.m */; };
 		5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9E1C48D4C900A7D99E /* ShareViewController.m */; };
 		5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498ECA11C48D4F400A7D99E /* FriendsViewController.m */; };
+		54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AA2BA91C5860C200582C30 /* PinyinChange.m */; };
 		54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */; };
 		54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AF9A1C4DD51900D79478 /* PointWithDistanceAnn.m */; };
 		54B3AFA41C4E256500D79478 /* DistanceCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AFA11C4E256500D79478 /* DistanceCalloutView.m */; };
@@ -89,6 +90,8 @@
 		C21876E61C5758D4009D428B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E41C5758D4009D428B /* DetailViewController.m */; };
 		C21876E71C5758D4009D428B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21876E51C5758D4009D428B /* DetailViewController.xib */; };
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
+		C28B4B671C58601D00BF8EFD /* FootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B4B651C58601D00BF8EFD /* FootPrint.m */; };
+		C28B4B681C58601D00BF8EFD /* FootPrint.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28B4B661C58601D00BF8EFD /* FootPrint.xib */; };
 		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
 		C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */; };
 		C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */; };
@@ -166,6 +169,8 @@
 		5498EC9E1C48D4C900A7D99E /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		5498ECA01C48D4F400A7D99E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		5498ECA11C48D4F400A7D99E /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		54AA2BA81C5860C200582C30 /* PinyinChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinChange.h; sourceTree = "<group>"; };
+		54AA2BA91C5860C200582C30 /* PinyinChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinChange.m; sourceTree = "<group>"; };
 		54B3AF961C4DD3BB00D79478 /* PointWithDistanceAnnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointWithDistanceAnnView.h; sourceTree = "<group>"; };
 		54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointWithDistanceAnnView.m; sourceTree = "<group>"; };
 		54B3AF991C4DD51900D79478 /* PointWithDistanceAnn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointWithDistanceAnn.h; sourceTree = "<group>"; };
@@ -228,6 +233,9 @@
 		C21876E51C5758D4009D428B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		C21876E81C5763C4009D428B /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		C21876E91C5763C4009D428B /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
+		C28B4B641C58601D00BF8EFD /* FootPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootPrint.h; sourceTree = "<group>"; };
+		C28B4B651C58601D00BF8EFD /* FootPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootPrint.m; sourceTree = "<group>"; };
+		C28B4B661C58601D00BF8EFD /* FootPrint.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootPrint.xib; sourceTree = "<group>"; };
 		C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -399,6 +407,8 @@
 				C2034DD31C49D1B400202881 /* LeancoudTools.m */,
 				C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */,
 				C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */,
+				54AA2BA81C5860C200582C30 /* PinyinChange.h */,
+				54AA2BA91C5860C200582C30 /* PinyinChange.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -416,9 +426,10 @@
 		5498EC881C48D0E700A7D99E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				5454DCC21C571B3C00B96CCD /* TrackLogging */,
 				C21876AD1C5708BD009D428B /* New&Weather */,
+				5454DCC21C571B3C00B96CCD /* TrackLogging */,
 				C21FE6C81C49239100D71330 /* User */,
+				C28B4B631C585AC600BF8EFD /* Share */,
 				5498EC941C48D27B00A7D99E /* DisplayViewController.h */,
 				5498EC951C48D27B00A7D99E /* DisplayViewController.m */,
 				5498EC971C48D41900A7D99E /* GroupActivityViewController.h */,
@@ -669,6 +680,16 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		C28B4B631C585AC600BF8EFD /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				C28B4B641C58601D00BF8EFD /* FootPrint.h */,
+				C28B4B651C58601D00BF8EFD /* FootPrint.m */,
+				C28B4B661C58601D00BF8EFD /* FootPrint.xib */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -740,6 +761,7 @@
 				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
 				C21876C41C570A9A009D428B /* WeatherCollectionViewCell.xib in Resources */,
+				C28B4B681C58601D00BF8EFD /* FootPrint.xib in Resources */,
 				540D99121C4A64380027EF2F /* haoyou-selected.png in Resources */,
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
@@ -845,6 +867,7 @@
 				C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */,
 				C21876D01C570B08009D428B /* SecretTableViewController.m in Sources */,
 				C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */,
+				C28B4B671C58601D00BF8EFD /* FootPrint.m in Sources */,
 				C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */,
 				C21876D91C570C05009D428B /* YDWeatherModel.m in Sources */,
 				C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */,
@@ -861,6 +884,7 @@
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */,
 				5454DCDC1C571C5700B96CCD /* KKNavigationController.m in Sources */,
+				54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */,
 				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
 				C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */,
 				C21876BD1C5708BD009D428B /* YDWeatherViewController.m in Sources */,

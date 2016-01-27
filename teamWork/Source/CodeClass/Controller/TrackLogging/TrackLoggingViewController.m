@@ -281,7 +281,7 @@
 {
     
     //初始化GPS定位对象
-    [[MapGPSLocation shareMapGPSLocation] setMapGPSLocationWithdistanceFilter:3 desiredAccuracy:kCLLocationAccuracyBest];
+    [[MapGPSLocation shareMapGPSLocation] setMapGPSLocationWithdistanceFilter:5 desiredAccuracy:kCLLocationAccuracyBest];
     //开始GPS定位
     [[MapGPSLocation shareMapGPSLocation] mapGPSLocationStart];
     [self beginTiming];
@@ -683,7 +683,7 @@
 //计时
 -(void)timerAction:(NSTimer *)timer
 {
-    self.mapView.moveInfoView.timeLabel.text = [NSString stringWithFormat:@"%0d:%02d:%02d",(self.timeCount/3600)%24,(self.timeCount/60)%60,self.timeCount%60];
+    self.mapView.moveInfoView.timeLabel.text = [NSString stringWithFormat:@"%0ld:%02ld:%02ld",(self.timeCount/3600)%24,(self.timeCount/60)%60,self.timeCount%60];
     
     self.sportInfoView.timeLB.text = self.mapView.moveInfoView.timeLabel.text;
     
