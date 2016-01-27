@@ -21,16 +21,22 @@ static NSString * const settingCellID = @"settingViewCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 10, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
     
-    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneAction)];
     
     //注册
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:settingCellID];
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.view addSubview:self.tableView];
+    NSLog(@"%@",kGD.BasicArray);
     
+}
+
+-(void)doneAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -40,16 +46,24 @@ static NSString * const settingCellID = @"settingViewCellIdentifier";
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [YDGetDataTools sharedGetData].BasicArray.count;
+    return kGD.BasicArray.count;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:settingCellID forIndexPath:indexPath];
     
-    cell.textLabel.text = [YDGetDataTools sharedGetData].BasicArray[indexPath.row];
+    YDWeatherModel * model = kGD.BasicArray[indexPath.row];
+    
+    cell.textLabel.text = model.city;
+    
     return cell;
     
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

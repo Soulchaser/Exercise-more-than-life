@@ -21,7 +21,7 @@ typedef void (^PassValueBlock)(NSMutableArray * array);
 //保存添加的城市的数组
 @property(strong,nonatomic) NSMutableArray * BasicArray;
 
-@property(strong,nonatomic) NSMutableArray * NowArray;
+@property(strong,nonatomic) NSMutableArray * TempArray;
 
 @property(strong,nonatomic) NSMutableArray * AqiArray;
 

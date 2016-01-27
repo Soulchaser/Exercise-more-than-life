@@ -7,9 +7,7 @@
 //
 
 #import "WeatherCollectionViewCell.h"
-#import "AddTableViewController.h"
-#import "SettingViewController.h"
-#import "YDWeatherViewController.h"
+
 @implementation WeatherCollectionViewCell
 
 - (void)awakeFromNib {
@@ -20,8 +18,8 @@
 - (IBAction)SettingAction:(id)sender {
     
     SettingViewController * SetVC = [SettingViewController new];
-    
-    [[YDWeatherViewController sharedViewController] presentViewController:SetVC animated:YES completion:nil];
+    UINavigationController * SetNC = [[UINavigationController alloc] initWithRootViewController:SetVC];
+    [[YDWeatherViewController sharedViewController] presentViewController:SetNC animated:YES completion:nil];
     
     
     
@@ -30,8 +28,8 @@
 - (IBAction)AddAction:(id)sender {
    
     AddTableViewController * addVC = [AddTableViewController new];
-    
-    [[YDWeatherViewController sharedViewController] presentViewController:addVC animated:YES completion:nil];
+    UINavigationController * addNC = [[UINavigationController alloc] initWithRootViewController:addVC];
+    [[YDWeatherViewController sharedViewController] presentViewController:addNC animated:YES completion:nil];
     
     
 }

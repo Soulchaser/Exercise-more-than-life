@@ -8,13 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol YDWeatherDelegate <NSObject>
-
--(void)runMethodOFCollectionCell:(UIButton *)button;
-
-@end
-
-
 @interface WeatherCollectionViewCell : UICollectionViewCell
 //页面的天气简图(上方)
 @property (weak, nonatomic) IBOutlet UIImageView *MainWeatherImgView;
@@ -41,7 +34,6 @@
 //大后天的天气简图
 @property (weak, nonatomic) IBOutlet UIImageView *TDFNImgView;
 
-@property(weak,nonatomic) id<YDWeatherDelegate> delegate;
 
 //设置按钮
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
