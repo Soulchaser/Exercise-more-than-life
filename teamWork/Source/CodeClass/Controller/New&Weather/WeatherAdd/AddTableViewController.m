@@ -117,20 +117,22 @@
             YDWeatherModel * model = [[YDWeatherModel alloc] init];
             model.city = dict[@"basic"][@"city"];
             //"Now"部分
-            model.code = dict[@"now"][@"cond"][@"code"];
+            model.tmp = dict[@"now"][@"tmp"];
             model.txt = dict[@"now"][@"cond"][@"txt"];
             
             //"aqi"部分
             model.aqi = dict[@"aqi"][@"city"][@"aqi"];
             model.qlty = dict[@"aqi"][@"city"][@"qlty"];
-            //"hourly_forecast"部分
-//            model.tmp = dict[@"hourly_forecast"][@"tmp"];
+
             //@"forecast"部分
             for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
                 
                 YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
-                modelF.code_d = forecastDic[@"cond"][@"code_d"];
+
                 modelF.date = forecastDic[@"date"];
+                modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
+                modelF.max = forecastDic[@"tmp"][@"max"];
+                modelF.min = forecastDic[@"tmp"][@"min"];
                 [model.array addObject:modelF];
             }
             //添加到结果数组中

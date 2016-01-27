@@ -121,21 +121,49 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 {
     WeatherCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:WeatherCollectionViewCellID forIndexPath:indexPath];
     
-//    cell.MainWeatherImgView.backgroundColor = [UIColor redColor];
-    
     YDWeatherModel * model = kGD.BasicArray[indexPath.row];
-    
-    cell.AQILabel.text = [NSString stringWithFormat:@"%@~%@",model.aqi,model.qlty];
+    //现在的温度
+    cell.currentTmpLabel.text = model.tmp;
+    //天气状况描述
+    cell.currentCondTxtLabel.text = model.txt;
+    //空气质量
+    cell.AQILabel.text = [NSString stringWithFormat:@"%@ %@",model.aqi,model.qlty];
+    //城市
     cell.CurrentCityLabel.text = model.city;
-    [cell.MainWeatherImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://files.heweather.com/cond_icon/%@.png",model.code]]];
-    //温度
-    cell.CurrentCityLabel.text = model.tmp;
-    //未来三天的天气情况
+
+    //今天和未来4天的天气情况
+    YDmodelForecast * Fmodel_0 = model.array[0];
     YDmodelForecast * Fmodel_1 = model.array[1];
     YDmodelForecast * Fmodel_2 = model.array[2];
     YDmodelForecast * Fmodel_3 = model.array[3];
+    YDmodelForecast * Fmodel_4 = model.array[4];
+   
+    cell.ForecastTHTemLabel.text = Fmodel_0.max;
+    cell.ForecastTLLabel.text = Fmodel_0.min;
+    
+    //明天
     cell.TomorrowDateLabel.text = [kGD weekdayStringFromDate:Fmodel_1.date];
-    [cell.TomorrowWeatherImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://files.heweather.com/cond_icon/%@.png",Fmodel_1.code_d]]];
+    cell.TomorrowCondTxtForeLabel.text = Fmodel_1.txt_d;
+    cell.TomorrowForecastHTmpLabel.text = Fmodel_1.max;
+    cell.TomorrowForecastLTmpLabel.text = Fmodel_1.min;
+    //后天
+    cell.TDATDateLabel.text = [kGD weekdayStringFromDate:Fmodel_2.date];
+    cell.TDATCondTxtLabel.text = Fmodel_2.txt_d;
+    cell.TDATForecastHLabel.text = Fmodel_2.max;
+    cell.TDATForecastLLabel.text = Fmodel_2.min;
+    //大后天
+    cell.TDATDateLabel.text = [kGD weekdayStringFromDate:Fmodel_3.date];
+    cell.TDATCondTxtLabel.text = Fmodel_3.txt_d;
+    cell.TDATForecastHLabel.text = Fmodel_3.max;
+    cell.TDATForecastLLabel.text = Fmodel_3.min;
+
+    //大大
+    cell.FDFNForecastDateLabel.text = [kGD weekdayStringFromDate:Fmodel_1.date];
+    cell.FDFNForecastCondTxtLabel.text = Fmodel_1.txt_d;
+    cell.FDFNForecastHLabel.text = Fmodel_1.max;
+    cell.FDFNForecastLLabel.text = Fmodel_1.min;
+
+    
     return cell;
     
 }
