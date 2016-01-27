@@ -118,7 +118,7 @@
         //
         NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
         
-        NSLog(@"%lu",dataArray.count);
+        NSLog(@"%lu",(unsigned long)dataArray.count);
         
         for (NSDictionary * dict in dataArray) {
             //Basic部分

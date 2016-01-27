@@ -12,8 +12,6 @@
 @interface TrackLoggingViewController ()<UIScrollViewDelegate,MapGPSLocationDelegate,MAMapViewDelegate>
 
 @property(strong,nonatomic)MapView *mapView;
-//信息提示label
-//@property(strong,nonatomic)UILabel *promptLabel;
 //地图的缩放级别，范围是[3-19]
 @property(assign,nonatomic)CGFloat zoomLevel;
 //是否开启高度测量
@@ -221,7 +219,12 @@
     //第一页
     self.sportInfoView = [[SportInfoView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight*0.7)];
     [self.scrollView addSubview:self.sportInfoView];
-    
+    //拖拽提示视图
+    UIImageView *tipView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tuodong"]];
+    tipView.frame =  CGRectMake(kScreenWidth-20, kScreenHeight/3, 20, 64);
+    tipView.backgroundColor = [UIColor whiteColor];
+    tipView.alpha = 0.9;
+    [self.sportInfoView addSubview:tipView];
     
     //第二页
     UIView *blueView = [[UIView alloc]initWithFrame:CGRectMake(kScreenWidth, 0, 50, kScreenHeight*0.7)];
@@ -273,7 +276,7 @@
 }
 
 #pragma mark -------运动开始和结束按钮事件-------
-
+//开始
 -(void)startButtonAction:(UIButton *)sender
 {
     
@@ -285,12 +288,12 @@
     [self.view addSubview:self.stopButton];
 
 }
-
+//继续
 -(void)continueButtonAction:(UIButton *)sender
 {
     
 }
-
+//结束
 -(void)stopButtonAction:(UIButton *)sender
 {
     //结束GPS定位
@@ -534,21 +537,6 @@
 {
     if(updatingLocation == YES)
     {
-        //            CGFloat distance = 0;
-        //            if (self.movementInfo.coorRecord.latitude && self.movementInfo.coorRecord.longitude)
-        //            {
-        //                //1.将两个经纬度点转成投影点
-        //                MAMapPoint point1 = MAMapPointForCoordinate(userLocation.location.coordinate);
-        //                MAMapPoint point2 = MAMapPointForCoordinate(self.movementInfo.coorRecord);
-        //                //2.计算距离
-        //                distance = MAMetersBetweenMapPoints(point1,point2);
-        //           //     DLog(@"distance%f",distance);
-        //            }
-        //
-        //            self.movementInfo.coorRecord = userLocation.coordinate;
-        //            self.movementInfo.totleDistance += distance;
-        //      //  DLog(@"+++%f",self.movementInfo.totleDistance);
-        //            self.moveInfoView.distanceLabel.text = [NSString stringWithFormat:@"%0.2f",self.movementInfo.totleDistance];
     }
 }
 

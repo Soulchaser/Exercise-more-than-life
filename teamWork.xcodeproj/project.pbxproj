@@ -43,6 +43,7 @@
 		5454DCF01C571E5F00B96CCD /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = 5454DCE51C571E5F00B96CCD /* run.png */; };
 		5454DCF11C571E5F00B96CCD /* walk_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5454DCE61C571E5F00B96CCD /* walk_selected.png */; };
 		5454DCF21C571E5F00B96CCD /* walk.png in Resources */ = {isa = PBXBuildFile; fileRef = 5454DCE71C571E5F00B96CCD /* walk.png */; };
+		5454DCF41C579B6400B96CCD /* tuodong.png in Resources */ = {isa = PBXBuildFile; fileRef = 5454DCF31C579B6400B96CCD /* tuodong.png */; };
 		5498EC6F1C48CE2400A7D99E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC6E1C48CE2400A7D99E /* main.m */; };
 		5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC761C48CE2400A7D99E /* Main.storyboard */; };
 		5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC791C48CE2400A7D99E /* Assets.xcassets */; };
@@ -143,6 +144,7 @@
 		5454DCE51C571E5F00B96CCD /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
 		5454DCE61C571E5F00B96CCD /* walk_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk_selected.png; sourceTree = "<group>"; };
 		5454DCE71C571E5F00B96CCD /* walk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walk.png; sourceTree = "<group>"; };
+		5454DCF31C579B6400B96CCD /* tuodong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tuodong.png; sourceTree = "<group>"; };
 		5498EC6A1C48CE2400A7D99E /* teamWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = teamWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5498EC6E1C48CE2400A7D99E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5498EC771C48CE2400A7D99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 		540D98FC1C4A64380027EF2F /* mapView */ = {
 			isa = PBXGroup;
 			children = (
+				5454DCF31C579B6400B96CCD /* tuodong.png */,
 				5454DCDD1C571E5F00B96CCD /* dingwei.png */,
 				5454DCDE1C571E5F00B96CCD /* jiantou.png */,
 				5454DCDF1C571E5F00B96CCD /* location.png */,
@@ -742,6 +745,7 @@
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
+				5454DCF41C579B6400B96CCD /* tuodong.png in Resources */,
 				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
 				5454DCED1C571E5F00B96CCD /* ride_selected.png in Resources */,
 				5454DCE91C571E5F00B96CCD /* jiantou.png in Resources */,
