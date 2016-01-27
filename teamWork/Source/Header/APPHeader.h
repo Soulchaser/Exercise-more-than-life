@@ -34,6 +34,7 @@
 #import "SportInfoView.h"
 //自定义的地图视图
 #import "MapView.h"
+#import "PinyinChange.h"
 #pragma mark ------------Model------------
 //资讯类
 #import "DogModel.h"

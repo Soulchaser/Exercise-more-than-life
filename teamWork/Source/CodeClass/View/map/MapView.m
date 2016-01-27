@@ -92,6 +92,15 @@
     //左滑视图
     self.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 50, kScreenHeight)];
     
+    //拖拽提示视图
+    UIImageView *tipView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tuodong"]];
+    tipView.frame =  CGRectMake(0, kScreenHeight/3, 20, 64);
+    tipView.backgroundColor = [UIColor whiteColor];
+    tipView.alpha = 0.9;
+    //tipView.center = CGPointMake(0, kScreenHeight/2);
+    [self.leftView addSubview:tipView];
+    
+    
     [self addSubview:self.shareButton];
     [self addSubview:self.mapBookButton];
     [self.mapView addSubview:self.leftView];

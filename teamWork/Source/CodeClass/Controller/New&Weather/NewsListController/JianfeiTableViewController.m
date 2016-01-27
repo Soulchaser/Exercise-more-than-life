@@ -72,7 +72,7 @@
 -(void)makeData
 {
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://apis.baidu.com/tngou/lore/list?id=11&page=%ld&rows=20",self.page++]] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://apis.baidu.com/tngou/lore/list?id=11&page=%ld&rows=20",(long)self.page++]] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
     
     [request setHTTPMethod: @"GET"];
     [request addValue: kApiKey forHTTPHeaderField: @"apikey"];
@@ -107,7 +107,7 @@
             
             [self.LWArray addObjectsFromArray:DataArray];
             
-            NSLog(@"%lu",self.LWArray.count);
+            NSLog(@"%lu",(unsigned long)self.LWArray.count);
             
             //主线程刷新数据
             dispatch_async(dispatch_get_main_queue(), ^{

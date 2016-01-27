@@ -70,7 +70,7 @@
 -(void)makeData
 {
     
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://apis.baidu.com/tngou/lore/list?id=7&page=%ld&rows=20",self.page++]] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://apis.baidu.com/tngou/lore/list?id=7&page=%ld&rows=20",(long)self.page++]] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
     [request setHTTPMethod: @"GET"];
     [request addValue: kApiKey forHTTPHeaderField: @"apikey"];
     
@@ -103,7 +103,7 @@
             
             [self.SecretLifeArray addObjectsFromArray: DataArray];
             
-            NSLog(@"%ld",self.SecretLifeArray.count);
+            NSLog(@"%ld",(unsigned long)self.SecretLifeArray.count);
             
             //主线程刷新数据
             dispatch_async(dispatch_get_main_queue(), ^{

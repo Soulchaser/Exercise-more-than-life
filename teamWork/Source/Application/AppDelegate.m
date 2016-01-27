@@ -60,13 +60,6 @@
     [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     [self.window setRootViewController:self.tabBC];
-    /*
-    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window setBackgroundColor:[UIColor whiteColor]];
-    [self.window makeKeyAndVisible];
-    UINavigationController *rootNC = [[UINavigationController alloc]initWithRootViewController:[MapViewController new]];
-    [self.window setRootViewController:rootNC];
-     */
     
     //leancoud配置
     // applicationId 即 App Id，clientKey 是 App Key
