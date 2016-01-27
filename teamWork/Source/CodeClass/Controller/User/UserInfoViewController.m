@@ -67,6 +67,10 @@
     currentUser.email = self.email.text;
     [currentUser setObject:self.address.text forKey:@"address"];
     //头像
+    //删除原头像
+    AVFile *oldAvatar = [currentUser objectForKey:@"avatar"];
+    [oldAvatar deleteInBackground];
+    //添加新头像
     AVFile *avatarFile = [AVFile fileWithData:self.avatarData];
     [currentUser setObject:avatarFile forKey:@"avatar"];
     [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
@@ -74,15 +78,15 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
-//头像
+//设置头像
 - (void)headerImageAction{
     self.sourceType = [[AvatarsourceType alloc]init];
-    [self addChildViewController:self.sourceType];
+    self.sourceType.view.frame = self.view.frame;
     [self.view addSubview:self.sourceType.view];
     [self.sourceType.cameraButton addTarget:self action:@selector(pickImageFromCamera) forControlEvents:UIControlEventTouchUpInside];
     [self.sourceType.albumButton addTarget:self action:@selector(pickImageFromAlbum) forControlEvents:UIControlEventTouchUpInside];
 }
-//相机选取头像
+//相机机机机机机机机机机机机机机机选取头像
 -(void)pickImageFromCamera{
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         //初始化
@@ -94,11 +98,10 @@
         picker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         //模态选择图片
         [self presentViewController:picker animated:YES completion:nil];
-        [self.sourceType removeFromParentViewController];
         [self.sourceType.view removeFromSuperview];
     }
 }
-//相册选取头像
+//相册册册册册册册选取头像
 -(void)pickImageFromAlbum{
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         //初始化
@@ -112,7 +115,6 @@
         picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         //模态选择图片
         [self presentViewController:picker animated:YES completion:nil];
-        [self.sourceType removeFromParentViewController];
         [self.sourceType.view removeFromSuperview];
     }
 }
@@ -122,22 +124,26 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     //此处info有六个类型
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //替换头像
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.headerImage.image = image;
+    });
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
-
-    
+    //压缩图片尺寸
+    CGSize imageSize = CGSizeMake(100, 100);
+    UIGraphicsBeginImageContext(imageSize);
+    [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
     //获取图片路径
-    self.headerImage.image = image;
     self.avatarData = UIImagePNGRepresentation(image);
-    
-    
-    
+    //压缩图片大小
+    self.avatarData = UIImageJPEGRepresentation(image, 0.00001);
+    self.headerImage.image = [UIImage imageWithData:self.avatarData];
 }
-+ (UIImage*)imageWithImageSimple:(UIImage*)image scaledToSize:(CGSize)newSize{
-    
-    return image;
-}
+
 //性别设置为男
 - (IBAction)genderBoyAction:(id)sender {
     [self.gender_Boy setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
@@ -154,8 +160,6 @@
 - (IBAction)ageAction:(id)sender {
     NSLog(@"没有方法");
 }
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     //头像切圆
@@ -164,8 +168,6 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(headerImageAction)];
     [self.headerImage addGestureRecognizer:tap];
     self.headerImage.userInteractionEnabled = YES;
-    
-
 }
 -(void)viewWillAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];
@@ -185,8 +187,6 @@
     AVFile *avatarFile = [currentUser objectForKey:@"avatar"];
     NSData *avatarData = [avatarFile getData];
     self.headerImage.image = [UIImage imageWithData:avatarData];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
