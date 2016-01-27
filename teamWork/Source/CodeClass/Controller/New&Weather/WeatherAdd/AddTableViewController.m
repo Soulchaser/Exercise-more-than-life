@@ -123,6 +123,8 @@
             //"aqi"部分
             model.aqi = dict[@"aqi"][@"city"][@"aqi"];
             model.qlty = dict[@"aqi"][@"city"][@"qlty"];
+            //"hourly_forecast"部分
+//            model.tmp = dict[@"hourly_forecast"][@"tmp"];
             //@"forecast"部分
             for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
                 
@@ -135,7 +137,7 @@
             [self.resultArray addObject:model];
             
         }
-        DLog(@"%lu",self.resultArray.count);
+        DLog(@"%@",self.resultArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -144,6 +146,7 @@
         
     }];
     [dataTask resume];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -168,7 +171,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 
     YDWeatherModel * model = self.resultArray[indexPath.row];
-    cell.textLabel.text = model.city;
+    
+    cell.textLabel.text =  model.city;
     
     return cell;
 }
@@ -177,7 +181,22 @@
 {
     
     YDWeatherModel * model = self.resultArray[indexPath.row];
-    [kGD.BasicArray addObject:model];
+    //如果数组为空直接添加,否则先判断
+    if (kGD.BasicArray.count == 0) {
+        [kGD.BasicArray addObject:model];
+    }else
+    {
+        for (YDWeatherModel * Tmodel in kGD.BasicArray) {
+            if ([Tmodel.city isEqualToString:model.city]) {
+                //不做操作
+                return;
+            }
+            //如果没有,添加到数组中
+            [kGD.BasicArray addObject:model];
+        }
+
+    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
         self.resultArray = nil;
     }];

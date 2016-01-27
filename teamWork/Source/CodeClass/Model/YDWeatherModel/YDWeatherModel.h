@@ -24,6 +24,8 @@
 
 @property(strong,nonatomic) NSString * qlty;//空气质量级别
 
+@property(strong,nonatomic) NSString * tmp;//温度
+
 //forecast
 @property(strong,nonatomic) NSMutableArray * array;
 

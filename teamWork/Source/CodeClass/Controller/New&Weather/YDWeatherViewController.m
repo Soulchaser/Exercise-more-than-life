@@ -121,13 +121,21 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 {
     WeatherCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:WeatherCollectionViewCellID forIndexPath:indexPath];
     
-    cell.MainWeatherImgView.backgroundColor = [UIColor redColor];
+//    cell.MainWeatherImgView.backgroundColor = [UIColor redColor];
     
     YDWeatherModel * model = kGD.BasicArray[indexPath.row];
     
     cell.AQILabel.text = [NSString stringWithFormat:@"%@~%@",model.aqi,model.qlty];
     cell.CurrentCityLabel.text = model.city;
-    
+    [cell.MainWeatherImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://files.heweather.com/cond_icon/%@.png",model.code]]];
+    //温度
+    cell.CurrentCityLabel.text = model.tmp;
+    //未来三天的天气情况
+    YDmodelForecast * Fmodel_1 = model.array[1];
+    YDmodelForecast * Fmodel_2 = model.array[2];
+    YDmodelForecast * Fmodel_3 = model.array[3];
+    cell.TomorrowDateLabel.text = [kGD weekdayStringFromDate:Fmodel_1.date];
+    [cell.TomorrowWeatherImgView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://files.heweather.com/cond_icon/%@.png",Fmodel_1.code_d]]];
     return cell;
     
 }

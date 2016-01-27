@@ -30,9 +30,8 @@
 // 如果是城市名称(汉字)进行遍历查询,以保证查询的精确度
 #warning 暂时只支持城市拼音全拼如:jinan,beijing-&&&&-城市名称全称如:济南,上海,北京,
 
-//封装请求天气数据的方法
-// 传入参数:字符串
-// 返回参数:数组
--(NSMutableArray*)requestDataWithCityName:(NSString*)cityName;
 
+
+//根据日期返回星期
+-(NSString*)weekdayStringFromDate:(NSString*)dateString;
 @end
