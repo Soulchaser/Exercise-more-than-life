@@ -7,9 +7,9 @@
 //
 
 #import "ShareViewController.h"
-
+#import "FootPrint.h"
 @interface ShareViewController ()
-
+@property(strong,nonatomic)UIButton *leftButton;
 @end
 
 @implementation ShareViewController
@@ -27,14 +27,40 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //self.navigationController.navigationItem.title = @"足迹分享";
-    
-    
-    
-    
-    
     self.view.backgroundColor = [UIColor yellowColor];
-    // Do any additional setup after loading the view.
+    FootPrint *footPrintVC = [FootPrint new];
+    [self addChildViewController:footPrintVC];
+    [self.view addSubview:footPrintVC.view];
+    
+}
+-(void)viewDidAppear:(BOOL)animated{
+    AVUser *currentUser = [AVUser currentUser];
+    UIImage *image = nil;
+    if (currentUser == nil) {
+        image = [UIImage imageNamed:@"person"];
+    }else {
+        AVFile *avatarFile = [currentUser objectForKey:@"avatar"];
+        NSData *data = [avatarFile getData];
+        image = [UIImage imageWithData:data];
+        image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    }
+    //自定义leftBarButtonItem
+    self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.leftButton setImage:image forState:UIControlStateNormal];
+    self.leftButton.frame = CGRectMake(0, 0, 40, 40);
+    self.leftButton.layer.cornerRadius = 20;
+    self.leftButton.layer.masksToBounds =YES;
+    [self.leftButton addTarget:self action:@selector(MyselfInfoAction:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton];
+}
+//用户界面
+-(void)MyselfInfoAction:(UIButton *)sender
+{
+    //将User.storyboard作为入口
+    UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+    UIViewController *entranceVC = [user instantiateInitialViewController];
+    //让window的rootViewController指向该控制器
+    [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

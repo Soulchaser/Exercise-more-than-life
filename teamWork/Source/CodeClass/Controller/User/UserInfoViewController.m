@@ -124,6 +124,10 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     //此处info有六个类型
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //替换头像
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.headerImage.image = image;
+    });
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }

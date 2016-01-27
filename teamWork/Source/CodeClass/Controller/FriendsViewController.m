@@ -24,7 +24,7 @@
 }
 
 //用户界面
--(void)MyselfInfoAction:(UIBarButtonItem *)sender
+-(void)MyselfInfoAction:(UIButton *)sender
 {
     //将User.storyboard作为入口
     UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
@@ -50,6 +50,7 @@
         image = [UIImage imageWithData:data];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     }
+    //自定义leftBarButtonItem
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [self.leftButton setImage:image forState:UIControlStateNormal];
     self.leftButton.frame = CGRectMake(0, 0, 40, 40);
