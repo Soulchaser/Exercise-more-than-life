@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"";
+    
     self.flag = YES;
     
     UISearchBar * bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-100, 64)];
@@ -41,7 +43,7 @@
     //显示cancel按钮
     bar.showsCancelButton = YES;
     //是否显示搜索结果按钮
-    bar.showsSearchResultsButton = YES;
+//    bar.showsSearchResultsButton = YES;
     
     bar.keyboardType = UIKeyboardTypeDefault;
     bar.placeholder = @"请键入城市拼音如'beijing'";

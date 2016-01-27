@@ -35,11 +35,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *TDFNImgView;
 
 
-//设置按钮
-@property (weak, nonatomic) IBOutlet UIButton *settingButton;
-
-//添加按钮
-@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 
 

@@ -7,7 +7,6 @@
 //
 
 #import "SettingViewController.h"
-#import "YDGetDataTools.h"
 @interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @property(strong,nonatomic) UITableView * tableView;
@@ -18,12 +17,25 @@ static NSString * const settingCellID = @"settingViewCellIdentifier";
 
 @implementation SettingViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+-(UITableView *)tableView
+{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+    }
+    return _tableView;
+}
 
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+- (void)viewDidLoad {
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneAction)];
+    [super viewDidLoad];
+    
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStyleDone target:self action:@selector(doneAction)];
+    
+    self.navigationItem.title = @"位置管理";
+    
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     //注册
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:settingCellID];
@@ -72,13 +84,13 @@ static NSString * const settingCellID = @"settingViewCellIdentifier";
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

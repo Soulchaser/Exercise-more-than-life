@@ -72,12 +72,10 @@
     self.navigationItem.titleView = self.segmentedControl;
 
     //初始化天气视图控制器
-    self.WeatherVC = [YDWeatherViewController sharedViewController];
+    self.WeatherVC = [[YDWeatherViewController alloc] init];
     //添加为子控制器
-//    [self addChildViewController:self.WeatherVC];
+    [self addChildViewController:self.WeatherVC];
 
-    
-    
 }
 
 -(void)segmentSelected
@@ -89,8 +87,6 @@
     {
         [self.view addSubview:self.WeatherVC.view];
     }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

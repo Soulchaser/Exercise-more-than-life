@@ -75,7 +75,6 @@
 		C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C204BC1A1C4FA4620085BE48 /* RegisterViewController.m */; };
 		C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B01C5708BD009D428B /* AddTableViewController.m */; };
 		C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B31C5708BD009D428B /* SettingViewController.m */; };
-		C21876BC1C5708BD009D428B /* YDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B51C5708BD009D428B /* YDTableViewController.m */; };
 		C21876BD1C5708BD009D428B /* YDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B71C5708BD009D428B /* YDWeatherViewController.m */; };
 		C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B91C5708BD009D428B /* YDWMViewController.m */; };
 		C21876C31C570A9A009D428B /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876C11C570A9A009D428B /* WeatherCollectionViewCell.m */; };
@@ -203,8 +202,6 @@
 		C21876B01C5708BD009D428B /* AddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTableViewController.m; sourceTree = "<group>"; };
 		C21876B21C5708BD009D428B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		C21876B31C5708BD009D428B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
-		C21876B41C5708BD009D428B /* YDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDTableViewController.h; sourceTree = "<group>"; };
-		C21876B51C5708BD009D428B /* YDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDTableViewController.m; sourceTree = "<group>"; };
 		C21876B61C5708BD009D428B /* YDWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWeatherViewController.h; sourceTree = "<group>"; };
 		C21876B71C5708BD009D428B /* YDWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDWeatherViewController.m; sourceTree = "<group>"; };
 		C21876B81C5708BD009D428B /* YDWMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWMViewController.h; sourceTree = "<group>"; };
@@ -564,8 +561,6 @@
 				C21876C51C570B08009D428B /* NewsListController */,
 				C21876AE1C5708BD009D428B /* WeatherAdd */,
 				C21876B11C5708BD009D428B /* WeatherSetting */,
-				C21876B41C5708BD009D428B /* YDTableViewController.h */,
-				C21876B51C5708BD009D428B /* YDTableViewController.m */,
 				C21876B61C5708BD009D428B /* YDWeatherViewController.h */,
 				C21876B71C5708BD009D428B /* YDWeatherViewController.m */,
 				C21876B81C5708BD009D428B /* YDWMViewController.h */,
@@ -872,7 +867,6 @@
 				C21876EA1C5763C4009D428B /* DetailModel.m in Sources */,
 				C21876D11C570B08009D428B /* WomenTableViewController.m in Sources */,
 				C21876D81C570C05009D428B /* DogModel.m in Sources */,
-				C21876BC1C5708BD009D428B /* YDTableViewController.m in Sources */,
 				5454DCD41C571B6000B96CCD /* SportInfoView.m in Sources */,
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,

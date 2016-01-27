@@ -230,7 +230,7 @@
                         
                     }
                     //将获取的城市名返还给代理
-                    //[self.multiDelegate GPSGetCityName:finalStr];
+                    [self.multiDelegate GPSGetCityName:finalStr];
                    // [self.delegate GPSGetCityName:finalStr];
                 }
 
