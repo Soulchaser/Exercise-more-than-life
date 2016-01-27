@@ -137,6 +137,11 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 80;
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
@@ -159,6 +164,13 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DetailViewController * detailVC = [DetailViewController new];
+    DogModel * model = self.SecretLifeArray[indexPath.row];
+    detailVC.IDString = model.ID;
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 /*
 // Override to support conditional editing of the table view.

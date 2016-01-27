@@ -7,7 +7,6 @@
 //
 
 #import "YDWMViewController.h"
-#import "YDWeatherViewController.h"
 
 @interface YDWMViewController ()
 
@@ -38,10 +37,9 @@
 {
     self = [super init];
     if (self) {
-        self.titles = @[@"减肥瘦身", @"男性健康",@"天气", @"女性保养",@"私密生活"];
+        self.titles = @[@"减肥瘦身", @"男性健康", @"女性保养",@"私密生活"];
         self.viewControllerClasses = @[[JianfeiTableViewController class],
                                        [NanxingTableViewController class],
-                                       [YDWeatherViewController class],
                                        [WomenTableViewController class],
                                        [SecretTableViewController class]
                                        ];
