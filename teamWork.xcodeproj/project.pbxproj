@@ -52,6 +52,7 @@
 		5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC981C48D41900A7D99E /* GroupActivityViewController.m */; };
 		5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9E1C48D4C900A7D99E /* ShareViewController.m */; };
 		5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498ECA11C48D4F400A7D99E /* FriendsViewController.m */; };
+		54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AA2BA91C5860C200582C30 /* PinyinChange.m */; };
 		54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */; };
 		54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AF9A1C4DD51900D79478 /* PointWithDistanceAnn.m */; };
 		54B3AFA41C4E256500D79478 /* DistanceCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B3AFA11C4E256500D79478 /* DistanceCalloutView.m */; };
@@ -167,6 +168,8 @@
 		5498EC9E1C48D4C900A7D99E /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		5498ECA01C48D4F400A7D99E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
 		5498ECA11C48D4F400A7D99E /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		54AA2BA81C5860C200582C30 /* PinyinChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PinyinChange.h; sourceTree = "<group>"; };
+		54AA2BA91C5860C200582C30 /* PinyinChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PinyinChange.m; sourceTree = "<group>"; };
 		54B3AF961C4DD3BB00D79478 /* PointWithDistanceAnnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointWithDistanceAnnView.h; sourceTree = "<group>"; };
 		54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointWithDistanceAnnView.m; sourceTree = "<group>"; };
 		54B3AF991C4DD51900D79478 /* PointWithDistanceAnn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointWithDistanceAnn.h; sourceTree = "<group>"; };
@@ -402,6 +405,8 @@
 				C2034DD31C49D1B400202881 /* LeancoudTools.m */,
 				C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */,
 				C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */,
+				54AA2BA81C5860C200582C30 /* PinyinChange.h */,
+				54AA2BA91C5860C200582C30 /* PinyinChange.m */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -866,6 +871,7 @@
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */,
 				5454DCDC1C571C5700B96CCD /* KKNavigationController.m in Sources */,
+				54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */,
 				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
 				C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */,
 				C21876BD1C5708BD009D428B /* YDWeatherViewController.m in Sources */,
