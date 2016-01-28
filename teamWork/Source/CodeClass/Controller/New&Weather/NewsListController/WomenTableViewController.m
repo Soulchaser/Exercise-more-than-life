@@ -25,9 +25,9 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //马上进入刷新状态
-    [self.tableView.mj_header beginRefreshing];
-    
+//    //马上进入刷新状态
+//    [self.tableView.mj_header beginRefreshing];
+//    
 
 }
 
@@ -61,6 +61,11 @@
         [tableView.mj_footer endRefreshing];
         
     }];
+    
+    //马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+    
+
     
 }
 

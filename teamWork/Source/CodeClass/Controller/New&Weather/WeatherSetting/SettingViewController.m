@@ -54,13 +54,13 @@ BOOL b = YES;
 -(void)EditAction:(UIBarButtonItem*)barButton
 {
     b = YES;
-    if ([barButton.title isEqualToString:@"删除"]) {
+    if ([barButton.title isEqualToString:@"编辑"]) {
         [self.tableView setEditing:YES];
         barButton.title = @"完成";
     }else
     {
         [self.tableView setEditing:NO animated:YES];
-        barButton.title = @"删除";
+        barButton.title = @"编辑";
     }
 
 }

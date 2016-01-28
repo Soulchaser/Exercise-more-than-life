@@ -18,10 +18,10 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="05x-6H-NF7" userLabel="模糊视图显示气温和未来三天">
                         <rect key="frame" x="0.0" y="388" width="419" height="78"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYA-UT-54X">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYA-UT-54X" userLabel="今天">
                                 <rect key="frame" x="0.0" y="0.0" width="84" height="78"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpL-y9-k9J">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpL-y9-k9J" userLabel="今天固定显示">
                                         <rect key="frame" x="8" y="5" width="68" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="68" id="Gln-zl-MSp"/>
@@ -84,12 +84,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-Nt-H9j" userLabel="明天">
                                 <rect key="frame" x="84" y="0.0" width="83" height="78"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="明天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-Rz-DUv">
-                                        <rect key="frame" x="5" y="5" width="73" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHN-nB-F6g" userLabel="天气状况">
                                         <rect key="frame" x="22" y="31" width="40" height="21"/>
                                         <constraints>
@@ -120,6 +114,12 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVn-gd-3ji" userLabel="低温">
                                         <rect key="frame" x="47" y="62" width="31" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="明天" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-Rz-DUv">
+                                        <rect key="frame" x="2" y="8" width="73" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -259,7 +259,7 @@
                                     <constraint firstItem="KIW-r3-Cgs" firstAttribute="top" secondItem="HKb-AN-Fjn" secondAttribute="bottom" constant="10" id="zXS-0G-OET"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6c-Ph-njW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6c-Ph-njW" userLabel="大大">
                                 <rect key="frame" x="335" y="0.0" width="84" height="78"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日期" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdG-yW-ZGP" userLabel="大大后天">
@@ -345,13 +345,6 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="geO-i4-mA4" userLabel="2/3View">
                         <rect key="frame" x="0.0" y="0.0" width="419" height="388"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="城市" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiU-OL-VRl">
-                                <rect key="frame" x="30" y="391" width="359" height="20"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jj-Pk-bHg">
                                 <rect key="frame" x="159" y="50" width="100" height="100"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,12 +378,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="XiU-OL-VRl" firstAttribute="leading" secondItem="geO-i4-mA4" secondAttribute="leading" constant="30" id="2Ug-2R-0DJ"/>
                             <constraint firstItem="8hA-6h-NeK" firstAttribute="top" secondItem="7jj-Pk-bHg" secondAttribute="bottom" constant="14" id="2jz-TF-M5P"/>
-                            <constraint firstAttribute="trailing" secondItem="XiU-OL-VRl" secondAttribute="trailing" constant="30" id="Erb-m4-WRi"/>
                             <constraint firstItem="RJW-Ai-iED" firstAttribute="top" secondItem="8hA-6h-NeK" secondAttribute="bottom" constant="15" id="Jx7-Mr-O35"/>
                             <constraint firstItem="RJW-Ai-iED" firstAttribute="centerX" secondItem="geO-i4-mA4" secondAttribute="centerX" id="KbU-jv-si0"/>
-                            <constraint firstAttribute="bottom" secondItem="XiU-OL-VRl" secondAttribute="bottom" constant="-23" id="R86-Gf-SSe"/>
                             <constraint firstItem="8hA-6h-NeK" firstAttribute="centerX" secondItem="geO-i4-mA4" secondAttribute="centerX" id="VB6-ZZ-qmo"/>
                             <constraint firstItem="7jj-Pk-bHg" firstAttribute="centerX" secondItem="geO-i4-mA4" secondAttribute="centerX" id="nbH-Up-M0r"/>
                             <constraint firstItem="7jj-Pk-bHg" firstAttribute="top" secondItem="geO-i4-mA4" secondAttribute="top" constant="50" id="oc5-H9-4Wf"/>
@@ -414,7 +404,6 @@
             <size key="customSize" width="419" height="588"/>
             <connections>
                 <outlet property="AQILabel" destination="RJW-Ai-iED" id="L0Q-l5-jxS"/>
-                <outlet property="CurrentCityLabel" destination="XiU-OL-VRl" id="dMG-J3-fDc"/>
                 <outlet property="FDFNForecastCondTxtLabel" destination="gMT-hq-sQm" id="5jq-sJ-52k"/>
                 <outlet property="FDFNForecastDateLabel" destination="wdG-yW-ZGP" id="yYf-UD-4bA"/>
                 <outlet property="FDFNForecastHLabel" destination="JP0-ee-Ezy" id="c7s-Jp-muL"/>

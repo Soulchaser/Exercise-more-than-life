@@ -129,7 +129,7 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     //空气质量
     cell.AQILabel.text = [NSString stringWithFormat:@"%@ %@",model.aqi,model.qlty];
     //城市
-    cell.CurrentCityLabel.text = model.city;
+//    cell.CurrentCityLabel.text = model.city;
 
     //今天和未来4天的天气情况
     YDmodelForecast * Fmodel_0 = model.array[0];
@@ -138,6 +138,8 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     YDmodelForecast * Fmodel_3 = model.array[3];
     YDmodelForecast * Fmodel_4 = model.array[4];
    
+    //今天
+    cell.currentCondtxtForeLabel.text = Fmodel_0.txt_d;
     cell.ForecastTHTemLabel.text = Fmodel_0.max;
     cell.ForecastTLLabel.text = Fmodel_0.min;
     
