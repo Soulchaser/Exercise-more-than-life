@@ -36,8 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
-   // self.navigationController.title = @"好友";
-    // Do any additional setup after loading the view.
+
 }
 -(void)viewDidAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];

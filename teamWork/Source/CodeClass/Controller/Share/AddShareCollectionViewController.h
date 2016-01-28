@@ -1,5 +1,5 @@
 //
-//  FootPrint.h
+//  AddShareCollectionViewController.h
 //  teamWork
 //
 //  Created by lanou3g on 16/1/27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FootPrint : UIViewController
+@interface AddShareCollectionViewController : UICollectionViewController
 
 @end

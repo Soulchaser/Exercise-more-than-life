@@ -42,15 +42,18 @@
 #import "DetailModel.h"
 
 #import "YDWeatherModel.h"
-
-
 //用户类
 #import "YYUserModel.h"
+
 
 //Leancoud用户工具类
 #import "LeancoudTools.h"
 //button类目,添加一个方法使button点击后显示倒计时(n秒内无法再次点击)
 #import "UIButton+CountDown.h"
+//UITableView和UITableViewCell类目,在xib情况下自适应高度
+#import "UITableView+FDTemplateLayoutCell.h"
+//图像获取方式(相机或相册)
+#import "AvatarsourceType.h"
 //登陆界面
 #import "LoginViewController.h"
 //自制气泡
