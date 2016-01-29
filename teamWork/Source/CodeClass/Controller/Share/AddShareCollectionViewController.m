@@ -47,7 +47,7 @@ static NSString * const headerReuserID = @"headerReuserID";
     
 }
 
-//发布
+//发布按钮点击事件
 -(void)publishAction{
     AVUser *currentUser = [AVUser currentUser];
     //分享类
@@ -71,16 +71,42 @@ static NSString * const headerReuserID = @"headerReuserID";
     //分享内容(文本)
     [share setObject:self.shareContent_txt.text forKey:@"share_txt"];
     //分享内容(图片)
-    NSMutableArray *allImage = [NSMutableArray array];
-    for (NSData *imageData in _dataArray) {
-        AVFile *shareFile = [AVFile fileWithName:@"shareImage.png" data:imageData];
-        [allImage addObject:shareFile];
-    }
-    [share setObject:allImage forKey:@"share_picture"];
-//    AVFile *file = [AVFile fileWithName:@"shareImage.png" data:_dataArray[0]];
+    /*//添加新头像
+     AVFile *avatarFile1 = [AVFile fileWithName:@"avatar.png"data:self.avatarData];
+     AVFile *avatarfile2 = [AVFile fileWithName:@"avatar.png"data:self.avatarData];
+     [avatarfile2 saveInBackground];
+     [currentUser setObject:avatarFile1 forKey:@"avatar"];
+     [currentUser setObject:@[avatarFile1,avatarfile2] forKey:@"avatarTest"];*/
+    
+    
+//    NSMutableArray *allImage = [[NSMutableArray alloc]initWithCapacity:1];
+//    for (NSData *imageData in _dataArray) {
+//        AVFile *shareFile = [AVFile fileWithName:@"shareImage.png" data:imageData];
+//        [shareFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//            if (succeeded) {
+//                [allImage addObject:shareFile];
+//            }
+//        }];
+//    }
+//    for (int i = 0; i<self.dataArray.count; i++) {
+//        NSString *fileName = [NSString stringWithFormat:@"shareFile%d",i+1];
+//        AVFile *a
+//    }
+    
+    AVFile *file1 = [AVFile fileWithName:@"shareImage.png" data:_dataArray[0]];
+    AVFile *file2 = [AVFile fileWithName:@"shareImage.png" data:_dataArray[1]];
+    [file1 saveInBackground];
+    [file2 saveInBackground];
+//    [share setObject:file1 forKey:@"share_picture1"];
+//    [share setObject:file1 forKey:@"share_picture"];
+//    [share setObject:file2 forKey:@"share_picture"];
+    [share setObject:@[file1,file2] forKey:@"share_picture"];
+//    AVFile *file = [AVFile fileWithN      ame:@"shareImage.png" data:_dataArray[0]];
 //    [share setObject:file forKey:@"share_picture"];
+    
     [share saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            //保存成功
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];
@@ -114,11 +140,11 @@ static NSString * const headerReuserID = @"headerReuserID";
 }
 
 #pragma mark <UICollectionViewDataSource>
-
+//区数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
-
+//cell个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _imageArray.count;
 }
@@ -136,6 +162,7 @@ static NSString * const headerReuserID = @"headerReuserID";
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     return CGSizeMake(kScreenWidth/4,kScreenHeight/4);
 }
+//分区之间布局
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
     return UIEdgeInsetsMake(0,0,0,0);
 }
@@ -150,11 +177,11 @@ static NSString * const headerReuserID = @"headerReuserID";
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     //最后一个image点击事件(添加)
     if (indexPath.row == _imageArray.count-1) {
+        //调用添加图片方法
         [self addImageAction];
     }
-    
 }
-//添加图片
+//添加图片方法
 -(void)addImageAction{
     //图片获取方式
     self.sourceType = [[AvatarsourceType alloc]init];
@@ -196,7 +223,7 @@ static NSString * const headerReuserID = @"headerReuserID";
         [self.sourceType.view removeFromSuperview];
     }
 }
-//选取完成时触发的方法
+//选取完成时触发的代理方法
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
     //返回
     [picker dismissViewControllerAnimated:YES completion:nil];

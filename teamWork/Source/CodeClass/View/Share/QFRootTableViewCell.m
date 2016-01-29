@@ -23,10 +23,13 @@
     self.commentLabel.text = item.share_txt;
     //取出分享图片的文件数组,改成data数组
     NSMutableArray *dataArray = [NSMutableArray array];
-    for (AVFile *pictureFile in item.share_picture) {
-        NSData *pictureData = [pictureFile getData];
-        [dataArray addObject:pictureData];
-    }
+//    for (AVFile *pictureFile in item.share_picture) {
+//        if (pictureFile == nil) {
+//            continue;
+//        }
+//        NSData *pictureData = [pictureFile getData];
+//        [dataArray addObject:pictureData];
+//    }
     [self createShareDetailPicture:dataArray];
 }
 
