@@ -10,7 +10,7 @@
 
 @interface AddShareCollectionViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property(strong,nonatomic)NSMutableArray *imageArray;//图片数据 image类型->用于实时显示
-@property(strong,nonatomic)NSMutableArray *dataArray;//图片数据 data类型->用于网络存储
+@property(strong,nonatomic)NSMutableArray *dataArray;//图片数据 data类型->用于网络存储 比imageArray少一个iconfont-tianjia.png元素
 @property(strong,nonatomic)AvatarsourceType *sourceType;//图片获取
 @property(strong,nonatomic)UITextView *shareContent_txt;
 @property(strong,nonatomic)UIButton *rightButton;
@@ -49,9 +49,11 @@ static NSString * const headerReuserID = @"headerReuserID";
 
 //发布按钮点击事件
 -(void)publishAction{
-    AVUser *currentUser = [AVUser currentUser];
+    
     //分享类
     AVObject *share = [AVObject objectWithClassName:@"Share"];
+    /*
+     因为要添加关注 将分享创建时的用户改为关联用户,而不是仅存储当时时间点的用户信息
     //昵称 如果用户未设置昵称 , 则昵称 == 用户名(手机号)
     if ([[currentUser objectForKey:@"nickname"] isEqualToString:@""]) {
         [share setObject:[currentUser objectForKey:@"nickname"] forKey:@"username"];
@@ -62,78 +64,45 @@ static NSString * const headerReuserID = @"headerReuserID";
     [share setObject:[currentUser objectForKey:@"gender"] forKey:@"gender"];
     //头像
     [share setObject:[currentUser objectForKey:@"avatar"] forKey:@"avatar"];
+     */
+    [share setObject:[AVUser currentUser] forKey:@"shareuser"];
     //分享时间
-    [share setObject:[NSDate date] forKey:@"shareTime"];
+    [share setObject:[NSDate date] forKey:@"sharetime"];
     //点赞数 初始为0
     [share setObject:[NSString stringWithFormat:@"0"] forKey:@"votes_count"];
     //评论数 初始为0
     [share setObject:[NSString stringWithFormat:@"0"] forKey:@"comment_count"];
     //分享内容(文本)
     [share setObject:self.shareContent_txt.text forKey:@"share_txt"];
-    //分享内容(图片)
-    /*//添加新头像
-     AVFile *avatarFile1 = [AVFile fileWithName:@"avatar.png"data:self.avatarData];
-     AVFile *avatarfile2 = [AVFile fileWithName:@"avatar.png"data:self.avatarData];
-     [avatarfile2 saveInBackground];
-     [currentUser setObject:avatarFile1 forKey:@"avatar"];
-     [currentUser setObject:@[avatarFile1,avatarfile2] forKey:@"avatarTest"];*/
+    //如果分享内容中有图片
+    NSMutableArray *imageArray = [NSMutableArray array];
+    if (self.dataArray.count > 0) {
+        //分享内容(图片) leancloud中AVFile存储,如果只有一个,直接将AVFile对象设置为属性即可,但如果是AVFile数组的情况下,直接存储会失败,需要先将数组当中的一个元素设置为属性,并将其他元素想保存到数据库中,然后数组存储才能实现.
+        for (int i = 0; i<self.dataArray.count; i++) {
+            //如果是第一个元素 在数据表中单独设置一个属性
+            if (i == 0) {
+                AVFile *file0 = [AVFile fileWithName:@"shareImage.png" data:_dataArray[i]];
+                [share setObject:file0 forKey:@"share_first_picture"];
+                [imageArray addObject:file0];
+            }else{
+                //其他元素保存到数据库中
+                AVFile *fileX = [AVFile fileWithName:@"shareImage.png" data:_dataArray[i]];
+                [fileX saveInBackground];
+                [imageArray addObject:fileX];
+            }
+        }
+    }
+    [share setObject:imageArray forKey:@"share_picture"];
     
-    
-//    NSMutableArray *allImage = [[NSMutableArray alloc]initWithCapacity:1];
-//    for (NSData *imageData in _dataArray) {
-//        AVFile *shareFile = [AVFile fileWithName:@"shareImage.png" data:imageData];
-//        [shareFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//            if (succeeded) {
-//                [allImage addObject:shareFile];
-//            }
-//        }];
-//    }
-//    for (int i = 0; i<self.dataArray.count; i++) {
-//        NSString *fileName = [NSString stringWithFormat:@"shareFile%d",i+1];
-//        AVFile *a
-//    }
-    
-    AVFile *file1 = [AVFile fileWithName:@"shareImage.png" data:_dataArray[0]];
-    AVFile *file2 = [AVFile fileWithName:@"shareImage.png" data:_dataArray[1]];
-    [file1 saveInBackground];
-    [file2 saveInBackground];
-//    [share setObject:file1 forKey:@"share_picture1"];
-//    [share setObject:file1 forKey:@"share_picture"];
-//    [share setObject:file2 forKey:@"share_picture"];
-    [share setObject:@[file1,file2] forKey:@"share_picture"];
-//    AVFile *file = [AVFile fileWithN      ame:@"shareImage.png" data:_dataArray[0]];
-//    [share setObject:file forKey:@"share_picture"];
-    
+    //保存这条share
     [share saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             //保存成功
             [self.navigationController popViewControllerAnimated:YES];
         }
     }];
-   
+    
 }
-/*
- 
- //使用关联表添加用户之间的互相关系(关注from和被关注to)
- //关注用户名为18701032556的用户
- //查找用户是否存在
- AVQuery *queryUser = [AVQuery queryWithClassName:@"_User"];
- [queryUser whereKey:@"username" equalTo:@"18701032556"];
- [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
- //用户存在添加关注
- if (objects) {
- AVUser *otherUser = objects[0];
- AVObject *follow = [AVObject objectWithClassName:@"Follow"];
- [follow setObject:[AVUser currentUser] forKey:@"from"];//主动者
- [follow setObject:otherUser forKey:@"to"];//被关注者
- //对于关注事件本身 添加一些属性
- [follow setObject:[NSDate date] forKey:@"date"];//关注时间
- [follow saveInBackground];
- }else {
- //用户不存在
- }
- }];*/
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
