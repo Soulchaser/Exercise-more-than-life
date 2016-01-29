@@ -28,8 +28,18 @@
         
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"寻找组织" image:[UIImage imageNamed:@"group"] selectedImage:[UIImage imageNamed:@"group_select"]];
         
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style: UIBarButtonItemStylePlain target:self action:@selector(pushToCreatPage)];
+        
     }
     return self;
+}
+
+#pragma mark **********"创建"按钮响应事件
+-(void)pushToCreatPage
+{
+    CreatActivityViewController * creatVC = [CreatActivityViewController new];
+    
+    [self.navigationController pushViewController:creatVC animated:YES];
 }
 
 - (void)viewDidLoad {
