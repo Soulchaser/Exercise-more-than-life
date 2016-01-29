@@ -25,6 +25,14 @@
     return _LWArray;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+    //马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+   
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -43,12 +51,13 @@
         // 结束刷新
         [tableView.mj_header endRefreshing];
 
+        
     }];
     
     // 设置自动切换透明度(在导航栏下面自动隐藏)
     tableView.mj_header.automaticallyChangeAlpha = YES;
     
-    // 上拉加载
+    // 上拉刷新
     tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
        
         [self makeData];
@@ -57,10 +66,6 @@
         [tableView.mj_footer endRefreshing];
         
     }];
-    
-    //马上进入刷新状态
-    [self.tableView.mj_header beginRefreshing];
-
 
 }
 
@@ -68,8 +73,6 @@
 {
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://apis.baidu.com/tngou/lore/list?id=11&page=%ld&rows=20",(long)self.page++]] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
-    
-    NSLog(@"%ld",self.page);
     
     [request setHTTPMethod: @"GET"];
     [request addValue: kApiKey forHTTPHeaderField: @"apikey"];
@@ -80,9 +83,7 @@
             
             [self endRefresh];
             
-            //从第一页开始请求数据
-            //page = 2的时候将数组清空初始化;
-            //当持续下拉刷新的时候,这个方法是不走的,只有回到顶端,下拉刷新数据的时候,会重新置空数组
+            //说明是在重新请求数据
             if (2 == self.page) {
                 self.LWArray = nil;
             }

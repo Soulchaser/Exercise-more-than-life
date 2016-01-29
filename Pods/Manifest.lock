@@ -1,5 +1,6 @@
 PODS:
   - AMap2DMap (3.2.0)
+  - AMapLocation (1.1.1)
   - AMapSearch (3.2.0)
   - AVOSCloud (3.2.0)
   - AVOSCloudIM (3.2.0):
@@ -7,31 +8,28 @@ PODS:
   - BFNavigationBarDrawer (1.0.2)
   - MJRefresh (3.1.0)
   - NYSegmentedControl (1.0.7)
-  - SDWebImage (3.7.5):
-    - SDWebImage/Core (= 3.7.5)
-  - SDWebImage/Core (3.7.5)
   - WMPageController (1.3.5)
 
 DEPENDENCIES:
   - AMap2DMap
+  - AMapLocation
   - AMapSearch
   - AVOSCloud
   - AVOSCloudIM
   - BFNavigationBarDrawer
   - MJRefresh (~> 3.1.0)
   - NYSegmentedControl (~> 1.0.7)
-  - SDWebImage (~> 3.7.5)
   - WMPageController (~> 1.3.5)
 
 SPEC CHECKSUMS:
   AMap2DMap: 02c73a3e55ac033e3b0b8ec35d3d21ffcac5aae3
+  AMapLocation: fc0245146ef90811f9590d428e9035a2a64f4526
   AMapSearch: a885f0702578a441a22cb66fa74f8918c6d19e6f
   AVOSCloud: 798551ac6cbf541b8436ce94800e2e59a042b670
   AVOSCloudIM: 082f0268a22253fd6ad70ec4e4dfd686b36a7308
   BFNavigationBarDrawer: 7114305b2eb64f796aeee63029a037e30bf37a93
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   NYSegmentedControl: 55b4f9eb652767cae9799623ec3e49e50029ef47
-  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
   WMPageController: 49ee075622e3a053b6ea702334d2fc7fd2c95161
 
 COCOAPODS: 0.39.0
