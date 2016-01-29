@@ -49,6 +49,7 @@
 		5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC791C48CE2400A7D99E /* Assets.xcassets */; };
 		5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5498EC7B1C48CE2400A7D99E /* LaunchScreen.storyboard */; };
 		5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC951C48D27B00A7D99E /* DisplayViewController.m */; };
+		5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC981C48D41900A7D99E /* GroupActivityViewController.m */; };
 		5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498EC9E1C48D4C900A7D99E /* ShareViewController.m */; };
 		5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5498ECA11C48D4F400A7D99E /* FriendsViewController.m */; };
 		54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 54AA2BA91C5860C200582C30 /* PinyinChange.m */; };
@@ -75,6 +76,7 @@
 		C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C204BC1A1C4FA4620085BE48 /* RegisterViewController.m */; };
 		C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B01C5708BD009D428B /* AddTableViewController.m */; };
 		C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B31C5708BD009D428B /* SettingViewController.m */; };
+		C21876BC1C5708BD009D428B /* YDTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B51C5708BD009D428B /* YDTableViewController.m */; };
 		C21876BD1C5708BD009D428B /* YDWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B71C5708BD009D428B /* YDWeatherViewController.m */; };
 		C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876B91C5708BD009D428B /* YDWMViewController.m */; };
 		C21876C31C570A9A009D428B /* WeatherCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876C11C570A9A009D428B /* WeatherCollectionViewCell.m */; };
@@ -89,15 +91,8 @@
 		C21876E61C5758D4009D428B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E41C5758D4009D428B /* DetailViewController.m */; };
 		C21876E71C5758D4009D428B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21876E51C5758D4009D428B /* DetailViewController.xib */; };
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
-		C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */; };
-		C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */; };
-		C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */; };
-		C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD461C5AF39B0099A8B6 /* AddShareCollectionViewController.m */; };
-		C28EFD4A1C5AF39B0099A8B6 /* FootPrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD481C5AF39B0099A8B6 /* FootPrintTableViewController.m */; };
-		C28EFD4F1C5AF3E50099A8B6 /* QFRootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD4D1C5AF3E50099A8B6 /* QFRootTableViewCell.m */; };
-		C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */; };
-		C28EFD531C5AF5630099A8B6 /* iconfont-bianji.png in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */; };
-		C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */; };
+		C28B4B671C58601D00BF8EFD /* FootPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = C28B4B651C58601D00BF8EFD /* FootPrint.m */; };
+		C28B4B681C58601D00BF8EFD /* FootPrint.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28B4B661C58601D00BF8EFD /* FootPrint.xib */; };
 		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
 		C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */; };
 		C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */; };
@@ -169,6 +164,8 @@
 		5498EC931C48D10B00A7D99E /* teamWorkPCH.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = teamWorkPCH.pch; sourceTree = "<group>"; };
 		5498EC941C48D27B00A7D99E /* DisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisplayViewController.h; sourceTree = "<group>"; };
 		5498EC951C48D27B00A7D99E /* DisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisplayViewController.m; sourceTree = "<group>"; };
+		5498EC971C48D41900A7D99E /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
+		5498EC981C48D41900A7D99E /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
 		5498EC9D1C48D4C900A7D99E /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		5498EC9E1C48D4C900A7D99E /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		5498ECA01C48D4F400A7D99E /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
@@ -211,6 +208,8 @@
 		C21876B01C5708BD009D428B /* AddTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddTableViewController.m; sourceTree = "<group>"; };
 		C21876B21C5708BD009D428B /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		C21876B31C5708BD009D428B /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		C21876B41C5708BD009D428B /* YDTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDTableViewController.h; sourceTree = "<group>"; };
+		C21876B51C5708BD009D428B /* YDTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDTableViewController.m; sourceTree = "<group>"; };
 		C21876B61C5708BD009D428B /* YDWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWeatherViewController.h; sourceTree = "<group>"; };
 		C21876B71C5708BD009D428B /* YDWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDWeatherViewController.m; sourceTree = "<group>"; };
 		C21876B81C5708BD009D428B /* YDWMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDWMViewController.h; sourceTree = "<group>"; };
@@ -237,21 +236,9 @@
 		C21876E51C5758D4009D428B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		C21876E81C5763C4009D428B /* DetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		C21876E91C5763C4009D428B /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
-		C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
-		C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
-		C22D59A51C59B3AA0070AE96 /* CreatActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController.h; sourceTree = "<group>"; };
-		C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController.m; sourceTree = "<group>"; };
-		C28EFD421C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
-		C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
-		C28EFD451C5AF39B0099A8B6 /* AddShareCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShareCollectionViewController.h; sourceTree = "<group>"; };
-		C28EFD461C5AF39B0099A8B6 /* AddShareCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddShareCollectionViewController.m; sourceTree = "<group>"; };
-		C28EFD471C5AF39B0099A8B6 /* FootPrintTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootPrintTableViewController.h; sourceTree = "<group>"; };
-		C28EFD481C5AF39B0099A8B6 /* FootPrintTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootPrintTableViewController.m; sourceTree = "<group>"; };
-		C28EFD4C1C5AF3E50099A8B6 /* QFRootTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QFRootTableViewCell.h; sourceTree = "<group>"; };
-		C28EFD4D1C5AF3E50099A8B6 /* QFRootTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QFRootTableViewCell.m; sourceTree = "<group>"; };
-		C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QFRootTableViewCell.xib; sourceTree = "<group>"; };
-		C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-bianji.png"; sourceTree = "<group>"; };
-		C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-tianjia.png"; sourceTree = "<group>"; };
+		C28B4B641C58601D00BF8EFD /* FootPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FootPrint.h; sourceTree = "<group>"; };
+		C28B4B651C58601D00BF8EFD /* FootPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FootPrint.m; sourceTree = "<group>"; };
+		C28B4B661C58601D00BF8EFD /* FootPrint.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FootPrint.xib; sourceTree = "<group>"; };
 		C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -423,8 +410,6 @@
 				C2034DD31C49D1B400202881 /* LeancoudTools.m */,
 				C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */,
 				C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */,
-				C28EFD421C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.h */,
-				C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */,
 				54AA2BA81C5860C200582C30 /* PinyinChange.h */,
 				54AA2BA91C5860C200582C30 /* PinyinChange.m */,
 			);
@@ -445,12 +430,13 @@
 			isa = PBXGroup;
 			children = (
 				C21876AD1C5708BD009D428B /* New&Weather */,
-				C22D59A11C59AE580070AE96 /* GroupActivity */,
 				5454DCC21C571B3C00B96CCD /* TrackLogging */,
 				C21FE6C81C49239100D71330 /* User */,
 				C28B4B631C585AC600BF8EFD /* Share */,
 				5498EC941C48D27B00A7D99E /* DisplayViewController.h */,
 				5498EC951C48D27B00A7D99E /* DisplayViewController.m */,
+				5498EC971C48D41900A7D99E /* GroupActivityViewController.h */,
+				5498EC981C48D41900A7D99E /* GroupActivityViewController.m */,
 				5498EC9D1C48D4C900A7D99E /* ShareViewController.h */,
 				5498EC9E1C48D4C900A7D99E /* ShareViewController.m */,
 				5498ECA01C48D4F400A7D99E /* FriendsViewController.h */,
@@ -475,7 +461,6 @@
 			children = (
 				C21876BF1C570A9A009D428B /* WeatherCollectionCell */,
 				54B3AF9F1C4E256500D79478 /* map */,
-				C28EFD4B1C5AF3E50099A8B6 /* Share */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -575,8 +560,6 @@
 		C204BC0C1C4F726E0085BE48 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */,
-				C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */,
 				C204BC0F1C4F73DB0085BE48 /* iconfont-yonghu.png */,
 				C204BC111C4F74AF0085BE48 /* iconfont-mima.png */,
 				C204BC141C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png */,
@@ -592,6 +575,8 @@
 				C21876C51C570B08009D428B /* NewsListController */,
 				C21876AE1C5708BD009D428B /* WeatherAdd */,
 				C21876B11C5708BD009D428B /* WeatherSetting */,
+				C21876B41C5708BD009D428B /* YDTableViewController.h */,
+				C21876B51C5708BD009D428B /* YDTableViewController.m */,
 				C21876B61C5708BD009D428B /* YDWeatherViewController.h */,
 				C21876B71C5708BD009D428B /* YDWeatherViewController.m */,
 				C21876B81C5708BD009D428B /* YDWMViewController.h */,
@@ -700,34 +685,12 @@
 			path = User;
 			sourceTree = "<group>";
 		};
-		C22D59A11C59AE580070AE96 /* GroupActivity */ = {
-			isa = PBXGroup;
-			children = (
-				C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */,
-				C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */,
-				C22D59A51C59B3AA0070AE96 /* CreatActivityViewController.h */,
-				C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */,
-			);
-			path = GroupActivity;
-			sourceTree = "<group>";
-		};
 		C28B4B631C585AC600BF8EFD /* Share */ = {
 			isa = PBXGroup;
 			children = (
-				C28EFD451C5AF39B0099A8B6 /* AddShareCollectionViewController.h */,
-				C28EFD461C5AF39B0099A8B6 /* AddShareCollectionViewController.m */,
-				C28EFD471C5AF39B0099A8B6 /* FootPrintTableViewController.h */,
-				C28EFD481C5AF39B0099A8B6 /* FootPrintTableViewController.m */,
-			);
-			path = Share;
-			sourceTree = "<group>";
-		};
-		C28EFD4B1C5AF3E50099A8B6 /* Share */ = {
-			isa = PBXGroup;
-			children = (
-				C28EFD4C1C5AF3E50099A8B6 /* QFRootTableViewCell.h */,
-				C28EFD4D1C5AF3E50099A8B6 /* QFRootTableViewCell.m */,
-				C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */,
+				C28B4B641C58601D00BF8EFD /* FootPrint.h */,
+				C28B4B651C58601D00BF8EFD /* FootPrint.m */,
+				C28B4B661C58601D00BF8EFD /* FootPrint.xib */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -803,6 +766,7 @@
 				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
 				C21876C41C570A9A009D428B /* WeatherCollectionViewCell.xib in Resources */,
+				C28B4B681C58601D00BF8EFD /* FootPrint.xib in Resources */,
 				540D99121C4A64380027EF2F /* haoyou-selected.png in Resources */,
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
@@ -810,7 +774,6 @@
 				C21876E71C5758D4009D428B /* DetailViewController.xib in Resources */,
 				540D991A1C4A64380027EF2F /* person.png in Resources */,
 				C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */,
-				C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */,
 				5454DCF21C571E5F00B96CCD /* walk.png in Resources */,
 				5454DCEE1C571E5F00B96CCD /* ride.png in Resources */,
 				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
@@ -821,14 +784,12 @@
 				C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */,
 				C204BC051C4F1A5B0085BE48 /* User.storyboard in Resources */,
 				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
-				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
 				5454DCF41C579B6400B96CCD /* tuodong.png in Resources */,
-				C28EFD531C5AF5630099A8B6 /* iconfont-bianji.png in Resources */,
 				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
 				5454DCED1C571E5F00B96CCD /* ride_selected.png in Resources */,
 				5454DCE91C571E5F00B96CCD /* jiantou.png in Resources */,
@@ -911,6 +872,7 @@
 				C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */,
 				C21876D01C570B08009D428B /* SecretTableViewController.m in Sources */,
 				C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */,
+				C28B4B671C58601D00BF8EFD /* FootPrint.m in Sources */,
 				C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */,
 				C21876D91C570C05009D428B /* YDWeatherModel.m in Sources */,
 				C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */,
@@ -926,9 +888,7 @@
 				C21876CF1C570B08009D428B /* NanxingTableViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */,
-				C28EFD4F1C5AF3E50099A8B6 /* QFRootTableViewCell.m in Sources */,
 				5454DCDC1C571C5700B96CCD /* KKNavigationController.m in Sources */,
-				C28EFD4A1C5AF39B0099A8B6 /* FootPrintTableViewController.m in Sources */,
 				54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */,
 				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
 				C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */,
@@ -936,16 +896,14 @@
 				C21876EA1C5763C4009D428B /* DetailModel.m in Sources */,
 				C21876D11C570B08009D428B /* WomenTableViewController.m in Sources */,
 				C21876D81C570C05009D428B /* DogModel.m in Sources */,
+				C21876BC1C5708BD009D428B /* YDTableViewController.m in Sources */,
 				5454DCD41C571B6000B96CCD /* SportInfoView.m in Sources */,
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,
 				C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */,
-				C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */,
-				C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */,
 				5454DCD31C571B6000B96CCD /* MapView.m in Sources */,
-				C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */,
-				C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
+				5498EC991C48D41900A7D99E /* GroupActivityViewController.m in Sources */,
 				5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */,
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
