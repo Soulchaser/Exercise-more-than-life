@@ -7,9 +7,11 @@
 //
 
 #import "ShareViewController.h"
-#import "FootPrint.h"
+#import "FootPrintTableViewController.h"
+#import "AddShareCollectionViewController.h"
 @interface ShareViewController ()
-@property(strong,nonatomic)UIButton *leftButton;
+@property(strong,nonatomic)UIButton *leftButton;//用户
+@property(strong,nonatomic)UIButton *rightButton;//编辑(添加分享内容)
 @end
 
 @implementation ShareViewController
@@ -28,9 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor yellowColor];
-    FootPrint *footPrintVC = [FootPrint new];
-    [self addChildViewController:footPrintVC];
-    [self.view addSubview:footPrintVC.view];
+    FootPrintTableViewController *footPrintTVC = [FootPrintTableViewController new];
+    [self addChildViewController:footPrintTVC];
+    [self.view addSubview:footPrintTVC.tableView];
     
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -52,6 +54,14 @@
     self.leftButton.layer.masksToBounds =YES;
     [self.leftButton addTarget:self action:@selector(MyselfInfoAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton];
+    //自定义rightBarButtonItem
+    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.rightButton setImage:[UIImage imageNamed:@"iconfont-bianji"] forState:UIControlStateNormal];
+    self.rightButton.frame = CGRectMake(0, 0, 40, 40);
+    self.rightButton.layer.cornerRadius = 20;
+    self.rightButton.layer.masksToBounds =YES;
+    [self.rightButton addTarget:self action:@selector(addShare) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
 }
 //用户界面
 -(void)MyselfInfoAction:(UIButton *)sender
@@ -61,6 +71,16 @@
     UIViewController *entranceVC = [user instantiateInitialViewController];
     //让window的rootViewController指向该控制器
     [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
+}
+//添加分享
+-(void)addShare{
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 0;
+    AddShareCollectionViewController *addShareCVC = [[AddShareCollectionViewController alloc]initWithCollectionViewLayout:layout];
+    layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height/2);
+    [self.navigationController pushViewController:addShareCVC animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,9 +10,6 @@
  */
 #import <Foundation/Foundation.h>
 
-// !!!:声明block
-typedef void (^PassValueBlock)(NSMutableArray * array);
-
 @interface YDGetDataTools : NSObject
 
 //单例方法
@@ -27,4 +24,14 @@ typedef void (^PassValueBlock)(NSMutableArray * array);
 
 @property(strong,nonatomic) NSMutableArray * daily_forecastArray;
 
+// !!!:添加数组过滤方法
+// 传入参数-字符串(拼音&城市名称)
+// 如果是拼音暂时不做判断
+// 如果是城市名称(汉字)进行遍历查询,以保证查询的精确度
+#warning 暂时只支持城市拼音全拼如:jinan,beijing-&&&&-城市名称全称如:济南,上海,北京,
+
+
+
+//根据日期返回星期
+-(NSString*)weekdayStringFromDate:(NSString*)dateString;
 @end

@@ -25,8 +25,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    //马上进入刷新状态
-    [self.tableView.mj_header beginRefreshing];
+//    //马上进入刷新状态
+//    [self.tableView.mj_header beginRefreshing];
     
 }
 
@@ -36,9 +36,11 @@
     //注册
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:MHID];
     
+    
+    
     __unsafe_unretained UITableView *tableView = self.tableView;
     
-    // 下拉刷新
+        // 下拉刷新
     tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         
         self.page = 1;
@@ -60,6 +62,10 @@
         [tableView.mj_footer endRefreshing];
         
     }];
+
+    //马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+    
 
     
 }
