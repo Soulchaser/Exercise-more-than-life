@@ -281,7 +281,7 @@
 {
     
     //初始化GPS定位对象
-    [[MapGPSLocation shareMapGPSLocation] setMapGPSLocationWithdistanceFilter:3 desiredAccuracy:kCLLocationAccuracyBest];
+    [[MapGPSLocation shareMapGPSLocation] setMapGPSLocationWithdistanceFilter:5 desiredAccuracy:kCLLocationAccuracyBest];
     //开始GPS定位
     [[MapGPSLocation shareMapGPSLocation] mapGPSLocationStart];
     [self beginTiming];
