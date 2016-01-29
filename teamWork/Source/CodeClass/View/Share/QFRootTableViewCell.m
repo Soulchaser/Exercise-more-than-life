@@ -16,25 +16,31 @@
     image = [image stretchableImageWithLeftCapWidth:floorf(image.size.width/2) topCapHeight:floorf(image.size.height/2)];
     self.backgroundImageView.image = image;
 }
-
+//创建视图
 -(void)createCellViews:(YYUserShare *)item{
-    self.userImageView.image = item.avatar;
-    self.nameLabel.text = item.nickname;
-    self.commentLabel.text = item.share_txt;
+    self.userImageView.image = item.avatar;//头像
+    self.nameLabel.text = item.nickname;//昵称
+    self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",item.shareTime];//日期
+    //对于关注按钮
+    //如果是本人分享内容
+    
+    
+    
+    self.commentLabel.text = item.share_txt;//txt
     //取出分享图片的文件数组,改成data数组
     NSMutableArray *dataArray = [NSMutableArray array];
-//    for (AVFile *pictureFile in item.share_picture) {
-//        if (pictureFile == nil) {
-//            continue;
-//        }
-//        NSData *pictureData = [pictureFile getData];
-//        [dataArray addObject:pictureData];
-//    }
+    for (AVFile *pictureFile in item.share_picture) {
+        if (pictureFile == nil) {
+            continue;
+        }
+        NSData *pictureData = [pictureFile getData];
+        [dataArray addObject:pictureData];
+    }
     [self createShareDetailPicture:dataArray];
 }
 
 - (void)createShareDetailPicture:(NSArray *)picture{
-    //移除前一个cell评论视图
+    //移除前一个cell图片视图
     for (UIView *v in self.commentListView.subviews){
         [v removeFromSuperview];
     }
@@ -50,8 +56,11 @@
         UIView *previousItemView = nil;
         UIView *lastItemView = nil;
         for (NSData *data in picture) {
-            UIImageView *sharePicture_one = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.commentListView.frame), 20)];
+            //设置图片展示Size
+            UIImageView *sharePicture_one = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.commentListView.frame), 80)];
             sharePicture_one.image = [UIImage imageWithData:data];
+            sharePicture_one.translatesAutoresizingMaskIntoConstraints = NO;
+            
             [self.commentListView addSubview:sharePicture_one];
             [self.commentListView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[sharePicture_one]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sharePicture_one)]];
             
@@ -73,6 +82,37 @@
     [self.commentListView layoutIfNeeded];
 
 }
+//添加关注
+- (IBAction)attendButtonAction:(id)sender {
+    
+    
+}
+
+/*
+ 
+ //使用关联表添加用户之间的互相关系(关注from和被关注to)
+ //关注用户名为18701032556的用户
+ //查找用户是否存在
+ AVQuery *queryUser = [AVQuery queryWithClassName:@"_User"];
+ [queryUser whereKey:@"username" equalTo:@"18701032556"];
+ [queryUser findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+ //用户存在添加关注
+ if (objects) {
+ AVUser *otherUser = objects[0];
+ AVObject *follow = [AVObject objectWithClassName:@"Follow"];
+ [follow setObject:[AVUser currentUser] forKey:@"from"];//主动者
+ [follow setObject:otherUser forKey:@"to"];//被关注者
+ //对于关注事件本身 添加一些属性
+ [follow setObject:[NSDate date] forKey:@"date"];//关注时间
+ [follow saveInBackground];
+ }else {
+ //用户不存在
+ }
+ }];*/
+
+
+
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];

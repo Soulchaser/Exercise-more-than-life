@@ -16,15 +16,18 @@ static NSString *const shareCellID = @"shareCellID";
 @implementation FootPrintTableViewController
 
 #pragma mark -----上拉加载和下拉刷新-------------------
-
+//懒加载_dataArray
+-(NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName: NSStringFromClass([QFRootTableViewCell class]) bundle:nil] forCellReuseIdentifier:shareCellID];
-    if (!_dataArray) {
-        _dataArray = [NSMutableArray new];
-    }
     __unsafe_unretained UITableView *tableView = self.tableView;
     
     // 下拉刷新
@@ -56,53 +59,58 @@ static NSString *const shareCellID = @"shareCellID";
     [self.tableView.mj_header beginRefreshing];
     
 }
-/*//用户分享model
- @interface YYUserShare : NSObject
- //如果未设置昵称,这里的昵称<==>用户名
- @property(strong,nonatomic)NSString *nickname;//昵称
- @property(strong,nonatomic)NSString *gender;//性别
- @property(strong,nonatomic)UIImage *avatar;//头像
- @property(strong,nonatomic)NSString *shareTime;//分享时间
- @property(strong,nonatomic)NSString *votes_count;//点赞数
- @property(strong,nonatomic)NSString *comment_count;//评论数
- @property(strong,nonatomic)NSString *share_txt;//分享内容(文本)
- @property(strong,nonatomic)NSArray *share_picture;//分享内容(图片) 图片数组 元素为AVFile类型
-*/
+
 -(void)makeData
 {
-    //清理dataArray
-    if (_dataArray != nil) {
-        _dataArray = nil;
-        _dataArray = [NSMutableArray new];
-    }
+    //获取数据(查询数据)
     AVQuery *query = [AVQuery queryWithClassName:@"Share"];
+    //限制查询条件
+    //limit 属性来控制返回结果的数量
     query.limit = 10*self.page++;
-    [query includeKey:@"share_picture"];
+    //skip 用来跳过初始结果
+    query.skip = 10*(self.page-2);
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"share_picture"];//图片为AVFile类型,查询出要特殊处理
+    [query includeKey:@"shareuser"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (AVObject *share in objects) {
-            YYUserShare *shareModel = [YYUserShare new];
-            shareModel.nickname = [share objectForKey:@"nickname"];//昵称
-            shareModel.gender = [share objectForKey:@"gender"];//性别
-            //头像
-            AVFile *avatarFile = [share objectForKey:@"avatar"];
-            NSData *avatarData = [avatarFile getData];
-            shareModel.avatar = [UIImage imageWithData:avatarData];
+        if (objects) {
+            //如果获取到数据
+            [self endRefresh];
+            if (self.page == 2) {
+                self.dataArray = nil;
+            }
             
-            shareModel.shareTime = [share objectForKey:@"shareTime"];//分享时间
-            shareModel.votes_count = [share objectForKey:@"votes_count"];//点赞数
-            shareModel.comment_count = [share objectForKey:@"comment_count"];//评论数
-            shareModel.share_txt = [share objectForKey:@"share_txt"];//分享内容(文本)
-            //分享内容(图片) 图片数组 元素为AVFile类型 (处理在自定义cell中)
-            shareModel.share_picture = [share objectForKey:@"share_picture"];
-            NSLog(@"%@",shareModel.share_picture);
-            [self.dataArray addObject:shareModel];
-        }
+            for (AVObject *share in objects) {
+                YYUserShare *shareModel = [YYUserShare new];
+                //分享用户
+                AVUser *shareUser = [share objectForKey:@"shareuser"];
+                NSLog(@"%@",shareUser);
+                //昵称
+                if ([[shareUser objectForKey:@"nickname"] isEqualToString:@""]) {
+                    shareModel.nickname = [shareUser objectForKey:@"username"];
+                }else{
+                    shareModel.nickname = [shareUser objectForKey:@"nickname"];
+                }
+                //头像
+                AVFile *avatarFile = [shareUser objectForKey:@"avatar"];
+                NSData *avatarData = [avatarFile getData];
+                shareModel.avatar = [UIImage imageWithData:avatarData];
+                
+                shareModel.gender = [shareUser objectForKey:@"gender"];//性别
+                shareModel.shareTime = [share objectForKey:@"sharetime"];//分享时间
+                shareModel.votes_count = [share objectForKey:@"votes_count"];//点赞数
+                shareModel.comment_count = [share objectForKey:@"comment_count"];//评论数
+                shareModel.share_txt = [share objectForKey:@"share_txt"];//分享内容(文本)
+                //分享内容(图片) 图片数组 元素为AVFile类型 (处理在自定义cell中)
+                shareModel.share_picture = [share objectForKey:@"share_picture"];
+                NSLog(@"%@",shareModel.share_picture);
+                [self.dataArray addObject:shareModel];
+            }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
-        
+        }
     }];
-    
     
 
 }
@@ -132,14 +140,21 @@ static NSString *const shareCellID = @"shareCellID";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     QFRootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shareCellID forIndexPath:indexPath];
-    [cell createCellViews:_dataArray[indexPath.row]];
+    if (self.dataArray.count > 0) {
+        [cell createCellViews:_dataArray[indexPath.row]];
+    }
+//    [cell createCellViews:_dataArray[indexPath.row]];
     return cell;
 }
 //cell高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [tableView fd_heightForCellWithIdentifier:shareCellID configuration:^(id cell) {
-        [cell createCellViews:_dataArray[indexPath.row]];
-    }];
+    if (self.dataArray.count > 0) {
+        return [tableView fd_heightForCellWithIdentifier:shareCellID configuration:^(id cell) {
+            [cell createCellViews:_dataArray[indexPath.row]];
+        }];
+    }else{
+        return 0;
+    }
 }
 
 /*
