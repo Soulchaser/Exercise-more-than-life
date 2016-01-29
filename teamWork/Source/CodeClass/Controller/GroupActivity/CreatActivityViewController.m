@@ -12,7 +12,11 @@
 
 @property(strong,nonatomic) UIScrollView * YDScrollView;
 
+@property(strong,nonatomic) UILabel * TitleLabel;//标题显示label
+
 @property(strong,nonatomic) UITextView * YDTextTitleView;//标题
+
+@property(strong,nonatomic) UILabel * DescriptionLabel;//描述显示label
 
 @property(strong,nonatomic) UITextView * YDTextDescripView;//描述
 
@@ -25,10 +29,6 @@
 @property(strong,nonatomic) UIImageView * imgViewThree;
 
 @property(strong,nonatomic) UIImageView * imgViewFour;
-
-@property(strong,nonatomic) UILabel * titleLabel;//"标题"文本
-
-@property(strong,nonatomic) UILabel * DescriptionLabel;//"描述文本"
 
 @end
 
@@ -43,19 +43,37 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     }
     return _YDScrollView;
 }
+//标题label
+-(UILabel *)TitleLabel
+{
+    if (!_TitleLabel) {
+        _TitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, 50, 21)];
+        _TitleLabel.text = @"标题";
+    }
+   return  _TitleLabel;
+}
 //textView标题
 -(UITextView *)YDTextTitleView
 {
     if (!_YDTextTitleView) {
-        _YDTextTitleView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 40)];
+        _YDTextTitleView = [[UITextView alloc] initWithFrame:CGRectMake(10, 31, kScreenWidth-40, 42)];
     }
     return _YDTextTitleView;
+}
+//描述label
+-(UILabel *)DescriptionLabel
+{
+    if (!_DescriptionLabel) {
+        _DescriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 83, 50, 21)];
+        _DescriptionLabel.text = @"描述";
+    }
+    return _DescriptionLabel;
 }
 //textView描述
 -(UITextView *)YDTextDescripView
 {
     if (!_YDTextDescripView) {
-        _YDTextDescripView = [[UITextView alloc] initWithFrame:CGRectMake(0, 40, kScreenWidth, 60)];
+        _YDTextDescripView = [[UITextView alloc] initWithFrame:CGRectMake(10, 104, kScreenWidth-40, 60)];
     }
     return _YDTextDescripView;
 }
@@ -63,7 +81,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 -(UITableView *)tableView
 {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, kScreenWidth, 300) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 164, kScreenWidth, 300) style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
     }
@@ -106,14 +124,17 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"确定" style:UIBarButtonItemStyleDone target:self action:@selector(DefaltAction)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(CancelAction)];
     
-    self.YDTextTitleView.backgroundColor = [UIColor redColor];
-    self.YDTextDescripView.backgroundColor = [UIColor grayColor];
+    self.YDTextTitleView.backgroundColor = [UIColor whiteColor];
+    self.YDTextDescripView.backgroundColor = [UIColor whiteColor];
+    
     
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:creatTableViewCellID];
     
-    
+    //添加到滚动视图上
+    [self.YDScrollView addSubview:self.TitleLabel];
     [self.YDScrollView addSubview:self.YDTextTitleView];
+    [self.YDScrollView addSubview:self.DescriptionLabel];
     [self.YDScrollView addSubview:self.YDTextDescripView];
     [self.YDScrollView addSubview:self.tableView];
     [self.YDScrollView addSubview:self.imgViewFour];
@@ -125,7 +146,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     //一个collectionView或者Button或者ImgView
     
     [self.view addSubview:self.YDScrollView];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor lightGrayColor];
 }
 
 #pragma mark *******"确定"--"取消"按钮点击事件
@@ -152,6 +173,8 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:creatTableViewCellID forIndexPath:indexPath];
+    
+    cell.textLabel.text = @"设置";
     
     return cell;
     
