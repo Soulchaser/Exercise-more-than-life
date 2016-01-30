@@ -15,7 +15,7 @@
 @property(strong,nonatomic)NSString *email;//邮箱
 @property(strong,nonatomic)NSString *gender;//性别
 @property(strong,nonatomic)NSString *age;//年龄
-@property(strong,nonatomic)UIImage *headerImage;//头像
+@property(strong,nonatomic)UIImage *avatar;//头像
 @property(strong,nonatomic)NSMutableArray *joinActivity;//参加的活动
 
 @end
@@ -23,14 +23,15 @@
 //用户分享model
 @interface YYUserShare : NSObject
 @property(strong,nonatomic)NSString *userName;//用户名(手机号)
+//如果未设置昵称,这里的昵称<==>用户名
 @property(strong,nonatomic)NSString *nickname;//昵称
 @property(strong,nonatomic)NSString *gender;//性别
-@property(strong,nonatomic)NSString *age;//年龄
-@property(strong,nonatomic)UIImage *headerImage;//头像
+@property(strong,nonatomic)UIImage *avatar;//头像
 @property(strong,nonatomic)NSString *shareTime;//分享时间
-@property(strong,nonatomic)NSString *agree_count;//点赞数
+@property(strong,nonatomic)NSString *votes_count;//点赞数
 @property(strong,nonatomic)NSString *comment_count;//评论数
-@property(strong,nonatomic)NSData *shareDetail;//分享内容
+@property(strong,nonatomic)NSString *share_txt;//分享内容(文本)
+@property(strong,nonatomic)NSArray *share_picture;//分享内容(图片) 图片数组 元素为AVFile类型
 
 @end
 

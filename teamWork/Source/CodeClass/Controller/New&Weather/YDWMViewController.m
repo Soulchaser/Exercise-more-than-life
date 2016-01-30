@@ -43,7 +43,10 @@
                                        [WomenTableViewController class],
                                        [SecretTableViewController class]
                                        ];
-        
+        self.titleSizeNormal = 15;
+        self.titleColorSelected = [UIColor blackColor];
+        self.titleColorNormal = [UIColor grayColor];
+        self.menuItemWidth = 80;
     }
     return self;
 }
@@ -72,12 +75,10 @@
     self.navigationItem.titleView = self.segmentedControl;
 
     //初始化天气视图控制器
-    self.WeatherVC = [YDWeatherViewController sharedViewController];
+    self.WeatherVC = [[YDWeatherViewController alloc] init];
     //添加为子控制器
-//    [self addChildViewController:self.WeatherVC];
+    [self addChildViewController:self.WeatherVC];
 
-    
-    
 }
 
 -(void)segmentSelected
@@ -89,8 +90,6 @@
     {
         [self.view addSubview:self.WeatherVC.view];
     }
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
