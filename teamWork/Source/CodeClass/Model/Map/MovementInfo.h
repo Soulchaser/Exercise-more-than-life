@@ -15,9 +15,9 @@
 @property(assign,nonatomic)CLLocationCoordinate2D coorRecord;
 //当前速度
 @property(assign,nonatomic)CGFloat currentSpeed;
-//该点的运动开始时间
-@property(strong,nonatomic)NSDate *timeDate;
-//海拔
-@property(assign,nonatomic)CGFloat altitude;
-//
+//运动开始时间
+@property(strong,nonatomic)NSDate *startDate;
+//到达上一个定位点的时间
+@property(strong,nonatomic)NSDate *lastDate;
+
 @end

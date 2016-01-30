@@ -7,6 +7,9 @@
 //
 
 #import "QFRootTableViewCell.h"
+@interface QFRootTableViewCell ()
+@property(strong,nonatomic)NSString *shareTime;//根据分享时间在数据表中查找分享记录
+@end
 @implementation QFRootTableViewCell
 
 - (void)awakeFromNib {
@@ -15,14 +18,28 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     image = [image stretchableImageWithLeftCapWidth:floorf(image.size.width/2) topCapHeight:floorf(image.size.height/2)];
     self.backgroundImageView.image = image;
+
 }
 //创建视图
 -(void)createCellViews:(YYUserShare *)item{
+    //判断该cell分享者是否已经被当前用户关注
+    AVQuery *query = [AVQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"from" equalTo:[AVUser currentUser]];
+    [query includeKey:@"to"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (AVObject *to in objects) {
+            AVUser *toUser = [to  objectForKey:@"to"];
+            if ([toUser isEqual:[AVUser currentUser]]) {
+                self.attentionButton.userInteractionEnabled = NO;
+                [self.attentionButton setTitle:@"已关注" forState:UIControlStateNormal];
+                break;
+            }
+        }
+    }];
     self.userImageView.image = item.avatar;//头像
     self.nameLabel.text = item.nickname;//昵称
+    self.shareTime = item.shareTime;//根据分享时间在数据表中查找分享记录
     self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",item.shareTime];//日期
-    //对于关注按钮
-    //如果是本人分享内容
     
     
     
@@ -84,7 +101,29 @@
 }
 //添加关注
 - (IBAction)attendButtonAction:(id)sender {
-    
+    AVQuery *query = [AVQuery queryWithClassName:@"Share"];
+    [query includeKey:@"shareuser"];
+    [query whereKey:@"sharetime" equalTo:self.shareTime];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects) {
+            for (AVObject *share in objects) {
+                AVUser *otherUser = [share objectForKey:@"shareuser"];
+                AVObject *follow = [AVObject objectWithClassName:@"Follow"];
+                [follow setObject:[AVUser currentUser] forKey:@"from"];//主动者
+                [follow setObject:otherUser forKey:@"to"];//被关注者
+                //对于关注事件本身 添加一些属性
+                [follow setObject:[NSDate date] forKey:@"date"];//关注时间
+                [follow saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                    if (succeeded) {
+                        //关注成功
+                        self.attentionButton.userInteractionEnabled = NO;
+                        [self.attentionButton setTitle:@"已关注" forState:UIControlStateNormal];
+                    }
+                }];
+            }
+        }
+        
+    }];
     
 }
 
@@ -111,9 +150,6 @@
  }];*/
 
 
-
-
-
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
@@ -121,3 +157,4 @@
 }
 
 @end
+

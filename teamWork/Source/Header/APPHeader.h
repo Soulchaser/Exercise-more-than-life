@@ -19,6 +19,8 @@
 #import "FriendsViewController.h"
 #import <MapKit/MapKit.h>
 #import <WebKit/WebKit.h>
+//地图用导航视图
+//#import "MapNavigationViewController.h"
 //自制的带统计距离的大头针样式
 #import "PointWithDistanceAnnView.h"
 //自制的带统计距离的大头针类
@@ -27,20 +29,12 @@
 #import "MapMoveInfoView.h"
 //GPS定位类
 #import "MapGPSLocation.h"
-#import <AMapLocationKit/AMapLocationKit.h>
 //运动数据记录类
 #import "MovementInfo.h"
 #import "SportInfoView.h"
 //自定义的地图视图
 #import "MapView.h"
 #import "PinyinChange.h"
-
-#pragma mark --------CoreData-------
-#import <CoreData/CoreData.h>
-#import "XLCodeDataTools.h"
-#import "Entity+CoreDataProperties.h"
-#import "Entity.h"
-
 #pragma mark ------------Model------------
 //资讯类
 #import "DogModel.h"
@@ -48,15 +42,18 @@
 #import "DetailModel.h"
 
 #import "YDWeatherModel.h"
-
-
 //用户类
 #import "YYUserModel.h"
+
 
 //Leancoud用户工具类
 #import "LeancoudTools.h"
 //button类目,添加一个方法使button点击后显示倒计时(n秒内无法再次点击)
 #import "UIButton+CountDown.h"
+//UITableView和UITableViewCell类目,在xib情况下自适应高度
+#import "UITableView+FDTemplateLayoutCell.h"
+//图像获取方式(相机或相册)
+#import "AvatarsourceType.h"
 //登陆界面
 #import "LoginViewController.h"
 //自制气泡
@@ -78,7 +75,7 @@
 #import "DetailViewController.h"
 #import "AddTableViewController.h"
 #import "SettingViewController.h"
-
+#import "CreatActivityViewController.h"
 #pragma mark ------------重用标识符------------
 //减肥瘦身-loseWight
 static NSString * const LWID = @"JianfeiTableViewCellReuseIdentifier";

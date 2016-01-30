@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"";
+    
     self.flag = YES;
     
     UISearchBar * bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-100, 64)];
@@ -41,7 +43,7 @@
     //显示cancel按钮
     bar.showsCancelButton = YES;
     //是否显示搜索结果按钮
-    bar.showsSearchResultsButton = YES;
+//    bar.showsSearchResultsButton = YES;
     
     bar.keyboardType = UIKeyboardTypeDefault;
     bar.placeholder = @"请键入城市拼音如'beijing'";
@@ -108,32 +110,36 @@
         //写入文件
         //        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
         
-        DLog(@"%lu",(unsigned long)dataArray.count);
+        DLog(@"%lu",dataArray.count);
         
         for (NSDictionary * dict in dataArray) {
             //Basic部分
             YDWeatherModel * model = [[YDWeatherModel alloc] init];
             model.city = dict[@"basic"][@"city"];
             //"Now"部分
-            model.code = dict[@"now"][@"cond"][@"code"];
+            model.tmp = dict[@"now"][@"tmp"];
             model.txt = dict[@"now"][@"cond"][@"txt"];
             
             //"aqi"部分
             model.aqi = dict[@"aqi"][@"city"][@"aqi"];
             model.qlty = dict[@"aqi"][@"city"][@"qlty"];
+
             //@"forecast"部分
             for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
                 
                 YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
-                modelF.code_d = forecastDic[@"cond"][@"code_d"];
+
                 modelF.date = forecastDic[@"date"];
+                modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
+                modelF.max = forecastDic[@"tmp"][@"max"];
+                modelF.min = forecastDic[@"tmp"][@"min"];
                 [model.array addObject:modelF];
             }
             //添加到结果数组中
             [self.resultArray addObject:model];
             
         }
-        DLog(@"%lu",(unsigned long)self.resultArray.count);
+        DLog(@"%@",self.resultArray);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
@@ -142,6 +148,7 @@
         
     }];
     [dataTask resume];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -166,7 +173,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
 
     YDWeatherModel * model = self.resultArray[indexPath.row];
-    cell.textLabel.text = model.city;
+    
+    cell.textLabel.text =  model.city;
     
     return cell;
 }
@@ -175,7 +183,22 @@
 {
     
     YDWeatherModel * model = self.resultArray[indexPath.row];
-    [kGD.BasicArray addObject:model];
+    //如果数组为空直接添加,否则先判断
+    if (kGD.BasicArray.count == 0) {
+        [kGD.BasicArray addObject:model];
+    }else
+    {
+        for (YDWeatherModel * Tmodel in kGD.BasicArray) {
+            if ([Tmodel.city isEqualToString:model.city]) {
+                //不做操作
+                return;
+            }
+            //如果没有,添加到数组中
+            [kGD.BasicArray addObject:model];
+        }
+
+    }
+    
     [self dismissViewControllerAnimated:YES completion:^{
         self.resultArray = nil;
     }];

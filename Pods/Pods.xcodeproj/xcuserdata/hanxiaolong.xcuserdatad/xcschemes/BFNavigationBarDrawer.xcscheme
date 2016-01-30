@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '1BA03D88E6611A2E7E83610F'
+               BlueprintIdentifier = '05CCA9C858BE4D20EE702A0F'
                BlueprintName = 'BFNavigationBarDrawer'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libBFNavigationBarDrawer.a'>

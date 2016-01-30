@@ -9,7 +9,7 @@
 #import "TrackLoggingViewController.h"
 
 #define kFloatButtonWidth ([UIScreen mainScreen].bounds.size.width/10.0)
-@interface TrackLoggingViewController ()<UIScrollViewDelegate,MapGPSLocationDelegate,MAMapViewDelegate,AMapLocationManagerDelegate>
+@interface TrackLoggingViewController ()<UIScrollViewDelegate,MapGPSLocationDelegate,MAMapViewDelegate>
 
 @property(strong,nonatomic)MapView *mapView;
 //地图的缩放级别，范围是[3-19]
@@ -20,14 +20,8 @@
 @property(assign,nonatomic)BOOL distanceFlag;
 //用来存放测距模式下的ann
 @property(strong,nonatomic)NSMutableArray *distanceAnnArray;
-//用来存放起点和终点
-@property(strong,nonatomic)NSMutableArray *startAndEndAnnArray;
 //用来存放测距状态在两点之间覆盖物（连线）
 @property(strong,nonatomic)NSMutableArray *distancePolylineArray;
-//用来存放整个运动过程中的运动信息model
-@property(strong,nonatomic)NSMutableArray *roadmapArray;
-//用来存放运动时的路径画线
-@property(strong,nonatomic)NSMutableArray *roadmapPolylineArray;
 //定位大头针图片
 @property(strong,nonatomic)UIImageView *annImgView;
 //当前的用户的跟踪方式
@@ -52,10 +46,6 @@
 @property(strong,nonatomic)UIButton *continueButton;
 //停止运动按钮
 @property(strong,nonatomic)UIButton *stopButton;
-//
-//@property(strong,nonatomic)MovementInfo *GPSMovementInfo;
-//
-@property(strong,nonatomic)AMapLocationManager *locationManager;
 @end
 
 @implementation TrackLoggingViewController
@@ -88,10 +78,6 @@
         
         //加到弹出视图上
         self.drawer.items = @[walkButton, runButton, rideButton];
-        
-        
-        self.locationManager = [[AMapLocationManager alloc] init];
-        self.locationManager.delegate = self;
         
         //设置高德地图的APIKEY
         [MAMapServices sharedServices].apiKey = KamapKey;
@@ -186,8 +172,7 @@
     self.mapView.mapView.showsUserLocation = YES;
     //
     [self.mapView.mapView setZoomLevel:15 animated:YES];
-    //设定定位的最小更新距离。默认为kCLDistanceFilterNone，会提示任何移动
-    self.mapView.mapView.distanceFilter = 10;
+    
     //指南针是否显示，no为不显示
     //self.mapView.showsCompass= NO;
     //设置指南针位置
@@ -196,7 +181,7 @@
     self.mapView.mapView.userTrackingMode = MAUserTrackingModeFollow;
     self.currentTrackigMode = MAUserTrackingModeFollow;
     //是否关闭后台持续定位的能力
-    self.mapView.mapView.pausesLocationUpdatesAutomatically = YES;
+    self.mapView.mapView.pausesLocationUpdatesAutomatically = NO;
     
     self.mapView.mapView.allowsBackgroundLocationUpdates = YES;//iOS9以上系统必须配
     
@@ -294,17 +279,14 @@
 //开始
 -(void)startButtonAction:(UIButton *)sender
 {
-    [self initWhenMoveStart];
-    //设置距离筛选器
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    //定位精度
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //不关闭后台持续定位的能力
-    self.mapView.mapView.pausesLocationUpdatesAutomatically = NO;
     
-    [self.locationManager startUpdatingLocation];
+    //初始化GPS定位对象
+    [[MapGPSLocation shareMapGPSLocation] setMapGPSLocationWithdistanceFilter:5 desiredAccuracy:kCLLocationAccuracyBest];
+    //开始GPS定位
+    [[MapGPSLocation shareMapGPSLocation] mapGPSLocationStart];
     [self beginTiming];
     [self.view addSubview:self.stopButton];
+
 }
 //继续
 -(void)continueButtonAction:(UIButton *)sender
@@ -314,39 +296,12 @@
 //结束
 -(void)stopButtonAction:(UIButton *)sender
 {
-    //关闭后台持续定位的能力
-    self.mapView.mapView.pausesLocationUpdatesAutomatically = YES;
-    
-    MovementInfo *movementInfo = (MovementInfo *)self.roadmapArray.lastObject;
-    
-    PointWithDistanceAnn *ann = [[PointWithDistanceAnn alloc]init];
-    ann.distanceStr = @"终点";
-    ann.coordinate = movementInfo.coorRecord;
-    [self.startAndEndAnnArray addObject:ann];
-    
-    // 添加大头针的方法
-    [self.mapView.mapView addAnnotation:ann];
-    
-    [self.locationManager stopUpdatingLocation];
+    //结束GPS定位
+    [[MapGPSLocation shareMapGPSLocation] mapGPSLocationStop];
     [self endTiming];
     [self.stopButton removeFromSuperview];
 
 }
-
-#pragma mark ------运动开始时的初始化-------
--(void)initWhenMoveStart
-{
-    [self.roadmapArray removeAllObjects];
-    [self.mapView.mapView removeOverlays:self.roadmapPolylineArray];
-    [self.roadmapPolylineArray removeAllObjects];
-    [self.mapView.mapView removeAnnotations:self.startAndEndAnnArray];
-    [self.startAndEndAnnArray removeAllObjects];
-    self.sportInfoView.currentSpeedLB.text = [NSString stringWithFormat:@"0.00"];
-    self.sportInfoView.distanceLB.text = @"0.00";
-    self.sportInfoView.timeLB.text = @"0:00:00";
-    self.sportInfoView.averageSpeedLB.text = @"0.00";
-}
-
 
 #pragma mark -------界面滑动事件--------
 -(void)panAction:(UIPanGestureRecognizer *)pan
@@ -525,7 +480,11 @@
     if (self.distanceFlag == YES)
     {
         // 创建一个大头针对象
-        PointWithDistanceAnn * ann = [[PointWithDistanceAnn alloc]init];
+        PointWithDistanceAnn * ann = [PointWithDistanceAnn alloc];
+        
+        
+        CLLocation *location = [[CLLocation alloc]initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+        DLog(@"%f",location.altitude);
         
         ann.coordinate = coordinate;
         CLLocationDistance distance = 0;
@@ -572,126 +531,15 @@
 }
 
 
-#pragma mark -------高德定位代理方法-------
-- (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location
-{
-
-//    DLog(@"%f,%f",location.coordinate.longitude,location.coordinate.latitude);
-    
-    MovementInfo *movementInfo = [[MovementInfo alloc]init];
-    if (self.roadmapArray.count != 0)
-    {
-        movementInfo = ((MovementInfo *)self.roadmapArray.lastObject).mutableCopy;
-    }
-    /*当定位成功后，如果horizontalAccuracy大于0，说明定位有效
-     horizontalAccuracy，该位置的纬度和经度确定的圆的中心，并且这个值表示圆的半径。负值表示该位置的纬度和经度是无效的。
-     */
-    if (location.horizontalAccuracy > 0)
-    {
-        CGFloat distance = 0;
-        NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
-        //将第一次定位单独处理，因为计算距离要与上一个点进行操作，第一次定位没有上一个点
-        if (movementInfo.coorRecord.latitude && movementInfo.coorRecord.longitude)
-        {
-            //DLog(@"=======================%f",location.speed);
-            if (location.speed == -1||location.speed == 0)
-            {
-                movementInfo.currentSpeed = 0.0;
-            }
-            else if(location.speed != 0)
-            {
-                CLLocation *locat1 = [[CLLocation alloc]initWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-                CLLocation *locat2 = [[CLLocation alloc]initWithLatitude:movementInfo.coorRecord.latitude longitude:movementInfo.coorRecord.longitude];
-                
-                NSTimeInterval timeINterval = [nowDate timeIntervalSinceDate:movementInfo.timeDate];
-                
-                //2.计算距离
-                distance = [locat1 distanceFromLocation:locat2];
-                movementInfo.currentSpeed = (distance/timeINterval)*3.6;
-                
-            }
-            //movementInfo.startDate = movementInfo.lastDate;
-            movementInfo.timeDate = nowDate;
-            movementInfo.totleDistance += distance;
-        }
-        //第一次定位,初始化一次参数
-        else
-        {
-            movementInfo.timeDate = nowDate;
-            movementInfo.currentSpeed = 0.0;
-            movementInfo.totleDistance = 0;
-        }
-        
-    }
-    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-    movementInfo.coorRecord = coordinate;
-    [self GDLocationSucceed:movementInfo];
-
-   // NSLog(@"location:{lat:%f; lon:%f; accuracy:%f}", location.coordinate.latitude, location.coordinate.longitude, location.horizontalAccuracy);
-}
-
--(void)GDLocationSucceed:(MovementInfo *)movementInfo
-{
-   
-        //判断是不是出发点,如果不是则计算与上一个点的距离，是的话就显示出发点
-        if (self.roadmapArray.count != 0)
-        {
-            if (movementInfo.currentSpeed != 0)
-            {
-                //构造折线数据对象
-                CLLocationCoordinate2D commonPolylineCoords[2];
-                
-                commonPolylineCoords[0].latitude = ((MovementInfo *)(self.roadmapArray.lastObject)).coorRecord.latitude;
-                commonPolylineCoords[0].longitude = ((MovementInfo *)(self.roadmapArray.lastObject)).coorRecord.longitude;
-                
-                commonPolylineCoords[1].latitude = movementInfo.coorRecord.latitude;
-                commonPolylineCoords[1].longitude = movementInfo.coorRecord.longitude;
-                //构造折线对象
-                MAPolyline *commonPolyline = [MAPolyline polylineWithCoordinates:commonPolylineCoords count:2];
-                //存入数组中
-                [self.roadmapPolylineArray addObject:commonPolyline];
-                //在地图上添加折线对象
-                [self.mapView.mapView addOverlay: commonPolyline];
-                
-            }
-     
-        }
-        else
-        {
-            PointWithDistanceAnn *ann = [[PointWithDistanceAnn alloc]init];
-            ann.distanceStr = @"出发点";
-            ann.coordinate = movementInfo.coorRecord;
-            [self.startAndEndAnnArray addObject:ann];
-            
-            // 添加大头针的方法
-            [self.mapView.mapView addAnnotation:ann];
-            //[self.roadmapArray addObject:movementInfo];
-        }
-    [self.roadmapArray addObject:movementInfo];
-    DLog(@"%lu",(unsigned long)self.roadmapArray.count);
-    self.mapView.moveInfoView.distanceLabel.text = [NSString stringWithFormat:@"%0.2f",movementInfo.totleDistance/1000.0];
-    self.mapView.moveInfoView.speedLabel.text = [NSString stringWithFormat:@"%0.2f",movementInfo.currentSpeed];
-    
-    self.sportInfoView.distanceLB.text = self.mapView.moveInfoView.distanceLabel.text;
-    self.sportInfoView.currentSpeedLB.text = self.mapView.moveInfoView.speedLabel.text;
-    
-}
-
 #pragma mark -------地图的代理事件-------
 //定位成功后执行的方法
-
 -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
 {
-    
     if(updatingLocation == YES)
     {
     }
 }
 
--(void)mapView:(MAMapView *)mapView didFailToLocateUserWithError:(NSError *)error
-{
-    DLog(@"fail");
-}
 
 //添加大头针
 - (void)mapView:(MAMapView *)mapView didAddAnnotationViews:(NSArray *)views
@@ -710,6 +558,9 @@
         MAUserLocationRepresentation *pre = [[MAUserLocationRepresentation alloc] init];
         pre.fillColor = [UIColor colorWithRed:0.9 green:0.1 blue:0.1 alpha:0.3];
         pre.strokeColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.9 alpha:1.0];
+        //pre.image = [UIImage imageNamed:@"touming"];
+        //pre.image = self.annImgView.image;
+        
         pre.lineWidth = 3;
         pre.lineDashPattern = @[@6, @3];
         pre.showsHeadingIndicator = YES;
@@ -767,20 +618,14 @@
 }
 
 
-
-
-
 #pragma mark -----GPS定位类代理方法------
 -(void)GPSLocationSucceed:(MovementInfo *)movementInfo
 {
-    
-   // self.GPSMovementInfo = movementInfo;
     self.mapView.moveInfoView.distanceLabel.text = [NSString stringWithFormat:@"%0.2f",movementInfo.totleDistance/1000.0];
-    self.mapView.moveInfoView.speedLabel.text = [NSString stringWithFormat:@"%0.2f",movementInfo.currentSpeed];
+    self.mapView.moveInfoView.speedLabel.text = [NSString stringWithFormat:@"%0.1f",movementInfo.currentSpeed];
     
     self.sportInfoView.distanceLB.text = self.mapView.moveInfoView.distanceLabel.text;
     self.sportInfoView.currentSpeedLB.text = self.mapView.moveInfoView.speedLabel.text;
-    
 }
 
 
@@ -788,8 +633,11 @@
 {
     
     CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI*heading.magneticHeading/180.0);
+    //DLog(@"234");
     self.annImgView.transform = CGAffineTransformIdentity;
     self.annImgView.transform = transform;
+    
+    //    NSLog(@"%@",self.pre)
 }
 
 
@@ -824,9 +672,7 @@
     }
     self.timeCount = 0;
     self.moveTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-    //NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
-    //self.GPSMovementInfo.startDate = nowDate;
-
+   
 }
 //结束计时
 -(void)endTiming
@@ -837,7 +683,7 @@
 //计时
 -(void)timerAction:(NSTimer *)timer
 {
-    self.mapView.moveInfoView.timeLabel.text = [NSString stringWithFormat:@"%0ld:%02ld:%02ld",(long)(self.timeCount/3600)%24,(long)(self.timeCount/60)%60,(long)self.timeCount%60];
+    self.mapView.moveInfoView.timeLabel.text = [NSString stringWithFormat:@"%0ld:%02ld:%02ld",(self.timeCount/3600)%24,(self.timeCount/60)%60,self.timeCount%60];
     
     self.sportInfoView.timeLB.text = self.mapView.moveInfoView.timeLabel.text;
     
@@ -848,25 +694,6 @@
 
 #pragma mark ---懒加载方法----
 //懒加载，初始化使用
-
--(NSMutableArray *)roadmapArray
-{
-    if (_roadmapArray == nil)
-    {
-        _roadmapArray = [[NSMutableArray alloc]initWithCapacity:10];
-    }
-    return _roadmapArray;
-}
-
--(NSMutableArray *)roadmapPolylineArray
-{
-    if (_roadmapPolylineArray == nil)
-    {
-        _roadmapPolylineArray = [[NSMutableArray alloc]initWithCapacity:10];
-    }
-    return _roadmapPolylineArray;
-}
-
 -(NSMutableArray *)distanceAnnArray
 {
     if (_distanceAnnArray == nil)
@@ -885,14 +712,6 @@
     return _distancePolylineArray;
 }
 
--(NSMutableArray *)startAndEndAnnArray
-{
-    if (_startAndEndAnnArray == nil)
-    {
-        _startAndEndAnnArray = [[NSMutableArray alloc]initWithCapacity:2];
-    }
-    return _startAndEndAnnArray;
-}
 
 
 - (void)didReceiveMemoryWarning {
