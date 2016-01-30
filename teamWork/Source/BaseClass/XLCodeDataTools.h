@@ -12,5 +12,7 @@
 //上下文
 @property(strong,nonatomic)NSManagedObjectContext *context;
 
++(instancetype)shareXLCoreDataTools;
+
 
 @end
