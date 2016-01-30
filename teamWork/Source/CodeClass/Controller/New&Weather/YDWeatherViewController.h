@@ -11,6 +11,6 @@
 
 @interface YDWeatherViewController : UIViewController
 
-//+(instancetype)sharedViewController;
++(instancetype)sharedViewController;
 
 @end

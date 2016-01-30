@@ -90,7 +90,7 @@
     self.moveInfoView = [[MapMoveInfoView alloc]initWithFrame:CGRectMake(kFloatButtonWidth*0.5,kScreenHeight*0.01 , kScreenWidth-kFloatButtonWidth, kFloatButtonWidth*1.5)];
     
     //左滑视图
-    self.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 50, kScreenHeight)];
+    self.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 25, kScreenHeight)];
     
     //拖拽提示视图
     UIImageView *tipView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tuodong"]];
