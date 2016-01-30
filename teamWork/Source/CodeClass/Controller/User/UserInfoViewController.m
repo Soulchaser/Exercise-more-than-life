@@ -7,6 +7,7 @@
 //
 
 #import "UserInfoViewController.h"
+#import "AvatarsourceType.h"
 
 @interface UserInfoViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 //头像
@@ -66,14 +67,12 @@
     currentUser.email = self.email.text;
     [currentUser setObject:self.address.text forKey:@"address"];
     //头像
-    if (self.avatarData) {
-        //删除原头像
-        AVFile *oldAvatar = [currentUser objectForKey:@"avatar"];
-        [oldAvatar deleteInBackground];
-        //添加新头像
-        AVFile *avatarFile = [AVFile fileWithName:@"avatar.png"data:self.avatarData];
-        [currentUser setObject:avatarFile forKey:@"avatar"];
-    }
+    //删除原头像
+    AVFile *oldAvatar = [currentUser objectForKey:@"avatar"];
+    [oldAvatar deleteInBackground];
+    //添加新头像
+    AVFile *avatarFile = [AVFile fileWithData:self.avatarData];
+    [currentUser setObject:avatarFile forKey:@"avatar"];
     [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
         NSLog(@"设置成功");
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -125,6 +124,10 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     //此处info有六个类型
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    //替换头像
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.headerImage.image = image;
+    });
     if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
@@ -138,10 +141,7 @@
     self.avatarData = UIImagePNGRepresentation(image);
     //压缩图片大小
     self.avatarData = UIImageJPEGRepresentation(image, 0.00001);
-    //替换头像
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.headerImage.image = [UIImage imageWithData:self.avatarData];
-    });
+    self.headerImage.image = [UIImage imageWithData:self.avatarData];
 }
 
 //性别设置为男

@@ -51,7 +51,6 @@
         self.manager.delegate = self;
         
         //设置滤波器不工作
-        
         self.manager.headingFilter = kCLHeadingFilterNone;
         
 
@@ -109,38 +108,50 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations
 {
     CLLocation *location = [locations lastObject];
-    
+//    DLog(@"%f,%f",location.coordinate.longitude,location.coordinate.latitude);
+//    /*当定位成功后，如果horizontalAccuracy大于0，说明定位有效
+//     horizontalAccuracy，该位置的纬度和经度确定的圆的中心，并且这个值表示圆的半径。负值表示该位置的纬度和经度是无效的。
+//     */
+//    if (location.horizontalAccuracy > 0)
+//    {
+//        CGFloat distance = 0;
+//        if (self.movementInfo.coorRecord.latitude && self.movementInfo.coorRecord.longitude)
+//        {
+//            
+//            NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
+//            
+//            if (location.speed == -1)
+//            {
+//                self.movementInfo.currentSpeed = 0.0;
+//            }
+//            else if(location.speed != 0)
+//            {
+//                CLLocation *locat1 = [[CLLocation alloc]initWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+//                CLLocation *locat2 = [[CLLocation alloc]initWithLatitude:self.movementInfo.coorRecord.latitude longitude:self.movementInfo.coorRecord.longitude];
+//                
+//                NSTimeInterval timeINterval = [nowDate timeIntervalSinceDate:self.movementInfo.lastDate];
+//                self.movementInfo.currentSpeed = (distance/timeINterval)*3.6;
+//                //self.movementInfo.currentSpeed = location.speed*(self.manager.distanceFilter);
+//                //if (self.movementInfo.currentSpeed != 0)
+//                //{
+//                    //2.计算距离
+//                    distance = [locat1 distanceFromLocation:locat2];
+//                    self.movementInfo.runDuration += timeINterval;
+//               // }
+//                
+//            }
+//            self.movementInfo.startDate = self.movementInfo.lastDate;
+//            self.movementInfo.lastDate = nowDate;
+//            self.movementInfo.totleDistance += distance;
+//        }
+//        
+//    }
+//    
+//    self.movementInfo.coorRecord = location.coordinate;
+//    
+//    
+//    [self.multiDelegate GPSLocationSucceed:self.movementInfo];
     [self getCityNameWithCoor:location.coordinate];
-    
-    
-        CGFloat distance = 0;
-        if (self.movementInfo.coorRecord.latitude && self.movementInfo.coorRecord.longitude)
-        {
-            CLLocation *locat1 = [[CLLocation alloc]initWithLatitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-            CLLocation *locat2 = [[CLLocation alloc]initWithLatitude:self.movementInfo.coorRecord.latitude longitude:self.movementInfo.coorRecord.longitude];
-            //2.计算距离
-            distance = [locat1 distanceFromLocation:locat2];
-            NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
-            
-            NSTimeInterval timeINterval = [nowDate timeIntervalSinceDate:self.movementInfo.lastDate];
-            
-            self.movementInfo.currentSpeed = (distance/timeINterval)*3.6;
-            
-            self.movementInfo.lastDate = nowDate;
-            
-            
-       //     DLog(@"distance%f",distance);
-        }
-    
-        self.movementInfo.coorRecord = location.coordinate;
-        self.movementInfo.totleDistance += distance;
-    
-    [self.multiDelegate GPSLocationSucceed:self.movementInfo];
-    
-    
-    
-    
-    //[self.delegate GPSLocationSucceed:location];
     //关闭定位
     //[self.manager stopUpdatingLocation];
 }
@@ -155,9 +166,7 @@
 //获取当前朝向
 -(void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading
 {
-    //计算imageView的角度偏移
-//    CGAffineTransform transform = CGAffineTransformMakeRotation(M_PI*newHeading.magneticHeading/180.0);
-    
+
     [self.multiDelegate GPSUpdateHeading:newHeading];
 
    // [self.delegate GPSUpdateHeading : transform];
@@ -237,8 +246,8 @@
     if (_movementInfo == nil)
     {
         _movementInfo = [[MovementInfo alloc]init];
-        _movementInfo.startDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
-        _movementInfo.lastDate = _movementInfo.startDate;
+        _movementInfo.timeDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
+        //_movementInfo.lastDate = _movementInfo.startDate;
     }
     return _movementInfo;
 }
