@@ -42,7 +42,7 @@
 #import "XLCodeDataTools.h"
 #import "Entity+CoreDataProperties.h"
 #import "Entity.h"
-
+#import "CordDataInfo.h"
 #pragma mark ------------Model------------
 //资讯类
 #import "DogModel.h"

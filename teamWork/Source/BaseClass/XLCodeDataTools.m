@@ -57,4 +57,96 @@
     return self;
 }
 
+#pragma mark -------写入--------
+-(void)insertData:(CordDataInfo *)info
+{
+    
+    Entity *ent = [NSEntityDescription insertNewObjectForEntityForName:@"Entity" inManagedObjectContext:self.context];
+    
+    ent.startDate = info.startDate;
+    ent.movementTime = [NSNumber numberWithInteger:info.movementTime];
+    ent.totleTime = [NSNumber numberWithDouble:info.totleTime];
+    ent.maxSpeed = [NSNumber numberWithFloat:info.maxSpeed];
+    ent.sportType = [NSNumber numberWithInteger:info.sportType];
+    ent.totleDistance = [NSNumber numberWithFloat:info.totleDistance];
+    ent.infoData = [NSKeyedArchiver archivedDataWithRootObject:info.infoArray];
+ 
+    [self.context save:nil];
+}
+
+#pragma mark -------查---------
+-(NSArray *)getDataFromLibrary
+{
+    //先填写一份查询表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Entity"];
+    
+    //填写查询条件
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"1=1"];
+    
+    request.predicate = predicate;
+    
+    //排序条件
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES]];
+    
+    NSArray *array = [self.context executeFetchRequest:request error:nil];
+
+//    for (Entity *dataInfo in array)
+//    {
+//        DLog(@"%@",dataInfo.infoData);
+//    }
+    
+    return array;
+}
+//删除某一条
+-(void)deleteDataFromLibraryWithstartDate:(NSDate *)startDate
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate = %@", startDate];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        
+    }
+    
+    //开始删除
+    for (Entity *ent in fetchedObjects)
+    {
+        [self.context deleteObject:ent];
+    }
+    
+    [self.context save:nil];
+    
+}
+//删除全部
+-(void)deleteAllDataFromLibrary
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"1=1", nil];
+    [fetchRequest setPredicate:predicate];
+
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        
+    }
+    
+    //开始删除
+    for (Entity *emp in fetchedObjects)
+    {
+        [self.context deleteObject:emp];
+    }
+    
+    [self.context save:nil];
+}
+
+
+
 @end

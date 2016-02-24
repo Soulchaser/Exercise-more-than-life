@@ -25,7 +25,7 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 {
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.backView];
     [self.collectionView reloadData];
-    NSLog(@"%lu",kGD.BasicArray.count);
+    NSLog(@"%lu",(unsigned long)kGD.BasicArray.count);
 
 }
 

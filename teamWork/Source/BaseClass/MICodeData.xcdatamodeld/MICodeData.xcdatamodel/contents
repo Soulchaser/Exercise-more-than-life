@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
     <entity name="Entity" representedClassName="Entity" syncable="YES">
-        <attribute name="infoData" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="infoData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="maxSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="movementTime" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="sportType" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>

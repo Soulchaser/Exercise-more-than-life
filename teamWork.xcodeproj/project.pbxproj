@@ -60,6 +60,7 @@
 		54BE0A6F1C5C522A008D1A6C /* Entity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE0A691C5C522A008D1A6C /* Entity+CoreDataProperties.m */; };
 		54BE0A701C5C522A008D1A6C /* MICodeData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 54BE0A6A1C5C522A008D1A6C /* MICodeData.xcdatamodeld */; };
 		54BE0A711C5C522A008D1A6C /* XLCodeDataTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE0A6D1C5C522A008D1A6C /* XLCodeDataTools.m */; };
+		54BE0A741C5C6980008D1A6C /* CordDataInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54BE0A731C5C6980008D1A6C /* CordDataInfo.m */; };
 		54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B241C4C8CD2001D20D9 /* altitude_selected.png */; };
 		54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B251C4C8CD2001D20D9 /* altitude.png */; };
 		54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */; };
@@ -194,6 +195,8 @@
 		54BE0A6B1C5C522A008D1A6C /* MICodeData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MICodeData.xcdatamodel; sourceTree = "<group>"; };
 		54BE0A6C1C5C522A008D1A6C /* XLCodeDataTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLCodeDataTools.h; sourceTree = "<group>"; };
 		54BE0A6D1C5C522A008D1A6C /* XLCodeDataTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCodeDataTools.m; sourceTree = "<group>"; };
+		54BE0A721C5C6980008D1A6C /* CordDataInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CordDataInfo.h; sourceTree = "<group>"; };
+		54BE0A731C5C6980008D1A6C /* CordDataInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CordDataInfo.m; sourceTree = "<group>"; };
 		54D26B241C4C8CD2001D20D9 /* altitude_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altitude_selected.png; sourceTree = "<group>"; };
 		54D26B251C4C8CD2001D20D9 /* altitude.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = altitude.png; sourceTree = "<group>"; };
 		54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance_selected.png; sourceTree = "<group>"; };
@@ -560,6 +563,8 @@
 				54B3AF971C4DD3BB00D79478 /* PointWithDistanceAnnView.m */,
 				54B3AF991C4DD51900D79478 /* PointWithDistanceAnn.h */,
 				54B3AF9A1C4DD51900D79478 /* PointWithDistanceAnn.m */,
+				54BE0A721C5C6980008D1A6C /* CordDataInfo.h */,
+				54BE0A731C5C6980008D1A6C /* CordDataInfo.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -961,6 +966,7 @@
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,
 				C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */,
+				54BE0A741C5C6980008D1A6C /* CordDataInfo.m in Sources */,
 				C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */,
 				C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */,
 				5454DCD31C571B6000B96CCD /* MapView.m in Sources */,
