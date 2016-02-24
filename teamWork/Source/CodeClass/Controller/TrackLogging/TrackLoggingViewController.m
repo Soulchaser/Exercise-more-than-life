@@ -52,9 +52,9 @@
 @property(strong,nonatomic)UIButton *continueButton;
 //停止运动按钮
 @property(strong,nonatomic)UIButton *stopButton;
-//
-//@property(strong,nonatomic)MovementInfo *GPSMovementInfo;
-//
+//数据库管理工具
+@property(strong,nonatomic)XLCodeDataTools *cordDataTools;
+//高德地图定位对象
 @property(strong,nonatomic)AMapLocationManager *locationManager;
 @end
 
@@ -309,6 +309,20 @@
 //继续
 -(void)continueButtonAction:(UIButton *)sender
 {
+    NSString *homePath = NSHomeDirectory();
+    NSLog(@"homePath = %@",homePath);
+    
+
+    //[self.cordDataTools deleteAllDataFromLibrary];
+    NSArray *dataArr = [self.cordDataTools getDataFromLibrary];
+    
+    NSArray *infoArr = [NSKeyedUnarchiver unarchiveObjectWithData:((Entity *)dataArr.lastObject).infoData];
+    for (MovementInfo *movementInfo in infoArr)
+    {
+        DLog(@"%@",movementInfo);
+    }
+    
+    
     
 }
 //结束
@@ -330,17 +344,30 @@
     [self.locationManager stopUpdatingLocation];
     [self endTiming];
     [self.stopButton removeFromSuperview];
+    
+    //数据入库
+    //组装model
+    CordDataInfo *cordDataInfo = [[CordDataInfo alloc]initWithMovementInfoArray:self.roadmapArray sportType:self.sportModel];
+    //存入数据库
+    [self.cordDataTools insertData:cordDataInfo];
 
 }
 
 #pragma mark ------运动开始时的初始化-------
 -(void)initWhenMoveStart
 {
+    //路程记录数组
     [self.roadmapArray removeAllObjects];
+    //移除地图上的线路路线
     [self.mapView.mapView removeOverlays:self.roadmapPolylineArray];
+    //清空路线数组
     [self.roadmapPolylineArray removeAllObjects];
+    //移除地图上的起点和终点的ann
     [self.mapView.mapView removeAnnotations:self.startAndEndAnnArray];
+    //清除起点和终点ann的数组
     [self.startAndEndAnnArray removeAllObjects];
+    
+    //清除所有显示数据的label
     self.sportInfoView.currentSpeedLB.text = [NSString stringWithFormat:@"0.00"];
     self.sportInfoView.distanceLB.text = @"0.00";
     self.sportInfoView.timeLB.text = @"0:00:00";
@@ -848,7 +875,14 @@
 
 #pragma mark ---懒加载方法----
 //懒加载，初始化使用
-
+-(XLCodeDataTools *)cordDataTools
+{
+    if (_cordDataTools == nil)
+    {
+        _cordDataTools = [[XLCodeDataTools alloc]init];
+    }
+    return _cordDataTools;
+}
 -(NSMutableArray *)roadmapArray
 {
     if (_roadmapArray == nil)

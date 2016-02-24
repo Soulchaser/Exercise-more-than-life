@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *maxSpeed;
 @property (nullable, nonatomic, retain) NSNumber *sportType;
 @property (nullable, nonatomic, retain) NSNumber *totleDistance;
-@property (nullable, nonatomic, retain) NSDate *infoData;
+@property (nullable, nonatomic, retain) NSData *infoData;
 
 @end
 

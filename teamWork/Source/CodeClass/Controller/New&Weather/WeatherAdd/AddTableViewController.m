@@ -110,7 +110,7 @@
         //写入文件
         //        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
         
-        DLog(@"%lu",dataArray.count);
+        DLog(@"%lu",(unsigned long)dataArray.count);
         
         for (NSDictionary * dict in dataArray) {
             //Basic部分

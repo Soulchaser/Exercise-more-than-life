@@ -69,7 +69,7 @@
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://apis.baidu.com/tngou/lore/list?id=11&page=%ld&rows=20",(long)self.page++]] cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
     
-    NSLog(@"%ld",self.page);
+    NSLog(@"%ld",(long)self.page);
     
     [request setHTTPMethod: @"GET"];
     [request addValue: kApiKey forHTTPHeaderField: @"apikey"];
