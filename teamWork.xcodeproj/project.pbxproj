@@ -96,6 +96,8 @@
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
 		C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */; };
 		C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */; };
+		C25D63721C7DE06600A03263 /* CreatActivityViewController_2.m in Sources */ = {isa = PBXBuildFile; fileRef = C25D63701C7DE06600A03263 /* CreatActivityViewController_2.m */; };
+		C25D63731C7DE06600A03263 /* CreatActivityViewController_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25D63711C7DE06600A03263 /* CreatActivityViewController_2.xib */; };
 		C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */; };
 		C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD461C5AF39B0099A8B6 /* AddShareCollectionViewController.m */; };
 		C28EFD4A1C5AF39B0099A8B6 /* FootPrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD481C5AF39B0099A8B6 /* FootPrintTableViewController.m */; };
@@ -255,6 +257,9 @@
 		C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
 		C22D59A51C59B3AA0070AE96 /* CreatActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController.h; sourceTree = "<group>"; };
 		C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController.m; sourceTree = "<group>"; };
+		C25D636F1C7DE06600A03263 /* CreatActivityViewController_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_2.h; sourceTree = "<group>"; };
+		C25D63701C7DE06600A03263 /* CreatActivityViewController_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_2.m; sourceTree = "<group>"; };
+		C25D63711C7DE06600A03263 /* CreatActivityViewController_2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatActivityViewController_2.xib; sourceTree = "<group>"; };
 		C28EFD421C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		C28EFD451C5AF39B0099A8B6 /* AddShareCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShareCollectionViewController.h; sourceTree = "<group>"; };
@@ -730,6 +735,9 @@
 				C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */,
 				C22D59A51C59B3AA0070AE96 /* CreatActivityViewController.h */,
 				C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */,
+				C25D636F1C7DE06600A03263 /* CreatActivityViewController_2.h */,
+				C25D63701C7DE06600A03263 /* CreatActivityViewController_2.m */,
+				C25D63711C7DE06600A03263 /* CreatActivityViewController_2.xib */,
 			);
 			path = GroupActivity;
 			sourceTree = "<group>";
@@ -835,6 +843,7 @@
 				C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */,
 				C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */,
 				5454DCF21C571E5F00B96CCD /* walk.png in Resources */,
+				C25D63731C7DE06600A03263 /* CreatActivityViewController_2.xib in Resources */,
 				5454DCEE1C571E5F00B96CCD /* ride.png in Resources */,
 				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
 				540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */,
@@ -983,6 +992,7 @@
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 				5454DCDB1C571C5700B96CCD /* GCDMulticastDelegate.m in Sources */,
 				C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */,
+				C25D63721C7DE06600A03263 /* CreatActivityViewController_2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
