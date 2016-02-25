@@ -27,7 +27,7 @@
 		542ADB141C7D57FE00937593 /* TrackwayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB131C7D57FE00937593 /* TrackwayTableViewController.m */; };
 		542ADB181C7D588900937593 /* TrackwayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB161C7D588900937593 /* TrackwayTableViewCell.m */; };
 		542ADB191C7D588900937593 /* TrackwayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB171C7D588900937593 /* TrackwayTableViewCell.xib */; };
-		542ADB1C1C7D5DBA00937593 /* biao.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB1A1C7D5DBA00937593 /* biao.png */; };
+		542ADB1C1C7D5DBA00937593 /* shijiianbiao.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB1A1C7D5DBA00937593 /* shijiianbiao.png */; };
 		542ADB1D1C7D5DBA00937593 /* speedometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB1B1C7D5DBA00937593 /* speedometer.png */; };
 		542ADB201C7DD0B400937593 /* MapwayDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */; };
 		5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCC41C571B3C00B96CCD /* TrackLoggingViewController.m */; };
@@ -146,7 +146,7 @@
 		542ADB151C7D588900937593 /* TrackwayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackwayTableViewCell.h; sourceTree = "<group>"; };
 		542ADB161C7D588900937593 /* TrackwayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackwayTableViewCell.m; sourceTree = "<group>"; };
 		542ADB171C7D588900937593 /* TrackwayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackwayTableViewCell.xib; sourceTree = "<group>"; };
-		542ADB1A1C7D5DBA00937593 /* biao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biao.png; sourceTree = "<group>"; };
+		542ADB1A1C7D5DBA00937593 /* shijiianbiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shijiianbiao.png; sourceTree = "<group>"; };
 		542ADB1B1C7D5DBA00937593 /* speedometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedometer.png; sourceTree = "<group>"; };
 		542ADB1E1C7DD0B400937593 /* MapwayDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapwayDetailsViewController.h; sourceTree = "<group>"; };
 		542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapwayDetailsViewController.m; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		540D98FC1C4A64380027EF2F /* mapView */ = {
 			isa = PBXGroup;
 			children = (
-				542ADB1A1C7D5DBA00937593 /* biao.png */,
+				542ADB1A1C7D5DBA00937593 /* shijiianbiao.png */,
 				542ADB1B1C7D5DBA00937593 /* speedometer.png */,
 				5454DCF31C579B6400B96CCD /* tuodong.png */,
 				5454DCDD1C571E5F00B96CCD /* dingwei.png */,
@@ -880,7 +880,7 @@
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
-				542ADB1C1C7D5DBA00937593 /* biao.png in Resources */,
+				542ADB1C1C7D5DBA00937593 /* shijiianbiao.png in Resources */,
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
