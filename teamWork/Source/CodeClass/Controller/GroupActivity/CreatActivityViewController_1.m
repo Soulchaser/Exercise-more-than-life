@@ -49,6 +49,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+#pragma mark -----------设置代理对象
+    self.TextFieldStartTime.delegate = self;
+    self.TextFieldEndTime.delegate = self;
+    
     UIDatePicker * datePicker = [[UIDatePicker alloc] init];
     //    self.datePicker.datePickerMode = UIDatePickerModeDate;
     
@@ -77,7 +82,7 @@
     
     [datePicker addTarget:self action:@selector(aaa:) forControlEvents:UIControlEventValueChanged];
     self.TextFieldStartTime.inputView = datePicker;
-    
+    self.TextFieldEndTime.inputView = datePicker;
     // Do any additional setup after loading the view from its nib.
     
     
@@ -203,7 +208,7 @@
 -(void)aaa:(UIDatePicker *)sender
 {
     NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"yyyy年MM月dd日(EEEE) HH:mm:ss"];
+    [formatter setDateFormat:@"yy年MM月dd日 HH:mm"];
     self.currentDateTextField.text = [formatter stringFromDate:sender.date];
     NSLog(@"%@",self.currentDateTextField.text);
 }
