@@ -33,6 +33,10 @@
 //运动数据记录类
 #import "MovementInfo.h"
 #import "SportInfoView.h"
+#import "TrackwayTableViewCell.h"
+#import "TrackwayTableViewController.h"
+#import "MapwayDetailsViewController.h"
+
 //自定义的地图视图
 #import "MapView.h"
 #import "PinyinChange.h"

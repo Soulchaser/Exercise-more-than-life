@@ -24,6 +24,12 @@
 		540D991C1C4A64380027EF2F /* share_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 540D990B1C4A64380027EF2F /* share_selected.png */; };
 		540D991D1C4A64380027EF2F /* weixing.png in Resources */ = {isa = PBXBuildFile; fileRef = 540D990C1C4A64380027EF2F /* weixing.png */; };
 		540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 540D990D1C4A64380027EF2F /* weixing_selected.png */; };
+		542ADB141C7D57FE00937593 /* TrackwayTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB131C7D57FE00937593 /* TrackwayTableViewController.m */; };
+		542ADB181C7D588900937593 /* TrackwayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB161C7D588900937593 /* TrackwayTableViewCell.m */; };
+		542ADB191C7D588900937593 /* TrackwayTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB171C7D588900937593 /* TrackwayTableViewCell.xib */; };
+		542ADB1C1C7D5DBA00937593 /* biao.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB1A1C7D5DBA00937593 /* biao.png */; };
+		542ADB1D1C7D5DBA00937593 /* speedometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB1B1C7D5DBA00937593 /* speedometer.png */; };
+		542ADB201C7DD0B400937593 /* MapwayDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */; };
 		5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCC41C571B3C00B96CCD /* TrackLoggingViewController.m */; };
 		5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCC61C571B3C00B96CCD /* TrackNaviController.m */; };
 		5454DCCD1C571B5700B96CCD /* MapGPSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCCA1C571B5700B96CCD /* MapGPSLocation.m */; };
@@ -133,6 +139,15 @@
 		540D990B1C4A64380027EF2F /* share_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_selected.png; sourceTree = "<group>"; };
 		540D990C1C4A64380027EF2F /* weixing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixing.png; sourceTree = "<group>"; };
 		540D990D1C4A64380027EF2F /* weixing_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixing_selected.png; sourceTree = "<group>"; };
+		542ADB121C7D57FE00937593 /* TrackwayTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackwayTableViewController.h; sourceTree = "<group>"; };
+		542ADB131C7D57FE00937593 /* TrackwayTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackwayTableViewController.m; sourceTree = "<group>"; };
+		542ADB151C7D588900937593 /* TrackwayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackwayTableViewCell.h; sourceTree = "<group>"; };
+		542ADB161C7D588900937593 /* TrackwayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackwayTableViewCell.m; sourceTree = "<group>"; };
+		542ADB171C7D588900937593 /* TrackwayTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TrackwayTableViewCell.xib; sourceTree = "<group>"; };
+		542ADB1A1C7D5DBA00937593 /* biao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = biao.png; sourceTree = "<group>"; };
+		542ADB1B1C7D5DBA00937593 /* speedometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speedometer.png; sourceTree = "<group>"; };
+		542ADB1E1C7DD0B400937593 /* MapwayDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapwayDetailsViewController.h; sourceTree = "<group>"; };
+		542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapwayDetailsViewController.m; sourceTree = "<group>"; };
 		5454DCC31C571B3C00B96CCD /* TrackLoggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackLoggingViewController.h; sourceTree = "<group>"; };
 		5454DCC41C571B3C00B96CCD /* TrackLoggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackLoggingViewController.m; sourceTree = "<group>"; };
 		5454DCC51C571B3C00B96CCD /* TrackNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackNaviController.h; sourceTree = "<group>"; };
@@ -298,6 +313,8 @@
 		540D98FC1C4A64380027EF2F /* mapView */ = {
 			isa = PBXGroup;
 			children = (
+				542ADB1A1C7D5DBA00937593 /* biao.png */,
+				542ADB1B1C7D5DBA00937593 /* speedometer.png */,
 				5454DCF31C579B6400B96CCD /* tuodong.png */,
 				5454DCDD1C571E5F00B96CCD /* dingwei.png */,
 				5454DCDE1C571E5F00B96CCD /* jiantou.png */,
@@ -341,6 +358,10 @@
 			children = (
 				5454DCC31C571B3C00B96CCD /* TrackLoggingViewController.h */,
 				5454DCC41C571B3C00B96CCD /* TrackLoggingViewController.m */,
+				542ADB121C7D57FE00937593 /* TrackwayTableViewController.h */,
+				542ADB131C7D57FE00937593 /* TrackwayTableViewController.m */,
+				542ADB1E1C7DD0B400937593 /* MapwayDetailsViewController.h */,
+				542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */,
 				5454DCC51C571B3C00B96CCD /* TrackNaviController.h */,
 				5454DCC61C571B3C00B96CCD /* TrackNaviController.m */,
 			);
@@ -548,6 +569,9 @@
 				54B3AFA11C4E256500D79478 /* DistanceCalloutView.m */,
 				54B3AFA61C4E268000D79478 /* MapMoveInfoView.h */,
 				54B3AFA71C4E268000D79478 /* MapMoveInfoView.m */,
+				542ADB151C7D588900937593 /* TrackwayTableViewCell.h */,
+				542ADB161C7D588900937593 /* TrackwayTableViewCell.m */,
+				542ADB171C7D588900937593 /* TrackwayTableViewCell.xib */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -847,6 +871,7 @@
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
+				542ADB1C1C7D5DBA00937593 /* biao.png in Resources */,
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
@@ -865,12 +890,14 @@
 				C204BC181C4FA3DF0085BE48 /* iconfont-yansebiankuang.png in Resources */,
 				5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */,
 				C204BC161C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png in Resources */,
+				542ADB191C7D588900937593 /* TrackwayTableViewCell.xib in Resources */,
 				540D991C1C4A64380027EF2F /* share_selected.png in Resources */,
 				5454DCEB1C571E5F00B96CCD /* mapBook.png in Resources */,
 				540D99151C4A64380027EF2F /* jia_selected.png in Resources */,
 				5454DCEA1C571E5F00B96CCD /* location.png in Resources */,
 				540D99131C4A64380027EF2F /* haoyou.png in Resources */,
 				540D99191C4A64380027EF2F /* news_selected.png in Resources */,
+				542ADB1D1C7D5DBA00937593 /* speedometer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,12 +991,14 @@
 				C21876D81C570C05009D428B /* DogModel.m in Sources */,
 				5454DCD41C571B6000B96CCD /* SportInfoView.m in Sources */,
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
+				542ADB181C7D588900937593 /* TrackwayTableViewCell.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,
 				C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */,
 				54BE0A741C5C6980008D1A6C /* CordDataInfo.m in Sources */,
 				C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */,
 				C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */,
 				5454DCD31C571B6000B96CCD /* MapView.m in Sources */,
+				542ADB141C7D57FE00937593 /* TrackwayTableViewController.m in Sources */,
 				54BE0A6F1C5C522A008D1A6C /* Entity+CoreDataProperties.m in Sources */,
 				C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */,
 				C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */,
@@ -978,6 +1007,7 @@
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
 				C2A6B8B01C5202AA006CF6BD /* FindPasswordVC_Tow.m in Sources */,
+				542ADB201C7DD0B400937593 /* MapwayDetailsViewController.m in Sources */,
 				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
