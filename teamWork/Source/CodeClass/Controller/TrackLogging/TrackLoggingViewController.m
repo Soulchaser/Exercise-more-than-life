@@ -303,11 +303,11 @@
 -(void)continueButtonAction:(UIButton *)sender
 {
     
-    //TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
-    //[self.navigationController pushViewController:TwtVC animated:YES];
+    TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
+    [self.navigationController pushViewController:TwtVC animated:YES];
     
-    [self moveStart];
-    [self.mapView.mapView removeAnnotation:self.startAndEndAnnArray.lastObject];
+ //   [self moveStart];
+   // [self.mapView.mapView removeAnnotation:self.startAndEndAnnArray.lastObject];
     
 }
 //结束

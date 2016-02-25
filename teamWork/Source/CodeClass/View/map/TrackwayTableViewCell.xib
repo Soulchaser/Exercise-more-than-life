@@ -28,7 +28,7 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shijiianbiao.png" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-Uz-SNI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfont-androidstopwatch.png" translatesAutoresizingMaskIntoConstraints="NO" id="uWa-Uz-SNI">
                         <rect key="frame" x="188" y="8" width="45" height="81"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speedometer.png" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-zA-UMq">
@@ -83,7 +83,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="shijiianbiao.png" width="128" height="128"/>
+        <image name="iconfont-androidstopwatch.png" width="64" height="64"/>
         <image name="speedometer.png" width="128" height="128"/>
     </resources>
 </document>
