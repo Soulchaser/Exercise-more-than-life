@@ -101,9 +101,10 @@
 		C21876E71C5758D4009D428B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21876E51C5758D4009D428B /* DetailViewController.xib */; };
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
 		C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */; };
-		C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */; };
-		C25D63721C7DE06600A03263 /* CreatActivityViewController_2.m in Sources */ = {isa = PBXBuildFile; fileRef = C25D63701C7DE06600A03263 /* CreatActivityViewController_2.m */; };
-		C25D63731C7DE06600A03263 /* CreatActivityViewController_2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C25D63711C7DE06600A03263 /* CreatActivityViewController_2.xib */; };
+		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
+		C248D0001C7EECA7002776E5 /* UITextField+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C248CFFF1C7EECA7002776E5 /* UITextField+DatePicker.m */; };
+		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
+		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
 		C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */; };
 		C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD461C5AF39B0099A8B6 /* AddShareCollectionViewController.m */; };
 		C28EFD4A1C5AF39B0099A8B6 /* FootPrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD481C5AF39B0099A8B6 /* FootPrintTableViewController.m */; };
@@ -280,11 +281,12 @@
 		C21876E91C5763C4009D428B /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
 		C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
-		C22D59A51C59B3AA0070AE96 /* CreatActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController.h; sourceTree = "<group>"; };
-		C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController.m; sourceTree = "<group>"; };
-		C25D636F1C7DE06600A03263 /* CreatActivityViewController_2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_2.h; sourceTree = "<group>"; };
-		C25D63701C7DE06600A03263 /* CreatActivityViewController_2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_2.m; sourceTree = "<group>"; };
-		C25D63711C7DE06600A03263 /* CreatActivityViewController_2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatActivityViewController_2.xib; sourceTree = "<group>"; };
+		C248CFD81C7EB234002776E5 /* iconfont-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-add.png"; sourceTree = "<group>"; };
+		C248CFFE1C7EECA7002776E5 /* UITextField+DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+DatePicker.h"; sourceTree = "<group>"; };
+		C248CFFF1C7EECA7002776E5 /* UITextField+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DatePicker.m"; sourceTree = "<group>"; };
+		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
+		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
+		C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatActivityViewController_1.xib; sourceTree = "<group>"; };
 		C28EFD421C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		C28EFD451C5AF39B0099A8B6 /* AddShareCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShareCollectionViewController.h; sourceTree = "<group>"; };
@@ -574,6 +576,7 @@
 		5498EC911C48D0E700A7D99E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C248CFD71C7EB234002776E5 /* CreatActivity */,
 				C204BC0C1C4F726E0085BE48 /* User */,
 				540D98FC1C4A64380027EF2F /* mapView */,
 			);
@@ -787,13 +790,21 @@
 			children = (
 				C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */,
 				C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */,
-				C22D59A51C59B3AA0070AE96 /* CreatActivityViewController.h */,
-				C22D59A61C59B3AA0070AE96 /* CreatActivityViewController.m */,
-				C25D636F1C7DE06600A03263 /* CreatActivityViewController_2.h */,
-				C25D63701C7DE06600A03263 /* CreatActivityViewController_2.m */,
-				C25D63711C7DE06600A03263 /* CreatActivityViewController_2.xib */,
+				C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */,
+				C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */,
+				C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */,
+				C248CFFE1C7EECA7002776E5 /* UITextField+DatePicker.h */,
+				C248CFFF1C7EECA7002776E5 /* UITextField+DatePicker.m */,
 			);
 			path = GroupActivity;
+			sourceTree = "<group>";
+		};
+		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
+			isa = PBXGroup;
+			children = (
+				C248CFD81C7EB234002776E5 /* iconfont-add.png */,
+			);
+			path = CreatActivity;
 			sourceTree = "<group>";
 		};
 		C28B4B631C585AC600BF8EFD /* Share */ = {
@@ -917,13 +928,13 @@
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
 				5454DCE81C571E5F00B96CCD /* dingwei.png in Resources */,
+				C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */,
 				C21876E71C5758D4009D428B /* DetailViewController.xib in Resources */,
 				540D991A1C4A64380027EF2F /* person.png in Resources */,
 				C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */,
 				C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */,
 				C2E6CFED1C7EEAE10019EDF9 /* iconfont-nv.png in Resources */,
 				5454DCF21C571E5F00B96CCD /* walk.png in Resources */,
-				C25D63731C7DE06600A03263 /* CreatActivityViewController_2.xib in Resources */,
 				5454DCEE1C571E5F00B96CCD /* ride.png in Resources */,
 				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
 				540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */,
@@ -963,6 +974,7 @@
 				542ADB191C7D588900937593 /* TrackwayTableViewCell.xib in Resources */,
 				540D991C1C4A64380027EF2F /* share_selected.png in Resources */,
 				5454DCEB1C571E5F00B96CCD /* mapBook.png in Resources */,
+				C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */,
 				540D99151C4A64380027EF2F /* jia_selected.png in Resources */,
 				5454DCEA1C571E5F00B96CCD /* location.png in Resources */,
 				540D99131C4A64380027EF2F /* haoyou.png in Resources */,
@@ -1045,6 +1057,7 @@
 				C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */,
 				54B3AFA81C4E268000D79478 /* MapMoveInfoView.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
+				C248D0001C7EECA7002776E5 /* UITextField+DatePicker.m in Sources */,
 				C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */,
 				C204BC081C4F2FCB0085BE48 /* UserViewController.m in Sources */,
 				5454DCCE1C571B5700B96CCD /* MovementInfo.m in Sources */,
@@ -1059,6 +1072,7 @@
 				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
 				C204BC0B1C4F33D60085BE48 /* LoginViewController.m in Sources */,
 				C21876BD1C5708BD009D428B /* YDWeatherViewController.m in Sources */,
+				C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */,
 				C21876EA1C5763C4009D428B /* DetailModel.m in Sources */,
 				C21876D11C570B08009D428B /* WomenTableViewController.m in Sources */,
 				C21876D81C570C05009D428B /* DogModel.m in Sources */,
@@ -1073,7 +1087,6 @@
 				5454DCD31C571B6000B96CCD /* MapView.m in Sources */,
 				542ADB141C7D57FE00937593 /* TrackwayTableViewController.m in Sources */,
 				54BE0A6F1C5C522A008D1A6C /* Entity+CoreDataProperties.m in Sources */,
-				C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */,
 				C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
 				C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */,
@@ -1087,7 +1100,6 @@
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 				5454DCDB1C571C5700B96CCD /* GCDMulticastDelegate.m in Sources */,
 				C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */,
-				C25D63721C7DE06600A03263 /* CreatActivityViewController_2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

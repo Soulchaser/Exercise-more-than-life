@@ -37,7 +37,7 @@
 #pragma mark **********"创建"按钮响应事件
 -(void)pushToCreatPage
 {
-    CreatActivityViewController * creatVC = [CreatActivityViewController new];
+    CreatActivityViewController_1 * creatVC = [CreatActivityViewController_1 new];
     
     [self.navigationController pushViewController:creatVC animated:YES];
 }
