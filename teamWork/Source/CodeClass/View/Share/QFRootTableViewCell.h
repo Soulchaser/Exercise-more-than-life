@@ -18,7 +18,11 @@ static NSString *const kQFRootTableViewCellIdentifier = @"QFRootTableViewCell";
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;//图片
 @property (weak, nonatomic) IBOutlet UIView *commentListView;//图片分享列表
 @property (weak, nonatomic) IBOutlet UILabel *shareTimeLabel;//分享时间
-
+//判断分享用户是否被当前用户关注
+- (void)userByAttentionOrNot:(YYUserShare *)item;
+//隐藏关注按钮
+- (void)hideAttentionButton;
+//绘制cell
 - (void)createCellViews:(YYUserShare *)item;
 
 @end

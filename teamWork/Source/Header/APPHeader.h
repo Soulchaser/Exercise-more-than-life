@@ -68,6 +68,14 @@
 #import "AvatarsourceType.h"
 //登陆界面
 #import "LoginViewController.h"
+//我的分享
+#import "UserAllShareTableViewController.h"
+//关注的人
+#import "UserAllAttentionTVC.h"
+//关注列表
+#import "UserAttentionCell.h"
+//关注详情页
+#import "AttentionDetailVC.h"
 //自制气泡
 #import "DistanceCalloutView.h"
 

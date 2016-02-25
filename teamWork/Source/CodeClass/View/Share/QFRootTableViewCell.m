@@ -9,6 +9,7 @@
 #import "QFRootTableViewCell.h"
 @interface QFRootTableViewCell ()
 @property(strong,nonatomic)NSString *shareTime;//根据分享时间在数据表中查找分享记录
+
 @end
 @implementation QFRootTableViewCell
 
@@ -20,29 +21,30 @@
     self.backgroundImageView.image = image;
 
 }
-//创建视图
--(void)createCellViews:(YYUserShare *)item{
+
+-(void)userByAttentionOrNot:(YYUserShare *)item{
     //判断该cell分享者是否已经被当前用户关注
     AVQuery *query = [AVQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from" equalTo:[AVUser currentUser]];
     [query includeKey:@"to"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        for (AVObject *to in objects) {
-            AVUser *toUser = [to  objectForKey:@"to"];
-            if ([toUser isEqual:[AVUser currentUser]]) {
+        for (AVObject *follow in objects) {//拿到所有已关注的用户
+            AVUser *toUser = [follow  objectForKey:@"to"];
+            NSString *userName = [toUser objectForKey:@"username"];
+            if ([userName isEqualToString:item.userName]) {
+                
                 self.attentionButton.userInteractionEnabled = NO;
                 [self.attentionButton setTitle:@"已关注" forState:UIControlStateNormal];
-                break;
             }
         }
     }];
-    self.userImageView.image = item.avatar;//头像
+}
+//创建视图
+-(void)createCellViews:(YYUserShare *)item{
+        self.userImageView.image = item.avatar;//头像
     self.nameLabel.text = item.nickname;//昵称
     self.shareTime = item.shareTime;//根据分享时间在数据表中查找分享记录
     self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",item.shareTime];//日期
-    
-    
-    
     self.commentLabel.text = item.share_txt;//txt
     //取出分享图片的文件数组,改成data数组
     NSMutableArray *dataArray = [NSMutableArray array];
@@ -54,6 +56,7 @@
         [dataArray addObject:pictureData];
     }
     [self createShareDetailPicture:dataArray];
+    
 }
 
 - (void)createShareDetailPicture:(NSArray *)picture{
@@ -99,7 +102,7 @@
     [self.commentListView layoutIfNeeded];
 
 }
-//添加关注
+//添加关注 在分享列表中使用
 - (IBAction)attendButtonAction:(id)sender {
     AVQuery *query = [AVQuery queryWithClassName:@"Share"];
     [query includeKey:@"shareuser"];
@@ -126,7 +129,11 @@
     }];
     
 }
-
+//隐藏关注按钮
+-(void)hideAttentionButton{
+    self.attentionButton.userInteractionEnabled = NO;
+    [self.attentionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+}
 /*
  
  //使用关联表添加用户之间的互相关系(关注from和被关注to)

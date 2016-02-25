@@ -111,6 +111,8 @@
 		C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */; };
 		C28EFD531C5AF5630099A8B6 /* iconfont-bianji.png in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */; };
 		C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */; };
+		C29EC1B41C7D966000155F14 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C29EC1B31C7D966000155F14 /* default_avatar.png */; };
+		C29EC1B81C7DAE0C00155F14 /* UserAllShareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */; };
 		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
 		C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */; };
 		C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */; };
@@ -118,6 +120,14 @@
 		C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */; };
 		C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */; };
 		C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */; };
+		C2E6CFDB1C7EB15A0019EDF9 /* UserAllAttentionTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */; };
+		C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */; };
+		C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E6CFE21C7ED4660019EDF9 /* UserAttentionCell.xib */; };
+		C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */; };
+		C2E6CFE91C7EE5EF0019EDF9 /* AttentionDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E6CFE71C7EE5EF0019EDF9 /* AttentionDetailVC.xib */; };
+		C2E6CFEC1C7EEAE10019EDF9 /* iconfont-iconfontnan.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E6CFEA1C7EEAE10019EDF9 /* iconfont-iconfontnan.png */; };
+		C2E6CFED1C7EEAE10019EDF9 /* iconfont-nv.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E6CFEB1C7EEAE10019EDF9 /* iconfont-nv.png */; };
+		C2E6CFF11C7F02810019EDF9 /* iconfont-wenhao.png in Resources */ = {isa = PBXBuildFile; fileRef = C2E6CFF01C7F02810019EDF9 /* iconfont-wenhao.png */; };
 		C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F74AB21C56678E00197D7D /* AvatarsourceType.m */; };
 		C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */; };
 /* End PBXBuildFile section */
@@ -286,6 +296,9 @@
 		C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QFRootTableViewCell.xib; sourceTree = "<group>"; };
 		C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-bianji.png"; sourceTree = "<group>"; };
 		C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-tianjia.png"; sourceTree = "<group>"; };
+		C29EC1B31C7D966000155F14 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
+		C29EC1B61C7DAE0C00155F14 /* UserAllShareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllShareTableViewController.h; sourceTree = "<group>"; };
+		C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAllShareTableViewController.m; sourceTree = "<group>"; };
 		C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -298,6 +311,17 @@
 		C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPasswordVC__Three.xib; sourceTree = "<group>"; };
 		C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
 		C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
+		C2E6CFD91C7EB15A0019EDF9 /* UserAllAttentionTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllAttentionTVC.h; sourceTree = "<group>"; };
+		C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAllAttentionTVC.m; sourceTree = "<group>"; };
+		C2E6CFE01C7ED4660019EDF9 /* UserAttentionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttentionCell.h; sourceTree = "<group>"; };
+		C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttentionCell.m; sourceTree = "<group>"; };
+		C2E6CFE21C7ED4660019EDF9 /* UserAttentionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAttentionCell.xib; sourceTree = "<group>"; };
+		C2E6CFE51C7EE5EF0019EDF9 /* AttentionDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttentionDetailVC.h; sourceTree = "<group>"; };
+		C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttentionDetailVC.m; sourceTree = "<group>"; };
+		C2E6CFE71C7EE5EF0019EDF9 /* AttentionDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AttentionDetailVC.xib; sourceTree = "<group>"; };
+		C2E6CFEA1C7EEAE10019EDF9 /* iconfont-iconfontnan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-iconfontnan.png"; sourceTree = "<group>"; };
+		C2E6CFEB1C7EEAE10019EDF9 /* iconfont-nv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-nv.png"; sourceTree = "<group>"; };
+		C2E6CFF01C7F02810019EDF9 /* iconfont-wenhao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-wenhao.png"; sourceTree = "<group>"; };
 		C2F74AB11C56678E00197D7D /* AvatarsourceType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvatarsourceType.h; sourceTree = "<group>"; };
 		C2F74AB21C56678E00197D7D /* AvatarsourceType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvatarsourceType.m; sourceTree = "<group>"; };
 		C2F74AB31C56678E00197D7D /* AvatarsourceType.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AvatarsourceType.xib; sourceTree = "<group>"; };
@@ -495,6 +519,7 @@
 				C22D59A11C59AE580070AE96 /* GroupActivity */,
 				5454DCC21C571B3C00B96CCD /* TrackLogging */,
 				C21FE6C81C49239100D71330 /* User */,
+				C29EC1B51C7DADA400155F14 /* UserAttendInformation */,
 				C28B4B631C585AC600BF8EFD /* Share */,
 				5498EC941C48D27B00A7D99E /* DisplayViewController.h */,
 				5498EC951C48D27B00A7D99E /* DisplayViewController.m */,
@@ -520,6 +545,7 @@
 		5498EC8A1C48D0E700A7D99E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C2E6CFDC1C7ED3310019EDF9 /* UserAttention */,
 				C21876BF1C570A9A009D428B /* WeatherCollectionCell */,
 				54B3AF9F1C4E256500D79478 /* map */,
 				C28EFD4B1C5AF3E50099A8B6 /* Share */,
@@ -627,6 +653,10 @@
 		C204BC0C1C4F726E0085BE48 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				C2E6CFF01C7F02810019EDF9 /* iconfont-wenhao.png */,
+				C2E6CFEA1C7EEAE10019EDF9 /* iconfont-iconfontnan.png */,
+				C2E6CFEB1C7EEAE10019EDF9 /* iconfont-nv.png */,
+				C29EC1B31C7D966000155F14 /* default_avatar.png */,
 				C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */,
 				C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */,
 				C204BC0F1C4F73DB0085BE48 /* iconfont-yonghu.png */,
@@ -787,6 +817,31 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		C29EC1B51C7DADA400155F14 /* UserAttendInformation */ = {
+			isa = PBXGroup;
+			children = (
+				C29EC1B61C7DAE0C00155F14 /* UserAllShareTableViewController.h */,
+				C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */,
+				C2E6CFD91C7EB15A0019EDF9 /* UserAllAttentionTVC.h */,
+				C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */,
+				C2E6CFE51C7EE5EF0019EDF9 /* AttentionDetailVC.h */,
+				C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */,
+				C2E6CFE71C7EE5EF0019EDF9 /* AttentionDetailVC.xib */,
+			);
+			name = UserAttendInformation;
+			path = teamWork/Source/CodeClass/Controller/UserAttendInformation;
+			sourceTree = SOURCE_ROOT;
+		};
+		C2E6CFDC1C7ED3310019EDF9 /* UserAttention */ = {
+			isa = PBXGroup;
+			children = (
+				C2E6CFE01C7ED4660019EDF9 /* UserAttentionCell.h */,
+				C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */,
+				C2E6CFE21C7ED4660019EDF9 /* UserAttentionCell.xib */,
+			);
+			path = UserAttention;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -866,6 +921,7 @@
 				540D991A1C4A64380027EF2F /* person.png in Resources */,
 				C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */,
 				C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */,
+				C2E6CFED1C7EEAE10019EDF9 /* iconfont-nv.png in Resources */,
 				5454DCF21C571E5F00B96CCD /* walk.png in Resources */,
 				C25D63731C7DE06600A03263 /* CreatActivityViewController_2.xib in Resources */,
 				5454DCEE1C571E5F00B96CCD /* ride.png in Resources */,
@@ -877,16 +933,21 @@
 				C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */,
 				C204BC051C4F1A5B0085BE48 /* User.storyboard in Resources */,
 				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
+				C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */,
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
-				542ADB1C1C7D5DBA00937593 /* shijiianbiao.png in Resources */,
+
+				C2E6CFE91C7EE5EF0019EDF9 /* AttentionDetailVC.xib in Resources */,
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
 				540D991B1C4A64380027EF2F /* share.png in Resources */,
 				5454DCF41C579B6400B96CCD /* tuodong.png in Resources */,
 				C28EFD531C5AF5630099A8B6 /* iconfont-bianji.png in Resources */,
+				C2E6CFEC1C7EEAE10019EDF9 /* iconfont-iconfontnan.png in Resources */,
+				C29EC1B41C7D966000155F14 /* default_avatar.png in Resources */,
 				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
+				C2E6CFF11C7F02810019EDF9 /* iconfont-wenhao.png in Resources */,
 				5454DCED1C571E5F00B96CCD /* ride_selected.png in Resources */,
 				5454DCE91C571E5F00B96CCD /* jiantou.png in Resources */,
 				540D99171C4A64380027EF2F /* jian_selected.png in Resources */,
@@ -976,16 +1037,19 @@
 				C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */,
 				5454DCCD1C571B5700B96CCD /* MapGPSLocation.m in Sources */,
 				54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */,
+				C2E6CFDB1C7EB15A0019EDF9 /* UserAllAttentionTVC.m in Sources */,
 				54BE0A701C5C522A008D1A6C /* MICodeData.xcdatamodeld in Sources */,
 				54BE0A6E1C5C522A008D1A6C /* Entity.m in Sources */,
 				C21876E61C5758D4009D428B /* DetailViewController.m in Sources */,
 				54B3AFA41C4E256500D79478 /* DistanceCalloutView.m in Sources */,
+				C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */,
 				54B3AFA81C4E268000D79478 /* MapMoveInfoView.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
 				C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */,
 				C204BC081C4F2FCB0085BE48 /* UserViewController.m in Sources */,
 				5454DCCE1C571B5700B96CCD /* MovementInfo.m in Sources */,
 				C21876CF1C570B08009D428B /* NanxingTableViewController.m in Sources */,
+				C29EC1B81C7DAE0C00155F14 /* UserAllShareTableViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */,
 				C28EFD4F1C5AF3E50099A8B6 /* QFRootTableViewCell.m in Sources */,
@@ -1012,6 +1076,7 @@
 				C22D59A81C59B3AA0070AE96 /* CreatActivityViewController.m in Sources */,
 				C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
+				C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */,
 				5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */,
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
