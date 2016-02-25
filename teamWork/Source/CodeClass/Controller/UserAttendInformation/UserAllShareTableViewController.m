@@ -1,29 +1,20 @@
 //
-//  FootPrintTableViewController.m
+//  UserAllShareTableViewController.m
 //  teamWork
 //
-//  Created by lanou3g on 16/1/27.
+//  Created by lanou3g on 16/2/24.
 //  Copyright © 2016年 hanxiaolong. All rights reserved.
 //
 
-#import "FootPrintTableViewController.h"
+#import "UserAllShareTableViewController.h"
 #import "QFRootTableViewCell.h"
-@interface FootPrintTableViewController ()
+@interface UserAllShareTableViewController ()
 @property(strong,nonatomic)NSMutableArray *dataArray;//请求的数据 - 为YYUserShare类型
 @property(assign,nonatomic) NSInteger page;//数据页数,表示请求第几页的数据
 @end
 static NSString *const shareCellID = @"shareCellID";
-@implementation FootPrintTableViewController
-+(instancetype)shareFootPrintTVC{
-    static FootPrintTableViewController *handler = nil;
-    if (handler == nil) {
-        static dispatch_once_t onceToken;
-        dispatch_once(&onceToken, ^{
-            handler = [[FootPrintTableViewController alloc]init];
-        });
-    }
-    return handler;
-}
+@implementation UserAllShareTableViewController
+
 #pragma mark -----上拉加载和下拉刷新-------------------
 //懒加载_dataArray
 -(NSMutableArray *)dataArray{
@@ -78,7 +69,8 @@ static NSString *const shareCellID = @"shareCellID";
     query.skip = 10*(self.page-2);
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"share_picture"];//图片为AVFile类型,查询出要特殊处理
-    [query includeKey:@"shareuser"];
+//    [query includeKey:@"shareuser"];
+    [query whereKey:@"shareuser" equalTo:[AVUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (objects) {
             //如果获取到数据
@@ -110,16 +102,15 @@ static NSString *const shareCellID = @"shareCellID";
                 shareModel.share_txt = [share objectForKey:@"share_txt"];//分享内容(文本)
                 //分享内容(图片) 图片数组 元素为AVFile类型 (处理在自定义cell中)
                 shareModel.share_picture = [share objectForKey:@"share_picture"];
-                NSLog(@"%@",shareModel.share_picture);
                 [self.dataArray addObject:shareModel];
             }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
         }
     }];
     
-
+    
 }
 
 /**
@@ -149,9 +140,8 @@ static NSString *const shareCellID = @"shareCellID";
     QFRootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:shareCellID forIndexPath:indexPath];
     if (self.dataArray.count > 0) {
         [cell createCellViews:_dataArray[indexPath.row]];
-        [cell userByAttentionOrNot:_dataArray[indexPath.row]];
+        [cell hideAttentionButton];
     }
-//    [cell createCellViews:_dataArray[indexPath.row]];
     return cell;
 }
 //cell高度
@@ -159,11 +149,30 @@ static NSString *const shareCellID = @"shareCellID";
     if (self.dataArray.count > 0) {
         return [tableView fd_heightForCellWithIdentifier:shareCellID configuration:^(id cell) {
             [cell createCellViews:_dataArray[indexPath.row]];
+            
         }];
     }else{
         return 0;
     }
 }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,self.tableView.frame.size.width,100)];
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.backgroundColor = [UIColor greenColor];
+    backButton.frame = CGRectMake(10, 40, 100, 40);
+    [backButton setTitle:@"返回" forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    [headerView addSubview:backButton];
+    return headerView;
+}
+-(void)backAction{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 100;
+}
+
+
 
 
 @end

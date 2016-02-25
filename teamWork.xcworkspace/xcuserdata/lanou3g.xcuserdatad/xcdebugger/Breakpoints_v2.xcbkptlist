@@ -10,22 +10,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "teamWork/Source/CodeClass/Controller/User/LoginViewController.m"
-            timestampString = "475414500.002779"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "-sendSMSAction:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "teamWork/Source/CodeClass/Controller/User/LoginViewController.m"
             timestampString = "475414457.082299"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

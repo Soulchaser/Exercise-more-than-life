@@ -29,11 +29,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
-    FootPrintTableViewController *footPrintTVC = [FootPrintTableViewController new];
-    [self addChildViewController:footPrintTVC];
-    [self.view addSubview:footPrintTVC.tableView];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    if ([AVUser currentUser] != nil) {
+        self.view.backgroundColor = [UIColor yellowColor];
+        FootPrintTableViewController *footPrintTVC = [FootPrintTableViewController shareFootPrintTVC];
+        [self addChildViewController:footPrintTVC];
+        [self.view addSubview:footPrintTVC.tableView];
+    }else{
+        NSArray *array = self.view.subviews;
+        for (UIView *myView in array) {
+            [myView removeFromSuperview];
+        }
+    }
 }
 -(void)viewDidAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];
