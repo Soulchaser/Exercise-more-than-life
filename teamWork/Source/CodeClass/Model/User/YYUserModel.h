@@ -47,10 +47,13 @@
 //用户信息model(存储在leancoud上)  用户登陆时, 用手机号+密码登陆  昵称用来展示
 @interface YYUserModel_Phone : NSObject
 @property(strong,nonatomic)NSString *userName;//用户名(手机号)
+@property(strong,nonatomic)NSString *nickName;//昵称
 @property(strong,nonatomic)NSString *password;//密码
 @property(strong,nonatomic)NSString *phone;//手机号
 @property(strong,nonatomic)NSString *gender;//性别
 @property(strong,nonatomic)NSString *age;//年龄
+@property(strong,nonatomic)NSString *address;//地址
+
 @property(strong,nonatomic)NSString *signature;//个性签名
 @property(strong,nonatomic)UIImage *avatar;//头像
 @property(strong,nonatomic)NSMutableArray *joinActivity;//参加的活动

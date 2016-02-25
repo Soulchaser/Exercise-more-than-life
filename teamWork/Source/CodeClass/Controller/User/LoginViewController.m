@@ -123,6 +123,12 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     [self.sendSMS startWithTime:_num title:@"发送验证码" countDownTitle:@"S" mainColor:[UIColor greenColor] countColor:[UIColor grayColor]];
 }
+-(void)viewWillDisappear:(BOOL)animated{
+    //取消观察者
+    [[NSNotificationCenter defaultCenter]removeObserver:self.observe];
+    [self.sendSMS removeObserver:self forKeyPath:@"userInteractionEnabled"];
+}
+
 -(void)viewDidAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser != nil) {
@@ -152,11 +158,6 @@
     //添加观察者
     [self.sendSMS addObserver:self forKeyPath:@"userInteractionEnabled" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];
 }
--(void)viewWillDisappear:(BOOL)animated{
-    //取消观察者
-    [[NSNotificationCenter defaultCenter]removeObserver:self.observe];
-    [self.sendSMS removeObserver:self forKeyPath:@"userInteractionEnabled"];
-}
 
 //观察者响应方法
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
@@ -174,10 +175,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//忘记密码(找回密码)
-- (IBAction)losePasswordAction:(id)sender {
-    
-}
+
 //登陆
 - (IBAction)loginAction:(id)sender {
     //先退出上一个账户
@@ -228,6 +226,11 @@
     }
 }
 -(void)alertCBackAction{
+    AVUser *currentUser = [AVUser currentUser];
+    //添加头像
+    AVFile *avatarFile = [AVFile fileWithName:@"avatar.png"data:UIImagePNGRepresentation([UIImage imageNamed:@"default_avatar"])];
+    [currentUser setObject:avatarFile forKey:@"avatar"];
+    [currentUser saveInBackground];
     //回收alertController
     [self dismissViewControllerAnimated:YES completion:nil];
     //跳转主界面

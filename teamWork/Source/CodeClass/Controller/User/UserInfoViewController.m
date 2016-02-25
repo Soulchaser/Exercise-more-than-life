@@ -56,8 +56,9 @@
 - (IBAction)backAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-//保存
+//保存用户设置
 - (IBAction)saveAction:(id)sender {
+    
     AVUser *currentUser = [AVUser currentUser];
     [currentUser setObject:self.nickname.text forKey:@"nickname"];
     [currentUser setObject:self.gender forKey:@"gender"];

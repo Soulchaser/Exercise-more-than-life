@@ -33,6 +33,10 @@
 //运动数据记录类
 #import "MovementInfo.h"
 #import "SportInfoView.h"
+#import "TrackwayTableViewCell.h"
+#import "TrackwayTableViewController.h"
+#import "MapwayDetailsViewController.h"
+
 //自定义的地图视图
 #import "MapView.h"
 #import "PinyinChange.h"
@@ -64,6 +68,14 @@
 #import "AvatarsourceType.h"
 //登陆界面
 #import "LoginViewController.h"
+//我的分享
+#import "UserAllShareTableViewController.h"
+//关注的人
+#import "UserAllAttentionTVC.h"
+//关注列表
+#import "UserAttentionCell.h"
+//关注详情页
+#import "AttentionDetailVC.h"
 //自制气泡
 #import "DistanceCalloutView.h"
 
@@ -83,8 +95,6 @@
 #import "DetailViewController.h"
 #import "AddTableViewController.h"
 #import "SettingViewController.h"
-//#import "CreatActivityViewController.h"
-//#import "CreatActivityViewController_2.h"
 #import "CreatActivityViewController_1.h"
 #pragma mark ------------重用标识符------------
 //减肥瘦身-loseWight

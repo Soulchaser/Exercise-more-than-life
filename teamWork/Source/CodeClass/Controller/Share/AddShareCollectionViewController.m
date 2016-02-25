@@ -14,6 +14,8 @@
 @property(strong,nonatomic)AvatarsourceType *sourceType;//图片获取
 @property(strong,nonatomic)UITextView *shareContent_txt;
 @property(strong,nonatomic)UIButton *rightButton;
+@property(strong,nonatomic)NSTimer *remindTimer;
+@property(strong,nonatomic)UILabel *remindLabel;
 @end
 
 @implementation AddShareCollectionViewController
@@ -46,10 +48,16 @@ static NSString * const headerReuserID = @"headerReuserID";
     self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth-20, kScreenHeight/2)];
     
 }
-
+-(void)timeAction{
+    
+}
 //发布按钮点击事件
 -(void)publishAction{
-    
+//    //如果发布字数小于5 发布失败
+//    if (self.shareContent_txt.text.length < 5) {
+//        self.remindTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
+//        return;
+//    }
     //分享类
     AVObject *share = [AVObject objectWithClassName:@"Share"];
     /*
@@ -218,46 +226,5 @@ static NSString * const headerReuserID = @"headerReuserID";
         [self.collectionView reloadData];
     });
 }
-
-
-
-
-#pragma mark <UICollectionViewDelegate>
-
-
-
-
-
-
-
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end

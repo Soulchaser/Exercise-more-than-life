@@ -109,7 +109,7 @@
     [self.mapView addSubview:self.mapZoomOutButton];
     [self.mapView addSubview:self.mapZoomInButton];
     [self.mapView addSubview:self.mapTypeButton];
-    [self.mapView addSubview:self.mapAltitudeButton];
+    //[self.mapView addSubview:self.mapAltitudeButton];
     [self.mapView addSubview:self.mapDistanceButton];
     //添加提示信息Label
     //[self.mapView addSubview:self.promptLabel];
