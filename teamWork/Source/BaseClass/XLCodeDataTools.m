@@ -97,6 +97,31 @@
     
     return array;
 }
+
+//根据开始时间查找某一条
+-(NSArray *)getDataFromLibraryWithstartDate:(NSDate *)startDate
+{
+    //先填写一份查询表
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Entity"];
+    
+    //填写查询条件
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate = %@", startDate];
+    
+    request.predicate = predicate;
+    
+    //排序条件
+    request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES]];
+    
+    NSArray *array = [self.context executeFetchRequest:request error:nil];
+    
+    //    for (Entity *dataInfo in array)
+    //    {
+    //        DLog(@"%@",dataInfo.infoData);
+    //    }
+    
+    return array;
+}
+
 //删除某一条
 -(void)deleteDataFromLibraryWithstartDate:(NSDate *)startDate
 {
@@ -147,6 +172,32 @@
     [self.context save:nil];
 }
 
-
+-(void)updata:(CordDataInfo *)info
+{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    [fetchRequest setEntity:entity];
+    // Specify criteria for filtering which objects to fetch
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"startDate = %@", info.startDate];
+    [fetchRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.context executeFetchRequest:fetchRequest error:&error];
+    if (fetchedObjects == nil) {
+        
+    }
+    
+    for (Entity *ent in fetchedObjects)
+    {
+        ent.startDate = info.startDate;
+        ent.movementTime = [NSNumber numberWithInteger:info.movementTime];
+        ent.totleTime = [NSNumber numberWithDouble:info.totleTime];
+        ent.maxSpeed = [NSNumber numberWithFloat:info.maxSpeed];
+        ent.sportType = [NSNumber numberWithInteger:info.sportType];
+        ent.totleDistance = [NSNumber numberWithFloat:info.totleDistance];
+        ent.infoData = [NSKeyedArchiver archivedDataWithRootObject:info.infoArray];
+    }
+     [self.context save:nil];
+}
 
 @end

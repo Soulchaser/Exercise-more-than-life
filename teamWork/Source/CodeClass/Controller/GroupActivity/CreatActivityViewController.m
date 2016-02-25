@@ -20,7 +20,7 @@
 
 @property(strong,nonatomic) UITextView * YDTextDescripView;//描述
 
-@property(strong,nonatomic) UITableView * tableView;
+//@property(strong,nonatomic) UITableView * tableView;
 
 @property(strong,nonatomic) UIImageView * imgViewOne;
 
@@ -78,15 +78,15 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     return _YDTextDescripView;
 }
 //tableView
--(UITableView *)tableView
-{
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 164, kScreenWidth, 300) style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-    }
-    return _tableView;
-}
+//-(UITableView *)tableView
+//{
+//    if (!_tableView) {
+//        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(10, 164, kScreenWidth, 300) style:UITableViewStylePlain];
+//        _tableView.delegate = self;
+//        _tableView.dataSource = self;
+//    }
+//    return _tableView;
+//}
 
 //图片
 -(UIImageView *)imgViewOne
@@ -129,14 +129,14 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     
     
     //注册cell
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:creatTableViewCellID];
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:creatTableViewCellID];
     
     //添加到滚动视图上
     [self.YDScrollView addSubview:self.TitleLabel];
     [self.YDScrollView addSubview:self.YDTextTitleView];
     [self.YDScrollView addSubview:self.DescriptionLabel];
     [self.YDScrollView addSubview:self.YDTextDescripView];
-    [self.YDScrollView addSubview:self.tableView];
+//    [self.YDScrollView addSubview:self.tableView];
     [self.YDScrollView addSubview:self.imgViewFour];
     [self.YDScrollView addSubview:self.imgViewOne];
     [self.YDScrollView addSubview:self.imgViewThree];
@@ -153,45 +153,36 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 //点击确定,整理数据,提交给服务器
 -(void)DefaltAction
 {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 //点击取消,弹窗提示"确定取消正在创建的活动?"
 //确定->返回前一个页面
 //去掉->不做操作
 -(void)CancelAction
 {
-    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark *************  TabelView 代理  ************
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 7;
-}
+//-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return 7;
+//}
 
--(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:creatTableViewCellID forIndexPath:indexPath];
-    
-    cell.textLabel.text = @"设置";
-    
-    return cell;
-    
-}
+//-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:creatTableViewCellID forIndexPath:indexPath];
+//    
+//    cell.textLabel.text = @"设置";
+//    
+//    return cell;
+//    
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

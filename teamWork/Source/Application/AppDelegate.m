@@ -57,7 +57,7 @@
     self.tabBC.tabBar.barStyle = UIBarStyleDefault;
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window setBackgroundColor:[UIColor whiteColor]];
+    [self.window setBackgroundColor:[UIColor blackColor]];
     [self.window makeKeyAndVisible];
     [self.window setRootViewController:self.tabBC];
     

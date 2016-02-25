@@ -203,6 +203,8 @@
     self.annImgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"location"]];
     
     [[MapGPSLocation shareMapGPSLocation] mapGpsHeadingStart];
+    
+    self.timeCount = 0;
     // Do any additional setup after loading the view.
 }
 
@@ -295,34 +297,17 @@
 -(void)startButtonAction:(UIButton *)sender
 {
     [self initWhenMoveStart];
-    //设置距离筛选器
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    //定位精度
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //不关闭后台持续定位的能力
-    self.mapView.mapView.pausesLocationUpdatesAutomatically = NO;
-    
-    [self.locationManager startUpdatingLocation];
-    [self beginTiming];
-    [self.view addSubview:self.stopButton];
+    [self moveStart];
 }
 //继续
 -(void)continueButtonAction:(UIButton *)sender
 {
-    NSString *homePath = NSHomeDirectory();
-    NSLog(@"homePath = %@",homePath);
     
-
-    //[self.cordDataTools deleteAllDataFromLibrary];
-    NSArray *dataArr = [self.cordDataTools getDataFromLibrary];
+    //TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
+    //[self.navigationController pushViewController:TwtVC animated:YES];
     
-    NSArray *infoArr = [NSKeyedUnarchiver unarchiveObjectWithData:((Entity *)dataArr.lastObject).infoData];
-    for (MovementInfo *movementInfo in infoArr)
-    {
-        DLog(@"%@",movementInfo);
-    }
-    
-    
+    [self moveStart];
+    [self.mapView.mapView removeAnnotation:self.startAndEndAnnArray.lastObject];
     
 }
 //结束
@@ -345,11 +330,33 @@
     [self endTiming];
     [self.stopButton removeFromSuperview];
     
-    //数据入库
-    //组装model
-    CordDataInfo *cordDataInfo = [[CordDataInfo alloc]initWithMovementInfoArray:self.roadmapArray sportType:self.sportModel];
-    //存入数据库
-    [self.cordDataTools insertData:cordDataInfo];
+    if (((MovementInfo *)self.roadmapArray.lastObject).totleDistance < 0)
+    {
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"由于本次运动过短，将不会被记录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defulAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:nil];
+        [alertCon addAction:defulAction];
+        [self presentViewController:alertCon animated:YES completion:nil];
+    }
+    else
+    {
+        //数据入库
+        //组装model
+        CordDataInfo *cordDataInfo = [[CordDataInfo alloc]initWithMovementInfoArray:self.roadmapArray sportType:self.sportModel];
+        //查询数据库中是否已存在该次的运动的数据，存在的话就更新，不存在则重新写
+       NSArray *arr = [self.cordDataTools getDataFromLibraryWithstartDate:((MovementInfo *)self.roadmapArray.firstObject).timeDate];
+        if (arr.count == 0)
+        {
+            //存入数据库
+            [self.cordDataTools insertData:cordDataInfo];
+        }
+        else
+        {
+            //更新数据
+            [self.cordDataTools updata:cordDataInfo];
+        }
+            
+        
+    }
 
 }
 
@@ -366,12 +373,27 @@
     [self.mapView.mapView removeAnnotations:self.startAndEndAnnArray];
     //清除起点和终点ann的数组
     [self.startAndEndAnnArray removeAllObjects];
-    
+    //清空计时
+    self.timeCount = 0;
     //清除所有显示数据的label
     self.sportInfoView.currentSpeedLB.text = [NSString stringWithFormat:@"0.00"];
     self.sportInfoView.distanceLB.text = @"0.00";
     self.sportInfoView.timeLB.text = @"0:00:00";
     self.sportInfoView.averageSpeedLB.text = @"0.00";
+}
+
+-(void)moveStart
+{
+    //设置距离筛选器
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    //定位精度
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    //不关闭后台持续定位的能力
+    self.mapView.mapView.pausesLocationUpdatesAutomatically = NO;
+    
+    [self.locationManager startUpdatingLocation];
+    [self beginTiming];
+    [self.view addSubview:self.stopButton];
 }
 
 
@@ -635,7 +657,11 @@
                 //2.计算距离
                 distance = [locat1 distanceFromLocation:locat2];
                 movementInfo.currentSpeed = (distance/timeINterval)*3.6;
-                
+                //去除因定位误差所产生的过大的错误速度
+                if (movementInfo.currentSpeed > 60)
+                {
+                    movementInfo.currentSpeed = 0.0;
+                }
             }
             //movementInfo.startDate = movementInfo.lastDate;
             movementInfo.timeDate = nowDate;
@@ -695,7 +721,7 @@
             //[self.roadmapArray addObject:movementInfo];
         }
     [self.roadmapArray addObject:movementInfo];
-    DLog(@"%lu",(unsigned long)self.roadmapArray.count);
+   // DLog(@"%lu",(unsigned long)self.roadmapArray.count);
     self.mapView.moveInfoView.distanceLabel.text = [NSString stringWithFormat:@"%0.2f",movementInfo.totleDistance/1000.0];
     self.mapView.moveInfoView.speedLabel.text = [NSString stringWithFormat:@"%0.2f",movementInfo.currentSpeed];
     
@@ -849,11 +875,8 @@
     {
         [self endTiming];
     }
-    self.timeCount = 0;
+    
     self.moveTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerAction:) userInfo:nil repeats:YES];
-    //NSDate *nowDate = [NSDate dateWithTimeIntervalSinceNow:8*60*60];
-    //self.GPSMovementInfo.startDate = nowDate;
-
 }
 //结束计时
 -(void)endTiming
