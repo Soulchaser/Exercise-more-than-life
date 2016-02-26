@@ -24,9 +24,61 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     if (self = [super init])
     {
         [self getData];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+        self.navigationItem.title = @"运动记录";
         
     }
     return self;
+}
+
+-(void)leftBarButtonAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)rightBarButtonAction
+{
+    AVUser *currentUser = [AVUser currentUser];
+
+    if (currentUser == nil) {
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"您尚未登录，请先登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *trueAlert = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            UIStoryboard *userStoryboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+            LoginViewController *loginVC = [userStoryboard instantiateViewControllerWithIdentifier:@"login"];
+            [self presentViewController:loginVC animated:YES completion:nil];
+        }];
+        [alertCon addAction:trueAlert];
+        [self presentViewController:alertCon animated:YES completion:nil];
+
+    }else {
+        
+        NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
+        
+            //创建一条运动记录
+            AVObject *exercise = [AVObject objectWithClassName:@"Exercise"];//运动记录在Exercise表中
+            [exercise setObject:currentUser forKey:@"exercise_user"];//运动记录创建者 (当前用户)
+//            //数据位字符串类型
+//            [exercise setObject:entity.startDate forKey:@"start_time"];//开始时间
+//            [exercise setObject:entity.totleTime forKey:@"all_time"];//总时间
+//            [exercise setObject:entity.movementTime forKey:@"exercise_time"];//运动时间
+//            [exercise setObject:entity.maxSpeed forKey:@"most_speed"];//最高时速
+//            [exercise setObject:entity.sportType forKey:@"exercise_type"];//运送类型
+//            [exercise setObject:entity.totleDistance forKey:@"all_length"];//总路程
+//
+            AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
+            [exercise setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
+            [exercise saveEventually:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    //储存成功执行
+                    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"上传成功" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                    [alertCon addAction:alertAct];
+                    [self presentViewController:alertCon animated:YES completion:nil];
+                }
+            }];
+    }
 }
 
 - (void)viewDidLoad {
@@ -36,16 +88,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    
-    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TrackwayTableViewCell class]) bundle:nil] forCellReuseIdentifier:systemCellResuseIdentfier];
     [self.tableView reloadData];
    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -81,15 +126,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
     MapwayDetailsViewController *mapVC = [[MapwayDetailsViewController alloc]init];
     mapVC.cordData = self.dataArray[indexPath.section];
     [self.navigationController pushViewController:mapVC animated:YES];
-    
-    
-    
-    
-   // DLog(@"%d",indexPath.section);
 }
 
 #pragma mark ----cell的删除操作------

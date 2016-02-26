@@ -37,11 +37,11 @@
     //设置高德地图LOGO位置
     self.mapView.logoCenter = CGPointMake(CGRectGetWidth(self.bounds)-55, CGRectGetHeight(self.bounds)-22);
 
-    self.shareButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5, 30,24, 24)];
-    [self.shareButton setImage:[UIImage imageNamed:@"mapShare"] forState:UIControlStateNormal];
-    self.shareButton.backgroundColor = [UIColor whiteColor];
-    
-    self.mapBookButton = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.shareButton.frame)-44, 30,24, 24)];
+//    self.shareButton = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(self.shareButton.frame)-44, 30,24, 24)];
+//    [self.shareButton setImage:[UIImage imageNamed:@"mapShare"] forState:UIControlStateNormal];
+//    self.shareButton.backgroundColor = [UIColor whiteColor];
+//    
+    self.mapBookButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5, 30,24, 24)];
     [self.mapBookButton setImage:[UIImage imageNamed:@"mapBook"] forState:UIControlStateNormal];
     self.mapBookButton.backgroundColor = [UIColor whiteColor];
     
@@ -101,7 +101,7 @@
     [self.leftView addSubview:tipView];
     
     
-    [self addSubview:self.shareButton];
+   // [self addSubview:self.shareButton];
     [self addSubview:self.mapBookButton];
     [self.mapView addSubview:self.leftView];
     [self.mapView addSubview:self.mapDirectionButton];
