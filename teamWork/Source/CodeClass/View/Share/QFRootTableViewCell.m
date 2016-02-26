@@ -21,9 +21,8 @@
     self.backgroundImageView.image = image;
 
 }
-
+//判断该cell分享者是否已经被当前用户关注
 -(void)userByAttentionOrNot:(YYUserShare *)item{
-    //判断该cell分享者是否已经被当前用户关注
     AVQuery *query = [AVQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from" equalTo:[AVUser currentUser]];
     [query includeKey:@"to"];
@@ -39,9 +38,16 @@
         }
     }];
 }
+
+
 //创建视图
 -(void)createCellViews:(YYUserShare *)item{
-        self.userImageView.image = item.avatar;//头像
+    if ([item.userName isEqualToString:[AVUser currentUser].username]) {
+        self.attentionButton.userInteractionEnabled = NO;
+        [self.attentionButton setTitle:@"" forState:UIControlStateNormal];
+        
+    }
+    self.userImageView.image = item.avatar;//头像
     self.nameLabel.text = item.nickname;//昵称
     self.shareTime = item.shareTime;//根据分享时间在数据表中查找分享记录
     self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",item.shareTime];//日期
@@ -129,7 +135,7 @@
     }];
     
 }
-//隐藏关注按钮
+//隐藏关注按钮 在管理我的关注列表时调用
 -(void)hideAttentionButton{
     self.attentionButton.userInteractionEnabled = NO;
     [self.attentionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
