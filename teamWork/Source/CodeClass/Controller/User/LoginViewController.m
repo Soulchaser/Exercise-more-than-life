@@ -227,10 +227,15 @@
 }
 -(void)alertCBackAction{
     AVUser *currentUser = [AVUser currentUser];
-    //添加头像
-    AVFile *avatarFile = [AVFile fileWithName:@"avatar.png"data:UIImagePNGRepresentation([UIImage imageNamed:@"default_avatar"])];
-    [currentUser setObject:avatarFile forKey:@"avatar"];
-    [currentUser saveInBackground];
+    AVFile *oldFile = [currentUser objectForKey:@"avatar"];
+    //确定用户是否设置过头像,如果没有,设置默认头像
+    if (oldFile == nil) {
+        //添加头像
+        AVFile *avatarFile = [AVFile fileWithName:@"avatar.png"data:UIImagePNGRepresentation([UIImage imageNamed:@"default_avatar"])];
+        [currentUser setObject:avatarFile forKey:@"avatar"];
+        [currentUser saveInBackground];
+    }
+  
     //回收alertController
     [self dismissViewControllerAnimated:YES completion:nil];
     //跳转主界面
