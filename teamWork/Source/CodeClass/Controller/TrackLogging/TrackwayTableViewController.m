@@ -61,13 +61,14 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
-        
-            //创建一条运动记录
-            AVObject *exercise = [AVObject objectWithClassName:@"Exercise"];//运动记录在Exercise表中
-            [exercise setObject:currentUser forKey:@"exercise_user"];//运动记录创建者 (当前用户)
-            AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
-            [exercise setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
-            [exercise saveEventually:^(BOOL succeeded, NSError *error) {
+        AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
+        //删除原运动记录
+        AVFile *oldPoint = [currentUser objectForKey:@"all_point"];
+        [oldPoint deleteInBackground];
+        //添加新记录
+        AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
+        [currentUser setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
+            [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
                     //储存成功执行
                     UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"上传成功" preferredStyle:UIAlertControllerStyleAlert];

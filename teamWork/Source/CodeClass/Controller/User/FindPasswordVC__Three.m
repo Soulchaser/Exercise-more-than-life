@@ -61,6 +61,8 @@
 }
 //返回登陆界面
 - (IBAction)backLoginAction:(id)sender {
+    [self dismissViewControllerAnimated:NO completion:nil];
+    
     UIStoryboard *userStoryboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
     LoginViewController *loginVC = [userStoryboard instantiateViewControllerWithIdentifier:@"login"];
     [self presentViewController:loginVC animated:YES completion:nil];
@@ -74,7 +76,7 @@
                 //重置成功 ->提示用户 跳转登陆界面
                 UIAlertController *success = [UIAlertController alertControllerWithTitle:@"提示" message:@"重置成功" preferredStyle:UIAlertControllerStyleAlert];
                 [self presentViewController:success animated:YES completion:^{
-                    [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(backLoginAction:) userInfo:nil repeats:NO];
+                    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(backLoginAction:) userInfo:nil repeats:NO];
                 }];
             }else{
                 //重置失败

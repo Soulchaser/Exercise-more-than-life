@@ -32,8 +32,6 @@ static NSString *const attentionCellID = @"attentionCellID";
     [self.tableView.mj_header beginRefreshing];
     
 }
-
--(void)viewWillAppear:(BOOL)animated{
     /*@property(strong,nonatomic)NSString *userName;//用户名(手机号)
      @property(strong,nonatomic)NSString *nickName;//昵称
      @property(strong,nonatomic)NSString *password;//密码
@@ -43,7 +41,7 @@ static NSString *const attentionCellID = @"attentionCellID";
      @property(strong,nonatomic)NSString *signature;//个性签名
      @property(strong,nonatomic)UIImage *avatar;//头像
      @property(strong,nonatomic)NSMutableArray *joinActivity;//参加的活动*/
-}
+
 -(void)makeData{
     //初始化数组
     self.dataArray = [[NSMutableArray alloc]initWithCapacity:1];
@@ -105,7 +103,7 @@ static NSString *const attentionCellID = @"attentionCellID";
     YYUserModel_Phone *model = self.dataArray[indexPath.row];
     cell.nickName.text = model.nickName;
     cell.avatar.image = model.avatar;
-    
+    cell.userName = model.userName;
     
     return cell;
 }
