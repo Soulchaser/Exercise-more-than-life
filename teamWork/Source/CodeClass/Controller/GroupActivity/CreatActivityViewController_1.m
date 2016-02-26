@@ -42,6 +42,8 @@
 //相机或者相册的资源类型
 @property(strong,nonatomic)AvatarsourceType *sourceType;
 
+@property(strong,nonatomic)NSMutableArray *dataArray;//活动图片按钮
+@property(strong,nonatomic)UIButton *rightButton;//发布活动按钮
 @end
 
 @implementation CreatActivityViewController_1
@@ -83,11 +85,60 @@
     [datePicker addTarget:self action:@selector(aaa:) forControlEvents:UIControlEventValueChanged];
     self.TextFieldStartTime.inputView = datePicker;
     self.TextFieldEndTime.inputView = datePicker;
-    // Do any additional setup after loading the view from its nib.
+    //发布按钮
+    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.rightButton.frame = CGRectMake(0, 0, 40, 40);
+    [self.rightButton setTitle:@"发起" forState:UIControlStateNormal];
+    [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:UIControlEventTouchUpInside];
     
+    self.navigationItem.title = @"活动";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
+}
+//发布按钮点击事件
+-(void)publishAction{
+    
+    //活动类
+    AVObject *activity = [AVObject objectWithClassName:@"Activity"];
+    [activity setObject:self.textfieldTitle.text forKey:@"title"];//标题
+    [activity setObject:self.textfieldDescription.text forKey:@"description"];//描述
+    [activity setObject:self.textfieldAddress.text forKey:@"address"];//集合地点
+    [activity setObject:self.textfieldDistance.text forKey:@"distance"];//路程
+    [activity setObject:self.TextFieldStartTime.text forKey:@"start_time"];//开始时间
+    [activity setObject:self.TextFieldEndTime.text forKey:@"end_time"];//结束时间
+    [activity setObject:self.textfieldPeopleCount.text forKey:@"people_count"];//人数限制
+    [activity setObject:self.textfieldPhone.text forKey:@"phone"];//发起人手机号
+    //图片三张
+    //如果活动内容中有图片
+    NSMutableArray *imageArray = [NSMutableArray array];
+    if (self.dataArray.count > 0) {
+        //活动内容(图片) leancloud中AVFile存储,如果只有一个,直接将AVFile对象设置为属性即可,但如果是AVFile数组的情况下,直接存储会失败,需要先将数组当中的一个元素设置为属性,并将其他元素想保存到数据库中,然后数组存储才能实现.
+        for (int i = 0; i<self.dataArray.count; i++) {
+            //如果是第一个元素 在数据表中单独设置一个属性
+            if (i == 0) {
+                AVFile *file0 = [AVFile fileWithName:@"activityImage.png" data:_dataArray[i]];
+                [activity setObject:file0 forKey:@"activity_first_picture"];
+                [imageArray addObject:file0];
+            }else{
+                //其他元素保存到数据库中
+                AVFile *fileX = [AVFile fileWithName:@"activityImage.png" data:_dataArray[i]];
+                [fileX saveInBackground];
+                [imageArray addObject:fileX];
+            }
+        }
+    }
+    [activity setObject:imageArray forKey:@"activity_picture"];
+    
+    //保存这条activity
+    [activity saveEventually:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            //保存成功
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
     
 }
 
+//调用系统工具选择图片
 -(void)makeData
 {
     self.sourceType = [[AvatarsourceType alloc]init];
@@ -147,19 +198,22 @@
     NSData * data = UIImageJPEGRepresentation(image, 0.00001);
     //替换头像
     dispatch_async(dispatch_get_main_queue(), ^{
+        UIImage *picture = [UIImage imageWithData:data];
         switch (self.z_count) {
             case 1:
-                [self.buttonPic1 setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+                [self.buttonPic1 setImage:picture forState:UIControlStateNormal];
                 break;
                 
             case 2:
-                [self.buttonPic2 setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+                [self.buttonPic2 setImage:picture forState:UIControlStateNormal];
                 break;
                 
             default:
-                [self.buttonPic3 setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+                [self.buttonPic3 setImage:picture forState:UIControlStateNormal];
                 break;
         }
+        
+        [self.dataArray insertObject:data atIndex:0];
     });
 }
 

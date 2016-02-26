@@ -21,27 +21,46 @@
     self.backgroundImageView.image = image;
 
 }
-
+//判断该cell分享者是否已经被当前用户关注
 -(void)userByAttentionOrNot:(YYUserShare *)item{
-    //判断该cell分享者是否已经被当前用户关注
+    //如果是自己发送的消息,不需要进行是否关注过判断
+    
+    if ([item.userName isEqualToString:[AVUser currentUser].username]) {
+        self.attentionButton.userInteractionEnabled = NO;
+        [self.attentionButton setTitle:@"" forState:UIControlStateNormal];
+        return;
+    }
+    
     AVQuery *query = [AVQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from" equalTo:[AVUser currentUser]];
     [query includeKey:@"to"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (objects.count == 0) {//如果一个用户没有关注过
+            self.attentionButton.userInteractionEnabled = YES;
+            [self.attentionButton setTitle:@"关注" forState:UIControlStateNormal];
+            return ;
+        }
         for (AVObject *follow in objects) {//拿到所有已关注的用户
+
             AVUser *toUser = [follow  objectForKey:@"to"];
             NSString *userName = [toUser objectForKey:@"username"];
             if ([userName isEqualToString:item.userName]) {
                 
                 self.attentionButton.userInteractionEnabled = NO;
                 [self.attentionButton setTitle:@"已关注" forState:UIControlStateNormal];
+            }else{
+                self.attentionButton.userInteractionEnabled = YES;
+                [self.attentionButton setTitle:@"关注" forState:UIControlStateNormal];
             }
         }
     }];
 }
+
+
 //创建视图
 -(void)createCellViews:(YYUserShare *)item{
-        self.userImageView.image = item.avatar;//头像
+
+    self.userImageView.image = item.avatar;//头像
     self.nameLabel.text = item.nickname;//昵称
     self.shareTime = item.shareTime;//根据分享时间在数据表中查找分享记录
     self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",item.shareTime];//日期
@@ -129,7 +148,7 @@
     }];
     
 }
-//隐藏关注按钮
+//隐藏关注按钮 在管理我的关注列表时调用
 -(void)hideAttentionButton{
     self.attentionButton.userInteractionEnabled = NO;
     [self.attentionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

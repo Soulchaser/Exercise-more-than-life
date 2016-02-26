@@ -24,9 +24,65 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     if (self = [super init])
     {
         [self getData];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+        //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+        
+        UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(uploadButtonAction)];
+        UIBarButtonItem *downloadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(downloadButtonAction)];
+        NSArray *arr = [[NSArray alloc]initWithObjects:uploadButton,downloadButton, nil];
+        
+        self.navigationItem.rightBarButtonItems = arr;
+        self.navigationItem.title = @"运动记录";
         
     }
     return self;
+}
+
+-(void)leftBarButtonAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(void)uploadButtonAction
+{
+    AVUser *currentUser = [AVUser currentUser];
+
+    if (currentUser == nil) {
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"您尚未登录，请先登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *trueAlert = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            UIStoryboard *userStoryboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+            LoginViewController *loginVC = [userStoryboard instantiateViewControllerWithIdentifier:@"login"];
+            [self presentViewController:loginVC animated:YES completion:nil];
+        }];
+        [alertCon addAction:trueAlert];
+        [self presentViewController:alertCon animated:YES completion:nil];
+
+    }else {
+        
+        NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
+        
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
+        AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
+        //删除原运动记录
+        AVFile *oldPoint = [currentUser objectForKey:@"all_point"];
+        [oldPoint deleteInBackground];
+        //添加新记录
+        AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
+        [currentUser setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
+            [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    //储存成功执行
+                    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"上传成功" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                    [alertCon addAction:alertAct];
+                    [self presentViewController:alertCon animated:YES completion:nil];
+                }
+            }];
+    }
+}
+
+-(void)downloadButtonAction
+{
+    
 }
 
 - (void)viewDidLoad {
@@ -36,16 +92,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
-    
-    
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TrackwayTableViewCell class]) bundle:nil] forCellReuseIdentifier:systemCellResuseIdentfier];
     [self.tableView reloadData];
    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 
@@ -81,15 +130,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
     MapwayDetailsViewController *mapVC = [[MapwayDetailsViewController alloc]init];
     mapVC.cordData = self.dataArray[indexPath.section];
     [self.navigationController pushViewController:mapVC animated:YES];
-    
-    
-    
-    
-   // DLog(@"%d",indexPath.section);
 }
 
 #pragma mark ----cell的删除操作------

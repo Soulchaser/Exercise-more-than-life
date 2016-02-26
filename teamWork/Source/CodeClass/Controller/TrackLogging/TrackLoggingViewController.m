@@ -98,6 +98,8 @@
     }
     return self;
 }
+
+
 #pragma mark ---导航栏左按钮点击事件-----
 -(void)sportModelChangAction:(UIBarButtonItem *)sender
 {
@@ -212,7 +214,7 @@
 {
     //地图视图
     self.mapView = [[MapView alloc]initWithFrame:CGRectMake(kScreenWidth, 0,  kScreenWidth, kScreenHeight)];
-    [[UIApplication sharedApplication].delegate.window addSubview:self.mapView];
+    
     
     //滑动视图
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight*0.7)];
@@ -285,11 +287,20 @@
     [self.mapView.mapZoomOutButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.mapView.mapDirectionButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     
+    [self.mapView.mapBookButton addTarget:self action:@selector(mapBookAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panAction:)];
     [self.mapView.leftView addGestureRecognizer:pan];
     
     
     self.view.backgroundColor = [UIColor orangeColor];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[UIApplication sharedApplication].delegate.window addSubview:self.mapView];
 }
 
 #pragma mark -------运动开始和结束按钮事件-------
@@ -302,12 +313,8 @@
 //继续
 -(void)continueButtonAction:(UIButton *)sender
 {
-    
-    TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
-    [self.navigationController pushViewController:TwtVC animated:YES];
-    
- //   [self moveStart];
-   // [self.mapView.mapView removeAnnotation:self.startAndEndAnnArray.lastObject];
+    [self moveStart];
+    [self.mapView.mapView removeAnnotation:self.startAndEndAnnArray.lastObject];
     
 }
 //结束
@@ -566,6 +573,17 @@
             break;
     }
 }
+
+-(void)mapBookAction
+{
+    
+    TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
+    UINavigationController *TwtNC =[[UINavigationController alloc]initWithRootViewController:TwtVC];
+    //[self.navigationController pushViewController:TwtVC animated:YES];
+    [self presentViewController:TwtNC animated:YES completion:nil];
+    [self.mapView removeFromSuperview];
+}
+
 
 #pragma mark -------屏幕点击事件--------
 

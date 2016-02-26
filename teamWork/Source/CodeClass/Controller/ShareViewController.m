@@ -49,11 +49,22 @@
     UIImage *image = nil;
     if (currentUser == nil) {
         image = [UIImage imageNamed:@"person"];
+        self.navigationItem.rightBarButtonItem = nil;
     }else {
         AVFile *avatarFile = [currentUser objectForKey:@"avatar"];
         NSData *data = [avatarFile getData];
         image = [UIImage imageWithData:data];
         image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        //自定义rightBarButtonItem用户登录后方可分享
+        self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self.rightButton setImage:[UIImage imageNamed:@"iconfont-bianji"] forState:UIControlStateNormal];
+        self.rightButton.frame = CGRectMake(0, 0, 40, 40);
+        self.rightButton.layer.cornerRadius = 20;
+        self.rightButton.layer.masksToBounds =YES;
+        [self.rightButton addTarget:self action:@selector(addShare) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
+
     }
     //自定义leftBarButtonItem
     self.leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -63,15 +74,7 @@
     self.leftButton.layer.masksToBounds =YES;
     [self.leftButton addTarget:self action:@selector(MyselfInfoAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton];
-    //自定义rightBarButtonItem
-    self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.rightButton setImage:[UIImage imageNamed:@"iconfont-bianji"] forState:UIControlStateNormal];
-    self.rightButton.frame = CGRectMake(0, 0, 40, 40);
-    self.rightButton.layer.cornerRadius = 20;
-    self.rightButton.layer.masksToBounds =YES;
-    [self.rightButton addTarget:self action:@selector(addShare) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
-}
+    }
 //用户界面
 -(void)MyselfInfoAction:(UIButton *)sender
 {

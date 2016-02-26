@@ -30,6 +30,7 @@
 		542ADB1D1C7D5DBA00937593 /* speedometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB1B1C7D5DBA00937593 /* speedometer.png */; };
 		542ADB201C7DD0B400937593 /* MapwayDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */; };
 		542ADB4E1C7F306600937593 /* iconfont-androidstopwatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB4D1C7F306600937593 /* iconfont-androidstopwatch.png */; };
+		542ADB501C7FEF5600937593 /* shangchuan.png in Resources */ = {isa = PBXBuildFile; fileRef = 542ADB4F1C7FEF5600937593 /* shangchuan.png */; };
 		5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCC41C571B3C00B96CCD /* TrackLoggingViewController.m */; };
 		5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCC61C571B3C00B96CCD /* TrackNaviController.m */; };
 		5454DCCD1C571B5700B96CCD /* MapGPSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5454DCCA1C571B5700B96CCD /* MapGPSLocation.m */; };
@@ -163,6 +164,7 @@
 		542ADB1E1C7DD0B400937593 /* MapwayDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapwayDetailsViewController.h; sourceTree = "<group>"; };
 		542ADB1F1C7DD0B400937593 /* MapwayDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapwayDetailsViewController.m; sourceTree = "<group>"; };
 		542ADB4D1C7F306600937593 /* iconfont-androidstopwatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-androidstopwatch.png"; sourceTree = "<group>"; };
+		542ADB4F1C7FEF5600937593 /* shangchuan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shangchuan.png; sourceTree = "<group>"; };
 		5454DCC31C571B3C00B96CCD /* TrackLoggingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackLoggingViewController.h; sourceTree = "<group>"; };
 		5454DCC41C571B3C00B96CCD /* TrackLoggingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackLoggingViewController.m; sourceTree = "<group>"; };
 		5454DCC51C571B3C00B96CCD /* TrackNaviController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackNaviController.h; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 		540D98FC1C4A64380027EF2F /* mapView */ = {
 			isa = PBXGroup;
 			children = (
+				542ADB4F1C7FEF5600937593 /* shangchuan.png */,
 				542ADB4D1C7F306600937593 /* iconfont-androidstopwatch.png */,
 				542ADB1B1C7D5DBA00937593 /* speedometer.png */,
 				5454DCF31C579B6400B96CCD /* tuodong.png */,
@@ -940,6 +943,7 @@
 				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
 				C21876C41C570A9A009D428B /* WeatherCollectionViewCell.xib in Resources */,
+				542ADB501C7FEF5600937593 /* shangchuan.png in Resources */,
 				540D99121C4A64380027EF2F /* haoyou-selected.png in Resources */,
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,

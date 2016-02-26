@@ -12,5 +12,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 @property (weak, nonatomic) IBOutlet UILabel *nickName;
 @property (weak, nonatomic) IBOutlet UIButton *attentionButton;
-
+@property(strong,nonatomic)NSString *userName;
 @end

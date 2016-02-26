@@ -79,6 +79,7 @@
 //自制气泡
 #import "DistanceCalloutView.h"
 
+#import "UserViewController.h"
 #pragma mark ------------YDD宏------------
 #define kGD [YDGetDataTools sharedGetData]
 #define errorString @"请检查您键入的拼音是否正确..."

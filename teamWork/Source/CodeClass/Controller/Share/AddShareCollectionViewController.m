@@ -49,15 +49,20 @@ static NSString * const headerReuserID = @"headerReuserID";
     
 }
 -(void)timeAction{
-    
+    [self.remindLabel removeFromSuperview];
 }
 //发布按钮点击事件
 -(void)publishAction{
-//    //如果发布字数小于5 发布失败
-//    if (self.shareContent_txt.text.length < 5) {
-//        self.remindTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
-//        return;
-//    }
+    //如果发布字数小于5 发布失败
+    if (self.shareContent_txt.text.length < 5) {
+        self.remindLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.collectionView.frame.size.height-100, self.collectionView.frame.size.width/2, 20)];
+        self.remindLabel.center = CGPointMake(self.collectionView.frame.size.width/2, self.collectionView.frame.size.height-100);
+        self.remindLabel.text = @"字数不能少于5";
+        self.remindLabel.backgroundColor = [UIColor greenColor];
+        [self.view addSubview:self.remindLabel];
+        self.remindTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
+        return;
+    }
     //分享类
     AVObject *share = [AVObject objectWithClassName:@"Share"];
     /*

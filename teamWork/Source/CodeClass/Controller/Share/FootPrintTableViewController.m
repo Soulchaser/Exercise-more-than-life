@@ -62,11 +62,13 @@ static NSString *const shareCellID = @"shareCellID";
         [tableView.mj_footer endRefreshing];
         
     }];
-    //马上进入刷新状态
-    [self.tableView.mj_header beginRefreshing];
     
 }
+-(void)viewWillAppear:(BOOL)animated{
+    //马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
 
+}
 -(void)makeData
 {
     //获取数据(查询数据)
@@ -113,10 +115,11 @@ static NSString *const shareCellID = @"shareCellID";
                 NSLog(@"%@",shareModel.share_picture);
                 [self.dataArray addObject:shareModel];
             }
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
-        }
+        
     }];
     
 
@@ -153,7 +156,7 @@ static NSString *const shareCellID = @"shareCellID";
     }
 //    [cell createCellViews:_dataArray[indexPath.row]];
     return cell;
-}
+}      
 //cell高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.dataArray.count > 0) {
