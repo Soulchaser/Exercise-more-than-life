@@ -25,7 +25,13 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     {
         [self getData];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+        //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+        
+        UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(uploadButtonAction)];
+        UIBarButtonItem *downloadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(downloadButtonAction)];
+        NSArray *arr = [[NSArray alloc]initWithObjects:uploadButton,downloadButton, nil];
+        
+        self.navigationItem.rightBarButtonItems = arr;
         self.navigationItem.title = @"运动记录";
         
     }
@@ -36,7 +42,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
--(void)rightBarButtonAction
+-(void)uploadButtonAction
 {
     AVUser *currentUser = [AVUser currentUser];
 
@@ -72,6 +78,11 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
                 }
             }];
     }
+}
+
+-(void)downloadButtonAction
+{
+    
 }
 
 - (void)viewDidLoad {
