@@ -96,7 +96,13 @@
 }
 #pragma mark ---------和用户信息有关的一些方法------------
 //运动记录
-- (IBAction)exerciseRecord:(id)sender {
+- (IBAction)exerciseRecord:(id)sender
+{
+    
+    TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
+    UINavigationController *TwtNC =[[UINavigationController alloc]initWithRootViewController:TwtVC];
+    //[self.navigationController pushViewController:TwtVC animated:YES];
+    [self presentViewController:TwtNC animated:YES completion:nil];
     
 }
 //我的分享
