@@ -25,7 +25,13 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     {
         [self getData];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+        //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
+        
+        UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(uploadButtonAction)];
+        UIBarButtonItem *downloadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(downloadButtonAction)];
+        NSArray *arr = [[NSArray alloc]initWithObjects:uploadButton,downloadButton, nil];
+        
+        self.navigationItem.rightBarButtonItems = arr;
         self.navigationItem.title = @"运动记录";
         
     }
@@ -36,7 +42,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
--(void)rightBarButtonAction
+-(void)uploadButtonAction
 {
     AVUser *currentUser = [AVUser currentUser];
 
@@ -59,14 +65,6 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
             //创建一条运动记录
             AVObject *exercise = [AVObject objectWithClassName:@"Exercise"];//运动记录在Exercise表中
             [exercise setObject:currentUser forKey:@"exercise_user"];//运动记录创建者 (当前用户)
-//            //数据位字符串类型
-//            [exercise setObject:entity.startDate forKey:@"start_time"];//开始时间
-//            [exercise setObject:entity.totleTime forKey:@"all_time"];//总时间
-//            [exercise setObject:entity.movementTime forKey:@"exercise_time"];//运动时间
-//            [exercise setObject:entity.maxSpeed forKey:@"most_speed"];//最高时速
-//            [exercise setObject:entity.sportType forKey:@"exercise_type"];//运送类型
-//            [exercise setObject:entity.totleDistance forKey:@"all_length"];//总路程
-//
             AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
             [exercise setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
             [exercise saveEventually:^(BOOL succeeded, NSError *error) {
@@ -79,6 +77,11 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
                 }
             }];
     }
+}
+
+-(void)downloadButtonAction
+{
+    
 }
 
 - (void)viewDidLoad {
