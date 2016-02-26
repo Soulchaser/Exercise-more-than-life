@@ -55,21 +55,14 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
         
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
-        
-            //创建一条运动记录
-            AVObject *exercise = [AVObject objectWithClassName:@"Exercise"];//运动记录在Exercise表中
-            [exercise setObject:currentUser forKey:@"exercise_user"];//运动记录创建者 (当前用户)
-//            //数据位字符串类型
-//            [exercise setObject:entity.startDate forKey:@"start_time"];//开始时间
-//            [exercise setObject:entity.totleTime forKey:@"all_time"];//总时间
-//            [exercise setObject:entity.movementTime forKey:@"exercise_time"];//运动时间
-//            [exercise setObject:entity.maxSpeed forKey:@"most_speed"];//最高时速
-//            [exercise setObject:entity.sportType forKey:@"exercise_type"];//运送类型
-//            [exercise setObject:entity.totleDistance forKey:@"all_length"];//总路程
-//
-            AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
-            [exercise setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
-            [exercise saveEventually:^(BOOL succeeded, NSError *error) {
+        AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
+        //删除原运动记录
+        AVFile *oldPoint = [currentUser objectForKey:@"all_point"];
+        [oldPoint deleteInBackground];
+        //添加新记录
+        AVFile *pointFile = [AVFile fileWithData:data];//运动点记录在AVFile表中
+        [currentUser setObject:pointFile forKey:@"all_point"];//该条记录所有的运动点
+            [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
                 if (succeeded) {
                     //储存成功执行
                     UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"上传成功" preferredStyle:UIAlertControllerStyleAlert];

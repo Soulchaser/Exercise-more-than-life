@@ -153,7 +153,7 @@ static NSString *const shareCellID = @"shareCellID";
     }
 //    [cell createCellViews:_dataArray[indexPath.row]];
     return cell;
-}
+}      
 //cell高度
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (self.dataArray.count > 0) {
