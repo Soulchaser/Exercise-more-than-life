@@ -91,7 +91,7 @@
             
             NSMutableArray * array = dataDic[@"tngou"];
             
-            DLog(@"YDD单例数据方法中打印数组第一条数据***%@",array[0]);
+            //DLog(@"YDD单例数据方法中打印数组第一条数据***%@",array[0]);
             
             NSMutableArray * DataArray = [NSMutableArray array];
             

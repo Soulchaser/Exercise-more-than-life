@@ -74,6 +74,8 @@
 		54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2C1C4CD6E1001D20D9 /* distance.png */; };
 		54D26B331C4CDA12001D20D9 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B321C4CDA12001D20D9 /* point.png */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
+		C200D76A1C80526900DD6830 /* GroupActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */; };
+		C200D76B1C80526900DD6830 /* GroupActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
 		C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD31C49D1B400202881 /* LeancoudTools.m */; };
@@ -234,6 +236,9 @@
 		54D26B321C4CDA12001D20D9 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C200D7671C80526900DD6830 /* GroupActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityTableViewCell.h; sourceTree = "<group>"; };
+		C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityTableViewCell.m; sourceTree = "<group>"; };
+		C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupActivityTableViewCell.xib; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C2034DCC1C49CC9900202881 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C2034DCF1C49CD6100202881 /* YYUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYUserModel.h; sourceTree = "<group>"; };
@@ -550,6 +555,7 @@
 		5498EC8A1C48D0E700A7D99E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C200D7661C80520100DD6830 /* CreatActivity */,
 				C2E6CFDC1C7ED3310019EDF9 /* UserAttention */,
 				C21876BF1C570A9A009D428B /* WeatherCollectionCell */,
 				54B3AF9F1C4E256500D79478 /* map */,
@@ -645,6 +651,16 @@
 				40ADB28BE06A8DAB820CF0BA /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C200D7661C80520100DD6830 /* CreatActivity */ = {
+			isa = PBXGroup;
+			children = (
+				C200D7671C80526900DD6830 /* GroupActivityTableViewCell.h */,
+				C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */,
+				C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */,
+			);
+			path = CreatActivity;
 			sourceTree = "<group>";
 		};
 		C2034DCE1C49CD4600202881 /* User */ = {
@@ -951,6 +967,7 @@
 				C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */,
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
+				C200D76B1C80526900DD6830 /* GroupActivityTableViewCell.xib in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
 				C2E6CFE91C7EE5EF0019EDF9 /* AttentionDetailVC.xib in Resources */,
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
@@ -1084,6 +1101,7 @@
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
 				542ADB181C7D588900937593 /* TrackwayTableViewCell.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,
+				C200D76A1C80526900DD6830 /* GroupActivityTableViewCell.m in Sources */,
 				C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */,
 				54BE0A741C5C6980008D1A6C /* CordDataInfo.m in Sources */,
 				C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */,

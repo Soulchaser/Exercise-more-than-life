@@ -31,7 +31,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"";
+    //    self.navigationItem.title = @"";
+    
+    //添加界面设置返回按钮
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
     
     self.flag = YES;
     
@@ -43,7 +46,7 @@
     //显示cancel按钮
     bar.showsCancelButton = YES;
     //是否显示搜索结果按钮
-//    bar.showsSearchResultsButton = YES;
+    //    bar.showsSearchResultsButton = YES;
     
     bar.keyboardType = UIKeyboardTypeDefault;
     bar.placeholder = @"请键入城市拼音如'beijing'";
@@ -53,6 +56,11 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     
     
+}
+
+-(void)backAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark ------------cancel按钮点击事件------------
@@ -95,6 +103,11 @@
 
 -(void)makeData
 {
+    
+    //输入汉字,转换成拼音,如果搜索出来的城市是多个,进行输入城市匹配,只显示一个
+    
+    //如果输入的拼音或者汉字不完整,或者没有匹配的城市,不显示(或提示信息,输入的汉字或者拼音不匹配,请输入完整的城市名称)
+    
     NSString * httpStr = @"http://apis.baidu.com/heweather/weather/free?city=";
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%@%@",httpStr,self.searchText]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
@@ -123,21 +136,30 @@
             //"aqi"部分
             model.aqi = dict[@"aqi"][@"city"][@"aqi"];
             model.qlty = dict[@"aqi"][@"city"][@"qlty"];
-
+            
             //@"forecast"部分
             for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
                 
                 YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
-
+                
                 modelF.date = forecastDic[@"date"];
                 modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
                 modelF.max = forecastDic[@"tmp"][@"max"];
                 modelF.min = forecastDic[@"tmp"][@"min"];
                 [model.array addObject:modelF];
             }
-            //添加到结果数组中
-            [self.resultArray addObject:model];
             
+            //判断根据输入的字段查询到的东西是否为合适的城市,如果为空,不添加进数组
+            //判断查询结果
+            DLog(@"%@",model.city);
+            
+            if (model.city == nil) {
+                return ;
+            }else
+            {
+                [self.resultArray addObject:model];
+            }
+           
         }
         DLog(@"%@",self.resultArray);
         
@@ -171,11 +193,29 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-
+    
     YDWeatherModel * model = self.resultArray[indexPath.row];
     
-    cell.textLabel.text =  model.city;
+    NSLog(@"%@",model.city);
     
+//    if (model.city == nil){
+//        //如果查询到数据为空,说明查询字段不正确
+//        //弹窗提示
+//        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"输入的查询字段不正确哦" preferredStyle:UIAlertControllerStyleAlert];
+//        UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            
+//            
+//            
+//        }];
+//        [alertController addAction:defaultAction];
+//        //模态跳转
+//        [self presentViewController:alertController animated:YES completion:nil];
+//    }
+//    else
+//    {
+        cell.textLabel.text =  model.city;
+//    }
+  
     return cell;
 }
 
@@ -189,14 +229,15 @@
     }else
     {
         for (YDWeatherModel * Tmodel in kGD.BasicArray) {
-            if ([Tmodel.city isEqualToString:model.city]) {
+            if ([model.city isEqualToString:Tmodel.city]) {
                 //不做操作
                 return;
             }
-            //如果没有,添加到数组中
-            [kGD.BasicArray addObject:model];
+            
         }
-
+        //如果没有,添加到数组中
+        [kGD.BasicArray addObject:model];
+        
     }
     
     [self dismissViewControllerAnimated:YES completion:^{
