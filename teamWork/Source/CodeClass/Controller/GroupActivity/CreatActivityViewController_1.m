@@ -66,7 +66,7 @@
     //当前时间创建NSDate
     NSDate * locaDate = [NSDate date];
     //在当前时间加上的时间,格里高利历
-    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents * offsetComponents = [[NSDateComponents alloc] init];
     //设置时间
     [offsetComponents setYear:0];
