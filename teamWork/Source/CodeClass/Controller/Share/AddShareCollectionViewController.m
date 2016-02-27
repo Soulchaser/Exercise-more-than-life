@@ -24,6 +24,8 @@ static NSString * const reuseIdentifier = @"Cell";
 static NSString * const headerReuserID = @"headerReuserID";
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     //发布按钮
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
@@ -45,7 +47,8 @@ static NSString * const headerReuserID = @"headerReuserID";
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuserID];
     
     //设置文本输入框
-    self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(10, 0, kScreenWidth-20, kScreenHeight/2)];
+    self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight/3)];
+    self.shareContent_txt.backgroundColor = [UIColor grayColor];
     
 }
 -(void)timeAction{

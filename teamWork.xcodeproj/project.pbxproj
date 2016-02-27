@@ -73,6 +73,7 @@
 		54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */; };
 		54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2C1C4CD6E1001D20D9 /* distance.png */; };
 		54D26B331C4CDA12001D20D9 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B321C4CDA12001D20D9 /* point.png */; };
+		54FF9E971C8037E800E57B08 /* xiazai.png in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9E961C8037E800E57B08 /* xiazai.png */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
@@ -232,6 +233,7 @@
 		54D26B2B1C4CD6E1001D20D9 /* distance_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance_selected.png; sourceTree = "<group>"; };
 		54D26B2C1C4CD6E1001D20D9 /* distance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance.png; sourceTree = "<group>"; };
 		54D26B321C4CDA12001D20D9 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
+		54FF9E961C8037E800E57B08 /* xiazai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazai.png; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		540D98FC1C4A64380027EF2F /* mapView */ = {
 			isa = PBXGroup;
 			children = (
+				54FF9E961C8037E800E57B08 /* xiazai.png */,
 				542ADB4F1C7FEF5600937593 /* shangchuan.png */,
 				542ADB4D1C7F306600937593 /* iconfont-androidstopwatch.png */,
 				542ADB1B1C7D5DBA00937593 /* speedometer.png */,
@@ -924,6 +927,7 @@
 			files = (
 				5454DCF01C571E5F00B96CCD /* run.png in Resources */,
 				540D99141C4A64380027EF2F /* jia.png in Resources */,
+				54FF9E971C8037E800E57B08 /* xiazai.png in Resources */,
 				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
 				C21876C41C570A9A009D428B /* WeatherCollectionViewCell.xib in Resources */,
