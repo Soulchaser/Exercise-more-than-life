@@ -1,14 +1,14 @@
 //
-//  GroupActivityTableViewCell.m
+//  GroupActibityCell.m
 //  teamWork
 //
-//  Created by lanou3g on 16/2/26.
+//  Created by lanou3g on 16/2/27.
 //  Copyright © 2016年 hanxiaolong. All rights reserved.
 //
 
-#import "GroupActivityTableViewCell.h"
+#import "GroupActibityCell.h"
 
-@implementation GroupActivityTableViewCell
+@implementation GroupActibityCell
 
 - (void)awakeFromNib {
     // Initialization code

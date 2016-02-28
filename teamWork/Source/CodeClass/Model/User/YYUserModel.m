@@ -23,7 +23,15 @@
 }
 -(void)setValue:(id)value forUndefinedKey:(NSString *)key{}
 @end
+//用户活动model
+@implementation YYUserActivity
+-(NSString *)description{
+    return [NSString stringWithFormat:@"%@",_title];
+}
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{}
 
+
+@end
 
 //用户评论model(评论时需要的信息)
 @implementation YYUserComment

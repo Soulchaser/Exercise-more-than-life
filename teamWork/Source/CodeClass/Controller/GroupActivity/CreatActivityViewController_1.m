@@ -48,6 +48,14 @@
 
 @implementation CreatActivityViewController_1
 
+-(NSMutableArray *)dataArray
+{
+    if (_dataArray == nil) {
+        _dataArray = [[NSMutableArray alloc] init];
+    }
+    return _dataArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -189,13 +197,14 @@
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
     //压缩图片尺寸
-    CGSize imageSize = CGSizeMake(100, 100);
+    CGSize imageSize = CGSizeMake(200, 200);
     UIGraphicsBeginImageContext(imageSize);
     [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //压缩图片大小
-    NSData * data = UIImageJPEGRepresentation(image, 0.00001);
+    NSData * data = UIImageJPEGRepresentation(image, 1);
+    [self.dataArray insertObject:data atIndex:0];
     //替换头像
     dispatch_async(dispatch_get_main_queue(), ^{
         UIImage *picture = [UIImage imageWithData:data];
@@ -213,7 +222,7 @@
                 break;
         }
         
-        [self.dataArray insertObject:data atIndex:0];
+        
     });
 }
 
