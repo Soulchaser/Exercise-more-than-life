@@ -337,7 +337,7 @@
     [self endTiming];
     [self.stopButton removeFromSuperview];
     
-    if (((MovementInfo *)self.roadmapArray.lastObject).totleDistance < 0)
+    if (((MovementInfo *)self.roadmapArray.lastObject).totleDistance < 20)
     {
         UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"由于本次运动过短，将不会被记录" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *defulAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDestructive handler:nil];

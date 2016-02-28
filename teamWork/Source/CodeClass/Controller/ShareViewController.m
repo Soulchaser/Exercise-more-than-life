@@ -90,6 +90,7 @@
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 0;
     AddShareCollectionViewController *addShareCVC = [[AddShareCollectionViewController alloc]initWithCollectionViewLayout:layout];
+    
     layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height/2);
     [self.navigationController pushViewController:addShareCVC animated:YES];
     

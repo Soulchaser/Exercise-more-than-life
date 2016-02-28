@@ -11,7 +11,8 @@
 @interface TrackwayTableViewController ()<UITabBarControllerDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
-
+//数据库管理工具
+@property(strong,nonatomic)XLCodeDataTools *cordDataTools;
 @end
 
 
@@ -28,7 +29,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
         
         UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(uploadButtonAction)];
-        UIBarButtonItem *downloadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(downloadButtonAction)];
+        UIBarButtonItem *downloadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"xiazai"] style:UIBarButtonItemStyleDone target:self action:@selector(downloadButtonAction)];
         NSArray *arr = [[NSArray alloc]initWithObjects:uploadButton,downloadButton, nil];
         
         self.navigationItem.rightBarButtonItems = arr;
@@ -58,9 +59,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 
     }else {
         
-        NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
-        
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:arr];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataArray];
         AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
         //删除原运动记录
         AVFile *oldPoint = [currentUser objectForKey:@"all_point"];
@@ -76,13 +75,66 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
                     [alertCon addAction:alertAct];
                     [self presentViewController:alertCon animated:YES completion:nil];
                 }
+                else
+                {
+                    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"警告" message:@"上传失败" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                    [alertCon addAction:alertAct];
+                    [self presentViewController:alertCon animated:YES completion:nil];
+                }
             }];
     }
 }
 
 -(void)downloadButtonAction
 {
+    AVUser *currentUser = [AVUser currentUser];
     
+    if (currentUser == nil) {
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"您尚未登录，请先登录" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *trueAlert = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            UIStoryboard *userStoryboard = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+            LoginViewController *loginVC = [userStoryboard instantiateViewControllerWithIdentifier:@"login"];
+            [self presentViewController:loginVC animated:YES completion:nil];
+        }];
+        [alertCon addAction:trueAlert];
+        [self presentViewController:alertCon animated:YES completion:nil];
+        
+    }else {
+        
+        //NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
+        
+
+        AVFile *pointFile = [currentUser objectForKey:@"all_point"];
+        
+        NSData *allPoint = [pointFile getData];
+        
+        NSArray *allPointArr = [NSKeyedUnarchiver unarchiveObjectWithData:allPoint];
+
+        for (CordDataInfo *cordData in allPointArr)
+        {
+            
+            NSArray *arr = [self.cordDataTools getDataFromLibraryWithstartDate:cordData.startDate];
+            if (arr.count == 0)
+            {
+                //存入数据库
+                [self.cordDataTools insertData:cordData];
+            }
+            else
+            {
+                //更新数据
+                [self.cordDataTools updata:cordData];
+            }
+        }
+        
+        [self.dataArray removeAllObjects];
+        [self getData];
+        [self.tableView reloadData];
+        
+        
+        
+
+    }
 }
 
 - (void)viewDidLoad {
@@ -271,6 +323,14 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     return _dataArray;
 }
 
+-(XLCodeDataTools *)cordDataTools
+{
+    if (_cordDataTools == nil)
+    {
+        _cordDataTools = [[XLCodeDataTools alloc]init];
+    }
+    return _cordDataTools;
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
