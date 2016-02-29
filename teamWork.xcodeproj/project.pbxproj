@@ -74,6 +74,7 @@
 		54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B2C1C4CD6E1001D20D9 /* distance.png */; };
 		54D26B331C4CDA12001D20D9 /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 54D26B321C4CDA12001D20D9 /* point.png */; };
 		54FF9E971C8037E800E57B08 /* xiazai.png in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9E961C8037E800E57B08 /* xiazai.png */; };
+		54FF9F871C841FC200E57B08 /* NSObject+AutoEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
 		C200D76A1C80526900DD6830 /* GroupActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */; };
 		C200D76B1C80526900DD6830 /* GroupActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */; };
@@ -236,6 +237,8 @@
 		54D26B2C1C4CD6E1001D20D9 /* distance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance.png; sourceTree = "<group>"; };
 		54D26B321C4CDA12001D20D9 /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		54FF9E961C8037E800E57B08 /* xiazai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazai.png; sourceTree = "<group>"; };
+		54FF9F851C841FC200E57B08 /* NSObject+AutoEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoEncode.h"; sourceTree = "<group>"; };
+		54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoEncode.m"; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C200D7671C80526900DD6830 /* GroupActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityTableViewCell.h; sourceTree = "<group>"; };
@@ -494,6 +497,8 @@
 		5498EC861C48D0E700A7D99E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				54FF9F851C841FC200E57B08 /* NSObject+AutoEncode.h */,
+				54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */,
 				C21876DA1C570C62009D428B /* YDGetDataTools.h */,
 				C21876DB1C570C62009D428B /* YDGetDataTools.m */,
 				C2034DD21C49D1B400202881 /* LeancoudTools.h */,
@@ -1121,6 +1126,7 @@
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
 				C2A6B8B01C5202AA006CF6BD /* FindPasswordVC_Tow.m in Sources */,
 				542ADB201C7DD0B400937593 /* MapwayDetailsViewController.m in Sources */,
+				54FF9F871C841FC200E57B08 /* NSObject+AutoEncode.m in Sources */,
 				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,

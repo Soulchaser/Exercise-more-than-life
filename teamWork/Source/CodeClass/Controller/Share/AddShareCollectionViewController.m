@@ -7,8 +7,8 @@
 //
 
 #import "AddShareCollectionViewController.h"
-
-@interface AddShareCollectionViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+#import <QuartzCore/QuartzCore.h>
+@interface AddShareCollectionViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextViewDelegate>
 @property(strong,nonatomic)NSMutableArray *imageArray;//图片数据 image类型->用于实时显示
 @property(strong,nonatomic)NSMutableArray *dataArray;//图片数据 data类型->用于网络存储 比imageArray少一个iconfont-tianjia.png元素
 @property(strong,nonatomic)AvatarsourceType *sourceType;//图片获取
@@ -22,6 +22,7 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 static NSString * const headerReuserID = @"headerReuserID";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,6 +31,7 @@ static NSString * const headerReuserID = @"headerReuserID";
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
     [self.rightButton setTitle:@"发布" forState:UIControlStateNormal];
+    [self.rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"分享";
@@ -47,23 +49,46 @@ static NSString * const headerReuserID = @"headerReuserID";
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuserID];
     
     //设置文本输入框
-    self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight/3)];
-    self.shareContent_txt.backgroundColor = [UIColor grayColor];
+    self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(20, 0, kScreenWidth-40, kScreenHeight/3)];
+    self.shareContent_txt.backgroundColor = [UIColor whiteColor];
+    self.shareContent_txt.delegate = self;
+    self.shareContent_txt.keyboardType = UIKeyboardTypeDefault;
+    self.shareContent_txt.returnKeyType = UIReturnKeyDone;
+    self.shareContent_txt.text = @"说点啥吧";
+    self.shareContent_txt.font = [UIFont systemFontOfSize:17];
+    self.shareContent_txt.textColor = [UIColor grayColor];
+    self.shareContent_txt.layer.borderColor = [UIColor grayColor].CGColor;
     
+    self.shareContent_txt.layer.borderWidth =0.5;
+    
+    self.shareContent_txt.layer.cornerRadius =5.0;
 }
 -(void)timeAction{
+    
     [self.remindLabel removeFromSuperview];
 }
 //发布按钮点击事件
 -(void)publishAction{
+    
+    [self.shareContent_txt resignFirstResponder];
+    
     //如果发布字数小于5 发布失败
     if (self.shareContent_txt.text.length < 5) {
         self.remindLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, self.collectionView.frame.size.height-100, self.collectionView.frame.size.width/2, 20)];
         self.remindLabel.center = CGPointMake(self.collectionView.frame.size.width/2, self.collectionView.frame.size.height-100);
         self.remindLabel.text = @"字数不能少于5";
-        self.remindLabel.backgroundColor = [UIColor greenColor];
+        self.remindLabel.textColor = [UIColor whiteColor];
+        [self.remindLabel setTextAlignment:NSTextAlignmentCenter];
+        self.remindLabel.backgroundColor = [UIColor blackColor];
         [self.view addSubview:self.remindLabel];
-        self.remindTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
+        //self.remindTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(timeAction) userInfo:nil repeats:NO];
+        //用2秒内完成animation内的操作,透明度设为0
+        [UIView animateWithDuration:2 animations:^{
+            self.remindLabel.alpha= 0;
+        } completion:^(BOOL finished) {
+            [self.remindLabel removeFromSuperview];
+            self.remindLabel.alpha = 1;
+        }];
         return;
     }
     //分享类
@@ -119,6 +144,12 @@ static NSString * const headerReuserID = @"headerReuserID";
     }];
     
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [self.shareContent_txt becomeFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -140,16 +171,16 @@ static NSString * const headerReuserID = @"headerReuserID";
     UIImageView *imgView = [[UIImageView alloc]initWithFrame:cell.contentView.frame];
     imgView.image = picture;
     [cell.contentView addSubview:imgView];
-    cell.backgroundColor = [UIColor redColor];
+    cell.backgroundColor = [UIColor whiteColor];
     return cell;
 }
 //cell大小
 -(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(kScreenWidth/4,kScreenHeight/4);
+    return CGSizeMake(kScreenWidth/4,kScreenWidth/4);
 }
 //分区之间布局
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0,0,0,0);
+    return UIEdgeInsetsMake(20,20,0,0);
 }
 //增补视图----文本输入框
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
@@ -160,6 +191,7 @@ static NSString * const headerReuserID = @"headerReuserID";
 }
 //cell点击事件
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.shareContent_txt resignFirstResponder];
     //最后一个image点击事件(添加)
     if (indexPath.row == _imageArray.count-1) {
         //调用添加图片方法
@@ -234,5 +266,34 @@ static NSString * const headerReuserID = @"headerReuserID";
         [self.collectionView reloadData];
     });
 }
+
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"说点啥吧"])
+    {
+        textView.textColor = [UIColor blackColor];
+        textView.text = @"";
+    }
+}
+
+
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
+    if (textView.text.length < 1)
+    {
+        textView.text = @"说点啥吧";
+        textView.textColor = [UIColor grayColor];
+    }
+}
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
 
 @end

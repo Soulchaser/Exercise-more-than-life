@@ -59,8 +59,10 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 
     }else {
         
+        
+        
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataArray];
-        AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
+       // AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
         //删除原运动记录
         AVFile *oldPoint = [currentUser objectForKey:@"all_point"];
         [oldPoint deleteInBackground];
@@ -102,9 +104,6 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         
     }else {
         
-        //NSArray *arr = [[[XLCodeDataTools alloc]init]getDataFromLibrary];
-        
-
         AVFile *pointFile = [currentUser objectForKey:@"all_point"];
         
         NSData *allPoint = [pointFile getData];
