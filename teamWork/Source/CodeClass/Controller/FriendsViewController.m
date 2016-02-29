@@ -23,23 +23,29 @@
     return self;
 }
 
-//用户界面
--(void)MyselfInfoAction:(UIButton *)sender
-{
-    //将User.storyboard作为入口
-    UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
-    UIViewController *entranceVC = [user instantiateInitialViewController];
-    //让window的rootViewController指向该控制器
-    [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
 
 }
+-(void)viewWillAppear:(BOOL)animated{
+    if ([AVUser currentUser] != nil) {
+        self.view.backgroundColor = [UIColor yellowColor];
+        Friend *friend = [Friend new];
+        [self addChildViewController:friend];
+        [self.view addSubview:friend.tableView];
+    }else{
+        NSArray *array = self.view.subviews;
+        for (UIView *myView in array) {
+            [myView removeFromSuperview];
+        }
+    }
+    
+    
+}
 -(void)viewDidAppear:(BOOL)animated{
-     AVUser *currentUser = [AVUser currentUser];
+    AVUser *currentUser = [AVUser currentUser];
     UIImage *image = nil;
     if (currentUser == nil) {
         image = [UIImage imageNamed:@"person"];
@@ -58,6 +64,16 @@
     [self.leftButton addTarget:self action:@selector(MyselfInfoAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.leftButton];
 }
+//用户界面
+-(void)MyselfInfoAction:(UIButton *)sender
+{
+    //将User.storyboard作为入口
+    UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+    UIViewController *entranceVC = [user instantiateInitialViewController];
+    //让window的rootViewController指向该控制器
+    [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

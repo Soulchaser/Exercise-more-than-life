@@ -76,6 +76,8 @@
 #import "UserAttentionCell.h"
 //关注详情页
 #import "AttentionDetailVC.h"
+//好友界面
+#import "Friend.h"
 //自制气泡
 #import "DistanceCalloutView.h"
 
