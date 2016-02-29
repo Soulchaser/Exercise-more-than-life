@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ActivityDetailViewController">
             <connections>
                 <outlet property="G_View" destination="osq-gx-zUg" id="kAQ-Mu-YVf"/>
+                <outlet property="JoinButton" destination="Pjf-OV-IX0" id="eE6-8G-zpP"/>
                 <outlet property="MyscrollView" destination="Flk-oa-IoZ" id="HRF-gK-BGZ"/>
                 <outlet property="activityAddressLabel" destination="MHq-hY-GLO" id="g5E-BG-Dk1"/>
                 <outlet property="activityDescriptionLabel" destination="c0U-0T-fKQ" id="rGu-XB-9RJ"/>
@@ -82,6 +83,9 @@
                                             <state key="normal" title="点击加入">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="JoinAction:" destination="-1" eventType="touchUpInside" id="Nky-8s-b27"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay3-ol-6bq">
                                             <rect key="frame" x="45" y="10" width="75" height="21"/>
