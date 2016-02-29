@@ -112,15 +112,7 @@
 		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
 		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
 		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
-		C281ECC71C845E20002F6D69 /* BaseChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECC41C845E20002F6D69 /* BaseChatViewController.m */; };
-		C281ECC81C845E20002F6D69 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECC61C845E20002F6D69 /* Friend.m */; };
-		C281ECD61C845E8E002F6D69 /* LeftTextMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECCB1C845E8E002F6D69 /* LeftTextMessageTableViewCell.m */; };
-		C281ECD71C845E8E002F6D69 /* MessageTableCells.xib in Resources */ = {isa = PBXBuildFile; fileRef = C281ECCC1C845E8E002F6D69 /* MessageTableCells.xib */; };
-		C281ECD81C845E8E002F6D69 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECCE1C845E8E002F6D69 /* MessageTableViewCell.m */; };
-		C281ECD91C845E8E002F6D69 /* MessageToolBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECD01C845E8E002F6D69 /* MessageToolBarView.m */; };
-		C281ECDA1C845E8E002F6D69 /* MessageToolBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C281ECD11C845E8E002F6D69 /* MessageToolBarView.xib */; };
-		C281ECDB1C845E8E002F6D69 /* RightTextMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECD31C845E8E002F6D69 /* RightTextMessageTableViewCell.m */; };
-		C281ECDC1C845E8E002F6D69 /* TextMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECD51C845E8E002F6D69 /* TextMessageTableViewCell.m */; };
+		C281ECDF1C846564002F6D69 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = C281ECDE1C846564002F6D69 /* Friend.m */; };
 		C286F5CA1C81443000BADB29 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C286F5C81C81443000BADB29 /* ActivityDetailViewController.m */; };
 		C286F5CB1C81443000BADB29 /* ActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C286F5C91C81443000BADB29 /* ActivityDetailViewController.xib */; };
 		C286F5D41C818D5200BADB29 /* GroupActibityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C286F5D21C818D5200BADB29 /* GroupActibityCell.m */; };
@@ -324,22 +316,8 @@
 		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
 		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
 		C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatActivityViewController_1.xib; sourceTree = "<group>"; };
-		C281ECC31C845E20002F6D69 /* BaseChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseChatViewController.h; sourceTree = "<group>"; };
-		C281ECC41C845E20002F6D69 /* BaseChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseChatViewController.m; sourceTree = "<group>"; };
-		C281ECC51C845E20002F6D69 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
-		C281ECC61C845E20002F6D69 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
-		C281ECCA1C845E8E002F6D69 /* LeftTextMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftTextMessageTableViewCell.h; sourceTree = "<group>"; };
-		C281ECCB1C845E8E002F6D69 /* LeftTextMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftTextMessageTableViewCell.m; sourceTree = "<group>"; };
-		C281ECCC1C845E8E002F6D69 /* MessageTableCells.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageTableCells.xib; sourceTree = "<group>"; };
-		C281ECCD1C845E8E002F6D69 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
-		C281ECCE1C845E8E002F6D69 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
-		C281ECCF1C845E8E002F6D69 /* MessageToolBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageToolBarView.h; sourceTree = "<group>"; };
-		C281ECD01C845E8E002F6D69 /* MessageToolBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageToolBarView.m; sourceTree = "<group>"; };
-		C281ECD11C845E8E002F6D69 /* MessageToolBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageToolBarView.xib; sourceTree = "<group>"; };
-		C281ECD21C845E8E002F6D69 /* RightTextMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RightTextMessageTableViewCell.h; sourceTree = "<group>"; };
-		C281ECD31C845E8E002F6D69 /* RightTextMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RightTextMessageTableViewCell.m; sourceTree = "<group>"; };
-		C281ECD41C845E8E002F6D69 /* TextMessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextMessageTableViewCell.h; sourceTree = "<group>"; };
-		C281ECD51C845E8E002F6D69 /* TextMessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextMessageTableViewCell.m; sourceTree = "<group>"; };
+		C281ECDD1C846564002F6D69 /* Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		C281ECDE1C846564002F6D69 /* Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		C286F5C71C81443000BADB29 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
 		C286F5C81C81443000BADB29 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
 		C286F5C91C81443000BADB29 /* ActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityDetailViewController.xib; sourceTree = "<group>"; };
@@ -607,13 +585,14 @@
 				C21FE6C81C49239100D71330 /* User */,
 				C29EC1B51C7DADA400155F14 /* UserAttendInformation */,
 				C28B4B631C585AC600BF8EFD /* Share */,
-				C281ECC21C845E04002F6D69 /* Friend */,
 				5498EC941C48D27B00A7D99E /* DisplayViewController.h */,
 				5498EC951C48D27B00A7D99E /* DisplayViewController.m */,
 				5498EC9D1C48D4C900A7D99E /* ShareViewController.h */,
 				5498EC9E1C48D4C900A7D99E /* ShareViewController.m */,
 				5498ECA01C48D4F400A7D99E /* FriendsViewController.h */,
 				5498ECA11C48D4F400A7D99E /* FriendsViewController.m */,
+				C281ECDD1C846564002F6D69 /* Friend.h */,
+				C281ECDE1C846564002F6D69 /* Friend.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -637,7 +616,6 @@
 				C21876BF1C570A9A009D428B /* WeatherCollectionCell */,
 				54B3AF9F1C4E256500D79478 /* map */,
 				C28EFD4B1C5AF3E50099A8B6 /* Share */,
-				C281ECC91C845E82002F6D69 /* Friend */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -914,36 +892,6 @@
 			path = CreatActivity;
 			sourceTree = "<group>";
 		};
-		C281ECC21C845E04002F6D69 /* Friend */ = {
-			isa = PBXGroup;
-			children = (
-				C281ECC51C845E20002F6D69 /* Friend.h */,
-				C281ECC61C845E20002F6D69 /* Friend.m */,
-				C281ECC31C845E20002F6D69 /* BaseChatViewController.h */,
-				C281ECC41C845E20002F6D69 /* BaseChatViewController.m */,
-			);
-			path = Friend;
-			sourceTree = "<group>";
-		};
-		C281ECC91C845E82002F6D69 /* Friend */ = {
-			isa = PBXGroup;
-			children = (
-				C281ECCA1C845E8E002F6D69 /* LeftTextMessageTableViewCell.h */,
-				C281ECCB1C845E8E002F6D69 /* LeftTextMessageTableViewCell.m */,
-				C281ECCC1C845E8E002F6D69 /* MessageTableCells.xib */,
-				C281ECCD1C845E8E002F6D69 /* MessageTableViewCell.h */,
-				C281ECCE1C845E8E002F6D69 /* MessageTableViewCell.m */,
-				C281ECCF1C845E8E002F6D69 /* MessageToolBarView.h */,
-				C281ECD01C845E8E002F6D69 /* MessageToolBarView.m */,
-				C281ECD11C845E8E002F6D69 /* MessageToolBarView.xib */,
-				C281ECD21C845E8E002F6D69 /* RightTextMessageTableViewCell.h */,
-				C281ECD31C845E8E002F6D69 /* RightTextMessageTableViewCell.m */,
-				C281ECD41C845E8E002F6D69 /* TextMessageTableViewCell.h */,
-				C281ECD51C845E8E002F6D69 /* TextMessageTableViewCell.m */,
-			);
-			path = Friend;
-			sourceTree = "<group>";
-		};
 		C28B4B631C585AC600BF8EFD /* Share */ = {
 			isa = PBXGroup;
 			children = (
@@ -1084,7 +1032,6 @@
 				C204BC101C4F73DB0085BE48 /* iconfont-yonghu.png in Resources */,
 				C286F5DF1C8194C500BADB29 /* address_green_64.png in Resources */,
 				5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */,
-				C281ECD71C845E8E002F6D69 /* MessageTableCells.xib in Resources */,
 				C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */,
 				C286F5E01C8194C500BADB29 /* calender_green_64.png in Resources */,
 				C286F5E51C8194C500BADB29 /* exercise_orange_128.png in Resources */,
@@ -1124,7 +1071,6 @@
 				C286F5D51C818D5200BADB29 /* GroupActibityCell.xib in Resources */,
 				C286F5E31C8194C500BADB29 /* exercise_gray_128.png in Resources */,
 				542ADB191C7D588900937593 /* TrackwayTableViewCell.xib in Resources */,
-				C281ECDA1C845E8E002F6D69 /* MessageToolBarView.xib in Resources */,
 				540D991C1C4A64380027EF2F /* share_selected.png in Resources */,
 				5454DCEB1C571E5F00B96CCD /* mapBook.png in Resources */,
 				C286F5CB1C81443000BADB29 /* ActivityDetailViewController.xib in Resources */,
@@ -1193,26 +1139,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C21876C31C570A9A009D428B /* WeatherCollectionViewCell.m in Sources */,
-				C281ECC81C845E20002F6D69 /* Friend.m in Sources */,
 				54B3AF981C4DD3BB00D79478 /* PointWithDistanceAnnView.m in Sources */,
 				C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */,
 				C21876D01C570B08009D428B /* SecretTableViewController.m in Sources */,
 				54BE0A711C5C522A008D1A6C /* XLCodeDataTools.m in Sources */,
 				C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */,
-				C281ECC71C845E20002F6D69 /* BaseChatViewController.m in Sources */,
 				C286F5D41C818D5200BADB29 /* GroupActibityCell.m in Sources */,
 				C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */,
 				C21876D91C570C05009D428B /* YDWeatherModel.m in Sources */,
-				C281ECDC1C845E8E002F6D69 /* TextMessageTableViewCell.m in Sources */,
+				C281ECDF1C846564002F6D69 /* Friend.m in Sources */,
 				C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */,
 				5454DCCD1C571B5700B96CCD /* MapGPSLocation.m in Sources */,
-				C281ECDB1C845E8E002F6D69 /* RightTextMessageTableViewCell.m in Sources */,
 				54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */,
 				C2E6CFDB1C7EB15A0019EDF9 /* UserAllAttentionTVC.m in Sources */,
 				54BE0A701C5C522A008D1A6C /* MICodeData.xcdatamodeld in Sources */,
 				54BE0A6E1C5C522A008D1A6C /* Entity.m in Sources */,
 				C21876E61C5758D4009D428B /* DetailViewController.m in Sources */,
-				C281ECD91C845E8E002F6D69 /* MessageToolBarView.m in Sources */,
 				54B3AFA41C4E256500D79478 /* DistanceCalloutView.m in Sources */,
 				C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */,
 				54B3AFA81C4E268000D79478 /* MapMoveInfoView.m in Sources */,
@@ -1261,12 +1203,10 @@
 				542ADB201C7DD0B400937593 /* MapwayDetailsViewController.m in Sources */,
 				54FF9FB91C84399600E57B08 /* (null) in Sources */,
 				54FF9F871C841FC200E57B08 /* (null) in Sources */,
-				C281ECD81C845E8E002F6D69 /* MessageTableViewCell.m in Sources */,
 				C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */,
 				5498EC9F1C48D4C900A7D99E /* ShareViewController.m in Sources */,
 				5498EC6F1C48CE2400A7D99E /* main.m in Sources */,
 				5454DCDB1C571C5700B96CCD /* GCDMulticastDelegate.m in Sources */,
-				C281ECD61C845E8E002F6D69 /* LeftTextMessageTableViewCell.m in Sources */,
 				C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

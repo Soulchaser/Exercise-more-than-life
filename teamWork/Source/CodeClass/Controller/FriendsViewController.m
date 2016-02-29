@@ -18,7 +18,7 @@
 {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
-        self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"我的" image:[UIImage imageNamed:@"haoyou"] selectedImage:[UIImage imageNamed:@"haoyou-selected"]];
+        self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"关注" image:[UIImage imageNamed:@"haoyou"] selectedImage:[UIImage imageNamed:@"haoyou-selected"]];
     }
     return self;
 }
@@ -31,8 +31,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     if ([AVUser currentUser] != nil) {
-        self.view.backgroundColor = [UIColor yellowColor];
-        Friend *friend = [Friend new];
+        Friend *friend = [Friend shareFriend];
         [self addChildViewController:friend];
         [self.view addSubview:friend.tableView];
     }else{
@@ -42,8 +41,8 @@
         }
     }
     
-    
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];
     UIImage *image = nil;

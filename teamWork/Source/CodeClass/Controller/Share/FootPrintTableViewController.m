@@ -65,9 +65,12 @@ static NSString *const shareCellID = @"shareCellID";
     
 }
 -(void)viewWillAppear:(BOOL)animated{
+    [self refreshUI];
+
+}
+-(void)refreshUI{
     //马上进入刷新状态
     [self.tableView.mj_header beginRefreshing];
-
 }
 -(void)makeData
 {

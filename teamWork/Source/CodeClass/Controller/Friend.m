@@ -7,15 +7,23 @@
 //
 
 #import "Friend.h"
-#import "BaseChatViewController.h"
+
 @interface Friend ()
 @property(strong,nonatomic)NSMutableArray *dataArray;
-@property (nonatomic,strong) NSString *selectedClientId;
-@property BOOL wifi;
 @end
 
 @implementation Friend
 static NSString *const friendCellID = @"friendCellID";
++(instancetype)shareFriend{
+    static Friend *handler = nil;
+    if (handler == nil) {
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            handler = [[Friend alloc]init];
+        });
+    }
+    return handler;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,28 +38,18 @@ static NSString *const friendCellID = @"friendCellID";
     }];
     // 设置自动切换透明度(在导航栏下面自动隐藏)
     tableView.mj_header.automaticallyChangeAlpha = YES;
-    //马上进入刷新状态
-    [self.tableView.mj_header beginRefreshing];
-    // 创建一个 AVIMClient 实例
-    AVIMClient *imClient = [AVIMClient defaultClient];
-    NSString *seflClientId=[AVUser currentUser].username;
-    [imClient openWithClientId:seflClientId callback:^(BOOL succeeded, NSError *error){
-        if (error) {
-            // 出错了，可能是网络问题无法连接 LeanCloud 云端，请检查网络之后重试。
-            // 此时聊天服务不可用。
-            UIAlertView *view = [[UIAlertView alloc] initWithTitle:@"聊天不可用！" message:[error description] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [view show];
-            self.wifi = NO;
-        } else {
-            // 成功登录，可以进入聊天主界面了。
-            self.wifi = YES;
-        }
-    }];
     
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [self refreshUI];
+}
+-(void)refreshUI{
+    //马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+}
 -(void)makeData{
     //初始化数组
+    self.dataArray = nil;
     self.dataArray = [[NSMutableArray alloc]initWithCapacity:1];
     //获取所有当前用户已关注的对象
     AVQuery *query = [AVQuery queryWithClassName:@"Follow"];
@@ -121,22 +119,10 @@ static NSString *const friendCellID = @"friendCellID";
 
 //cell的点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (self.wifi == YES) {
-        YYUserModel_Phone *model = self.dataArray[indexPath.row];
-        self.selectedClientId = model.userName;
-        [[AVIMClient defaultClient] createConversationWithName:@"" clientIds:@[self.selectedClientId] callback:^(AVIMConversation *conversation, NSError *error) {
-            //跳转到聊天界面
-            BaseChatViewController *singleChat = [BaseChatViewController new];
-//             [self.navigationController pushViewController:singleChat animated:YES];
-            [self presentViewController:singleChat animated:YES completion:nil];
-            //显示私聊对象 ClientId
-            [singleChat setTargetClientId:self.selectedClientId];
-            //设置私聊对象所在的具体对话
-            [singleChat setCurrentConversation:conversation];
-            
-        }];
-    }
-    
+        //跳转到详情页
+        AttentionDetailVC *attentionDVC = [AttentionDetailVC new];
+        attentionDVC.model = self.dataArray[indexPath.row];
+    [self.navigationController pushViewController:attentionDVC animated:YES];
 }
 
 @end

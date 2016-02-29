@@ -32,8 +32,9 @@
     
 }
 -(void)viewWillAppear:(BOOL)animated{
+    
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
     if ([AVUser currentUser] != nil) {
-        self.view.backgroundColor = [UIColor yellowColor];
         FootPrintTableViewController *footPrintTVC = [FootPrintTableViewController shareFootPrintTVC];
         [self addChildViewController:footPrintTVC];
         [self.view addSubview:footPrintTVC.tableView];

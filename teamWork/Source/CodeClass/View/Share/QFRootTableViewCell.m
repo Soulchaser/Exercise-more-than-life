@@ -48,9 +48,11 @@
                 
                 self.attentionButton.userInteractionEnabled = NO;
                 [self.attentionButton setTitle:@"已关注" forState:UIControlStateNormal];
+                return;
             }else{
                 self.attentionButton.userInteractionEnabled = YES;
                 [self.attentionButton setTitle:@"关注" forState:UIControlStateNormal];
+        
             }
         }
     }];
@@ -140,6 +142,7 @@
                         //关注成功
                         self.attentionButton.userInteractionEnabled = NO;
                         [self.attentionButton setTitle:@"已关注" forState:UIControlStateNormal];
+                        [self reloadUI];//刷新界面
                     }
                 }];
             }
@@ -147,6 +150,10 @@
         
     }];
     
+}
+//刷新UI 
+-(void)reloadUI{
+    [[FootPrintTableViewController shareFootPrintTVC] refreshUI];
 }
 //隐藏关注按钮 在管理我的关注列表时调用
 -(void)hideAttentionButton{
