@@ -97,7 +97,6 @@
 #import "AddTableViewController.h"
 #import "SettingViewController.h"
 #import "CreatActivityViewController_1.h"
-
 #pragma mark ------------发现活动------------
 #import "YDDCarouseFigureView.h"
 #import "GroupActibityCell.h"

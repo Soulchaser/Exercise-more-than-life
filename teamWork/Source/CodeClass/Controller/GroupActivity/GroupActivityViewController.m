@@ -50,7 +50,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 -(void)pushToCreatPage
 {
     CreatActivityViewController_1 * creatVC = [CreatActivityViewController_1 new];
-    
+//    CreatActivityViewController * creatVC = [CreatActivityViewController new];
     [self.navigationController pushViewController:creatVC animated:YES];
 }
 

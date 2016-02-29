@@ -28,6 +28,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;//用户昵称
 
+@property (weak, nonatomic) IBOutlet UIScrollView *MyscrollView;
+
+@property (weak, nonatomic) IBOutlet UIView *theLastView;
+
 
 @end
 
@@ -56,6 +60,9 @@
     currentFrame.size.height = rect.size.height;
     self.activityDescriptionLabel.frame = currentFrame;
     
+//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.MyscrollView.contentSize = CGSizeMake(kScreenWidth, CGRectGetHeight(self.theLastView.frame));
+    
     NSMutableArray * array = [[NSMutableArray alloc] init];
     
     for (int i = 0; i<self.PassActivity.activity_picture.count; i++) {
@@ -65,7 +72,7 @@
         
     }
     
-    YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
+    YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, 200)];
     //    carouselView.duration = 1;
     carouselView.delegate = self;
     carouselView.images = array;
