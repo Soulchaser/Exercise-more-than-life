@@ -80,6 +80,7 @@
     [self.segmentedControl sizeToFit];
     self.segmentedControl.center = CGPointMake([UIScreen mainScreen].bounds.size.width/2, 80);
     [self.view addSubview:self.segmentedControl];
+    self.password.secureTextEntry = YES;
 }
 //segment选择
 -(void)segmentSelected{
@@ -87,10 +88,12 @@
         self.sendSMS.userInteractionEnabled = NO;
         self.sendSMS.backgroundColor = [UIColor whiteColor];
         self.password.placeholder = @"请输入密码";
+        self.password.secureTextEntry = YES;
     }else{
         self.sendSMS.userInteractionEnabled = YES;
         self.sendSMS.backgroundColor = [UIColor greenColor];
         self.password.placeholder = @"输入验证码";
+        self.password.secureTextEntry = NO;
     }
 }
 //发送验证短信
