@@ -76,8 +76,6 @@
 		54FF9E971C8037E800E57B08 /* xiazai.png in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9E961C8037E800E57B08 /* xiazai.png */; };
 		54FF9F871C841FC200E57B08 /* NSObject+AutoEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
-		C200D76A1C80526900DD6830 /* GroupActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */; };
-		C200D76B1C80526900DD6830 /* GroupActivityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
 		C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD31C49D1B400202881 /* LeancoudTools.m */; };
@@ -107,9 +105,22 @@
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
 		C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */; };
 		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
-		C248D0001C7EECA7002776E5 /* UITextField+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C248CFFF1C7EECA7002776E5 /* UITextField+DatePicker.m */; };
 		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
 		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
+		C286F5CA1C81443000BADB29 /* ActivityDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C286F5C81C81443000BADB29 /* ActivityDetailViewController.m */; };
+		C286F5CB1C81443000BADB29 /* ActivityDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C286F5C91C81443000BADB29 /* ActivityDetailViewController.xib */; };
+		C286F5D41C818D5200BADB29 /* GroupActibityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C286F5D21C818D5200BADB29 /* GroupActibityCell.m */; };
+		C286F5D51C818D5200BADB29 /* GroupActibityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C286F5D31C818D5200BADB29 /* GroupActibityCell.xib */; };
+		C286F5DF1C8194C500BADB29 /* address_green_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5D61C8194C500BADB29 /* address_green_64.png */; };
+		C286F5E01C8194C500BADB29 /* calender_green_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5D71C8194C500BADB29 /* calender_green_64.png */; };
+		C286F5E11C8194C500BADB29 /* distance_road_green_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5D81C8194C500BADB29 /* distance_road_green_64.png */; };
+		C286F5E21C8194C500BADB29 /* exercise_black_128.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5D91C8194C500BADB29 /* exercise_black_128.png */; };
+		C286F5E31C8194C500BADB29 /* exercise_gray_128.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5DA1C8194C500BADB29 /* exercise_gray_128.png */; };
+		C286F5E41C8194C500BADB29 /* exercise_lightBlue_128.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5DB1C8194C500BADB29 /* exercise_lightBlue_128.png */; };
+		C286F5E51C8194C500BADB29 /* exercise_orange_128.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5DC1C8194C500BADB29 /* exercise_orange_128.png */; };
+		C286F5E61C8194C500BADB29 /* group_green_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5DD1C8194C500BADB29 /* group_green_64.png */; };
+		C286F5E71C8194C500BADB29 /* road_orange_128.png in Resources */ = {isa = PBXBuildFile; fileRef = C286F5DE1C8194C500BADB29 /* road_orange_128.png */; };
+		C286F5EA1C81D97000BADB29 /* YDDCarouseFigureView.m in Sources */ = {isa = PBXBuildFile; fileRef = C286F5E91C81D97000BADB29 /* YDDCarouseFigureView.m */; };
 		C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */; };
 		C28EFD491C5AF39B0099A8B6 /* AddShareCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD461C5AF39B0099A8B6 /* AddShareCollectionViewController.m */; };
 		C28EFD4A1C5AF39B0099A8B6 /* FootPrintTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C28EFD481C5AF39B0099A8B6 /* FootPrintTableViewController.m */; };
@@ -125,6 +136,7 @@
 		C2A6B8B01C5202AA006CF6BD /* FindPasswordVC_Tow.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AF1C5202AA006CF6BD /* FindPasswordVC_Tow.m */; };
 		C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */; };
 		C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */; };
+		C2BBBE101C82CCC000CDA142 /* UITextField+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBBE0F1C82CCC000CDA142 /* UITextField+DatePicker.m */; };
 		C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */; };
 		C2E6CFDB1C7EB15A0019EDF9 /* UserAllAttentionTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */; };
 		C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */; };
@@ -241,9 +253,6 @@
 		54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoEncode.m"; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		C200D7671C80526900DD6830 /* GroupActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityTableViewCell.h; sourceTree = "<group>"; };
-		C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityTableViewCell.m; sourceTree = "<group>"; };
-		C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupActivityTableViewCell.xib; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C2034DCC1C49CC9900202881 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C2034DCF1C49CD6100202881 /* YYUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYUserModel.h; sourceTree = "<group>"; };
@@ -294,11 +303,26 @@
 		C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
 		C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
 		C248CFD81C7EB234002776E5 /* iconfont-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-add.png"; sourceTree = "<group>"; };
-		C248CFFE1C7EECA7002776E5 /* UITextField+DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+DatePicker.h"; sourceTree = "<group>"; };
-		C248CFFF1C7EECA7002776E5 /* UITextField+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DatePicker.m"; sourceTree = "<group>"; };
 		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
 		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
 		C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatActivityViewController_1.xib; sourceTree = "<group>"; };
+		C286F5C71C81443000BADB29 /* ActivityDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityDetailViewController.h; sourceTree = "<group>"; };
+		C286F5C81C81443000BADB29 /* ActivityDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityDetailViewController.m; sourceTree = "<group>"; };
+		C286F5C91C81443000BADB29 /* ActivityDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityDetailViewController.xib; sourceTree = "<group>"; };
+		C286F5D11C818D5200BADB29 /* GroupActibityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActibityCell.h; sourceTree = "<group>"; };
+		C286F5D21C818D5200BADB29 /* GroupActibityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActibityCell.m; sourceTree = "<group>"; };
+		C286F5D31C818D5200BADB29 /* GroupActibityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupActibityCell.xib; sourceTree = "<group>"; };
+		C286F5D61C8194C500BADB29 /* address_green_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = address_green_64.png; sourceTree = "<group>"; };
+		C286F5D71C8194C500BADB29 /* calender_green_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender_green_64.png; sourceTree = "<group>"; };
+		C286F5D81C8194C500BADB29 /* distance_road_green_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = distance_road_green_64.png; sourceTree = "<group>"; };
+		C286F5D91C8194C500BADB29 /* exercise_black_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise_black_128.png; sourceTree = "<group>"; };
+		C286F5DA1C8194C500BADB29 /* exercise_gray_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise_gray_128.png; sourceTree = "<group>"; };
+		C286F5DB1C8194C500BADB29 /* exercise_lightBlue_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise_lightBlue_128.png; sourceTree = "<group>"; };
+		C286F5DC1C8194C500BADB29 /* exercise_orange_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exercise_orange_128.png; sourceTree = "<group>"; };
+		C286F5DD1C8194C500BADB29 /* group_green_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = group_green_64.png; sourceTree = "<group>"; };
+		C286F5DE1C8194C500BADB29 /* road_orange_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = road_orange_128.png; sourceTree = "<group>"; };
+		C286F5E81C81D97000BADB29 /* YDDCarouseFigureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDDCarouseFigureView.h; sourceTree = "<group>"; };
+		C286F5E91C81D97000BADB29 /* YDDCarouseFigureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDDCarouseFigureView.m; sourceTree = "<group>"; };
 		C28EFD421C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+FDTemplateLayoutCell.h"; sourceTree = "<group>"; };
 		C28EFD431C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+FDTemplateLayoutCell.m"; sourceTree = "<group>"; };
 		C28EFD451C5AF39B0099A8B6 /* AddShareCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddShareCollectionViewController.h; sourceTree = "<group>"; };
@@ -323,6 +347,8 @@
 		C2A6B8DA1C525C8C006CF6BD /* FindPasswordVC__Three.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FindPasswordVC__Three.h; sourceTree = "<group>"; };
 		C2A6B8DB1C525C8C006CF6BD /* FindPasswordVC__Three.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FindPasswordVC__Three.m; sourceTree = "<group>"; };
 		C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FindPasswordVC__Three.xib; sourceTree = "<group>"; };
+		C2BBBE0E1C82CCC000CDA142 /* UITextField+DatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+DatePicker.h"; sourceTree = "<group>"; };
+		C2BBBE0F1C82CCC000CDA142 /* UITextField+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DatePicker.m"; sourceTree = "<group>"; };
 		C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
 		C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
 		C2E6CFD91C7EB15A0019EDF9 /* UserAllAttentionTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllAttentionTVC.h; sourceTree = "<group>"; };
@@ -497,8 +523,15 @@
 		5498EC861C48D0E700A7D99E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				54FF9F851C841FC200E57B08 /* NSObject+AutoEncode.h */,
 				54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */,
+=======
+				C2BBBE0E1C82CCC000CDA142 /* UITextField+DatePicker.h */,
+				C2BBBE0F1C82CCC000CDA142 /* UITextField+DatePicker.m */,
+				C286F5E81C81D97000BADB29 /* YDDCarouseFigureView.h */,
+				C286F5E91C81D97000BADB29 /* YDDCarouseFigureView.m */,
+>>>>>>> da38345ee32da5f4dd7725ef3d570edcfc3c7248
 				C21876DA1C570C62009D428B /* YDGetDataTools.h */,
 				C21876DB1C570C62009D428B /* YDGetDataTools.m */,
 				C2034DD21C49D1B400202881 /* LeancoudTools.h */,
@@ -664,9 +697,9 @@
 		C200D7661C80520100DD6830 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
-				C200D7671C80526900DD6830 /* GroupActivityTableViewCell.h */,
-				C200D7681C80526900DD6830 /* GroupActivityTableViewCell.m */,
-				C200D7691C80526900DD6830 /* GroupActivityTableViewCell.xib */,
+				C286F5D11C818D5200BADB29 /* GroupActibityCell.h */,
+				C286F5D21C818D5200BADB29 /* GroupActibityCell.m */,
+				C286F5D31C818D5200BADB29 /* GroupActibityCell.xib */,
 			);
 			path = CreatActivity;
 			sourceTree = "<group>";
@@ -820,8 +853,9 @@
 				C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */,
 				C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */,
 				C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */,
-				C248CFFE1C7EECA7002776E5 /* UITextField+DatePicker.h */,
-				C248CFFF1C7EECA7002776E5 /* UITextField+DatePicker.m */,
+				C286F5C71C81443000BADB29 /* ActivityDetailViewController.h */,
+				C286F5C81C81443000BADB29 /* ActivityDetailViewController.m */,
+				C286F5C91C81443000BADB29 /* ActivityDetailViewController.xib */,
 			);
 			path = GroupActivity;
 			sourceTree = "<group>";
@@ -829,6 +863,15 @@
 		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
+				C286F5D61C8194C500BADB29 /* address_green_64.png */,
+				C286F5D71C8194C500BADB29 /* calender_green_64.png */,
+				C286F5D81C8194C500BADB29 /* distance_road_green_64.png */,
+				C286F5D91C8194C500BADB29 /* exercise_black_128.png */,
+				C286F5DA1C8194C500BADB29 /* exercise_gray_128.png */,
+				C286F5DB1C8194C500BADB29 /* exercise_lightBlue_128.png */,
+				C286F5DC1C8194C500BADB29 /* exercise_orange_128.png */,
+				C286F5DD1C8194C500BADB29 /* group_green_64.png */,
+				C286F5DE1C8194C500BADB29 /* road_orange_128.png */,
 				C248CFD81C7EB234002776E5 /* iconfont-add.png */,
 			);
 			path = CreatActivity;
@@ -946,6 +989,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C286F5E11C8194C500BADB29 /* distance_road_green_64.png in Resources */,
 				5454DCF01C571E5F00B96CCD /* run.png in Resources */,
 				540D99141C4A64380027EF2F /* jia.png in Resources */,
 				54FF9E971C8037E800E57B08 /* xiazai.png in Resources */,
@@ -962,22 +1006,27 @@
 				540D991A1C4A64380027EF2F /* person.png in Resources */,
 				C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */,
 				C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */,
+				C286F5E41C8194C500BADB29 /* exercise_lightBlue_128.png in Resources */,
 				C2E6CFED1C7EEAE10019EDF9 /* iconfont-nv.png in Resources */,
 				5454DCF21C571E5F00B96CCD /* walk.png in Resources */,
 				5454DCEE1C571E5F00B96CCD /* ride.png in Resources */,
 				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
 				540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */,
 				540D99181C4A64380027EF2F /* news.png in Resources */,
+				C286F5E71C8194C500BADB29 /* road_orange_128.png in Resources */,
 				C204BC101C4F73DB0085BE48 /* iconfont-yonghu.png in Resources */,
+				C286F5DF1C8194C500BADB29 /* address_green_64.png in Resources */,
 				5498EC7D1C48CE2400A7D99E /* LaunchScreen.storyboard in Resources */,
 				C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */,
+				C286F5E01C8194C500BADB29 /* calender_green_64.png in Resources */,
+				C286F5E51C8194C500BADB29 /* exercise_orange_128.png in Resources */,
 				C204BC051C4F1A5B0085BE48 /* User.storyboard in Resources */,
 				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
 				C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */,
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
-				C200D76B1C80526900DD6830 /* GroupActivityTableViewCell.xib in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
+				C286F5E61C8194C500BADB29 /* group_green_64.png in Resources */,
 				C2E6CFE91C7EE5EF0019EDF9 /* AttentionDetailVC.xib in Resources */,
 				C2F74AB51C56678E00197D7D /* AvatarsourceType.xib in Resources */,
 				5498EC7A1C48CE2400A7D99E /* Assets.xcassets in Resources */,
@@ -992,6 +1041,7 @@
 				5454DCE91C571E5F00B96CCD /* jiantou.png in Resources */,
 				540D99171C4A64380027EF2F /* jian_selected.png in Resources */,
 				5454DCEC1C571E5F00B96CCD /* mapShare.png in Resources */,
+				C286F5E21C8194C500BADB29 /* exercise_black_128.png in Resources */,
 				54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */,
 				5454DCF11C571E5F00B96CCD /* walk_selected.png in Resources */,
 				C204BC121C4F74AF0085BE48 /* iconfont-mima.png in Resources */,
@@ -1001,9 +1051,12 @@
 				C204BC181C4FA3DF0085BE48 /* iconfont-yansebiankuang.png in Resources */,
 				5498EC781C48CE2400A7D99E /* Main.storyboard in Resources */,
 				C204BC161C4FA1B70085BE48 /* iconfont-quedinggouxuanxuanxiang.png in Resources */,
+				C286F5D51C818D5200BADB29 /* GroupActibityCell.xib in Resources */,
+				C286F5E31C8194C500BADB29 /* exercise_gray_128.png in Resources */,
 				542ADB191C7D588900937593 /* TrackwayTableViewCell.xib in Resources */,
 				540D991C1C4A64380027EF2F /* share_selected.png in Resources */,
 				5454DCEB1C571E5F00B96CCD /* mapBook.png in Resources */,
+				C286F5CB1C81443000BADB29 /* ActivityDetailViewController.xib in Resources */,
 				C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */,
 				540D99151C4A64380027EF2F /* jia_selected.png in Resources */,
 				5454DCEA1C571E5F00B96CCD /* location.png in Resources */,
@@ -1074,6 +1127,7 @@
 				C21876D01C570B08009D428B /* SecretTableViewController.m in Sources */,
 				54BE0A711C5C522A008D1A6C /* XLCodeDataTools.m in Sources */,
 				C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */,
+				C286F5D41C818D5200BADB29 /* GroupActibityCell.m in Sources */,
 				C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */,
 				C21876D91C570C05009D428B /* YDWeatherModel.m in Sources */,
 				C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */,
@@ -1087,16 +1141,17 @@
 				C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */,
 				54B3AFA81C4E268000D79478 /* MapMoveInfoView.m in Sources */,
 				5498ECA21C48D4F400A7D99E /* FriendsViewController.m in Sources */,
-				C248D0001C7EECA7002776E5 /* UITextField+DatePicker.m in Sources */,
 				C2A6B8DD1C525C8C006CF6BD /* FindPasswordVC__Three.m in Sources */,
 				C204BC081C4F2FCB0085BE48 /* UserViewController.m in Sources */,
 				5454DCCE1C571B5700B96CCD /* MovementInfo.m in Sources */,
 				C21876CF1C570B08009D428B /* NanxingTableViewController.m in Sources */,
+				C286F5CA1C81443000BADB29 /* ActivityDetailViewController.m in Sources */,
 				C29EC1B81C7DAE0C00155F14 /* UserAllShareTableViewController.m in Sources */,
 				C2034DD41C49D1B400202881 /* LeancoudTools.m in Sources */,
 				5454DCC81C571B3C00B96CCD /* TrackNaviController.m in Sources */,
 				C28EFD4F1C5AF3E50099A8B6 /* QFRootTableViewCell.m in Sources */,
 				5454DCDC1C571C5700B96CCD /* KKNavigationController.m in Sources */,
+				C286F5EA1C81D97000BADB29 /* YDDCarouseFigureView.m in Sources */,
 				C28EFD4A1C5AF39B0099A8B6 /* FootPrintTableViewController.m in Sources */,
 				54AA2BAA1C5860C200582C30 /* PinyinChange.m in Sources */,
 				C2F74AB41C56678E00197D7D /* AvatarsourceType.m in Sources */,
@@ -1110,7 +1165,6 @@
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
 				542ADB181C7D588900937593 /* TrackwayTableViewCell.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,
-				C200D76A1C80526900DD6830 /* GroupActivityTableViewCell.m in Sources */,
 				C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */,
 				54BE0A741C5C6980008D1A6C /* CordDataInfo.m in Sources */,
 				C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */,
@@ -1122,6 +1176,7 @@
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
 				C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */,
 				5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */,
+				C2BBBE101C82CCC000CDA142 /* UITextField+DatePicker.m in Sources */,
 				5498EC961C48D27B00A7D99E /* DisplayViewController.m in Sources */,
 				C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */,
 				C2A6B8B01C5202AA006CF6BD /* FindPasswordVC_Tow.m in Sources */,

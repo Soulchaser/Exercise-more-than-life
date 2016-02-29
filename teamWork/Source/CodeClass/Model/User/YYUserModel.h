@@ -34,6 +34,23 @@
 @property(strong,nonatomic)NSArray *share_picture;//分享内容(图片) 图片数组 元素为AVFile类型
 
 @end
+//用户活动model
+@interface YYUserActivity : NSObject
+@property(strong,nonatomic) NSString * title;//标题
+@property(strong,nonatomic) NSString * myDescription;//描述
+@property(strong,nonatomic) NSString * address;//集合地点
+@property(strong,nonatomic) NSString * distance;//距离
+@property(strong,nonatomic) NSString * start_time;//开始时间
+@property(strong,nonatomic) NSString * end_time;//结束时间
+@property(strong,nonatomic) NSString * people_count;//人数限制
+@property(strong,nonatomic) NSString * people_current;//当前参与人数
+@property(strong,nonatomic) NSString * phone;//手机号
+@property(strong,nonatomic)NSMutableArray *activity_picture;//活动内容(图片) 图片数组 元素为NSData类型
+//发起人信息
+@property(strong,nonatomic)UIImage *avatar;//头像
+@property(strong,nonatomic)NSString *nickname;//昵称
+@end
+
 
 //用户评论model(评论时需要展示的信息)有昵称优先使用,否则显示用户名
 @interface YYUserComment : NSObject

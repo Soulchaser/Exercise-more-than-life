@@ -97,6 +97,11 @@
 #import "AddTableViewController.h"
 #import "SettingViewController.h"
 #import "CreatActivityViewController_1.h"
+#pragma mark ------------发现活动------------
+#import "YDDCarouseFigureView.h"
+#import "GroupActibityCell.h"
+#import "ActivityDetailViewController.h"
+
 #pragma mark ------------重用标识符------------
 //减肥瘦身-loseWight
 static NSString * const LWID = @"JianfeiTableViewCellReuseIdentifier";

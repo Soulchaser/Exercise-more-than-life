@@ -13,7 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *textfieldTitle;//活动标题
 
-@property (weak, nonatomic) IBOutlet UITextView *textfieldDescription;//活动描述
+@property (weak, nonatomic) IBOutlet UITextView *textViewDescription;//活动描述
 
 @property (weak, nonatomic) IBOutlet UITextField *textfieldAddress;//集合地点
 
@@ -47,6 +47,14 @@
 @end
 
 @implementation CreatActivityViewController_1
+
+-(NSMutableArray *)dataArray
+{
+    if (_dataArray == nil) {
+        _dataArray = [[NSMutableArray alloc] init];
+    }
+    return _dataArray;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -100,7 +108,7 @@
     //活动类
     AVObject *activity = [AVObject objectWithClassName:@"Activity"];
     [activity setObject:self.textfieldTitle.text forKey:@"title"];//标题
-    [activity setObject:self.textfieldDescription.text forKey:@"description"];//描述
+    [activity setObject:self.textViewDescription.text forKey:@"description"];//描述
     [activity setObject:self.textfieldAddress.text forKey:@"address"];//集合地点
     [activity setObject:self.textfieldDistance.text forKey:@"distance"];//路程
     [activity setObject:self.TextFieldStartTime.text forKey:@"start_time"];//开始时间
@@ -189,13 +197,14 @@
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
     //压缩图片尺寸
-    CGSize imageSize = CGSizeMake(100, 100);
+    CGSize imageSize = CGSizeMake(200, 200);
     UIGraphicsBeginImageContext(imageSize);
     [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
     image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     //压缩图片大小
-    NSData * data = UIImageJPEGRepresentation(image, 0.00001);
+    NSData * data = UIImageJPEGRepresentation(image, 1);
+    [self.dataArray insertObject:data atIndex:0];
     //替换头像
     dispatch_async(dispatch_get_main_queue(), ^{
         UIImage *picture = [UIImage imageWithData:data];
@@ -213,7 +222,7 @@
                 break;
         }
         
-        [self.dataArray insertObject:data atIndex:0];
+        
     });
 }
 
@@ -243,6 +252,12 @@
     
 }
 
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.TextFieldStartTime resignFirstResponder];
+    return YES;
+}
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
