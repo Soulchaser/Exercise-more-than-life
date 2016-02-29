@@ -49,9 +49,13 @@
     self.tabBC.selectedIndex = 2;
     
     //    //tabBar字体选中颜色
-    self.tabBC.tabBar.tintColor = [UIColor orangeColor];
+    self.tabBC.tabBar.tintColor = [UIColor whiteColor];
     //    //tabBar颜色
-    self.tabBC.tabBar.barTintColor = [UIColor greenColor];
+    CGFloat red = 38 /255.0;
+    CGFloat blue = 38 /255.0;
+    CGFloat green = 38 /255.0;
+    self.tabBC.tabBar.barTintColor = [UIColor colorWithRed:red green:green blue:blue alpha:1];
+
     
     
     self.tabBC.tabBar.barStyle = UIBarStyleDefault;

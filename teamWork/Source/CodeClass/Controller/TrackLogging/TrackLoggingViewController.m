@@ -68,6 +68,8 @@
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"跟你走" image:[UIImage imageNamed:@"daohang"] selectedImage:[UIImage imageNamed:@"daohang_selected"]];
         //导航栏左按钮
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"ride_selected"] style:UIBarButtonItemStyleDone target:self action:@selector(sportModelChangAction:)];
+        [self.navigationItem.leftBarButtonItem setTintColor:[UIColor whiteColor]];
+        
         //初始运动模式
         self.sportModel = rideModel;
         
@@ -166,7 +168,8 @@
     self.navigationItem.title = @"跟你走";
     //字体颜色
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
-    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:38/255.0 green:38/255.0 blue:38/255.0 alpha:1]];
+   // [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self drawView];
     //成为MapGPSLocation的代理
     [[MapGPSLocation shareMapGPSLocation] addDelegateMapGPSLocation:self delegateQueue:dispatch_get_main_queue()];
@@ -256,12 +259,13 @@
     
     self.startButton = [[UIButton alloc]initWithFrame:CGRectMake(0, kScreenHeight*0.7, kScreenWidth/2, kScreenHeight*0.1)];
     [self.startButton setTitle:@"开始" forState:UIControlStateNormal];
-    self.startButton.backgroundColor = [UIColor blueColor];
+    self.startButton.backgroundColor = [UIColor colorWithRed:10 /255.0 green:83 /255.0 blue:149 /255.0 alpha:1];
     [self.startButton addTarget:self action:@selector(startButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     self.continueButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth/2, kScreenHeight*0.7, kScreenWidth/2, kScreenHeight*0.1)];
     [self.continueButton setTitle:@"继续" forState:UIControlStateNormal];
-    self.continueButton.backgroundColor = [UIColor blackColor];
+
+    self.continueButton.backgroundColor = [UIColor colorWithRed:38 /255.0 green:38 /255.0 blue:38 /255.0 alpha:1];
     [self.continueButton addTarget:self action:@selector(continueButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     
     self.stopButton = [[UIButton alloc]initWithFrame:CGRectMake(0, kScreenHeight*0.7, kScreenWidth, kScreenHeight*0.1)];

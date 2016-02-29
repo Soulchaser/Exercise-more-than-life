@@ -27,7 +27,10 @@ static NSString *const cellID = @"cellID";
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])
     {
         self.cordData = [[CordDataInfo alloc]init];
+        
     }
+   
+    
     return self;
 }
 
@@ -35,6 +38,9 @@ static NSString *const cellID = @"cellID";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     
     self.segmentedControl = [[NYSegmentedControl alloc] initWithItems:@[@"轨迹", @"数据"]];
     [self.segmentedControl addTarget:self action:@selector(segmentSelected) forControlEvents:UIControlEventValueChanged];
@@ -58,6 +64,11 @@ static NSString *const cellID = @"cellID";
     [self tableVIewSet];
     [self.view addSubview:self.mapView];
     
+}
+
+-(void)leftBarButtonAction
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark -------地图View---------

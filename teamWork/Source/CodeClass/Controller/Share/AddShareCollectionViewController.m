@@ -49,7 +49,7 @@ static NSString * const headerReuserID = @"headerReuserID";
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerReuserID];
     
     //设置文本输入框
-    self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(20, 0, kScreenWidth-40, kScreenHeight/3)];
+    self.shareContent_txt = [[UITextView alloc]initWithFrame:CGRectMake(20, 0, kScreenWidth-40, kScreenHeight/2)];
     self.shareContent_txt.backgroundColor = [UIColor whiteColor];
     self.shareContent_txt.delegate = self;
     self.shareContent_txt.keyboardType = UIKeyboardTypeDefault;
