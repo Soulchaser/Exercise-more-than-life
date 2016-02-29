@@ -50,6 +50,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
 }
 -(void)uploadButtonAction
 {
+    
+
+    
     AVUser *currentUser = [AVUser currentUser];
 
     if (currentUser == nil) {
@@ -63,6 +66,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         [self presentViewController:alertCon animated:YES completion:nil];
 
     }else {
+        LoadingEvents *loadingEvent = [LoadingEvents shareLoadingEvents];
+        [loadingEvent dataBeginLoading:self];
+        
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataArray];
        // AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
         //删除原运动记录
@@ -78,6 +84,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
                     UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
                     [alertCon addAction:alertAct];
                     [self presentViewController:alertCon animated:YES completion:nil];
+                    [loadingEvent dataLoadSucceed:self];
                 }
                 else
                 {
@@ -85,6 +92,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
                     UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
                     [alertCon addAction:alertAct];
                     [self presentViewController:alertCon animated:YES completion:nil];
+                    [loadingEvent dataLoadFailed:self];
                 }
             }];
     }
@@ -105,6 +113,9 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         [self presentViewController:alertCon animated:YES completion:nil];
         
     }else {
+        LoadingEvents *loadingEvent = [LoadingEvents shareLoadingEvents];
+        [loadingEvent dataBeginLoading:self];
+        
         
         AVFile *pointFile = [currentUser objectForKey:@"all_point"];
         
@@ -131,8 +142,11 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         [self.dataArray removeAllObjects];
         [self getData];
         [self.tableView reloadData];
-        
-        
+        [loadingEvent dataLoadSucceed:self];
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"下载成功" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alertCon addAction:alertAct];
+        [self presentViewController:alertCon animated:YES completion:nil];
         
 
     }

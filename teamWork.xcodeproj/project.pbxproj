@@ -77,6 +77,9 @@
 		54FF9F871C841FC200E57B08 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		54FF9FB91C84399600E57B08 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		54FF9FBC1C843B8E00E57B08 /* NSObject+AutoEncode.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9FBB1C843B8E00E57B08 /* NSObject+AutoEncode.m */; };
+		54FF9FBE1C8466DC00E57B08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FBD1C8466DC00E57B08 /* Images.xcassets */; };
+		54FF9FC41C8470E700E57B08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FC31C8470E700E57B08 /* Images.xcassets */; };
+		54FF9FC71C84741A00E57B08 /* LoadingEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9FC61C84741A00E57B08 /* LoadingEvents.m */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
@@ -262,6 +265,10 @@
 		54FF9E961C8037E800E57B08 /* xiazai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiazai.png; sourceTree = "<group>"; };
 		54FF9FBA1C843B8E00E57B08 /* NSObject+AutoEncode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AutoEncode.h"; sourceTree = "<group>"; };
 		54FF9FBB1C843B8E00E57B08 /* NSObject+AutoEncode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AutoEncode.m"; sourceTree = "<group>"; };
+		54FF9FBD1C8466DC00E57B08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		54FF9FC31C8470E700E57B08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		54FF9FC51C84741A00E57B08 /* LoadingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingEvents.h; sourceTree = "<group>"; };
+		54FF9FC61C84741A00E57B08 /* LoadingEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingEvents.m; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -487,6 +494,7 @@
 		5498EC611C48CE2300A7D99E = {
 			isa = PBXGroup;
 			children = (
+				54FF9FBD1C8466DC00E57B08 /* Images.xcassets */,
 				5498EC6C1C48CE2400A7D99E /* teamWork */,
 				5498EC6B1C48CE2400A7D99E /* Products */,
 				7B9768A9AE9E5614914AA432 /* Pods */,
@@ -511,6 +519,7 @@
 				5498EC7B1C48CE2400A7D99E /* LaunchScreen.storyboard */,
 				5498EC7E1C48CE2400A7D99E /* Info.plist */,
 				5498EC931C48D10B00A7D99E /* teamWorkPCH.pch */,
+				54FF9FC31C8470E700E57B08 /* Images.xcassets */,
 				5498EC6D1C48CE2400A7D99E /* Supporting Files */,
 			);
 			path = teamWork;
@@ -550,6 +559,8 @@
 		5498EC861C48D0E700A7D99E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				54FF9FC51C84741A00E57B08 /* LoadingEvents.h */,
+				54FF9FC61C84741A00E57B08 /* LoadingEvents.m */,
 				54FF9FBA1C843B8E00E57B08 /* NSObject+AutoEncode.h */,
 				54FF9FBB1C843B8E00E57B08 /* NSObject+AutoEncode.m */,
 				C2BBBE0E1C82CCC000CDA142 /* UITextField+DatePicker.h */,
@@ -1082,6 +1093,7 @@
 				C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */,
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
+				54FF9FBE1C8466DC00E57B08 /* Images.xcassets in Resources */,
 				540D99101C4A64380027EF2F /* group.png in Resources */,
 				C286F5E61C8194C500BADB29 /* group_green_64.png in Resources */,
 				C2E6CFE91C7EE5EF0019EDF9 /* AttentionDetailVC.xib in Resources */,
@@ -1095,6 +1107,7 @@
 				54D26B261C4C8CD2001D20D9 /* altitude_selected.png in Resources */,
 				C2E6CFF11C7F02810019EDF9 /* iconfont-wenhao.png in Resources */,
 				5454DCED1C571E5F00B96CCD /* ride_selected.png in Resources */,
+				54FF9FC41C8470E700E57B08 /* Images.xcassets in Resources */,
 				5454DCE91C571E5F00B96CCD /* jiantou.png in Resources */,
 				540D99171C4A64380027EF2F /* jian_selected.png in Resources */,
 				5454DCEC1C571E5F00B96CCD /* mapShare.png in Resources */,
@@ -1228,6 +1241,7 @@
 				5454DCD41C571B6000B96CCD /* SportInfoView.m in Sources */,
 				C21876DC1C570C62009D428B /* YDGetDataTools.m in Sources */,
 				542ADB181C7D588900937593 /* TrackwayTableViewCell.m in Sources */,
+				54FF9FC71C84741A00E57B08 /* LoadingEvents.m in Sources */,
 				C21876CE1C570B08009D428B /* JianfeiTableViewController.m in Sources */,
 				C21876BB1C5708BD009D428B /* SettingViewController.m in Sources */,
 				54BE0A741C5C6980008D1A6C /* CordDataInfo.m in Sources */,
