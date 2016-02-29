@@ -26,13 +26,18 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     {
         [self getData];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+        self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
         //self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction)];
         
         UIBarButtonItem *uploadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shangchuan"] style:UIBarButtonItemStyleDone target:self action:@selector(uploadButtonAction)];
+        uploadButton.tintColor = [UIColor blackColor];
         UIBarButtonItem *downloadButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"xiazai"] style:UIBarButtonItemStyleDone target:self action:@selector(downloadButtonAction)];
+        downloadButton.tintColor = [UIColor blackColor];
         NSArray *arr = [[NSArray alloc]initWithObjects:uploadButton,downloadButton, nil];
         
         self.navigationItem.rightBarButtonItems = arr;
+        
+        
         self.navigationItem.title = @"运动记录";
         
     }
@@ -58,9 +63,6 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         [self presentViewController:alertCon animated:YES completion:nil];
 
     }else {
-        
-        
-        
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.dataArray];
        // AVUser *currentUser = [AVUser currentUser];//运动作为用户的一个属性,存储为AVFile类型
         //删除原运动记录
