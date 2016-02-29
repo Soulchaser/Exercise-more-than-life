@@ -194,7 +194,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     cell.titleLabel.text = model.title;
     cell.addressLabel.text = model.address;
     cell.calendarLabel.text = model.start_time;
-    cell.progressLabel.text = [NSString stringWithFormat:@"%@/%@",model.people_current,model.people_count];
+    cell.progressLabel.text = [NSString stringWithFormat:@"%d/%@",model.people_current,model.people_count];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@km",model.distance];
 
     
