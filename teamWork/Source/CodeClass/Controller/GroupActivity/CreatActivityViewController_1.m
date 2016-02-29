@@ -8,7 +8,7 @@
 
 #import "CreatActivityViewController_1.h"
 
-@interface CreatActivityViewController_1 () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate>
+@interface CreatActivityViewController_1 () <UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate,UITextViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *textfieldTitle;//活动标题
@@ -46,6 +46,8 @@
 @property(strong,nonatomic)UIButton *rightButton;//发布活动按钮
 @end
 
+#define kGap (([UIScreen mainScreen].bounds.size.height)/15)
+
 @implementation CreatActivityViewController_1
 
 -(NSMutableArray *)dataArray
@@ -63,6 +65,102 @@
 #pragma mark -----------设置代理对象
     self.TextFieldStartTime.delegate = self;
     self.TextFieldEndTime.delegate = self;
+    self.textfieldTitle.delegate = self;
+    self.textfieldAddress.delegate = self;
+    //自定义键盘返回键
+#pragma mark ---------------标题
+    // 自定义的view-标题
+    UIView *customView_title = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_title.backgroundColor = [UIColor lightGrayColor];
+    self.textfieldTitle.inputAccessoryView = customView_title;
+    
+    self.textfieldTitle.delegate = self;
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClicked) forControlEvents:UIControlEventTouchUpInside];
+    [customView_title addSubview:btn];
+    
+#pragma mark -----------------自定义弹出键盘--描述
+    
+    self.textViewDescription.delegate = self;
+    
+#pragma mark ----------------集合地点
+    // 自定义的view-
+    UIView *customView_address = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_address.backgroundColor = [UIColor lightGrayColor];
+    self.textfieldAddress.inputAccessoryView = customView_address;
+    
+    
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn_address = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn_address setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn_address addTarget:self action:@selector(btnClicked_address) forControlEvents:UIControlEventTouchUpInside];
+    [customView_address addSubview:btn_address];
+#pragma mark -----------------里程
+    
+    // 自定义的view-
+    UIView *customView_distance = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_distance.backgroundColor = [UIColor lightGrayColor];
+    self.textfieldDistance.inputAccessoryView = customView_distance;
+    
+    
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn_distance = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn_distance setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn_distance addTarget:self action:@selector(btnClicked_distance) forControlEvents:UIControlEventTouchUpInside];
+    [customView_distance addSubview:btn_distance];
+    
+#pragma mark ---------------开始时间
+    // 自定义的view-
+    UIView *customView_startTime = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_startTime.backgroundColor = [UIColor lightGrayColor];
+    self.TextFieldStartTime.inputAccessoryView = customView_startTime;
+    
+    
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn_starTime = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn_starTime setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn_starTime addTarget:self action:@selector(btnClicked_startTime) forControlEvents:UIControlEventTouchUpInside];
+    [customView_startTime addSubview:btn_starTime];
+#pragma mark ---------------结束时间
+    // 自定义的view-
+    UIView *customView_endTime = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_endTime.backgroundColor = [UIColor lightGrayColor];
+    self.TextFieldEndTime.inputAccessoryView = customView_endTime;
+    
+    
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn_endTime = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn_endTime setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn_endTime addTarget:self action:@selector(btnClicked_endTime) forControlEvents:UIControlEventTouchUpInside];
+    [customView_endTime addSubview:btn_endTime];
+#pragma mark ----------------活动人数
+    // 自定义的view-
+    UIView *customView_people = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_people.backgroundColor = [UIColor lightGrayColor];
+    self.textfieldPeopleCount.inputAccessoryView = customView_people;
+    
+    
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn_people = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn_people setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn_people addTarget:self action:@selector(btnClicked_people) forControlEvents:UIControlEventTouchUpInside];
+    [customView_people addSubview:btn_people];
+#pragma mark------------------手机号
+    // 自定义的view-
+    UIView *customView_phone = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, kGap)];
+    customView_phone.backgroundColor = [UIColor lightGrayColor];
+    self.textfieldPhone.inputAccessoryView = customView_phone;
+    
+    
+    // 往自定义view中添加各种UI控件(以UIButton为例)
+    UIButton *btn_phone = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-kGap, 0, kGap,kGap)];
+    [btn_phone setImage:[UIImage imageNamed:@"download_deepblue_64"] forState:UIControlStateNormal];
+    [btn_phone addTarget:self action:@selector(btnClicked_phone) forControlEvents:UIControlEventTouchUpInside];
+    [customView_phone addSubview:btn_phone];
+    
+    
     
     UIDatePicker * datePicker = [[UIDatePicker alloc] init];
     //    self.datePicker.datePickerMode = UIDatePickerModeDate;
@@ -97,13 +195,82 @@
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
     [self.rightButton setTitle:@"发起" forState:UIControlStateNormal];
-    [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:
+     UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"活动";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
 }
+
+//
+-(void)btnClicked
+{
+    [self.textfieldTitle resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.textfieldTitle)
+    {
+        [self.textfieldTitle resignFirstResponder];
+    }
+    else if (textField == self.textfieldAddress)
+    {
+        [textField resignFirstResponder];
+    }
+    
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([@"\n" isEqualToString:text])
+    {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
+//-(void)btnClicked_description
+//{
+//     [ resignFirstResponder];
+//}
+-(void)btnClicked_address
+{
+     [self.textfieldAddress resignFirstResponder];
+}
+
+-(void)btnClicked_distance
+{
+     [self.textfieldDistance resignFirstResponder];
+}
+-(void)btnClicked_startTime
+{
+     [self.TextFieldStartTime resignFirstResponder];
+}
+-(void)btnClicked_endTime
+{
+     [self.TextFieldEndTime resignFirstResponder];
+}
+-(void)btnClicked_people
+{
+     [self.textfieldPeopleCount resignFirstResponder];
+}
+-(void)btnClicked_phone
+{
+     [self.textfieldPhone resignFirstResponder];
+}
 //发布按钮点击事件
 -(void)publishAction{
+    
+    //发布前的判断
+    //不能为空
+    if ([self.textfieldTitle.text isEqualToString:@""]) {
+        
+    }
+    
     
     //活动类
     AVObject *activity = [AVObject objectWithClassName:@"Activity"];
@@ -250,13 +417,6 @@
     
     [self makeData];
     
-}
-
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [self.TextFieldStartTime resignFirstResponder];
-    return YES;
 }
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

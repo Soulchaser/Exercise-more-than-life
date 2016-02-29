@@ -134,6 +134,7 @@
 		C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */; };
 		C28EFD531C5AF5630099A8B6 /* iconfont-bianji.png in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */; };
 		C28EFD541C5AF5630099A8B6 /* iconfont-tianjia.png in Resources */ = {isa = PBXBuildFile; fileRef = C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */; };
+		C29B6E061C8484BE005B4CF0 /* download_deepblue_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */; };
 		C29EC1B41C7D966000155F14 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C29EC1B31C7D966000155F14 /* default_avatar.png */; };
 		C29EC1B81C7DAE0C00155F14 /* UserAllShareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */; };
 		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
@@ -346,6 +347,7 @@
 		C28EFD4E1C5AF3E50099A8B6 /* QFRootTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QFRootTableViewCell.xib; sourceTree = "<group>"; };
 		C28EFD511C5AF5630099A8B6 /* iconfont-bianji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-bianji.png"; sourceTree = "<group>"; };
 		C28EFD521C5AF5630099A8B6 /* iconfont-tianjia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-tianjia.png"; sourceTree = "<group>"; };
+		C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = download_deepblue_64.png; sourceTree = "<group>"; };
 		C29EC1B31C7D966000155F14 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		C29EC1B61C7DAE0C00155F14 /* UserAllShareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllShareTableViewController.h; sourceTree = "<group>"; };
 		C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAllShareTableViewController.m; sourceTree = "<group>"; };
@@ -878,6 +880,7 @@
 		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
+				C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */,
 				C286F5D61C8194C500BADB29 /* address_green_64.png */,
 				C286F5D71C8194C500BADB29 /* calender_green_64.png */,
 				C286F5D81C8194C500BADB29 /* distance_road_green_64.png */,
@@ -1008,6 +1011,7 @@
 				5454DCF01C571E5F00B96CCD /* run.png in Resources */,
 				540D99141C4A64380027EF2F /* jia.png in Resources */,
 				54FF9E971C8037E800E57B08 /* xiazai.png in Resources */,
+				C29B6E061C8484BE005B4CF0 /* download_deepblue_64.png in Resources */,
 				54D26B2D1C4CD6E1001D20D9 /* distance_selected.png in Resources */,
 				540D990E1C4A64380027EF2F /* daohang.png in Resources */,
 				C21876C41C570A9A009D428B /* WeatherCollectionViewCell.xib in Resources */,
