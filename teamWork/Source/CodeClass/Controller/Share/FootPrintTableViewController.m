@@ -115,7 +115,6 @@ static NSString *const shareCellID = @"shareCellID";
                 shareModel.share_txt = [share objectForKey:@"share_txt"];//分享内容(文本)
                 //分享内容(图片) 图片数组 元素为AVFile类型 (处理在自定义cell中)
                 shareModel.share_picture = [share objectForKey:@"share_picture"];
-                NSLog(@"%@",shareModel.share_picture);
                 [self.dataArray addObject:shareModel];
             }
         }
