@@ -138,7 +138,8 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
                 activityModel.start_time = [activity objectForKey:@"start_time"];//开始时间
                 activityModel.end_time = [activity objectForKey:@"end_time"];//结束时间
                 activityModel.people_count = [activity objectForKey:@"people_count"];//人数限制
-                activityModel.people_current = [activity objectForKey:@"people_current"];//当前参与人数
+                activityModel.people_current = [[activity objectForKey:@"people_current"]intValue];//当前参与人数
+                activityModel.createdAt = [activity objectForKey:@"createdAt"];//创建时间
                 activityModel.phone = [activity objectForKey:@"phone"];//发起人填写的手机号
                 
                 //活动内容(图片) 图片数组 元素为NSData类型

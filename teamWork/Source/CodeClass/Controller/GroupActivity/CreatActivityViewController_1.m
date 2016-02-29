@@ -114,6 +114,7 @@
     [activity setObject:self.TextFieldStartTime.text forKey:@"start_time"];//开始时间
     [activity setObject:self.TextFieldEndTime.text forKey:@"end_time"];//结束时间
     [activity setObject:self.textfieldPeopleCount.text forKey:@"people_count"];//人数限制
+    [activity setObject:[NSNumber numberWithInt:1] forKey:@"people_current"];//当前参与人数 初始值为1
     [activity setObject:self.textfieldPhone.text forKey:@"phone"];//发起人手机号
     //图片三张
     //如果活动内容中有图片
@@ -139,6 +140,11 @@
     //保存这条activity
     [activity saveEventually:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
+            //在Join中加入一条记录 确定当前用户加入了该活动
+            AVObject *join = [AVObject objectWithClassName:@"Join"];
+            [join setObject:[AVUser currentUser] forKey:@"joinuser"];//加入者
+            [join setObject:activity forKey:@"activity"];
+            [join saveInBackground];
             //保存成功
             [self.navigationController popViewControllerAnimated:YES];
         }
