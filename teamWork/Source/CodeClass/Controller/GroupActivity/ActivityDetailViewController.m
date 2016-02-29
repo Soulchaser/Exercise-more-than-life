@@ -32,6 +32,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *theLastView;
 
+@property (weak, nonatomic) IBOutlet UIButton *JoinButton;
+
 
 @end
 
@@ -89,6 +91,11 @@
     self.activityPhoneLabel.text = self.PassActivity.phone;
     
 }
+
+- (IBAction)JoinAction:(id)sender {
+    
+}
+
 
 -(void)backAction
 {

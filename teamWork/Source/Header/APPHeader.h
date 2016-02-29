@@ -118,6 +118,9 @@ static NSString * const SLID = @"SecretTableViewCellReuseIdentifier";
 #pragma mark ------------GetDataTools*单例工具*------------
 #import "YDGetDataTools.h"
 
+
+#import "LoadingEvents.h"
+
 //打印
 #ifdef DEBUG
 #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
