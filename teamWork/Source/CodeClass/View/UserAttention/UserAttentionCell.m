@@ -31,12 +31,18 @@
                 if ([self.userName isEqualToString:toUser.username]) {
                     //删除这条关注记录 数据库
                     [follow deleteInBackground];
-                    //显示给用户处理结果
-                    [self.attentionButton setTitle:@"已取消" forState:UIControlStateNormal];
-                    self.attentionButton.userInteractionEnabled = NO;
+//                    //显示给用户处理结果
+//                    [self.attentionButton setTitle:@"已取消" forState:UIControlStateNormal];
+//                    self.attentionButton.userInteractionEnabled = NO;
+                    [self refreshUI];
+                    return ;
                 }
             }
     }];
+}
+-(void)refreshUI{
+    [[Friend shareFriend] refreshUI];
+    
 }
 
 @end

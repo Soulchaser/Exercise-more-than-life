@@ -10,4 +10,5 @@
 
 @interface FootPrintTableViewController : UITableViewController
 +(instancetype)shareFootPrintTVC;
+-(void)refreshUI;
 @end

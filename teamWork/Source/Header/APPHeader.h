@@ -70,6 +70,7 @@
 #import "LoginViewController.h"
 //我的分享
 #import "UserAllShareTableViewController.h"
+#import "FootPrintTableViewController.h"
 //关注的人
 #import "UserAllAttentionTVC.h"
 //关注列表

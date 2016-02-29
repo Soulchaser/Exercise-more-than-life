@@ -31,8 +31,7 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     if ([AVUser currentUser] != nil) {
-        self.view.backgroundColor = [UIColor yellowColor];
-        Friend *friend = [Friend new];
+        Friend *friend = [Friend shareFriend];
         [self addChildViewController:friend];
         [self.view addSubview:friend.tableView];
     }else{
@@ -42,8 +41,8 @@
         }
     }
     
-    
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];
     UIImage *image = nil;
