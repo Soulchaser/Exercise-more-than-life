@@ -118,15 +118,23 @@
 }
 //我的参与
 - (IBAction)myJoinActivity:(id)sender {
+    //判断用户是否登录,如果未登录,跳转到用户登录状态
+    if ([self userAleadyLogin] == NO) {
+        [self performSegueWithIdentifier:@"loginUI" sender:self];
+    }else{
+        //展示参与的活动
+        
+    }
+
 }
-//我的关注
+//清除缓存
 - (IBAction)myAttention:(id)sender {
     //判断用户是否登录,如果未登录,跳转到用户登录状态
     if ([self userAleadyLogin] == NO) {
         [self performSegueWithIdentifier:@"loginUI" sender:self];
     }else{
-        UserAllAttentionTVC *allAttention = [UserAllAttentionTVC new];
-        [self presentViewController:allAttention animated:YES completion:nil];
+        //缓存清除
+        
     }
 }
 //登陆注销
@@ -152,22 +160,5 @@
 }
 
 
-
-
-
-
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
