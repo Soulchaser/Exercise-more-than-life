@@ -523,15 +523,11 @@
 		5498EC861C48D0E700A7D99E /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				54FF9F851C841FC200E57B08 /* NSObject+AutoEncode.h */,
-				54FF9F861C841FC200E57B08 /* NSObject+AutoEncode.m */,
-=======
+
 				C2BBBE0E1C82CCC000CDA142 /* UITextField+DatePicker.h */,
 				C2BBBE0F1C82CCC000CDA142 /* UITextField+DatePicker.m */,
 				C286F5E81C81D97000BADB29 /* YDDCarouseFigureView.h */,
 				C286F5E91C81D97000BADB29 /* YDDCarouseFigureView.m */,
->>>>>>> da38345ee32da5f4dd7725ef3d570edcfc3c7248
 				C21876DA1C570C62009D428B /* YDGetDataTools.h */,
 				C21876DB1C570C62009D428B /* YDGetDataTools.m */,
 				C2034DD21C49D1B400202881 /* LeancoudTools.h */,
