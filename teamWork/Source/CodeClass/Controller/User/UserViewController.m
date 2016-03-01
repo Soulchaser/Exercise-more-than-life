@@ -130,12 +130,25 @@
 //清除缓存
 - (IBAction)myAttention:(id)sender {
     //判断用户是否登录,如果未登录,跳转到用户登录状态
-    if ([self userAleadyLogin] == NO) {
-        [self performSegueWithIdentifier:@"loginUI" sender:self];
-    }else{
-        //缓存清除
-        
-    }
+//    if ([self userAleadyLogin] == NO) {
+//        [self performSegueWithIdentifier:@"loginUI" sender:self];
+//    }else{
+//        //缓存清除
+//        
+//    }
+    
+    
+    
+    
+    [[LoadingEvents shareLoadingEvents]dataBeginLoading:self];
+    [[XLCodeDataTools shareXLCoreDataTools]deleteAllDataFromLibrary];
+    [[LoadingEvents shareLoadingEvents]dataLoadSucceed:self];
+    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"清除成功" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    [alertCon addAction:alertAct];
+    [self presentViewController:alertCon animated:YES completion:nil];
+    
+    
 }
 //登陆注销
 - (IBAction)cancelLogin:(id)sender {

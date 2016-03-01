@@ -80,6 +80,7 @@
 		54FF9FBE1C8466DC00E57B08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FBD1C8466DC00E57B08 /* Images.xcassets */; };
 		54FF9FC41C8470E700E57B08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FC31C8470E700E57B08 /* Images.xcassets */; };
 		54FF9FC71C84741A00E57B08 /* LoadingEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9FC61C84741A00E57B08 /* LoadingEvents.m */; };
+		54FF9FC91C84982800E57B08 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FC81C84982800E57B08 /* background.jpg */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
@@ -261,6 +262,7 @@
 		54FF9FC31C8470E700E57B08 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		54FF9FC51C84741A00E57B08 /* LoadingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingEvents.h; sourceTree = "<group>"; };
 		54FF9FC61C84741A00E57B08 /* LoadingEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingEvents.m; sourceTree = "<group>"; };
+		54FF9FC81C84982800E57B08 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 		5498EC911C48D0E700A7D99E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				54FF9FC81C84982800E57B08 /* background.jpg */,
 				C248CFD71C7EB234002776E5 /* CreatActivity */,
 				C204BC0C1C4F726E0085BE48 /* User */,
 				540D98FC1C4A64380027EF2F /* mapView */,
@@ -1077,6 +1080,7 @@
 				C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */,
 				540D99151C4A64380027EF2F /* jia_selected.png in Resources */,
 				5454DCEA1C571E5F00B96CCD /* location.png in Resources */,
+				54FF9FC91C84982800E57B08 /* background.jpg in Resources */,
 				540D99131C4A64380027EF2F /* haoyou.png in Resources */,
 				540D99191C4A64380027EF2F /* news_selected.png in Resources */,
 				542ADB1D1C7D5DBA00937593 /* speedometer.png in Resources */,
