@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *age;//年龄 
 @property (weak, nonatomic) IBOutlet UILabel *signature;//个性签名
 @property (weak, nonatomic) IBOutlet UILabel *address;//地址
+- (IBAction)gobackAction:(id)sender;
 
 
 
@@ -24,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.avatar.image = self.model.avatar;
     self.nickName.text = self.model.nickName;
     if ([self.model.gender isEqualToString:@"男"]) {
@@ -54,4 +56,10 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+
+- (IBAction)gobackAction:(id)sender {
+     //[self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 @end

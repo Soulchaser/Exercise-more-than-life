@@ -120,9 +120,50 @@ static NSString *const friendCellID = @"friendCellID";
 //cell的点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
         //跳转到详情页
-        AttentionDetailVC *attentionDVC = [AttentionDetailVC new];
-        attentionDVC.model = self.dataArray[indexPath.row];
-    [self.navigationController pushViewController:attentionDVC animated:YES];
+//        AttentionDetailVC *attentionDVC = [[AttentionDetailVC alloc]init];
+//    attentionDVC.view.alpha = 0.5;
+//    
+//        attentionDVC.model = self.dataArray[indexPath.row];
+//    [self.view addSubview:attentionDVC.view];
+   // [self.navigationController presentViewController:attentionDVC animated:NO completion:nil];
+    YYUserModel_Phone *model = self.dataArray[indexPath.row];
+    
+    UserInfo *userView = [[UserInfo alloc]initWithFrame:self.view.frame];
+    if (model.avatar != nil)
+    {
+         userView.avatar.image = model.avatar;
+    }
+    if (model.nickName != nil)
+    {
+        userView.nickName.text = model.nickName;
+    }
+
+    if ([model.gender isEqualToString:@"男"]) {
+        userView.gender.image = [UIImage imageNamed:@"iconfont-iconfontnan"];
+    }else if([model.gender isEqualToString:@"女"]){
+        userView.gender.image = [UIImage imageNamed:@"iconfont-nv"];
+    }else{
+        userView.gender.image = [UIImage imageNamed:@"iconfont-wenhao.png"];
+    }
+    if (model.age != nil)
+    {
+       userView.age.text = model.age;
+    }
+    
+    if (model.signature == nil) {
+        
+    }else{
+        userView.signature.text = model.signature;
+    }
+    if (model.address != nil)
+    {
+      userView.address.text = model.address;  
+    }
+    
+    
+    
+    [[UIApplication sharedApplication].delegate.window addSubview:userView];
+    
 }
 
 @end
