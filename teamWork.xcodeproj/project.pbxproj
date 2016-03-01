@@ -81,6 +81,8 @@
 		54FF9FC41C8470E700E57B08 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FC31C8470E700E57B08 /* Images.xcassets */; };
 		54FF9FC71C84741A00E57B08 /* LoadingEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9FC61C84741A00E57B08 /* LoadingEvents.m */; };
 		54FF9FC91C84982800E57B08 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FC81C84982800E57B08 /* background.jpg */; };
+		54FF9FCC1C852ABB00E57B08 /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54FF9FCB1C852ABB00E57B08 /* UserInfo.m */; };
+		54FF9FCE1C852D5D00E57B08 /* iconfont-cuowu.png in Resources */ = {isa = PBXBuildFile; fileRef = 54FF9FCD1C852D5D00E57B08 /* iconfont-cuowu.png */; };
 		7C835AF59DDEBCA136F22534 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40ADB28BE06A8DAB820CF0BA /* libPods.a */; };
 		C2034DCD1C49CC9900202881 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DCC1C49CC9900202881 /* AppDelegate.m */; };
 		C2034DD11C49CD6100202881 /* YYUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2034DD01C49CD6100202881 /* YYUserModel.m */; };
@@ -149,7 +151,6 @@
 		C2A6B8DE1C525C8C006CF6BD /* FindPasswordVC__Three.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8DC1C525C8C006CF6BD /* FindPasswordVC__Three.xib */; };
 		C2BBBE101C82CCC000CDA142 /* UITextField+DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BBBE0F1C82CCC000CDA142 /* UITextField+DatePicker.m */; };
 		C2C6CE211C507F3E004215E1 /* UIButton+CountDown.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */; };
-		C2E6CFDB1C7EB15A0019EDF9 /* UserAllAttentionTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */; };
 		C2E6CFE31C7ED4660019EDF9 /* UserAttentionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */; };
 		C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2E6CFE21C7ED4660019EDF9 /* UserAttentionCell.xib */; };
 		C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */; };
@@ -267,6 +268,9 @@
 		54FF9FC51C84741A00E57B08 /* LoadingEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingEvents.h; sourceTree = "<group>"; };
 		54FF9FC61C84741A00E57B08 /* LoadingEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingEvents.m; sourceTree = "<group>"; };
 		54FF9FC81C84982800E57B08 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		54FF9FCA1C852ABB00E57B08 /* UserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		54FF9FCB1C852ABB00E57B08 /* UserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		54FF9FCD1C852D5D00E57B08 /* iconfont-cuowu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-cuowu.png"; sourceTree = "<group>"; };
 		8548A76332434B8AF27C174A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A4FD56D4368DF51162DA0C2E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C2034DCB1C49CC9900202881 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -373,8 +377,6 @@
 		C2BBBE0F1C82CCC000CDA142 /* UITextField+DatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+DatePicker.m"; sourceTree = "<group>"; };
 		C2C6CE1F1C507F3E004215E1 /* UIButton+CountDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+CountDown.h"; sourceTree = "<group>"; };
 		C2C6CE201C507F3E004215E1 /* UIButton+CountDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+CountDown.m"; sourceTree = "<group>"; };
-		C2E6CFD91C7EB15A0019EDF9 /* UserAllAttentionTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllAttentionTVC.h; sourceTree = "<group>"; };
-		C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAllAttentionTVC.m; sourceTree = "<group>"; };
 		C2E6CFE01C7ED4660019EDF9 /* UserAttentionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAttentionCell.h; sourceTree = "<group>"; };
 		C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAttentionCell.m; sourceTree = "<group>"; };
 		C2E6CFE21C7ED4660019EDF9 /* UserAttentionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserAttentionCell.xib; sourceTree = "<group>"; };
@@ -742,6 +744,7 @@
 		C204BC0C1C4F726E0085BE48 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				54FF9FCD1C852D5D00E57B08 /* iconfont-cuowu.png */,
 				C2E6CFF01C7F02810019EDF9 /* iconfont-wenhao.png */,
 				C2E6CFEA1C7EEAE10019EDF9 /* iconfont-iconfontnan.png */,
 				C2E6CFEB1C7EEAE10019EDF9 /* iconfont-nv.png */,
@@ -933,8 +936,6 @@
 			children = (
 				C29EC1B61C7DAE0C00155F14 /* UserAllShareTableViewController.h */,
 				C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */,
-				C2E6CFD91C7EB15A0019EDF9 /* UserAllAttentionTVC.h */,
-				C2E6CFDA1C7EB15A0019EDF9 /* UserAllAttentionTVC.m */,
 				C2E6CFE51C7EE5EF0019EDF9 /* AttentionDetailVC.h */,
 				C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */,
 				C2E6CFE71C7EE5EF0019EDF9 /* AttentionDetailVC.xib */,
@@ -949,6 +950,8 @@
 				C2E6CFE01C7ED4660019EDF9 /* UserAttentionCell.h */,
 				C2E6CFE11C7ED4660019EDF9 /* UserAttentionCell.m */,
 				C2E6CFE21C7ED4660019EDF9 /* UserAttentionCell.xib */,
+				54FF9FCA1C852ABB00E57B08 /* UserInfo.h */,
+				54FF9FCB1C852ABB00E57B08 /* UserInfo.m */,
 			);
 			path = UserAttention;
 			sourceTree = "<group>";
@@ -987,7 +990,7 @@
 				TargetAttributes = {
 					5498EC691C48CE2400A7D99E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = ZNZ6622SA3;
+						DevelopmentTeam = 93VY77L34D;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1096,6 +1099,7 @@
 				C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */,
 				540D99151C4A64380027EF2F /* jia_selected.png in Resources */,
 				5454DCEA1C571E5F00B96CCD /* location.png in Resources */,
+				54FF9FCE1C852D5D00E57B08 /* iconfont-cuowu.png in Resources */,
 				54FF9FC91C84982800E57B08 /* background.jpg in Resources */,
 				540D99131C4A64380027EF2F /* haoyou.png in Resources */,
 				540D99191C4A64380027EF2F /* news_selected.png in Resources */,
@@ -1163,6 +1167,7 @@
 				C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */,
 				C21876D01C570B08009D428B /* SecretTableViewController.m in Sources */,
 				54BE0A711C5C522A008D1A6C /* XLCodeDataTools.m in Sources */,
+				54FF9FCC1C852ABB00E57B08 /* UserInfo.m in Sources */,
 				C204BC1B1C4FA4620085BE48 /* RegisterViewController.m in Sources */,
 				C286F5D41C818D5200BADB29 /* GroupActibityCell.m in Sources */,
 				C21876BE1C5708BD009D428B /* YDWMViewController.m in Sources */,
@@ -1171,7 +1176,6 @@
 				C21876BA1C5708BD009D428B /* AddTableViewController.m in Sources */,
 				5454DCCD1C571B5700B96CCD /* MapGPSLocation.m in Sources */,
 				54B3AF9B1C4DD51900D79478 /* PointWithDistanceAnn.m in Sources */,
-				C2E6CFDB1C7EB15A0019EDF9 /* UserAllAttentionTVC.m in Sources */,
 				54BE0A701C5C522A008D1A6C /* MICodeData.xcdatamodeld in Sources */,
 				54BE0A6E1C5C522A008D1A6C /* Entity.m in Sources */,
 				C21876E61C5758D4009D428B /* DetailViewController.m in Sources */,

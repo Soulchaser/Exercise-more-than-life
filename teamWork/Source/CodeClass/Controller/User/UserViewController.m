@@ -138,15 +138,28 @@
 //    }
     
     
-    
-    
-    [[LoadingEvents shareLoadingEvents]dataBeginLoading:self];
-    [[XLCodeDataTools shareXLCoreDataTools]deleteAllDataFromLibrary];
-    [[LoadingEvents shareLoadingEvents]dataLoadSucceed:self];
-    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"清除成功" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否进行清除" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+        [[LoadingEvents shareLoadingEvents]dataBeginLoading:self];
+        
+        
+        [[LoadingEvents shareLoadingEvents]dataBeginLoading:self];
+        [[XLCodeDataTools shareXLCoreDataTools]deleteAllDataFromLibrary];
+        [[LoadingEvents shareLoadingEvents]dataLoadSucceed:self];
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"清除成功" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+        [alertCon addAction:alertAct];
+        [self presentViewController:alertCon animated:YES completion:nil];
+        [[LoadingEvents shareLoadingEvents]dataLoadSucceed:self];
+    }];
+    UIAlertAction *alertActEsc = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:nil];
     [alertCon addAction:alertAct];
+    [alertCon addAction:alertActEsc];
     [self presentViewController:alertCon animated:YES completion:nil];
+    
+    
+
     
     
 }

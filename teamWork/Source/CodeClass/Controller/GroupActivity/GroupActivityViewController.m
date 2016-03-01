@@ -54,8 +54,17 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 #pragma mark **********"创建"按钮响应事件
 -(void)pushToCreatPage
 {
+    if ([AVUser currentUser] == nil) {
+        //如果未登录,跳转到登陆界面
+        //将User.storyboard作为入口
+        UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+        UIViewController *entranceVC = [user instantiateInitialViewController];
+        //让window的rootViewController指向该控制器
+        [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
+    }else{
     CreatActivityViewController_1 * creatVC = [CreatActivityViewController_1 new];
     [self.navigationController pushViewController:creatVC animated:YES];
+    }
 }
 
 
@@ -204,7 +213,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     NSRange range = {4,2};
     NSString *  subsString = [model.start_time substringWithRange:range];
     cell.calendarLabel.text = subsString;
-    cell.progressLabel.text = [NSString stringWithFormat:@"%d/%@",model.people_current,model.people_count];
+    cell.progressLabel.text = [NSString stringWithFormat:@"%lu/%@",model.people_current,model.people_count];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@km",model.distance];
     
     if (model.activity_picture.count) {

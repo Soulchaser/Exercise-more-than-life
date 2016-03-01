@@ -71,8 +71,7 @@
 //我的分享
 #import "UserAllShareTableViewController.h"
 #import "FootPrintTableViewController.h"
-//关注的人
-#import "UserAllAttentionTVC.h"
+
 //关注列表
 #import "UserAttentionCell.h"
 //关注详情页
@@ -120,7 +119,7 @@ static NSString * const SLID = @"SecretTableViewCellReuseIdentifier";
 
 
 #import "LoadingEvents.h"
-
+#import "UserInfo.h"
 //打印
 #ifdef DEBUG
 #define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
