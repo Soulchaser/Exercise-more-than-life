@@ -26,6 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"关注";
+    //字体颜色
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:38/255.0 green:38/255.0 blue:38/255.0 alpha:1]];
     self.view.backgroundColor = [UIColor grayColor];
 
 }
@@ -48,6 +52,22 @@
     UIImage *image = nil;
     if (currentUser == nil) {
         image = [UIImage imageNamed:@"person"];
+        UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
+        
+        view.backgroundColor = [UIColor whiteColor];
+        
+        UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width/2, self.view.frame.size.height/2)];
+        imgView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+        imgView.image = [UIImage imageNamed:@"background.jpg"];
+        
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(imgView.frame), view.frame.size.width, 40)];
+        [label setTextAlignment:NSTextAlignmentCenter];
+        label.text = @"您尚未登录，请先登录";
+        [view addSubview:label];
+        [view addSubview:imgView];
+        
+        
+        self.view = view;
     }else {
         AVFile *avatarFile = [currentUser objectForKey:@"avatar"];
         NSData *data = [avatarFile getData];
