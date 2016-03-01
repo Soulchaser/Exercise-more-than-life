@@ -34,12 +34,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *JoinButton;
 
-
 @end
 
 #define kModel self.PassActivity
 
 @implementation ActivityDetailViewController
+//代理方法
+-(void)carouselFigureDidCarousel:(YDDCarouseFigureView *)carouselFigureView withIndex:(NSUInteger)index{}
 //layer层操作耗时,最好放在初始化方法中
 -(void)awakeFromNib
 {
@@ -63,6 +64,8 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(backToUpPage)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    
     //描述
     self.activityDescriptionLabel.text = self.PassActivity.myDescription;
 
@@ -93,7 +96,7 @@
     //距离
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
-    self.progressLabel.text = [NSString stringWithFormat:@"%d/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+    self.progressLabel.text = [NSString stringWithFormat:@"%lu/%@",self.PassActivity.people_current,self.PassActivity.people_count];
     //时间
     self.activityTimeLabel.text = [NSString stringWithFormat:@"%@到%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址
@@ -110,6 +113,7 @@
 
 //每次进入一个界面时,判断该活动是否已经加入过
 -(void)viewWillAppear:(BOOL)animated{
+    [self peoplecount];
     //拿到数据库中的所有当前用户已参加的活动
     AVQuery *query = [AVQuery queryWithClassName:@"Join"];
     [query whereKey:@"joinuser" equalTo:[AVUser currentUser]];
@@ -136,34 +140,54 @@
     [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         AVObject *activity = [objects firstObject];
-        NSString *people_current = [activity objectForKey:@"people_current"];//当前人数
+        NSString *people_current = [[activity objectForKey:@"people_current"]stringValue];//当前人数
         NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
         if ([people_count isEqualToString:people_current]) {
             [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
+            self.JoinButton.backgroundColor = [UIColor redColor];
             self.JoinButton.userInteractionEnabled = NO;
         }
     }];
 }
 //活动加入按钮
 - (IBAction)JoinAction:(id)sender {
-    AVObject *join = [AVObject objectWithClassName:@"Join"];
-    [join setObject:[AVUser currentUser] forKey:@"joinuser"];//加入者
-    //查找加入的活动
+    //查找当前的活动
     AVQuery *query = [AVQuery queryWithClassName:@"Activity"];
     [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         AVObject *activity = [objects firstObject];
-        [join setObject:activity forKey:@"activity"];//关联活动
-        //更新活动人数
-        [activity incrementKey:@"people_current"];//增加当前参与人数
-        activity.fetchWhenSave = YES;
-        [activity saveInBackground];
-        //保存加入记录
-        [join saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            //改变按钮的样式
+        NSString *people_current = [[activity objectForKey:@"people_current"]stringValue];//当前人数
+        NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
+        if ([people_count isEqualToString:people_current]) {
+            [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
+            self.JoinButton.backgroundColor = [UIColor redColor];
             self.JoinButton.userInteractionEnabled = NO;
-            [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+            self.progressLabel.text = [NSString stringWithFormat:@"%@/%@",self.PassActivity.people_count,self.PassActivity.people_count];
+            
+        }else{
+        AVObject *join = [AVObject objectWithClassName:@"Join"];
+        [join setObject:[AVUser currentUser] forKey:@"joinuser"];//加入者
+        //查找加入的活动
+        AVQuery *queryJoin = [AVQuery queryWithClassName:@"Activity"];
+        [queryJoin whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
+        [queryJoin findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            AVObject *activity = [objects firstObject];
+            [join setObject:activity forKey:@"activity"];//关联活动
+            //更新活动人数
+            NSInteger people_Current = self.PassActivity.people_current ++ ;
+            self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",people_Current,self.PassActivity.people_count];
+            [activity incrementKey:@"people_current"];//增加当前参与人数
+            activity.fetchWhenSave = YES;
+            [activity saveInBackground];
+            //保存加入记录
+            [join saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                //改变按钮的样式
+                self.JoinButton.userInteractionEnabled = NO;
+                [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+            }];
         }];
+
+        }
     }];
     
 }
