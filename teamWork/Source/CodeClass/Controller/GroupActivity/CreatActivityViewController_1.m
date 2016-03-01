@@ -194,10 +194,10 @@
     NSCalendar * gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     NSDateComponents * offsetComponents = [[NSDateComponents alloc] init];
     //设置时间
-    [offsetComponents setYear:0];
+    [offsetComponents setYear:1];
     [offsetComponents setMonth:0];
-    [offsetComponents setDay:5];
-    [offsetComponents setHour:20];
+    [offsetComponents setDay:0];
+    [offsetComponents setHour:0];
     [offsetComponents setMinute:0];
     [offsetComponents setSecond:0];
     
