@@ -16,6 +16,8 @@
 
 @property(strong,nonatomic) NSString * cityStr;
 
+
+
 @end
 
 //Cell重用标识符
@@ -29,8 +31,15 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.backView];
     [self.collectionView reloadData];
     [[MapGPSLocation shareMapGPSLocation]addDelegateMapGPSLocation:self delegateQueue:dispatch_get_main_queue()];
-    
+    self.cityStr = [[NSString alloc]init];
 
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if ([self.cityStr isEqualToString: @""])
+        {
+            [[LoadingEvents shareLoadingEvents]dataLoadFailed:self];
+            
+        }
+    });
     
     
     
@@ -64,6 +73,7 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     [super viewDidLoad];
     
     [[MapGPSLocation shareMapGPSLocation]mapGPSLocationStart];
+    
     //小菊花
     [[LoadingEvents shareLoadingEvents]dataBeginLoading:self];
     
