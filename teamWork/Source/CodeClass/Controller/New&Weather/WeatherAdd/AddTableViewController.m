@@ -16,6 +16,8 @@
 
 @property(assign,nonatomic) BOOL flag;
 
+@property(strong,nonatomic)UISearchBar *bar;
+
 @end
 
 @implementation AddTableViewController
@@ -38,19 +40,19 @@
     
     self.flag = YES;
     
-    UISearchBar * bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-100, 64)];
+    self.bar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width-100, 64)];
     
-    bar.backgroundColor = [UIColor redColor];
+    self.bar.backgroundColor = [UIColor redColor];
     
-    bar.delegate = self;
+    self.bar.delegate = self;
     //显示cancel按钮
-    bar.showsCancelButton = YES;
+    self.bar.showsCancelButton = YES;
     //是否显示搜索结果按钮
     //    bar.showsSearchResultsButton = YES;
     
-    bar.keyboardType = UIKeyboardTypeDefault;
-    bar.placeholder = @"请键入城市拼音如'beijing'";
-    self.tableView.tableHeaderView = bar;
+    self.bar.keyboardType = UIKeyboardTypeDefault;
+    self.bar.placeholder = @"请键入城市拼音如'beijing'";
+    self.tableView.tableHeaderView = self.bar;
     
     //注册cell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
@@ -108,6 +110,35 @@
     
     //如果输入的拼音或者汉字不完整,或者没有匹配的城市,不显示(或提示信息,输入的汉字或者拼音不匹配,请输入完整的城市名称)
     
+    if(self.searchText){
+        
+        for (int i=0; i<self.searchText.length; i++) {
+            
+            NSRange range=NSMakeRange(i,1);
+            
+            NSString *subString=[self.searchText substringWithRange:range];
+            
+            const char *cString=[subString UTF8String];
+            
+            if (strlen(cString)==3)
+                
+            {
+                self.searchText = @"";
+                self.bar.text = @"";
+                
+                UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"请输入城市拼音全拼" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction * def = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil];
+                [vc addAction:def];
+                [self presentViewController:vc animated:YES completion:nil];
+            }
+            
+        }
+        
+    }
+
+    
+    
+    
     NSString * httpStr = @"http://apis.baidu.com/heweather/weather/free?city=";
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%@%@",httpStr,self.searchText]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
@@ -115,7 +146,6 @@
     [request addValue: @"2914a9e8c533799c98515dbba2834624" forHTTPHeaderField: @"apikey"];
     
     NSURLSessionDataTask * dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
         
         NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         

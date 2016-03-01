@@ -70,5 +70,9 @@
 //大大后天预报温度低
 @property (weak, nonatomic) IBOutlet UILabel *FDFNForecastLLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *backView;
+
+@property (weak, nonatomic) IBOutlet UIView *backView2;//未来几天的
+
 
 @end

@@ -115,6 +115,7 @@
 		C248411F1C8521A200186DA3 /* RunTime_placehoder.png in Resources */ = {isa = PBXBuildFile; fileRef = C248411E1C8521A200186DA3 /* RunTime_placehoder.png */; };
 		C24841221C852EB400186DA3 /* add_lightGray_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841201C852EB400186DA3 /* add_lightGray_64.png */; };
 		C24841231C852EB400186DA3 /* add_white_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841211C852EB400186DA3 /* add_white_64.png */; };
+		C24841251C856DD800186DA3 /* backgroundImge.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841241C856DD800186DA3 /* backgroundImge.png */; };
 		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
 		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
 		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
@@ -143,6 +144,7 @@
 		C29B6E061C8484BE005B4CF0 /* download_deepblue_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */; };
 		C29EC1B41C7D966000155F14 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C29EC1B31C7D966000155F14 /* default_avatar.png */; };
 		C29EC1B81C7DAE0C00155F14 /* UserAllShareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */; };
+		C2A114061C85479E003BB297 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A114051C85479E003BB297 /* MyActivity.m */; };
 		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
 		C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */; };
 		C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */; };
@@ -325,6 +327,7 @@
 		C248411E1C8521A200186DA3 /* RunTime_placehoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RunTime_placehoder.png; sourceTree = "<group>"; };
 		C24841201C852EB400186DA3 /* add_lightGray_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_lightGray_64.png; sourceTree = "<group>"; };
 		C24841211C852EB400186DA3 /* add_white_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_white_64.png; sourceTree = "<group>"; };
+		C24841241C856DD800186DA3 /* backgroundImge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundImge.png; sourceTree = "<group>"; };
 		C248CFD81C7EB234002776E5 /* iconfont-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-add.png"; sourceTree = "<group>"; };
 		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
 		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 		C29EC1B31C7D966000155F14 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		C29EC1B61C7DAE0C00155F14 /* UserAllShareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllShareTableViewController.h; sourceTree = "<group>"; };
 		C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAllShareTableViewController.m; sourceTree = "<group>"; };
+		C2A114041C85479E003BB297 /* MyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivity.h; sourceTree = "<group>"; };
+		C2A114051C85479E003BB297 /* MyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
 		C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -892,6 +897,7 @@
 		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
+				C24841241C856DD800186DA3 /* backgroundImge.png */,
 				C24841201C852EB400186DA3 /* add_lightGray_64.png */,
 				C24841211C852EB400186DA3 /* add_white_64.png */,
 				C248411E1C8521A200186DA3 /* RunTime_placehoder.png */,
@@ -939,6 +945,8 @@
 				C2E6CFE51C7EE5EF0019EDF9 /* AttentionDetailVC.h */,
 				C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */,
 				C2E6CFE71C7EE5EF0019EDF9 /* AttentionDetailVC.xib */,
+				C2A114041C85479E003BB297 /* MyActivity.h */,
+				C2A114051C85479E003BB297 /* MyActivity.m */,
 			);
 			name = UserAttendInformation;
 			path = teamWork/Source/CodeClass/Controller/UserAttendInformation;
@@ -990,7 +998,7 @@
 				TargetAttributes = {
 					5498EC691C48CE2400A7D99E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 93VY77L34D;
+						DevelopmentTeam = ZNZ6622SA3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1083,6 +1091,7 @@
 				C286F5E21C8194C500BADB29 /* exercise_black_128.png in Resources */,
 				54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */,
 				5454DCF11C571E5F00B96CCD /* walk_selected.png in Resources */,
+				C24841251C856DD800186DA3 /* backgroundImge.png in Resources */,
 				C204BC121C4F74AF0085BE48 /* iconfont-mima.png in Resources */,
 				540D99111C4A64380027EF2F /* group_select.png in Resources */,
 				542ADB4E1C7F306600937593 /* iconfont-androidstopwatch.png in Resources */,
@@ -1218,6 +1227,7 @@
 				54BE0A6F1C5C522A008D1A6C /* Entity+CoreDataProperties.m in Sources */,
 				C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
+				C2A114061C85479E003BB297 /* MyActivity.m in Sources */,
 				C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */,
 				5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */,
 				C2BBBE101C82CCC000CDA142 /* UITextField+DatePicker.m in Sources */,
