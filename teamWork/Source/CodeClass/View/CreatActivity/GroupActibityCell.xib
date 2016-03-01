@@ -196,7 +196,7 @@
                 <outlet property="titleLabel" destination="tDR-i5-7d7" id="nq7-QR-ip8"/>
                 <outlet property="userPicImgView" destination="7pK-J0-95a" id="FX9-CY-vwG"/>
             </connections>
-            <point key="canvasLocation" x="368.5" y="342"/>
+            <point key="canvasLocation" x="479.5" y="338"/>
         </tableViewCell>
     </objects>
     <resources>

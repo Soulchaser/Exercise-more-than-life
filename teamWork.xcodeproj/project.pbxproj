@@ -109,6 +109,7 @@
 		C21876E71C5758D4009D428B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C21876E51C5758D4009D428B /* DetailViewController.xib */; };
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
 		C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */; };
+		C248411F1C8521A200186DA3 /* RunTime_placehoder.png in Resources */ = {isa = PBXBuildFile; fileRef = C248411E1C8521A200186DA3 /* RunTime_placehoder.png */; };
 		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
 		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
 		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
@@ -313,6 +314,7 @@
 		C21876E91C5763C4009D428B /* DetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
 		C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
+		C248411E1C8521A200186DA3 /* RunTime_placehoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RunTime_placehoder.png; sourceTree = "<group>"; };
 		C248CFD81C7EB234002776E5 /* iconfont-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-add.png"; sourceTree = "<group>"; };
 		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
 		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
@@ -880,6 +882,7 @@
 		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
+				C248411E1C8521A200186DA3 /* RunTime_placehoder.png */,
 				C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */,
 				C286F5D61C8194C500BADB29 /* address_green_64.png */,
 				C286F5D71C8194C500BADB29 /* calender_green_64.png */,
@@ -1018,6 +1021,7 @@
 				542ADB501C7FEF5600937593 /* shangchuan.png in Resources */,
 				540D99121C4A64380027EF2F /* haoyou-selected.png in Resources */,
 				540D991D1C4A64380027EF2F /* weixing.png in Resources */,
+				C248411F1C8521A200186DA3 /* RunTime_placehoder.png in Resources */,
 				540D990F1C4A64380027EF2F /* daohang_selected.png in Resources */,
 				5454DCE81C571E5F00B96CCD /* dingwei.png in Resources */,
 				C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */,
@@ -1330,7 +1334,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1347,7 +1351,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

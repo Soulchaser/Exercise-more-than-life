@@ -11,7 +11,10 @@
 @implementation GroupActibityCell
 
 - (void)awakeFromNib {
-    // Initialization code
+
+//    YYUserActivity * model = [[YYUserActivity alloc] init];
+//    self.userPicImgView.image = [UIImage imageWithData:model.activity_picture[1]];
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

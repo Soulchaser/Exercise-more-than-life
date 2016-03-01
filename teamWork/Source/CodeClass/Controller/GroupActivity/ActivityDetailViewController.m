@@ -37,7 +37,15 @@
 
 @end
 
+#define kModel self.PassActivity
+
 @implementation ActivityDetailViewController
+//layer层操作耗时,最好放在初始化方法中
+-(void)awakeFromNib
+{
+    self.userPic.image = self.PassActivity.avatar;
+    self.userNameLabel.text = self.PassActivity.nickname;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,7 +70,6 @@
     currentFrame.size.height = rect.size.height;
     self.activityDescriptionLabel.frame = currentFrame;
     
-//    self.automaticallyAdjustsScrollViewInsets = NO;
     self.MyscrollView.contentSize = CGSizeMake(kScreenWidth, CGRectGetHeight(self.theLastView.frame));
     
     NSMutableArray * array = [[NSMutableArray alloc] init];
@@ -75,14 +82,13 @@
     }
     
     YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, 200)];
-    //    carouselView.duration = 1;
     carouselView.delegate = self;
     carouselView.images = array;
     [self.G_View addSubview: carouselView];
     //距离
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
-    self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+    self.progressLabel.text = [NSString stringWithFormat:@"%d/%@",self.PassActivity.people_current,self.PassActivity.people_count];
     //时间
     self.activityTimeLabel.text = [NSString stringWithFormat:@"%@到%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址

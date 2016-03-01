@@ -53,6 +53,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     [self.navigationController pushViewController:creatVC animated:YES];
 }
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor greenColor];
@@ -159,8 +160,6 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
         });
         
     }];
-    
-    
 }
 
 /**
@@ -193,10 +192,18 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     //赋值
     cell.titleLabel.text = model.title;
     cell.addressLabel.text = model.address;
-    cell.calendarLabel.text = model.start_time;
+    //截取字符串
+    NSRange range = {4,2};
+    NSString *  subsString = [model.start_time substringWithRange:range];
+    cell.calendarLabel.text = subsString;
     cell.progressLabel.text = [NSString stringWithFormat:@"%d/%@",model.people_current,model.people_count];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@km",model.distance];
-
+    
+    if (model.activity_picture.count) {
+        cell.userPicImgView.image = [UIImage imageWithData:model.activity_picture[0]];
+    }
+    
+    
     
     return cell;
     
