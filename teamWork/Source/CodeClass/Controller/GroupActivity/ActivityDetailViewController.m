@@ -88,14 +88,14 @@
         
     }
     
-    YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, 200)];
+    YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, self.G_View.frame.size.height)];
     carouselView.delegate = self;
     carouselView.images = array;
     [self.G_View addSubview: carouselView];
     //距离
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
-    self.progressLabel.text = [NSString stringWithFormat:@"%lu/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+    self.progressLabel.text = [NSString stringWithFormat:@"%lu/%@",(long)self.PassActivity.people_current,self.PassActivity.people_count];
     //时间
     self.activityTimeLabel.text = [NSString stringWithFormat:@"%@到%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址
