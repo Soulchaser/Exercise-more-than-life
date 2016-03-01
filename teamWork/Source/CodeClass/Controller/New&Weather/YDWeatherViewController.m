@@ -30,15 +30,7 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 {
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.backView];
     [self.collectionView reloadData];
-    [[MapGPSLocation shareMapGPSLocation]addDelegateMapGPSLocation:self delegateQueue:dispatch_get_main_queue()];
-    self.cityStr = [[NSString alloc]init];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if ([self.cityStr isEqualToString: @""])
-        {
-            [[LoadingEvents shareLoadingEvents]dataLoadFailed:self];
-        }
-    });
     
     
     
@@ -70,11 +62,24 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.cityStr = [[NSString alloc]init];
     [[MapGPSLocation shareMapGPSLocation]mapGPSLocationStart];
     
     //小菊花
     [[LoadingEvents shareLoadingEvents]dataBeginLoading:self];
+    
+    
+    [[MapGPSLocation shareMapGPSLocation]addDelegateMapGPSLocation:self delegateQueue:dispatch_get_main_queue()];
+    
+    __weak typeof(self) temp = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if ([temp.cityStr isEqualToString: @""])
+        {
+            [[LoadingEvents shareLoadingEvents]dataLoadFailed:temp];
+        }
+    });
+    
+    
     
     UICollectionViewFlowLayout * flowLayout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -243,58 +248,63 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     
     NSURLSessionDataTask * dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        
-        NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
-        //写入文件
-        //        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
-        
-        DLog(@"%lu",(unsigned long)dataArray.count);
-        
-        for (NSDictionary * dict in dataArray) {
-            //Basic部分
-            YDWeatherModel * model = [[YDWeatherModel alloc] init];
-            model.city = dict[@"basic"][@"city"];
-            //"Now"部分
-            model.tmp = dict[@"now"][@"tmp"];
-            model.txt = dict[@"now"][@"cond"][@"txt"];
+        if (data != nil)
+        {
+            NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             
-            //"aqi"部分
-            model.aqi = dict[@"aqi"][@"city"][@"aqi"];
-            model.qlty = dict[@"aqi"][@"city"][@"qlty"];
+            NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
+            //写入文件
+            //        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
             
-            //@"forecast"部分
-            for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
+            DLog(@"%lu",(unsigned long)dataArray.count);
+            
+            for (NSDictionary * dict in dataArray) {
+                //Basic部分
+                YDWeatherModel * model = [[YDWeatherModel alloc] init];
+                model.city = dict[@"basic"][@"city"];
+                //"Now"部分
+                model.tmp = dict[@"now"][@"tmp"];
+                model.txt = dict[@"now"][@"cond"][@"txt"];
                 
-                YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
+                //"aqi"部分
+                model.aqi = dict[@"aqi"][@"city"][@"aqi"];
+                model.qlty = dict[@"aqi"][@"city"][@"qlty"];
                 
-                modelF.date = forecastDic[@"date"];
-                modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
-                modelF.max = forecastDic[@"tmp"][@"max"];
-                modelF.min = forecastDic[@"tmp"][@"min"];
-                [model.array addObject:modelF];
+                //@"forecast"部分
+                for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
+                    
+                    YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
+                    
+                    modelF.date = forecastDic[@"date"];
+                    modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
+                    modelF.max = forecastDic[@"tmp"][@"max"];
+                    modelF.min = forecastDic[@"tmp"][@"min"];
+                    [model.array addObject:modelF];
+                }
+                
+                //判断根据输入的字段查询到的东西是否为合适的城市,如果为空,不添加进数组
+                //判断查询结果
+                DLog(@"%@",model.city);
+                
+                if (model.city == nil) {
+                    return ;
+                }else
+                {
+                    [kGD.BasicArray addObject:model];
+                }
+                
             }
+            DLog(@"%@",kGD.BasicArray);
             
-            //判断根据输入的字段查询到的东西是否为合适的城市,如果为空,不添加进数组
-            //判断查询结果
-            DLog(@"%@",model.city);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.collectionView reloadData];
+                [[LoadingEvents shareLoadingEvents]dataLoadSucceed:self];
+            });
             
-            if (model.city == nil) {
-                return ;
-            }else
-            {
-                [kGD.BasicArray addObject:model];
-            }
             
         }
-        DLog(@"%@",kGD.BasicArray);
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.collectionView reloadData];
-            [[LoadingEvents shareLoadingEvents]dataLoadSucceed:self];
-        });
-        
-        
+
     }];
     [dataTask resume];
     
