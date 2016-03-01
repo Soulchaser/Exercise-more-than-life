@@ -37,7 +37,15 @@
 
 @end
 
+#define kModel self.PassActivity
+
 @implementation ActivityDetailViewController
+//layer层操作耗时,最好放在初始化方法中
+-(void)awakeFromNib
+{
+    self.userPic.image = self.PassActivity.avatar;
+    self.userNameLabel.text = self.PassActivity.nickname;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -62,7 +70,6 @@
     currentFrame.size.height = rect.size.height;
     self.activityDescriptionLabel.frame = currentFrame;
     
-//    self.automaticallyAdjustsScrollViewInsets = NO;
     self.MyscrollView.contentSize = CGSizeMake(kScreenWidth, CGRectGetHeight(self.theLastView.frame));
     
     NSMutableArray * array = [[NSMutableArray alloc] init];
@@ -75,14 +82,13 @@
     }
     
     YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, 200)];
-    //    carouselView.duration = 1;
     carouselView.delegate = self;
     carouselView.images = array;
     [self.G_View addSubview: carouselView];
     //距离
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
-    self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+    self.progressLabel.text = [NSString stringWithFormat:@"%d/%@",self.PassActivity.people_current,self.PassActivity.people_count];
     //时间
     self.activityTimeLabel.text = [NSString stringWithFormat:@"%@到%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址
@@ -96,17 +102,34 @@
     //拿到数据库中的所有当前用户已参加的活动
     AVQuery *query = [AVQuery queryWithClassName:@"Join"];
     [query whereKey:@"joinuser" equalTo:[AVUser currentUser]];
+    [query includeKey:@"activity"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (AVObject *join in objects) {
             //如果在已加入的活动中存在当前活动(根据活动的创建时间判断)
             AVObject *activity = [join objectForKey:@"activity"];//已加入的活动
             NSString *createdAt = [activity objectForKey:@"createdAt"];//已加入活动的创建时间
-            if ([createdAt isEqualToString:self.PassActivity.createdAt]) {
+            if ([createdAt isEqual:self.PassActivity.createdAt]) {
                 //改变按钮的样式
                 self.JoinButton.userInteractionEnabled = NO;
                 [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+                self.JoinButton.backgroundColor = [UIColor grayColor];
                 return ;
             }
+        }
+    }];
+}
+//判断加入的用户是否达到限制人数
+-(void)peoplecount{
+    //查找当前的活动
+    AVQuery *query = [AVQuery queryWithClassName:@"Activity"];
+    [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        AVObject *activity = [objects firstObject];
+        NSString *people_current = [activity objectForKey:@"people_current"];//当前人数
+        NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
+        if ([people_count isEqualToString:people_current]) {
+            [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
+            self.JoinButton.userInteractionEnabled = NO;
         }
     }];
 }
@@ -124,9 +147,12 @@
         [activity incrementKey:@"people_current"];//增加当前参与人数
         activity.fetchWhenSave = YES;
         [activity saveInBackground];
-        //改变按钮的样式
-        self.JoinButton.userInteractionEnabled = NO;
-        [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+        //保存加入记录
+        [join saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            //改变按钮的样式
+            self.JoinButton.userInteractionEnabled = NO;
+            [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+        }];
     }];
     
 }

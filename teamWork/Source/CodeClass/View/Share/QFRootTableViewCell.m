@@ -65,7 +65,10 @@
     self.userImageView.image = item.avatar;//头像
     self.nameLabel.text = item.nickname;//昵称
     self.shareTime = item.shareTime;//根据分享时间在数据表中查找分享记录
-    self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",item.shareTime];//日期
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"MM月dd日 HH:mm"];
+    NSString *shareTim = [dateFormatter stringFromDate:item.shareTime];
+    self.shareTimeLabel.text = [NSString stringWithFormat:@"%@",shareTim];//日期
     self.commentLabel.text = item.share_txt;//txt
     //取出分享图片的文件数组,改成data数组
     NSMutableArray *dataArray = [NSMutableArray array];

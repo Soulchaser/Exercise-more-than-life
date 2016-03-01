@@ -131,7 +131,7 @@
                                         <constraint firstItem="nWA-Cg-7NE" firstAttribute="top" secondItem="CCz-RG-KYU" secondAttribute="top" constant="5" id="xyU-Q8-Y4K"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSg-N7-sFI" userLabel="用户头像昵称-View">
+                                <view alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSg-N7-sFI" userLabel="用户头像昵称-View">
                                     <rect key="frame" x="0.0" y="207" width="375" height="50"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="voH-5W-nJ9">
@@ -141,7 +141,7 @@
                                                 <constraint firstAttribute="width" secondItem="voH-5W-nJ9" secondAttribute="height" multiplier="1:1" id="pdD-yC-u5Q"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fai-lu-HPl">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fai-lu-HPl">
                                             <rect key="frame" x="60" y="14" width="305" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="6ns-lc-5Pe"/>
@@ -151,7 +151,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.886422822" green="0.70737292279999997" blue="0.35151381780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="fai-lu-HPl" secondAttribute="trailing" constant="10" id="Enu-UM-Q2N"/>
                                         <constraint firstAttribute="height" constant="50" id="P0c-Ah-WnP"/>
@@ -163,7 +163,7 @@
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8K-Ma-tKh">
                                     <rect key="frame" x="10" y="277" width="34" height="21"/>
-                                    <color key="backgroundColor" red="0.886422822" green="0.70737292279999997" blue="0.35151381780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="34" id="4Wy-bt-Nn6"/>
                                         <constraint firstAttribute="height" constant="21" id="TUP-ZL-vDP"/>
@@ -174,7 +174,7 @@
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0U-0T-fKQ">
                                     <rect key="frame" x="10" y="318" width="355" height="21"/>
-                                    <color key="backgroundColor" red="1" green="0.5605138382" blue="0.18886146649999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -261,7 +261,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="xjd-on-1nJ" firstAttribute="leading" secondItem="Rnj-7g-gnb" secondAttribute="leading" constant="10" id="0fJ-KK-qMK"/>
                                         <constraint firstAttribute="trailing" secondItem="LIf-SY-hhg" secondAttribute="trailing" id="17F-lf-H66"/>
@@ -288,7 +288,7 @@
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="osq-gx-zUg" firstAttribute="top" secondItem="iY4-4q-Eae" secondAttribute="top" id="4h2-uH-Lwg"/>
                                 <constraint firstAttribute="trailing" secondItem="XSg-N7-sFI" secondAttribute="trailing" id="5kX-vo-Dcw"/>
@@ -329,7 +329,7 @@
                 <constraint firstAttribute="bottom" secondItem="Flk-oa-IoZ" secondAttribute="bottom" id="zAY-mG-ldT"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="577.5" y="191.5"/>
+            <point key="canvasLocation" x="412.5" y="150.5"/>
         </view>
     </objects>
     <resources>

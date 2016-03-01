@@ -48,7 +48,7 @@
         for (UIView *myView in array) {
             [myView removeFromSuperview];
         }
-       // UIImageView *imgView = [UIImageView alloc]initWithFrame:<#(CGRect)#>
+       
         UIView *view = [[UIView alloc]initWithFrame:self.view.frame];
         
         view.backgroundColor = [UIColor whiteColor];
