@@ -64,6 +64,8 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(backToUpPage)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    
     //描述
     self.activityDescriptionLabel.text = self.PassActivity.myDescription;
 
