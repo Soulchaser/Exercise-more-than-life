@@ -33,8 +33,13 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"寻找组织" image:[UIImage imageNamed:@"group"] selectedImage:[UIImage imageNamed:@"group_select"]];
+
+        UIButton * rightButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 20,20)];
+        [rightButton setImage:[UIImage imageNamed:@"add_white_64"] forState:UIControlStateNormal];
         
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style: UIBarButtonItemStylePlain target:self action:@selector(pushToCreatPage)];
+        [rightButton addTarget:self action:@selector(pushToCreatPage) forControlEvents:UIControlEventTouchUpInside];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
         
     }
     return self;
@@ -214,7 +219,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 120;
+    return kScreenHeight/5;
 }
 
 //cell点击事件

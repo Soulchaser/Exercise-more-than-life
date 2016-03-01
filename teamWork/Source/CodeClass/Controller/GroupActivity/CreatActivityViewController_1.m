@@ -39,11 +39,15 @@
 
 @property(assign,nonatomic) NSInteger z_count;//用于标记三个接收图片的属性
 
+@property(strong,nonatomic) NSNotificationCenter * MyObserver;
+
 //相机或者相册的资源类型
 @property(strong,nonatomic)AvatarsourceType *sourceType;
 
 @property(strong,nonatomic)NSMutableArray *dataArray;//活动图片按钮
 @property(strong,nonatomic)UIButton *rightButton;//发布活动按钮
+
+@property(strong,nonatomic) UILabel * t_label;//提示用label
 @end
 
 #define kGap (([UIScreen mainScreen].bounds.size.height)/15)
@@ -58,6 +62,20 @@
     return _dataArray;
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    self.MyObserver = [[NSNotificationCenter defaultCenter]addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        
+        
+        
+        
+    }];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self.MyObserver];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -195,14 +213,13 @@
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
     [self.rightButton setTitle:@"发起" forState:UIControlStateNormal];
-    [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:
+    [self.rightButton addTarget:self action:@selector(publishActivity) forControlEvents:
      UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"活动";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
 }
 
-//
 -(void)btnClicked
 {
     [self.textfieldTitle resignFirstResponder];
@@ -233,10 +250,6 @@
     return YES;
 }
 
-//-(void)btnClicked_description
-//{
-//     [ resignFirstResponder];
-//}
 -(void)btnClicked_address
 {
      [self.textfieldAddress resignFirstResponder];
@@ -262,16 +275,91 @@
 {
      [self.textfieldPhone resignFirstResponder];
 }
+
+-(void)simpleMethod
+{
+    [[UIApplication sharedApplication].delegate.window addSubview:self.t_label];
+    //用2秒内完成animation内的操作,透明度设为0
+    [UIView animateWithDuration:2 animations:^{
+        self.t_label.alpha= 0;
+    } completion:^(BOOL finished) {
+        [self.t_label removeFromSuperview];
+        self.t_label.alpha = 1;
+    }];
+
+}
+
 //发布按钮点击事件
--(void)publishAction{
-    
+-(void)publishActivity{
+    [self.textfieldTitle resignFirstResponder];
+    [self.textViewDescription resignFirstResponder];
+    [self.textfieldAddress resignFirstResponder];
+    [self.textfieldDistance resignFirstResponder];
+    [self.TextFieldStartTime resignFirstResponder];
+    [self.TextFieldEndTime resignFirstResponder];
+    [self.textfieldPeopleCount resignFirstResponder];
+    [self.textfieldPhone resignFirstResponder];
     //发布前的判断
-    //不能为空
+    self.t_label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/2, kScreenHeight/10)];
+    self.t_label.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+    self.t_label.layer.masksToBounds = YES;
+    self.t_label.layer.cornerRadius = 10;
+    
+    self.t_label.alpha = 1;
+    self.t_label.textColor = [UIColor whiteColor];
+    [self.t_label setTextAlignment:NSTextAlignmentCenter];
+    self.t_label.backgroundColor = [UIColor blackColor];
+    
     if ([self.textfieldTitle.text isEqualToString:@""]) {
+        self.t_label.text = @"请填写活动标题";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
         
+    }else if ([self.textViewDescription.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写活动描述";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
+    }else if ([self.textfieldAddress.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写地址";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
+    }else if ([self.textfieldDistance.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写活动距离";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
+    }else if ([self.TextFieldStartTime.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写活动开始时间";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
+    }else if ([self.TextFieldEndTime.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写活动结束时间";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
+    }else if ([self.textfieldPeopleCount.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写活动人数";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
+    }else if ([self.textfieldPhone.text isEqualToString:@""])
+    {
+        self.t_label.text = @"请填写手机号";
+        [self simpleMethod];
+        //return 填写不完整,跳出
+        return;
     }
-    
-    
+
     //活动类
     AVObject *activity = [AVObject objectWithClassName:@"Activity"];
     [activity setObject:self.textfieldTitle.text forKey:@"title"];//标题

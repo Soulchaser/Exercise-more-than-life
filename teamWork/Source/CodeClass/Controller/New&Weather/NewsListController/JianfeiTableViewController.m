@@ -143,7 +143,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return kScreenHeight/10;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

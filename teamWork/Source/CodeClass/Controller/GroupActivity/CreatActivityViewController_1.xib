@@ -177,7 +177,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入活动人数" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbv-ck-GN2">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入活动人数" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mbv-ck-GN2">
                                     <rect key="frame" x="88" y="366" width="241" height="30"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -196,7 +196,7 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入里程" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89i-Kx-kSS">
+                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入里程" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="89i-Kx-kSS">
                                     <rect key="frame" x="88" y="246" width="241" height="30"/>
                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -208,7 +208,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Otl-mZ-Pg7">
                                     <rect key="frame" x="10" y="446" width="355" height="133"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyN-rI-Mks">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyN-rI-Mks" userLabel="竖向1/3">
                                             <rect key="frame" x="118" y="0.0" width="1" height="133"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -218,7 +218,7 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSv-A6-sMr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSv-A6-sMr" userLabel="竖向2/3">
                                             <rect key="frame" x="236" y="0.0" width="1" height="133"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -230,21 +230,21 @@
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhA-fm-1Ig">
                                             <rect key="frame" x="5" y="5" width="108" height="123"/>
-                                            <state key="normal" image="iconfont-tianjia.png"/>
+                                            <state key="normal" image="iconfont-add.png"/>
                                             <connections>
                                                 <action selector="buttonPic1Setting:" destination="-1" eventType="touchUpInside" id="MeL-J0-Q5n"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-R2-v9H">
                                             <rect key="frame" x="124" y="5" width="107" height="123"/>
-                                            <state key="normal" image="iconfont-tianjia.png"/>
+                                            <state key="normal" image="iconfont-add.png"/>
                                             <connections>
                                                 <action selector="buttonPic2Setting:" destination="-1" eventType="touchUpInside" id="QIC-g7-UJ8"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXk-sQ-qif">
                                             <rect key="frame" x="242" y="5" width="108" height="123"/>
-                                            <state key="normal" image="iconfont-tianjia.png"/>
+                                            <state key="normal" image="iconfont-add.png"/>
                                             <connections>
                                                 <action selector="buttonPic3Setting:" destination="-1" eventType="touchUpInside" id="s89-E0-tuK"/>
                                             </connections>
@@ -325,6 +325,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="xPk-3e-bW8" secondAttribute="bottom" id="f5v-Tv-L6i"/>
                         <constraint firstAttribute="trailing" secondItem="xPk-3e-bW8" secondAttribute="trailing" id="q20-5C-KbZ"/>
@@ -334,6 +335,7 @@
                     </constraints>
                 </scrollView>
             </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="V8u-Cl-tl6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6xa-ZH-OLr"/>
                 <constraint firstItem="V8u-Cl-tl6" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="COd-OY-jXL"/>
@@ -347,6 +349,6 @@
         </view>
     </objects>
     <resources>
-        <image name="iconfont-tianjia.png" width="128" height="128"/>
+        <image name="iconfont-add.png" width="128" height="128"/>
     </resources>
 </document>
