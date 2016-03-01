@@ -115,6 +115,7 @@
 		C248411F1C8521A200186DA3 /* RunTime_placehoder.png in Resources */ = {isa = PBXBuildFile; fileRef = C248411E1C8521A200186DA3 /* RunTime_placehoder.png */; };
 		C24841221C852EB400186DA3 /* add_lightGray_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841201C852EB400186DA3 /* add_lightGray_64.png */; };
 		C24841231C852EB400186DA3 /* add_white_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841211C852EB400186DA3 /* add_white_64.png */; };
+		C24841251C856DD800186DA3 /* backgroundImge.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841241C856DD800186DA3 /* backgroundImge.png */; };
 		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
 		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
 		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
@@ -326,6 +327,7 @@
 		C248411E1C8521A200186DA3 /* RunTime_placehoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RunTime_placehoder.png; sourceTree = "<group>"; };
 		C24841201C852EB400186DA3 /* add_lightGray_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_lightGray_64.png; sourceTree = "<group>"; };
 		C24841211C852EB400186DA3 /* add_white_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_white_64.png; sourceTree = "<group>"; };
+		C24841241C856DD800186DA3 /* backgroundImge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundImge.png; sourceTree = "<group>"; };
 		C248CFD81C7EB234002776E5 /* iconfont-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-add.png"; sourceTree = "<group>"; };
 		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
 		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
@@ -895,6 +897,7 @@
 		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
+				C24841241C856DD800186DA3 /* backgroundImge.png */,
 				C24841201C852EB400186DA3 /* add_lightGray_64.png */,
 				C24841211C852EB400186DA3 /* add_white_64.png */,
 				C248411E1C8521A200186DA3 /* RunTime_placehoder.png */,
@@ -995,7 +998,7 @@
 				TargetAttributes = {
 					5498EC691C48CE2400A7D99E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 93VY77L34D;
+						DevelopmentTeam = ZNZ6622SA3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1088,6 +1091,7 @@
 				C286F5E21C8194C500BADB29 /* exercise_black_128.png in Resources */,
 				54D26B271C4C8CD2001D20D9 /* altitude.png in Resources */,
 				5454DCF11C571E5F00B96CCD /* walk_selected.png in Resources */,
+				C24841251C856DD800186DA3 /* backgroundImge.png in Resources */,
 				C204BC121C4F74AF0085BE48 /* iconfont-mima.png in Resources */,
 				540D99111C4A64380027EF2F /* group_select.png in Resources */,
 				542ADB4E1C7F306600937593 /* iconfont-androidstopwatch.png in Resources */,
