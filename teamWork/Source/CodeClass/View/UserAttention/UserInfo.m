@@ -21,8 +21,8 @@
 
 -(void)drawView
 {
-    self.alpha = 0.8;
-    UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/4, self.frame.size.width, self.frame.size.height/3)];
+    self.alpha = 0.9;
+    UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/4, self.frame.size.width, self.frame.size.height/2)];
     //infoView.backgroundColor = [UIColor colorWithRed:38/255.0 green:38/255.0 blue:38/255.0 alpha:1];
     infoView.backgroundColor = [UIColor blackColor];
     infoView.alpha = 1;

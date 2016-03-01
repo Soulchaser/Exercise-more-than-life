@@ -289,9 +289,6 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     }];
     [dataTask resume];
     
-    
-    
-    
 }
 
 
