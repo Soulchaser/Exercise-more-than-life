@@ -51,13 +51,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    
+    self.navigationItem.hidesBackButton = YES;
+    
+//    UIImage * btn_nav_back = [UIImage imageNamed:@""];
+//    btn_nav_back = [btn_nav_back imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:btn_nav_back style:UIBarButtonItemStylePlain target:self action:@selector(backToFontPage:)];
+    
     //标题
     self.title = self.PassActivity.title;
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回"
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
-                                                                            action:@selector(backAction)];
+                                                                            action:@selector(backToUpPage)];
     //描述
     self.activityDescriptionLabel.text = self.PassActivity.myDescription;
 
@@ -97,6 +104,12 @@
     self.activityPhoneLabel.text = self.PassActivity.phone;
     
 }
+
+-(void)backToUpPage
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 //每次进入一个界面时,判断该活动是否已经加入过
 -(void)viewWillAppear:(BOOL)animated{
     //拿到数据库中的所有当前用户已参加的活动
@@ -157,11 +170,6 @@
     
 }
 
-
--(void)backAction
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
