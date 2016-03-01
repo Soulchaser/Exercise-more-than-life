@@ -243,7 +243,7 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     [request addValue: @"2914a9e8c533799c98515dbba2834624" forHTTPHeaderField: @"apikey"];
     
     NSURLSessionDataTask * dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        
+  
         NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
         
         NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
