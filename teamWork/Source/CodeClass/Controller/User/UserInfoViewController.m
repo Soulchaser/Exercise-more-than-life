@@ -21,8 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *gender_Girl;//性别女
 @property(strong,nonatomic)NSString *gender;
 //年龄
-@property (weak, nonatomic) IBOutlet UIButton *age;
-@property(strong,nonatomic)NSString *year;
+@property (weak, nonatomic) IBOutlet UITextField *age;
+
 //个性签名
 @property (weak, nonatomic) IBOutlet UITextView *signature;
 //邮箱
@@ -62,7 +62,7 @@
     AVUser *currentUser = [AVUser currentUser];
     [currentUser setObject:self.nickname.text forKey:@"nickname"];
     [currentUser setObject:self.gender forKey:@"gender"];
-    [currentUser setObject:self.year forKey:@"age"];
+    [currentUser setObject:self.age.text forKey:@"age"];
     [currentUser setObject:self.signature.text forKey:@"signature"];
     currentUser.email = self.email.text;
     [currentUser setObject:self.address.text forKey:@"address"];
@@ -76,7 +76,6 @@
         [currentUser setObject:avatarFile forKey:@"avatar"];
     }
     [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
-        NSLog(@"设置成功");
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
@@ -157,14 +156,11 @@
     [self.gender_Boy setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     self.gender = @"女";
 }
-//年龄设置
-- (IBAction)ageAction:(id)sender {
-    NSLog(@"没有方法");
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //头像切圆
-    self.headerImage.layer.cornerRadius = self.headerImage.frame.size.height/2;
+    self.headerImage.layer.cornerRadius = self.headerImage.frame.size.width/3;
     self.headerImage.layer.masksToBounds = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(headerImageAction)];
     [self.headerImage addGestureRecognizer:tap];
@@ -173,6 +169,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     AVUser *currentUser = [AVUser currentUser];
     self.nickname.text = [currentUser objectForKey:@"nickname"];
+    self.age.text = [currentUser objectForKey:@"age"];
     self.signature.text = [currentUser objectForKey:@"signature"];
     self.email.text = currentUser.email;
     self.address.text = [currentUser objectForKey:@"address"];

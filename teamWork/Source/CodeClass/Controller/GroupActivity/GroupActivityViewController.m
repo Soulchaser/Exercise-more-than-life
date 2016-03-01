@@ -137,12 +137,15 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
                 //分享用户
                 AVUser *activityUser = [activity objectForKey:@"activityuser"];
                 //昵称
-                activityModel.nickname = [activityUser objectForKey:@"nickname"];
+                if ([[activityUser objectForKey:@"nickname"] isEqualToString:@""] || [activityUser objectForKey:@"nickname"] == nil) {
+                    activityModel.nickname = [activityUser objectForKey:@"username"];
+                }else{
+                    activityModel.nickname = [activityUser objectForKey:@"nickname"];
+                }
                 //头像
                 AVFile *avatarFile = [activityUser objectForKey:@"avatar"];
                 NSData *avatarData = [avatarFile getData];
                 activityModel.avatar = [UIImage imageWithData:avatarData];
-                
                 activityModel.title = [activity objectForKey:@"title"];//标题
                 activityModel.myDescription = [activity objectForKey:@"description"];
                 activityModel.address = [activity objectForKey:@"address"];//集合地点
@@ -229,10 +232,18 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
 //cell点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ActivityDetailViewController * detailVC = [ActivityDetailViewController new];
-    detailVC.PassActivity = self.dataArray[indexPath.row];
-    
-    [self.navigationController pushViewController:detailVC animated:YES];
+    if ([AVUser currentUser] == nil) {
+        //如果未登录,跳转到登陆界面
+        //将User.storyboard作为入口
+        UIStoryboard *user = [UIStoryboard storyboardWithName:@"User" bundle:nil];
+        UIViewController *entranceVC = [user instantiateInitialViewController];
+        //让window的rootViewController指向该控制器
+        [[UIApplication sharedApplication].delegate.window.rootViewController presentViewController:entranceVC animated:YES completion:nil];
+    }else{
+        ActivityDetailViewController * detailVC = [ActivityDetailViewController new];
+        detailVC.PassActivity = self.dataArray[indexPath.row];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

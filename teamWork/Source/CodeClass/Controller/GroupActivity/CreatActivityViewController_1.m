@@ -283,6 +283,7 @@
     [activity setObject:self.textfieldPeopleCount.text forKey:@"people_count"];//人数限制
     [activity setObject:[NSNumber numberWithInt:1] forKey:@"people_current"];//当前参与人数 初始值为1
     [activity setObject:self.textfieldPhone.text forKey:@"phone"];//发起人手机号
+    [activity setObject:[AVUser currentUser] forKey:@"activityuser"];//发起者
     //图片三张
     //如果活动内容中有图片
     NSMutableArray *imageArray = [NSMutableArray array];

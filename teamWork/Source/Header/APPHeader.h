@@ -71,7 +71,8 @@
 //我的分享
 #import "UserAllShareTableViewController.h"
 #import "FootPrintTableViewController.h"
-
+//参与的活动
+#import "MyActivity.h"
 //关注列表
 #import "UserAttentionCell.h"
 //关注详情页

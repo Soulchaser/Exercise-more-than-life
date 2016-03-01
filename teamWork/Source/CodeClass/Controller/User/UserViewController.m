@@ -101,7 +101,6 @@
     
     TrackwayTableViewController *TwtVC = [[TrackwayTableViewController alloc]init];
     UINavigationController *TwtNC =[[UINavigationController alloc]initWithRootViewController:TwtVC];
-    //[self.navigationController pushViewController:TwtVC animated:YES];
     [self presentViewController:TwtNC animated:YES completion:nil];
     
 }
@@ -112,7 +111,8 @@
         [self performSegueWithIdentifier:@"loginUI" sender:self];
     }else{
         UserAllShareTableViewController *allShare = [UserAllShareTableViewController new];
-        [self presentViewController:allShare animated:YES completion:nil];
+        UINavigationController *allShareNC = [[UINavigationController alloc]initWithRootViewController:allShare];
+        [self presentViewController:allShareNC animated:YES completion:nil];
     }
     
 }
@@ -123,7 +123,9 @@
         [self performSegueWithIdentifier:@"loginUI" sender:self];
     }else{
         //展示参与的活动
-        
+        MyActivity *myActivity = [[MyActivity alloc]init];
+        UINavigationController *myActivityNC = [[UINavigationController alloc]initWithRootViewController:myActivity];
+        [self presentViewController:myActivityNC animated:YES completion:nil];
     }
 
 }

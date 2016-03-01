@@ -23,8 +23,14 @@ static NSString *const shareCellID = @"shareCellID";
     }
     return _dataArray;
 }
+-(void)leftBarButtonAction
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     
     //注册cell
     [self.tableView registerNib:[UINib nibWithNibName: NSStringFromClass([QFRootTableViewCell class]) bundle:nil] forCellReuseIdentifier:shareCellID];
@@ -155,24 +161,4 @@ static NSString *const shareCellID = @"shareCellID";
         return 0;
     }
 }
--(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0,self.tableView.frame.size.width,100)];
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    backButton.backgroundColor = [UIColor greenColor];
-    backButton.frame = CGRectMake(10, 40, 100, 40);
-    [backButton setTitle:@"返回" forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
-    [headerView addSubview:backButton];
-    return headerView;
-}
--(void)backAction{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 100;
-}
-
-
-
-
 @end

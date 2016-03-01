@@ -43,14 +43,14 @@
 //layer层操作耗时,最好放在初始化方法中
 -(void)awakeFromNib
 {
-    self.userPic.image = self.PassActivity.avatar;
-    self.userNameLabel.text = self.PassActivity.nickname;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
+    self.userPic.image = self.PassActivity.avatar;
+    self.userNameLabel.text = self.PassActivity.nickname;
     //标题
     self.title = self.PassActivity.title;
     
