@@ -43,8 +43,10 @@
 @property(strong,nonatomic) NSString * start_time;//开始时间
 @property(strong,nonatomic) NSString * end_time;//结束时间
 @property(strong,nonatomic) NSString * people_count;//人数限制
-@property(strong,nonatomic) NSString * people_current;//当前参与人数
+@property(assign,nonatomic) NSInteger people_current;//当前参与人数
 @property(strong,nonatomic) NSString * phone;//手机号
+@property(strong,nonatomic)NSString *createdAt;//活动创建时间
+
 @property(strong,nonatomic)NSMutableArray *activity_picture;//活动内容(图片) 图片数组 元素为NSData类型
 //发起人信息
 @property(strong,nonatomic)UIImage *avatar;//头像

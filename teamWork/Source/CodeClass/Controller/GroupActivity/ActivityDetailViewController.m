@@ -32,6 +32,8 @@
 
 @property (weak, nonatomic) IBOutlet UIView *theLastView;
 
+@property (weak, nonatomic) IBOutlet UIButton *JoinButton;
+
 
 @end
 
@@ -80,7 +82,7 @@
     //距离
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
-    self.progressLabel.text = [NSString stringWithFormat:@"%@/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+    self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",self.PassActivity.people_current,self.PassActivity.people_count];
     //时间
     self.activityTimeLabel.text = [NSString stringWithFormat:@"%@到%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址
@@ -89,6 +91,46 @@
     self.activityPhoneLabel.text = self.PassActivity.phone;
     
 }
+//每次进入一个界面时,判断该活动是否已经加入过
+-(void)viewWillAppear:(BOOL)animated{
+    //拿到数据库中的所有当前用户已参加的活动
+    AVQuery *query = [AVQuery queryWithClassName:@"Join"];
+    [query whereKey:@"joinuser" equalTo:[AVUser currentUser]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        for (AVObject *join in objects) {
+            //如果在已加入的活动中存在当前活动(根据活动的创建时间判断)
+            AVObject *activity = [join objectForKey:@"activity"];//已加入的活动
+            NSString *createdAt = [activity objectForKey:@"createdAt"];//已加入活动的创建时间
+            if ([createdAt isEqualToString:self.PassActivity.createdAt]) {
+                //改变按钮的样式
+                self.JoinButton.userInteractionEnabled = NO;
+                [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+                return ;
+            }
+        }
+    }];
+}
+//活动加入按钮
+- (IBAction)JoinAction:(id)sender {
+    AVObject *join = [AVObject objectWithClassName:@"Join"];
+    [join setObject:[AVUser currentUser] forKey:@"joinuser"];//加入者
+    //查找加入的活动
+    AVQuery *query = [AVQuery queryWithClassName:@"Activity"];
+    [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        AVObject *activity = [objects firstObject];
+        [join setObject:activity forKey:@"activity"];//关联活动
+        //更新活动人数
+        [activity incrementKey:@"people_current"];//增加当前参与人数
+        activity.fetchWhenSave = YES;
+        [activity saveInBackground];
+        //改变按钮的样式
+        self.JoinButton.userInteractionEnabled = NO;
+        [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+    }];
+    
+}
+
 
 -(void)backAction
 {
