@@ -78,7 +78,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     
 #pragma mark -----------设置代理对象
     self.TextFieldStartTime.delegate = self;
@@ -211,13 +212,21 @@
     self.TextFieldEndTime.inputView = datePicker;
     //发布按钮
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
     [self.rightButton setTitle:@"发起" forState:UIControlStateNormal];
+
     [self.rightButton addTarget:self action:@selector(publishActivity) forControlEvents:
      UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"活动";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
+    
+}
+
+-(void)leftBarButtonAction
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)btnClicked
@@ -371,6 +380,7 @@
     [activity setObject:self.textfieldPeopleCount.text forKey:@"people_count"];//人数限制
     [activity setObject:[NSNumber numberWithInt:1] forKey:@"people_current"];//当前参与人数 初始值为1
     [activity setObject:self.textfieldPhone.text forKey:@"phone"];//发起人手机号
+    [activity setObject:[AVUser currentUser] forKey:@"activityuser"];//发起者
     //图片三张
     //如果活动内容中有图片
     NSMutableArray *imageArray = [NSMutableArray array];

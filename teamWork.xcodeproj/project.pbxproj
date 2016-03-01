@@ -144,6 +144,7 @@
 		C29B6E061C8484BE005B4CF0 /* download_deepblue_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */; };
 		C29EC1B41C7D966000155F14 /* default_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = C29EC1B31C7D966000155F14 /* default_avatar.png */; };
 		C29EC1B81C7DAE0C00155F14 /* UserAllShareTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */; };
+		C2A114061C85479E003BB297 /* MyActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A114051C85479E003BB297 /* MyActivity.m */; };
 		C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */; };
 		C2A6B8AA1C51CC0F006CF6BD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */; };
 		C2A6B8AD1C52029D006CF6BD /* FindPasswordVC_One.m in Sources */ = {isa = PBXBuildFile; fileRef = C2A6B8AC1C52029D006CF6BD /* FindPasswordVC_One.m */; };
@@ -365,6 +366,8 @@
 		C29EC1B31C7D966000155F14 /* default_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_avatar.png; sourceTree = "<group>"; };
 		C29EC1B61C7DAE0C00155F14 /* UserAllShareTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAllShareTableViewController.h; sourceTree = "<group>"; };
 		C29EC1B71C7DAE0C00155F14 /* UserAllShareTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAllShareTableViewController.m; sourceTree = "<group>"; };
+		C2A114041C85479E003BB297 /* MyActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivity.h; sourceTree = "<group>"; };
+		C2A114051C85479E003BB297 /* MyActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivity.m; sourceTree = "<group>"; };
 		C2A6B8A61C51CC0F006CF6BD /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		C2A6B8A71C51CC0F006CF6BD /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		C2A6B8A81C51CC0F006CF6BD /* UserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
@@ -942,6 +945,8 @@
 				C2E6CFE51C7EE5EF0019EDF9 /* AttentionDetailVC.h */,
 				C2E6CFE61C7EE5EF0019EDF9 /* AttentionDetailVC.m */,
 				C2E6CFE71C7EE5EF0019EDF9 /* AttentionDetailVC.xib */,
+				C2A114041C85479E003BB297 /* MyActivity.h */,
+				C2A114051C85479E003BB297 /* MyActivity.m */,
 			);
 			name = UserAttendInformation;
 			path = teamWork/Source/CodeClass/Controller/UserAttendInformation;
@@ -1222,6 +1227,7 @@
 				54BE0A6F1C5C522A008D1A6C /* Entity+CoreDataProperties.m in Sources */,
 				C28EFD441C5AF3730099A8B6 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				C2A6B8A91C51CC0F006CF6BD /* UserInfoViewController.m in Sources */,
+				C2A114061C85479E003BB297 /* MyActivity.m in Sources */,
 				C2E6CFE81C7EE5EF0019EDF9 /* AttentionDetailVC.m in Sources */,
 				5454DCC71C571B3C00B96CCD /* TrackLoggingViewController.m in Sources */,
 				C2BBBE101C82CCC000CDA142 /* UITextField+DatePicker.m in Sources */,
@@ -1354,7 +1360,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1371,7 +1377,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

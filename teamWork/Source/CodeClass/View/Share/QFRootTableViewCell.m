@@ -161,7 +161,7 @@
 //隐藏关注按钮 在管理我的关注列表时调用
 -(void)hideAttentionButton{
     self.attentionButton.userInteractionEnabled = NO;
-    [self.attentionButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.attentionButton setTitle:@"" forState:UIControlStateNormal];
 }
 /*
  
