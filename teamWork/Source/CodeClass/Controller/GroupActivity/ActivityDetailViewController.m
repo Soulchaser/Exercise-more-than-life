@@ -153,9 +153,9 @@
     [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         AVObject *activity = [objects firstObject];
-        NSString *people_current = [[activity objectForKey:@"people_current"]stringValue];//当前人数
-        NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
-        if ([people_count isEqualToString:people_current]) {
+        NSInteger people_current = [[activity objectForKey:@"people_current"]integerValue];//当前人数
+        NSInteger people_count = [[activity objectForKey:@"people_count"]integerValue];//限制人数
+        if (people_count <= people_current) {
             [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
             self.JoinButton.backgroundColor = [UIColor redColor];
             self.JoinButton.userInteractionEnabled = NO;
