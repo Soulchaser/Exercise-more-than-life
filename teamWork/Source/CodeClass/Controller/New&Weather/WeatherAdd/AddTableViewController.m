@@ -147,56 +147,72 @@
     
     NSURLSessionDataTask * dataTask = [[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
-        
-        NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
-        //写入文件
-        //        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
-        
-        DLog(@"%lu",(unsigned long)dataArray.count);
-        
-        for (NSDictionary * dict in dataArray) {
-            //Basic部分
-            YDWeatherModel * model = [[YDWeatherModel alloc] init];
-            model.city = dict[@"basic"][@"city"];
-            //"Now"部分
-            model.tmp = dict[@"now"][@"tmp"];
-            model.txt = dict[@"now"][@"cond"][@"txt"];
+        if (data != nil)
+        {
+            NSDictionary * dict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             
-            //"aqi"部分
-            model.aqi = dict[@"aqi"][@"city"][@"aqi"];
-            model.qlty = dict[@"aqi"][@"city"][@"qlty"];
+            NSMutableArray * dataArray = dict[@"HeWeather data service 3.0"];
+            //写入文件
+            //        [dict writeToFile:[NSString stringWithFormat:@"/Users/yuandongdong/Desktop/download/%@.plist",self.searchText] atomically:YES];
             
-            //@"forecast"部分
-            for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
+            DLog(@"%lu",(unsigned long)dataArray.count);
+            
+            for (NSDictionary * dict in dataArray) {
+                //Basic部分
+                YDWeatherModel * model = [[YDWeatherModel alloc] init];
+                model.city = dict[@"basic"][@"city"];
+                //"Now"部分
+                model.tmp = dict[@"now"][@"tmp"];
+                model.txt = dict[@"now"][@"cond"][@"txt"];
                 
-                YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
+                //"aqi"部分
+                model.aqi = dict[@"aqi"][@"city"][@"aqi"];
+                model.qlty = dict[@"aqi"][@"city"][@"qlty"];
                 
-                modelF.date = forecastDic[@"date"];
-                modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
-                modelF.max = forecastDic[@"tmp"][@"max"];
-                modelF.min = forecastDic[@"tmp"][@"min"];
-                [model.array addObject:modelF];
+                //@"forecast"部分
+                for (NSDictionary * forecastDic in dict[@"daily_forecast"]) {
+                    
+                    YDmodelForecast * modelF = [[YDmodelForecast alloc] init];
+                    
+                    modelF.date = forecastDic[@"date"];
+                    modelF.txt_d = forecastDic[@"cond"][@"txt_d"];
+                    modelF.max = forecastDic[@"tmp"][@"max"];
+                    modelF.min = forecastDic[@"tmp"][@"min"];
+                    [model.array addObject:modelF];
+                }
+                
+                //判断根据输入的字段查询到的东西是否为合适的城市,如果为空,不添加进数组
+                //判断查询结果
+                DLog(@"%@",model.city);
+                
+                if (model.city == nil) {
+                    return ;
+                }else
+                {
+                    [self.resultArray addObject:model];
+                }
+                
             }
+            DLog(@"%@",self.resultArray);
             
-            //判断根据输入的字段查询到的东西是否为合适的城市,如果为空,不添加进数组
-            //判断查询结果
-            DLog(@"%@",model.city);
-            
-            if (model.city == nil) {
-                return ;
-            }else
-            {
-                [self.resultArray addObject:model];
-            }
-           
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
         }
-        DLog(@"%@",self.resultArray);
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-        
+        else
+        {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"提示" message:@"网络不佳" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *act = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil];
+                [vc addAction:act];
+                
+                [self presentViewController:vc animated:YES completion:nil];
+            });
+           
+            
+            
+        }
         
     }];
     [dataTask resume];
