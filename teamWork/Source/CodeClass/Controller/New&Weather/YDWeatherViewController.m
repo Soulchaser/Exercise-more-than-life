@@ -36,13 +36,13 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     
     //每个单元格的大小
     flowLayout.itemSize = CGSizeMake(self.view.bounds.size.width, self.view.bounds.size.height);
-    
+    flowLayout.minimumLineSpacing= 0;
     //初始化collectionView
     self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
     //集合视图背景色
     self.collectionView.backgroundColor = [UIColor whiteColor];
     self.collectionView.pagingEnabled = YES;
-    
+
     //滑动方向(默认是竖向滑动)
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     //添加到主视图
@@ -122,21 +122,36 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     WeatherCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:WeatherCollectionViewCellID forIndexPath:indexPath];
     
     YDWeatherModel * model = kGD.BasicArray[indexPath.row];
+    
+    
     //现在的温度
-    cell.currentTmpLabel.text = model.tmp;
+    cell.currentTmpLabel.text = [NSString stringWithFormat:@"%@°",model.tmp];
+    
     //天气状况描述
     cell.currentCondTxtLabel.text = model.txt;
+    
     //空气质量
-    cell.AQILabel.text = [NSString stringWithFormat:@"%@ %@",model.aqi,model.qlty];
-    //城市
-//    cell.CurrentCityLabel.text = model.city;
-
+    //如果小城市的空气质量为空,就让空气质量显示城市
+    //存在就正常显示
+    if (model.aqi == nil || [model.qlty isEqualToString:@""]) {
+        
+        cell.AQILabel.text = model.city;
+        
+        cell.CurrentCityLabel = nil;
+        
+    }else{
+        
+        cell.AQILabel.text = [NSString stringWithFormat:@"%@ %@",model.aqi,model.qlty];
+        //城市
+        cell.CurrentCityLabel.text = model.city;
+    }
+    
     //今天和未来4天的天气情况
     YDmodelForecast * Fmodel_0 = model.array[0];
-    YDmodelForecast * Fmodel_1 = model.array[1];
-    YDmodelForecast * Fmodel_2 = model.array[2];
-    YDmodelForecast * Fmodel_3 = model.array[3];
-    YDmodelForecast * Fmodel_4 = model.array[4];
+    YDmodelForecast * Fmodel_1 = model.array[1];//明天
+    YDmodelForecast * Fmodel_2 = model.array[2];//后天
+    YDmodelForecast * Fmodel_3 = model.array[3];//大后天
+    YDmodelForecast * Fmodel_4 = model.array[4];//大大后天
    
     //今天
     cell.currentCondtxtForeLabel.text = Fmodel_0.txt_d;
@@ -154,10 +169,10 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     cell.TDATForecastHLabel.text = Fmodel_2.max;
     cell.TDATForecastLLabel.text = Fmodel_2.min;
     //大后天
-    cell.TDATDateLabel.text = [kGD weekdayStringFromDate:Fmodel_3.date];
-    cell.TDATCondTxtLabel.text = Fmodel_3.txt_d;
-    cell.TDATForecastHLabel.text = Fmodel_3.max;
-    cell.TDATForecastLLabel.text = Fmodel_3.min;
+    cell.TDFNDateLabel.text = [kGD weekdayStringFromDate:Fmodel_3.date];
+    cell.TDFNCondTxtLabel.text = Fmodel_3.txt_d;
+    cell.TDFNForecastHLabel.text = Fmodel_3.max;
+    cell.TDFNForecastLLabel.text = Fmodel_3.min;
 
     //大大
     cell.FDFNForecastDateLabel.text = [kGD weekdayStringFromDate:Fmodel_4.date];
@@ -165,12 +180,9 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     cell.FDFNForecastHLabel.text = Fmodel_4.max;
     cell.FDFNForecastLLabel.text = Fmodel_4.min;
 
-    
     return cell;
     
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

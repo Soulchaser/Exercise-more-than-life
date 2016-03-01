@@ -11,7 +11,8 @@
 @implementation WeatherCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+    self.backView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundImge"]];
+    self.backView2.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"backgroundImge"]];
 }
 
 

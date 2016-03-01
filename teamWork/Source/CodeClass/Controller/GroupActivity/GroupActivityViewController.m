@@ -213,7 +213,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
     NSRange range = {4,2};
     NSString *  subsString = [model.start_time substringWithRange:range];
     cell.calendarLabel.text = subsString;
-    cell.progressLabel.text = [NSString stringWithFormat:@"%lu/%@",model.people_current,model.people_count];
+    cell.progressLabel.text = [NSString stringWithFormat:@"%d/%@",model.people_current,model.people_count];
     cell.distanceLabel.text = [NSString stringWithFormat:@"%@km",model.distance];
     
     if (model.activity_picture.count) {
