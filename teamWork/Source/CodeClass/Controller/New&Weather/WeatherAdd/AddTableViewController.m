@@ -227,24 +227,8 @@
     YDWeatherModel * model = self.resultArray[indexPath.row];
     
     NSLog(@"%@",model.city);
-    
-//    if (model.city == nil){
-//        //如果查询到数据为空,说明查询字段不正确
-//        //弹窗提示
-//        UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"输入的查询字段不正确哦" preferredStyle:UIAlertControllerStyleAlert];
-//        UIAlertAction * defaultAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//            
-//            
-//            
-//        }];
-//        [alertController addAction:defaultAction];
-//        //模态跳转
-//        [self presentViewController:alertController animated:YES completion:nil];
-//    }
-//    else
-//    {
+
         cell.textLabel.text =  model.city;
-//    }
   
     return cell;
 }

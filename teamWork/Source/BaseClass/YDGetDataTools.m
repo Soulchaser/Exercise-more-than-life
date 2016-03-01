@@ -52,7 +52,13 @@
     }
     return _daily_forecastArray;
 }
-
+-(NSMutableArray *)cityArray
+{
+    if (!_cityArray) {
+        _cityArray = [NSMutableArray array];
+    }
+    return _cityArray;
+}
 
 
 -(NSString*)weekdayStringFromDate:(NSString*)dateString {
