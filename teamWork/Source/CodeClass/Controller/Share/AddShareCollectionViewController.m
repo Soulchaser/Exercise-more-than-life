@@ -25,7 +25,7 @@ static NSString * const headerReuserID = @"headerReuserID";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.shareContent_txt becomeFirstResponder];
     self.collectionView.backgroundColor = [UIColor whiteColor];
     //发布按钮
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -150,11 +150,6 @@ static NSString * const headerReuserID = @"headerReuserID";
         }
     }];
     
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
-    [self.shareContent_txt becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

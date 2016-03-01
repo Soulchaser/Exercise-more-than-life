@@ -21,8 +21,8 @@
 
 -(void)drawView
 {
-    self.alpha = 0.8;
-    UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/4, self.frame.size.width, self.frame.size.height/3)];
+    self.alpha = 0.9;
+    UIView *infoView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/4, self.frame.size.width, self.frame.size.height/2)];
     //infoView.backgroundColor = [UIColor colorWithRed:38/255.0 green:38/255.0 blue:38/255.0 alpha:1];
     infoView.backgroundColor = [UIColor blackColor];
     infoView.alpha = 1;
@@ -51,6 +51,7 @@
     self.age = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.avatar.frame), CGRectGetMaxY(self.gender.frame), infoView.frame.size.width*0.1, infoView.frame.size.height*0.3)];
     //self.age.backgroundColor = [UIColor whiteColor];
     self.age.text = @"18";
+    self.age.font = [UIFont systemFontOfSize:13];
     [self.age setTextAlignment:NSTextAlignmentCenter];
     self.age.textColor = [UIColor whiteColor];
     
@@ -58,12 +59,13 @@
     //self.address.backgroundColor = [UIColor whiteColor];
     self.address.text = @"大约在北京";
     self.address.textColor = [UIColor whiteColor];
+    self.address.numberOfLines = 0;
     [self.address setTextAlignment:NSTextAlignmentCenter];
     self.signature = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.address.frame), infoView.frame.size.width, infoView.frame.size.height*0.4)];
     //self.signature.backgroundColor = [UIColor whiteColor];
     self.signature.text = @"这个人很懒，什么也没说";
     self.signature.textColor = [UIColor whiteColor];
-    
+    self.signature.numberOfLines = 0;
     [infoView addSubview:self.nickName];
     [infoView addSubview:self.avatar];
     [infoView addSubview:self.gender];

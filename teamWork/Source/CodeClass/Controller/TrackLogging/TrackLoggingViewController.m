@@ -298,7 +298,7 @@
     [self.mapView.leftView addGestureRecognizer:pan];
     
     
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated
