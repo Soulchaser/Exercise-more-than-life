@@ -113,6 +113,8 @@
 		C21876EA1C5763C4009D428B /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C21876E91C5763C4009D428B /* DetailModel.m */; };
 		C22D59A41C59AE580070AE96 /* GroupActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */; };
 		C248411F1C8521A200186DA3 /* RunTime_placehoder.png in Resources */ = {isa = PBXBuildFile; fileRef = C248411E1C8521A200186DA3 /* RunTime_placehoder.png */; };
+		C24841221C852EB400186DA3 /* add_lightGray_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841201C852EB400186DA3 /* add_lightGray_64.png */; };
+		C24841231C852EB400186DA3 /* add_white_64.png in Resources */ = {isa = PBXBuildFile; fileRef = C24841211C852EB400186DA3 /* add_white_64.png */; };
 		C248CFD91C7EB234002776E5 /* iconfont-add.png in Resources */ = {isa = PBXBuildFile; fileRef = C248CFD81C7EB234002776E5 /* iconfont-add.png */; };
 		C248D0041C7EF77A002776E5 /* CreatActivityViewController_1.m in Sources */ = {isa = PBXBuildFile; fileRef = C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */; };
 		C248D0051C7EF77A002776E5 /* CreatActivityViewController_1.xib in Resources */ = {isa = PBXBuildFile; fileRef = C248D0031C7EF77A002776E5 /* CreatActivityViewController_1.xib */; };
@@ -322,6 +324,8 @@
 		C22D59A21C59AE580070AE96 /* GroupActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupActivityViewController.h; sourceTree = "<group>"; };
 		C22D59A31C59AE580070AE96 /* GroupActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupActivityViewController.m; sourceTree = "<group>"; };
 		C248411E1C8521A200186DA3 /* RunTime_placehoder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RunTime_placehoder.png; sourceTree = "<group>"; };
+		C24841201C852EB400186DA3 /* add_lightGray_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_lightGray_64.png; sourceTree = "<group>"; };
+		C24841211C852EB400186DA3 /* add_white_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_white_64.png; sourceTree = "<group>"; };
 		C248CFD81C7EB234002776E5 /* iconfont-add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconfont-add.png"; sourceTree = "<group>"; };
 		C248D0011C7EF77A002776E5 /* CreatActivityViewController_1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatActivityViewController_1.h; sourceTree = "<group>"; };
 		C248D0021C7EF77A002776E5 /* CreatActivityViewController_1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatActivityViewController_1.m; sourceTree = "<group>"; };
@@ -891,6 +895,8 @@
 		C248CFD71C7EB234002776E5 /* CreatActivity */ = {
 			isa = PBXGroup;
 			children = (
+				C24841201C852EB400186DA3 /* add_lightGray_64.png */,
+				C24841211C852EB400186DA3 /* add_white_64.png */,
 				C248411E1C8521A200186DA3 /* RunTime_placehoder.png */,
 				C29B6E051C8484BE005B4CF0 /* download_deepblue_64.png */,
 				C286F5D61C8194C500BADB29 /* address_green_64.png */,
@@ -1044,6 +1050,7 @@
 				C2E6CFED1C7EEAE10019EDF9 /* iconfont-nv.png in Resources */,
 				5454DCF21C571E5F00B96CCD /* walk.png in Resources */,
 				5454DCEE1C571E5F00B96CCD /* ride.png in Resources */,
+				C24841231C852EB400186DA3 /* add_white_64.png in Resources */,
 				54D26B331C4CDA12001D20D9 /* point.png in Resources */,
 				540D991E1C4A64380027EF2F /* weixing_selected.png in Resources */,
 				540D99181C4A64380027EF2F /* news.png in Resources */,
@@ -1056,6 +1063,7 @@
 				C286F5E51C8194C500BADB29 /* exercise_orange_128.png in Resources */,
 				C204BC051C4F1A5B0085BE48 /* User.storyboard in Resources */,
 				54D26B2E1C4CD6E1001D20D9 /* distance.png in Resources */,
+				C24841221C852EB400186DA3 /* add_lightGray_64.png in Resources */,
 				C2E6CFE41C7ED4660019EDF9 /* UserAttentionCell.xib in Resources */,
 				C28EFD501C5AF3E50099A8B6 /* QFRootTableViewCell.xib in Resources */,
 				540D99161C4A64380027EF2F /* jian.png in Resources */,
@@ -1348,7 +1356,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1365,7 +1373,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

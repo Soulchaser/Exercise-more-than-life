@@ -33,7 +33,8 @@ static NSString * const headerReuserID = @"headerReuserID";
     [self.rightButton setTitle:@"发布" forState:UIControlStateNormal];
     [self.rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:UIControlEventTouchUpInside];
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     self.navigationItem.title = @"分享";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
     _dataArray = [[NSMutableArray alloc]initWithCapacity:1];
@@ -63,6 +64,12 @@ static NSString * const headerReuserID = @"headerReuserID";
     
     self.shareContent_txt.layer.cornerRadius =5.0;
 }
+
+-(void)leftBarButtonAction
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 -(void)timeAction{
     
     [self.remindLabel removeFromSuperview];
