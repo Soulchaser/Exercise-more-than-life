@@ -34,6 +34,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *JoinButton;
 
+@property(strong,nonatomic) UIImage * placehoderImage;//用户没有上传图片时,在详情页面占位展示
+
 @end
 
 #define kModel self.PassActivity
@@ -47,15 +49,19 @@
     
 }
 
+-(UIImage *)placehoderImage
+{
+    if (_placehoderImage == nil) {
+        _placehoderImage = [UIImage imageNamed:@"exercise_gray_128"];
+    }
+    return _placehoderImage;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.userPic.image = self.PassActivity.avatar;
     self.userNameLabel.text = self.PassActivity.nickname;
     self.navigationItem.hidesBackButton = YES;
-    
-//    UIImage * btn_nav_back = [UIImage imageNamed:@""];
-//    btn_nav_back = [btn_nav_back imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:btn_nav_back style:UIBarButtonItemStylePlain target:self action:@selector(backToFontPage:)];
     
     //标题
     self.title = self.PassActivity.title;
@@ -82,23 +88,30 @@
     
     NSMutableArray * array = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i<self.PassActivity.activity_picture.count; i++) {
-     
-        UIImage * image = [UIImage imageWithData:self.PassActivity.activity_picture[i]];
-        [array addObject:image];
+    if (self.PassActivity.activity_picture.count) {
         
+        for (int i = 0; i<self.PassActivity.activity_picture.count; i++) {
+            UIImage * image = [UIImage imageWithData:self.PassActivity.activity_picture[i]];
+            [array addObject:image];
+            
+        }
+        
+    }else
+    {
+        [array addObject:self.placehoderImage];
     }
-    
-    YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, self.G_View.frame.size.height)];
+ 
+    YDDCarouseFigureView *carouselView = [[YDDCarouseFigureView alloc] initWithFrame:CGRectMake(0, 0,kScreenWidth, kScreenHeight/4)];
     carouselView.delegate = self;
     carouselView.images = array;
     [self.G_View addSubview: carouselView];
     //距离
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
-    self.progressLabel.text = [NSString stringWithFormat:@"%lu/%@",(long)self.PassActivity.people_current,self.PassActivity.people_count];
+    self.progressLabel.text = [NSString stringWithFormat:@"%d/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+
     //时间
-    self.activityTimeLabel.text = [NSString stringWithFormat:@"%@到%@",self.PassActivity.start_time,self.PassActivity.end_time];
+    self.activityTimeLabel.text = [NSString stringWithFormat:@"%@\n%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址
     self.activityAddressLabel.text = self.PassActivity.address;
     //手机号
@@ -140,9 +153,9 @@
     [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         AVObject *activity = [objects firstObject];
-        NSString *people_current = [[activity objectForKey:@"people_current"]stringValue];//当前人数
-        NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
-        if ([people_count isEqualToString:people_current]) {
+        NSInteger people_current = [[activity objectForKey:@"people_current"]integerValue];//当前人数
+        NSInteger people_count = [[activity objectForKey:@"people_count"]integerValue];//限制人数
+        if (people_count <= people_current) {
             [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
             self.JoinButton.backgroundColor = [UIColor redColor];
             self.JoinButton.userInteractionEnabled = NO;
