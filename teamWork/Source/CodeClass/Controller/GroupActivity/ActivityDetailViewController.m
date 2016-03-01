@@ -96,12 +96,13 @@
     //拿到数据库中的所有当前用户已参加的活动
     AVQuery *query = [AVQuery queryWithClassName:@"Join"];
     [query whereKey:@"joinuser" equalTo:[AVUser currentUser]];
+    [query includeKey:@"activity"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         for (AVObject *join in objects) {
             //如果在已加入的活动中存在当前活动(根据活动的创建时间判断)
             AVObject *activity = [join objectForKey:@"activity"];//已加入的活动
             NSString *createdAt = [activity objectForKey:@"createdAt"];//已加入活动的创建时间
-            if ([createdAt isEqualToString:self.PassActivity.createdAt]) {
+            if ([createdAt isEqual:self.PassActivity.createdAt]) {
                 //改变按钮的样式
                 self.JoinButton.userInteractionEnabled = NO;
                 [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
@@ -124,9 +125,12 @@
         [activity incrementKey:@"people_current"];//增加当前参与人数
         activity.fetchWhenSave = YES;
         [activity saveInBackground];
-        //改变按钮的样式
-        self.JoinButton.userInteractionEnabled = NO;
-        [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+        //保存加入记录
+        [join saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            //改变按钮的样式
+            self.JoinButton.userInteractionEnabled = NO;
+            [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+        }];
     }];
     
 }
