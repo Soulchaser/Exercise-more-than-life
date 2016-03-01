@@ -84,6 +84,7 @@
 }
 //segment选择
 -(void)segmentSelected{
+    self.password.text = @"";
     if (self.segmentedControl.selectedSegmentIndex == 0) {
         self.sendSMS.userInteractionEnabled = NO;
         self.sendSMS.backgroundColor = [UIColor whiteColor];
@@ -136,7 +137,7 @@
     AVUser *currentUser = [AVUser currentUser];
     if (currentUser != nil) {
         self.phoneTextfield.text = currentUser.username;
-        self.password.text = currentUser.password;
+       
     }
     //通知中心
     _observe = [[NSNotificationCenter defaultCenter]addObserverForName:UITextFieldTextDidChangeNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {

@@ -76,7 +76,10 @@
         [currentUser setObject:avatarFile forKey:@"avatar"];
     }
     [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
-        [self dismissViewControllerAnimated:YES completion:nil];
+        if (succeeded) {
+           [self dismissViewControllerAnimated:YES completion:nil];
+        }
+        
     }];
 }
 //设置头像

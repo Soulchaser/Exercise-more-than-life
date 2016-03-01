@@ -34,12 +34,13 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *JoinButton;
 
-@property BOOL joinActivity;
 @end
 
 #define kModel self.PassActivity
 
 @implementation ActivityDetailViewController
+//代理方法
+-(void)carouselFigureDidCarousel:(YDDCarouseFigureView *)carouselFigureView withIndex:(NSUInteger)index{}
 //layer层操作耗时,最好放在初始化方法中
 -(void)awakeFromNib
 {
@@ -143,7 +144,6 @@
             [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
             self.JoinButton.backgroundColor = [UIColor redColor];
             self.JoinButton.userInteractionEnabled = NO;
-            _joinActivity = YES;
         }
     }];
 }
@@ -172,6 +172,8 @@
             AVObject *activity = [objects firstObject];
             [join setObject:activity forKey:@"activity"];//关联活动
             //更新活动人数
+            NSInteger people_Current = self.PassActivity.people_current ++ ;
+            self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",people_Current,self.PassActivity.people_count];
             [activity incrementKey:@"people_current"];//增加当前参与人数
             activity.fetchWhenSave = YES;
             [activity saveInBackground];
