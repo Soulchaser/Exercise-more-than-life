@@ -109,6 +109,7 @@
     self.distanceLabel.text = [NSString stringWithFormat:@"%@km",self.PassActivity.distance];
     //参与进度
     self.progressLabel.text = [NSString stringWithFormat:@"%d/%@",self.PassActivity.people_current,self.PassActivity.people_count];
+
     //时间
     self.activityTimeLabel.text = [NSString stringWithFormat:@"%@\n%@",self.PassActivity.start_time,self.PassActivity.end_time];
     //地址
