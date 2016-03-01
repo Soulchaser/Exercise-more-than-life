@@ -48,16 +48,17 @@
    // self.gender.backgroundColor = [UIColor whiteColor];
     
     
-    self.age = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.gender.frame), CGRectGetMaxY(self.nickName.frame), infoView.frame.size.width*0.2, infoView.frame.size.height*0.3)];
+    self.age = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.avatar.frame), CGRectGetMaxY(self.gender.frame), infoView.frame.size.width*0.1, infoView.frame.size.height*0.3)];
     //self.age.backgroundColor = [UIColor whiteColor];
     self.age.text = @"18";
+    [self.age setTextAlignment:NSTextAlignmentCenter];
     self.age.textColor = [UIColor whiteColor];
     
     self.address = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.age.frame), CGRectGetMaxY(self.nickName.frame), infoView.frame.size.width*0.5, infoView.frame.size.height*0.3)];
     //self.address.backgroundColor = [UIColor whiteColor];
     self.address.text = @"大约在北京";
     self.address.textColor = [UIColor whiteColor];
-    
+    [self.address setTextAlignment:NSTextAlignmentCenter];
     self.signature = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.address.frame), infoView.frame.size.width, infoView.frame.size.height*0.4)];
     //self.signature.backgroundColor = [UIColor whiteColor];
     self.signature.text = @"这个人很懒，什么也没说";

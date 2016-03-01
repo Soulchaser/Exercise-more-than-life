@@ -35,6 +35,7 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"寻找组织" image:[UIImage imageNamed:@"group"] selectedImage:[UIImage imageNamed:@"group_select"]];
         
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style: UIBarButtonItemStylePlain target:self action:@selector(pushToCreatPage)];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
         
     }
     return self;

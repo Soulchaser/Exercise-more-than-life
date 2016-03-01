@@ -60,7 +60,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(leftBarButtonAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
     
 #pragma mark -----------设置代理对象
     self.TextFieldStartTime.delegate = self;
@@ -193,13 +194,21 @@
     self.TextFieldEndTime.inputView = datePicker;
     //发布按钮
     self.rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
     [self.rightButton setTitle:@"发起" forState:UIControlStateNormal];
+    
     [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:
      UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"活动";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:self.rightButton];
+    
+}
+
+-(void)leftBarButtonAction
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 //
