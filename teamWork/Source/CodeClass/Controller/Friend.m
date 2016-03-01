@@ -107,7 +107,12 @@ static NSString *const friendCellID = @"friendCellID";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UserAttentionCell *cell = [tableView dequeueReusableCellWithIdentifier:friendCellID forIndexPath:indexPath];
     YYUserModel_Phone *model = self.dataArray[indexPath.row];
-    cell.nickName.text = model.nickName;
+    if ([model.nickName isEqualToString:@""] || model.nickName == nil) {
+        cell.nickName.text = model.userName;
+    }else{
+        cell.nickName.text = model.nickName;
+    }
+    
     cell.avatar.image = model.avatar;
     cell.userName = model.userName;
     

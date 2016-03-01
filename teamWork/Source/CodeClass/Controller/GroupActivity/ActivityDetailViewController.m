@@ -112,8 +112,24 @@
                 //改变按钮的样式
                 self.JoinButton.userInteractionEnabled = NO;
                 [self.JoinButton setTitle:@"已加入" forState:UIControlStateNormal];
+                self.JoinButton.backgroundColor = [UIColor grayColor];
                 return ;
             }
+        }
+    }];
+}
+//判断加入的用户是否达到限制人数
+-(void)peoplecount{
+    //查找当前的活动
+    AVQuery *query = [AVQuery queryWithClassName:@"Activity"];
+    [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        AVObject *activity = [objects firstObject];
+        NSString *people_current = [activity objectForKey:@"people_current"];//当前人数
+        NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
+        if ([people_count isEqualToString:people_current]) {
+            [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
+            self.JoinButton.userInteractionEnabled = NO;
         }
     }];
 }

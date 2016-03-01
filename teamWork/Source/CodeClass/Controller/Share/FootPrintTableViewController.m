@@ -97,7 +97,7 @@ static NSString *const shareCellID = @"shareCellID";
                 //分享用户
                 AVUser *shareUser = [share objectForKey:@"shareuser"];
                 //昵称
-                if ([[shareUser objectForKey:@"nickname"] isEqualToString:@""]) {
+                if ([[shareUser objectForKey:@"nickname"] isEqualToString:@""] || [shareUser objectForKey:@"nickname"] == nil) {
                     shareModel.nickname = [shareUser objectForKey:@"username"];
                 }else{
                     shareModel.nickname = [shareUser objectForKey:@"nickname"];
