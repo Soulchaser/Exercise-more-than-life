@@ -39,12 +39,10 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
         
         [rightButton addTarget:self action:@selector(pushToCreatPage) forControlEvents:UIControlEventTouchUpInside];
         
-<<<<<<< HEAD
+
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style: UIBarButtonItemStylePlain target:self action:@selector(pushToCreatPage)];
         self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
-=======
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
->>>>>>> d45dfdef02ab4557d8d64d62094509eced262372
+
         
     }
     return self;

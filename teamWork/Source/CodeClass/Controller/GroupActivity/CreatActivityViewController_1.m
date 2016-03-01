@@ -215,12 +215,8 @@
     [self.rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     self.rightButton.frame = CGRectMake(0, 0, 40, 40);
     [self.rightButton setTitle:@"发起" forState:UIControlStateNormal];
-<<<<<<< HEAD
-    
-    [self.rightButton addTarget:self action:@selector(publishAction) forControlEvents:
-=======
+
     [self.rightButton addTarget:self action:@selector(publishActivity) forControlEvents:
->>>>>>> d45dfdef02ab4557d8d64d62094509eced262372
      UIControlEventTouchUpInside];
     
     self.navigationItem.title = @"活动";
