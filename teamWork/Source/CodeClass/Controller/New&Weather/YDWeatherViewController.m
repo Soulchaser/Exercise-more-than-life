@@ -33,11 +33,10 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
     [[MapGPSLocation shareMapGPSLocation]addDelegateMapGPSLocation:self delegateQueue:dispatch_get_main_queue()];
     self.cityStr = [[NSString alloc]init];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(30 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         if ([self.cityStr isEqualToString: @""])
         {
             [[LoadingEvents shareLoadingEvents]dataLoadFailed:self];
-            
         }
     });
     
