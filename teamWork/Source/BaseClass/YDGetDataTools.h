@@ -24,6 +24,8 @@
 
 @property(strong,nonatomic) NSMutableArray * daily_forecastArray;
 
+@property(strong,nonatomic) NSMutableArray * cityArray;
+
 // !!!:添加数组过滤方法
 // 传入参数-字符串(拼音&城市名称)
 // 如果是拼音暂时不做判断
