@@ -18,6 +18,7 @@
 
 @property(strong,nonatomic)UISearchBar *bar;
 
+
 @end
 
 @implementation AddTableViewController
@@ -74,6 +75,7 @@
 -(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
 {
     DLog(@"点击开始搜索");
+    
     self.resultArray = nil;
     return YES;
 }
@@ -98,6 +100,7 @@
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     
+
     [self makeData];
     
     DLog(@"点击搜索调用此方法");

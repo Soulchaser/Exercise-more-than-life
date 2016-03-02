@@ -124,13 +124,7 @@ static NSString *const friendCellID = @"friendCellID";
 
 //cell的点击事件
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-        //跳转到详情页
-//        AttentionDetailVC *attentionDVC = [[AttentionDetailVC alloc]init];
-//    attentionDVC.view.alpha = 0.5;
-//    
-//        attentionDVC.model = self.dataArray[indexPath.row];
-//    [self.view addSubview:attentionDVC.view];
-   // [self.navigationController presentViewController:attentionDVC animated:NO completion:nil];
+
     YYUserModel_Phone *model = self.dataArray[indexPath.row];
     
     UserInfo *userView = [[UserInfo alloc]initWithFrame:self.view.frame];
