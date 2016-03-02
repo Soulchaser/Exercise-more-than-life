@@ -24,6 +24,9 @@
     
     self.DetailWebView.delegate = self;
 
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(goBackAction)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor blackColor];
+    
     [self makeData];
     
 }
@@ -68,6 +71,11 @@
     
 }
 
+
+-(void)goBackAction
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -19,7 +19,7 @@
 @property (strong, nonatomic)  UILabel *age;//年龄
 @property (strong, nonatomic)  UILabel *signature;//个性签名
 @property (strong, nonatomic)  UILabel *address;//地址
-
+@property(strong,nonatomic)UIView *infoView;
 
 
 

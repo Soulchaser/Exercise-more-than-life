@@ -168,7 +168,7 @@
     self.navigationItem.title = @"跟你走";
     //字体颜色
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:38/255.0 green:38/255.0 blue:38/255.0 alpha:1]];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:88/255.0 green:88/255.0 blue:88/255.0 alpha:1]];
    // [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
     [self drawView];
     //成为MapGPSLocation的代理
@@ -298,7 +298,7 @@
     [self.mapView.leftView addGestureRecognizer:pan];
     
     
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -751,6 +751,8 @@
     
     self.sportInfoView.distanceLB.text = self.mapView.moveInfoView.distanceLabel.text;
     self.sportInfoView.currentSpeedLB.text = self.mapView.moveInfoView.speedLabel.text;
+    self.sportInfoView.averageSpeedLB.text = [NSString stringWithFormat:@"%0.2f",(movementInfo.totleDistance/self.timeCount)*3.6];
+    
     
 }
 

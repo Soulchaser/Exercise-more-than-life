@@ -152,22 +152,23 @@ static NSString *const friendCellID = @"friendCellID";
     }
     if (model.age != nil)
     {
-       userView.age.text = model.age;
+       userView.age.text = [NSString stringWithFormat:@"%@岁",model.age];
     }
     
     if (model.signature == nil) {
         
     }else{
-        userView.signature.text = model.signature;
+        userView.signature.text = [NSString stringWithFormat:@"签名:%@",model.signature];
     }
     if (model.address != nil)
     {
-      userView.address.text = model.address;  
+      userView.address.text = [NSString stringWithFormat:@"地址:%@",model.address];
     }
     
-    
-    
     [[UIApplication sharedApplication].delegate.window addSubview:userView];
+   // [self.navigationController.view addSubview:userView];
+    [[UIApplication sharedApplication].delegate.window bringSubviewToFront:userView.infoView];
+
     
 }
 

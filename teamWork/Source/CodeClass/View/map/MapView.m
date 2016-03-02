@@ -23,9 +23,9 @@
 {
     
     //self.backgroundColor = [UIColor colorWithRed:38.0 green:38.0 blue:38.0 alpha:1];
-    CGFloat red = 38 /255.0;
-    CGFloat blue = 38 /255.0;
-    CGFloat green = 38 /255.0;
+    CGFloat red = 88 /255.0;
+    CGFloat blue = 88 /255.0;
+    CGFloat green = 88 /255.0;
     self.backgroundColor = [UIColor colorWithRed:red green:green blue:blue alpha:1];
     //设置地图视图
     self.mapView = [[MAMapView alloc]initWithFrame:CGRectMake(0, 64, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds)-64)];
@@ -43,7 +43,8 @@
 //    
     self.mapBookButton = [[UIButton alloc]initWithFrame:CGRectMake(kScreenWidth-kFloatButtonWidth*1.5, 30,24, 24)];
     [self.mapBookButton setImage:[UIImage imageNamed:@"mapBook"] forState:UIControlStateNormal];
-    self.mapBookButton.backgroundColor = [UIColor whiteColor];
+    
+    self.mapBookButton.backgroundColor = [UIColor colorWithRed:88/255.0 green:88/255.0 blue:88/255.0 alpha:1];
     
     //提示信息Label
     self.promptLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kFloatButtonWidth*3, kFloatButtonWidth)];

@@ -51,9 +51,9 @@
     //    //tabBar字体选中颜色
     self.tabBC.tabBar.tintColor = [UIColor whiteColor];
     //    //tabBar颜色
-    CGFloat red = 38 /255.0;
-    CGFloat blue = 38 /255.0;
-    CGFloat green = 38 /255.0;
+    CGFloat red = 48 /255.0;
+    CGFloat blue = 48 /255.0;
+    CGFloat green = 48 /255.0;
     self.tabBC.tabBar.barTintColor = [UIColor colorWithRed:red green:green blue:blue alpha:1];
 
     

@@ -38,6 +38,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
         self.navigationItem.rightBarButtonItems = arr;
         
         
+        
         self.navigationItem.title = @"运动记录";
         
     }
@@ -161,6 +162,7 @@ static NSString *const systemCellResuseIdentfier = @"systemCellResuseIdentfier";
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([TrackwayTableViewCell class]) bundle:nil] forCellReuseIdentifier:systemCellResuseIdentfier];
     [self.tableView reloadData];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:88/255.0 green:88/255.0 blue:88/255.0 alpha:1]];
    
 }
 
