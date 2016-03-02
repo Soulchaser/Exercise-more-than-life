@@ -165,9 +165,10 @@ static NSString *const friendCellID = @"friendCellID";
       userView.address.text = [NSString stringWithFormat:@"地址:%@",model.address];
     }
     
-    
-    
     [[UIApplication sharedApplication].delegate.window addSubview:userView];
+   // [self.navigationController.view addSubview:userView];
+    [[UIApplication sharedApplication].delegate.window bringSubviewToFront:userView.infoView];
+
     
 }
 
