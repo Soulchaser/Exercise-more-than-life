@@ -9,7 +9,8 @@
 #import "QFRootTableViewCell.h"
 @interface QFRootTableViewCell ()
 @property(strong,nonatomic)NSString *shareTime;//根据分享时间在数据表中查找分享记录
-
+@property(strong,nonatomic)UIImageView *imgView;
+@property(strong,nonatomic)UIView *myView;
 @end
 @implementation QFRootTableViewCell
 
@@ -19,7 +20,7 @@
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     image = [image stretchableImageWithLeftCapWidth:floorf(image.size.width/2) topCapHeight:floorf(image.size.height/2)];
     self.backgroundImageView.image = image;
-
+    
 }
 //判断该cell分享者是否已经被当前用户关注
 -(void)userByAttentionOrNot:(YYUserShare *)item{
@@ -104,6 +105,9 @@
             UIImageView *sharePicture_one = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.commentListView.frame), 80)];
             sharePicture_one.image = [UIImage imageWithData:data];
             sharePicture_one.translatesAutoresizingMaskIntoConstraints = NO;
+            sharePicture_one.userInteractionEnabled = YES;
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+            [sharePicture_one addGestureRecognizer:tap];
             
             [self.commentListView addSubview:sharePicture_one];
             [self.commentListView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[sharePicture_one]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(sharePicture_one)]];
@@ -125,6 +129,23 @@
     [self.commentListView updateConstraintsIfNeeded];
     [self.commentListView layoutIfNeeded];
 
+}
+-(void)tapAction:(UITapGestureRecognizer *)tap{
+    self.myView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.myView.backgroundColor = [UIColor blackColor];
+    UIImageView *iv = (UIImageView *)tap.view;
+    self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(1, kScreenHeight/4, kScreenWidth-2, kScreenHeight/2)];
+    self.imgView.image = iv.image;
+    self.imgView.userInteractionEnabled = YES;
+    [self.myView addSubview:self.imgView];
+    [[UIApplication sharedApplication].delegate.window addSubview:self.myView];
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction1)];
+    [self.myView addGestureRecognizer:tap1];
+}
+-(void)tapAction1{
+    
+    [self.imgView removeFromSuperview];
+    [self.myView removeFromSuperview];
 }
 //添加关注 在分享列表中使用
 - (IBAction)attendButtonAction:(id)sender {

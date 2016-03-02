@@ -16,6 +16,8 @@
  */
 @property(strong,nonatomic) NSTimer *timer;
 
+@property(strong,nonatomic)UIImageView *imgView;
+@property(strong,nonatomic)UIView *myView;
 @end
 
 
@@ -173,22 +175,37 @@
 //    //获取对一个下标
 //    NSUInteger index = [self.images indexOfObject:imgView.image];
     
-    //获取所点击的视图
-    UIImageView *imgView = (UIImageView *)tap.view;
-    //获取下标
-    NSUInteger index = imgView.tag - 1000;
+//    获取所点击的视图
+//    UIImageView *imgView = (UIImageView *)tap.view;
     
+//    //获取下标
+//    NSUInteger index = imgView.tag - 1000;
+//    
+//    
+//    //当手势触发时,代理对象执行代理方法
+//    //将当前视图和当前下标携带给外界
+//    if (_delegate && [_delegate respondsToSelector:@selector(carouselFigureDidCarousel:withIndex:)]) {
+//        
+//        [_delegate carouselFigureDidCarousel:self withIndex:index];
+//    }
     
-    //当手势触发时,代理对象执行代理方法
-    //将当前视图和当前下标携带给外界
-    if (_delegate && [_delegate respondsToSelector:@selector(carouselFigureDidCarousel:withIndex:)]) {
-        
-        [_delegate carouselFigureDidCarousel:self withIndex:index];
-    }
-    
-    
-
+    self.myView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.myView.backgroundColor = [UIColor blackColor];
+    UIImageView *iv = (UIImageView *)tap.view;
+    self.imgView = [[UIImageView alloc]initWithFrame:CGRectMake(1, kScreenHeight/4, kScreenWidth-2, kScreenHeight/2)];
+    self.imgView.image = iv.image;
+    self.imgView.userInteractionEnabled = YES;
+    [self.myView addSubview:self.imgView];
+    [[UIApplication sharedApplication].delegate.window addSubview:self.myView];
+    UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction1)];
+    [self.myView addGestureRecognizer:tap1];
 }
+-(void)tapAction1{
+    
+    [self.imgView removeFromSuperview];
+    [self.myView removeFromSuperview];
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

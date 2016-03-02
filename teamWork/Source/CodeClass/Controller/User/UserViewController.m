@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *logOutButton;
 //注销登录按钮背景
 @property (weak, nonatomic) IBOutlet UIView *logOutBgView;
+@property (weak, nonatomic) IBOutlet UIView *userBGView;
 
 @end
 
@@ -26,6 +27,42 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.userBGView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg2"]];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    self.headerImageView.userInteractionEnabled = YES;
+    [self.headerImageView addGestureRecognizer:tap];
+    
+    UIButton *myButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    myButton.frame = self.userBGView.bounds;
+    myButton.backgroundColor = [UIColor clearColor];
+    [myButton addTarget:self action:@selector(myButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.userBGView addSubview:myButton];
+}
+-(void)tapAction{
+    //检测当前用户
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser != nil) {
+        //用户已登录->用户详情页
+        UserInfoViewController *userInfo = [UserInfoViewController shareUserInfoViewController];
+        [self presentViewController:userInfo animated:YES completion:nil];
+    }else{
+        //用户未登录->登陆界面
+        [self performSegueWithIdentifier:@"loginUI" sender:self];
+        
+    }
+}
+-(void)myButtonAction{
+    //检测当前用户
+    AVUser *currentUser = [AVUser currentUser];
+    if (currentUser != nil) {
+        //用户已登录->用户详情页
+        UserInfoViewController *userInfo = [UserInfoViewController shareUserInfoViewController];
+        [self presentViewController:userInfo animated:YES completion:nil];
+    }else{
+        //用户未登录->登陆界面
+        [self performSegueWithIdentifier:@"loginUI" sender:self];
+        
+    }
 }
 -(void)viewDidAppear:(BOOL)animated{
     //检测当前用户
