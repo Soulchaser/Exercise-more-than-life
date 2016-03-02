@@ -751,6 +751,8 @@
     
     self.sportInfoView.distanceLB.text = self.mapView.moveInfoView.distanceLabel.text;
     self.sportInfoView.currentSpeedLB.text = self.mapView.moveInfoView.speedLabel.text;
+    self.sportInfoView.averageSpeedLB.text = [NSString stringWithFormat:@"%0.2f",(movementInfo.totleDistance/self.timeCount)*3.6];
+    
     
 }
 
