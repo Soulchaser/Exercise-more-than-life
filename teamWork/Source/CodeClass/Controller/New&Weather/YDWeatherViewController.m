@@ -16,6 +16,7 @@
 
 @property(strong,nonatomic) NSString * cityStr;
 
+@property(assign,nonatomic) NSInteger countForWeather;//记录次数,便于判断循环
 
 
 @end
@@ -30,11 +31,9 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 {
     [[UIApplication sharedApplication].delegate.window bringSubviewToFront:self.backView];
     [self.collectionView reloadData];
-
     
-    
-    
-//    [kGD.BasicArray addObjectsFromArray:[[NSUserDefaults standardUserDefaults] objectForKey:@"cityArray"]];
+    //
+    self.countForWeather = 1;
 
 }
 
@@ -62,6 +61,9 @@ static NSString * const WeatherCollectionViewCellID = @"WeatherCollectionViewCel
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSLog(@"---3月2号%ld",self.countForWeather);
+    
     self.cityStr = [[NSString alloc]init];
     [[MapGPSLocation shareMapGPSLocation]mapGPSLocationStart];
     
