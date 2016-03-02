@@ -106,7 +106,7 @@
             
             [self.LWArray addObjectsFromArray:DataArray];
             
-            NSLog(@"%lu",(unsigned long)self.LWArray.count);
+            DLog(@"%lu",(unsigned long)self.LWArray.count);
             
             //主线程刷新数据
             dispatch_async(dispatch_get_main_queue(), ^{
