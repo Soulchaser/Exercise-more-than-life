@@ -252,13 +252,13 @@ static NSString * const headerReuserID = @"headerReuserID";
         UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     }
         //压缩图片尺寸
-        CGSize imageSize = CGSizeMake(100, 100);
+        CGSize imageSize = CGSizeMake(100,100);
         UIGraphicsBeginImageContext(imageSize);
         [image drawInRect:CGRectMake(0, 0, imageSize.width, imageSize.height)];
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
     //压缩图片大小
-    NSData *data = UIImageJPEGRepresentation(image, 0.00001);
+    NSData *data = UIImageJPEGRepresentation(image, 1);
     
     //添加图片
     dispatch_async(dispatch_get_main_queue(), ^{
