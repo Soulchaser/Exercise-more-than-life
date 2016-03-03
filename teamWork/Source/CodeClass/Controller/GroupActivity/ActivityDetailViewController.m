@@ -36,6 +36,7 @@
 
 @property(strong,nonatomic) UIImage * placehoderImage;//用户没有上传图片时,在详情页面占位展示
 
+@property(strong,nonatomic) UILabel * t_label;//提示用label
 @end
 
 #define kModel self.PassActivity
@@ -117,6 +118,19 @@
     //手机号
     self.activityPhoneLabel.text = self.PassActivity.phone;
     
+    //发布前的判断
+    self.t_label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/2, kScreenHeight/10)];
+    self.t_label.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+    self.t_label.layer.masksToBounds = YES;
+    self.t_label.layer.cornerRadius = 10;
+    
+    self.t_label.alpha = 1;
+    self.t_label.textColor = [UIColor whiteColor];
+    [self.t_label setTextAlignment:NSTextAlignmentCenter];
+    self.t_label.backgroundColor = [UIColor blackColor];
+    
+    
+    
 }
 
 -(void)backToUpPage
@@ -164,19 +178,25 @@
 }
 //活动加入按钮
 - (IBAction)JoinAction:(id)sender {
+    //防止用户连续点击两次
+    self.JoinButton.userInteractionEnabled = NO;
     //查找当前的活动
     AVQuery *query = [AVQuery queryWithClassName:@"Activity"];
     [query whereKey:@"createdAt" equalTo:self.PassActivity.createdAt];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         AVObject *activity = [objects firstObject];
-        NSString *people_current = [[activity objectForKey:@"people_current"]stringValue];//当前人数
-        NSString *people_count = [activity objectForKey:@"people_count"];//限制人数
-        if ([people_count isEqualToString:people_current]) {
+        NSInteger people_current = [[activity objectForKey:@"people_current"]integerValue];//当前人数
+        NSInteger people_count = [[activity objectForKey:@"people_count"]integerValue];//限制人数
+        if (people_count <= people_current) {
             [self.JoinButton setTitle:@"人数已满" forState:UIControlStateNormal];
             self.JoinButton.backgroundColor = [UIColor redColor];
             self.JoinButton.userInteractionEnabled = NO;
-            self.progressLabel.text = [NSString stringWithFormat:@"%@/%@",self.PassActivity.people_count,self.PassActivity.people_count];
-            
+            self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",(long)self.PassActivity.people_current,self.PassActivity.people_count];
+                self.t_label.text = @"活动人数已满";
+                [self simpleMethod];
+                //return 填写不完整,跳出
+                return;
+
         }else{
         AVObject *join = [AVObject objectWithClassName:@"Join"];
         [join setObject:[AVUser currentUser] forKey:@"joinuser"];//加入者
@@ -187,11 +207,13 @@
             AVObject *activity = [objects firstObject];
             [join setObject:activity forKey:@"activity"];//关联活动
             //更新活动人数
-            NSInteger people_Current = self.PassActivity.people_current ++ ;
+            NSInteger people_Current = self.PassActivity.people_current + 1 ;
             self.progressLabel.text = [NSString stringWithFormat:@"%ld/%@",people_Current,self.PassActivity.people_count];
             [activity incrementKey:@"people_current"];//增加当前参与人数
             activity.fetchWhenSave = YES;
             [activity saveInBackground];
+            self.t_label.text = @"已加入该活动";
+            [self simpleMethod];
             //保存加入记录
             [join saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 //改变按钮的样式
@@ -200,11 +222,22 @@
             }];
         }];
 
-        }
+        }     
     }];
     
 }
-
+-(void)simpleMethod
+{
+    [[UIApplication sharedApplication].delegate.window addSubview:self.t_label];
+    //用2秒内完成animation内的操作,透明度设为0
+    [UIView animateWithDuration:2 animations:^{
+        self.t_label.alpha= 0;
+    } completion:^(BOOL finished) {
+        [self.t_label removeFromSuperview];
+        self.t_label.alpha = 1;
+    }];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

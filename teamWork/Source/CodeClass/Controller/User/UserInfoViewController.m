@@ -30,6 +30,7 @@
 //地址
 @property (weak, nonatomic) IBOutlet UITextField *address;
 
+@property (weak, nonatomic) IBOutlet UIView *avatarBGView;
 
 @end
 
@@ -162,6 +163,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.avatarBGView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg2"]];
     //头像切圆
     self.headerImage.layer.cornerRadius = self.headerImage.frame.size.width/3;
     self.headerImage.layer.masksToBounds = YES;
@@ -178,11 +180,11 @@
     self.address.text = [currentUser objectForKey:@"address"];
     self.gender = [currentUser objectForKey:@"gender"];
     if ([self.gender isEqualToString:@"男"]) {
-        [self.gender_Boy setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.gender_Boy setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         [self.gender_Girl setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     }else {
         [self.gender_Boy setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-        [self.gender_Girl setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.gender_Girl setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     }
     //头像
     AVFile *avatarFile = [currentUser objectForKey:@"avatar"];

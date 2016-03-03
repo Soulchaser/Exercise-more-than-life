@@ -144,6 +144,7 @@
         //监测输入框中内容变化
         if (self.phoneTextfield.text.length == 11) {
             self.phoneTextfield.backgroundColor = [UIColor whiteColor];
+            [self.password becomeFirstResponder];
             if (self.password.text.length <6 || self.password.text.length > 16) {
                 self.password.backgroundColor = [UIColor colorWithRed:248/255.0 green:229/255.0 blue:150/255.0 alpha:1];
                 //登陆无法点击
@@ -157,7 +158,6 @@
         }else {
             self.phoneTextfield.backgroundColor = [UIColor colorWithRed:248/255.0 green:229/255.0 blue:150/255.0 alpha:1];
         }
-        
     }];
     //添加观察者
     [self.sendSMS addObserver:self forKeyPath:@"userInteractionEnabled" options:(NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld) context:nil];

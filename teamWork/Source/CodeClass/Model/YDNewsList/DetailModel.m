@@ -24,8 +24,6 @@
         _Description = value;
     }
     
-//    NSLog(@"不能识别的键值--%@",key);
-    
 }
 
 
