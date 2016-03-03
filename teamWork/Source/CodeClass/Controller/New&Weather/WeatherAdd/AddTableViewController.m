@@ -93,12 +93,17 @@
 // !!!:实时输出,显示键入的文本
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
+    
     self.searchText = searchText;
-    //    DLog(@"%@",self.searchText);
+
+//    NSLog(@"%@",searchText);
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
+    
+//    NSLog(@"%@",self.resultArray);
+    
     
 
     [self makeData];
@@ -139,9 +144,6 @@
         
     }
 
-    
-    
-    
     NSString * httpStr = @"http://apis.baidu.com/heweather/weather/free?city=";
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%@%@",httpStr,self.searchText]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
