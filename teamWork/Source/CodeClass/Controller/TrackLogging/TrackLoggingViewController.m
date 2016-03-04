@@ -306,7 +306,10 @@
     [super viewWillAppear:animated];
     [[UIApplication sharedApplication].delegate.window addSubview:self.mapView];
 }
-
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [self.mapView removeFromSuperview];
+}
 #pragma mark -------运动开始和结束按钮事件-------
 //开始
 -(void)startButtonAction:(UIButton *)sender
