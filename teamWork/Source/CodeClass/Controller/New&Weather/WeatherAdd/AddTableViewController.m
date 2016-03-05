@@ -18,6 +18,7 @@
 
 @property(strong,nonatomic)UISearchBar *bar;
 
+@property(strong,nonatomic) UILabel * t_label;
 
 @end
 
@@ -95,17 +96,17 @@
 {
     
     self.searchText = searchText;
-
-//    NSLog(@"%@",searchText);
+    
+    //    NSLog(@"%@",searchText);
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
 {
     
-//    NSLog(@"%@",self.resultArray);
+    //    NSLog(@"%@",self.resultArray);
     
     
-
+    
     [self makeData];
     
     DLog(@"点击搜索调用此方法");
@@ -143,7 +144,7 @@
         }
         
     }
-
+    
     NSString * httpStr = @"http://apis.baidu.com/heweather/weather/free?city=";
     NSURL *url = [NSURL URLWithString: [NSString stringWithFormat:@"%@%@",httpStr,self.searchText]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc]initWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 10];
@@ -194,11 +195,27 @@
                     return ;
                 }else
                 {
-                    [self.resultArray addObject:model];
+                    if (self.resultArray.count == 0) {
+                        [self.resultArray addObject:model];
+                    }
+                    
+                    
+                    
+                    if ([[[self.resultArray lastObject] city] isEqualToString:model.city]) {
+                        
+                    }else
+                    {
+                        [self.resultArray addObject:model];
+                    }
+                    
+                    
+                    
+                   
                 }
                 
             }
-            DLog(@"%@",self.resultArray);
+            
+            
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
@@ -214,7 +231,7 @@
                 
                 [self presentViewController:vc animated:YES completion:nil];
             });
-           
+            
             
             
         }
@@ -248,10 +265,23 @@
     YDWeatherModel * model = self.resultArray[indexPath.row];
     
     NSLog(@"%@",model.city);
-
-        cell.textLabel.text =  model.city;
-  
+    
+    cell.textLabel.text =  model.city;
+    
     return cell;
+}
+
+-(void)simpleMethod
+{
+    [[UIApplication sharedApplication].delegate.window addSubview:self.t_label];
+    //用2秒内完成animation内的操作,透明度设为0
+    [UIView animateWithDuration:2 animations:^{
+        self.t_label.alpha= 0;
+    } completion:^(BOOL finished) {
+        [self.t_label removeFromSuperview];
+        self.t_label.alpha = 1;
+    }];
+    
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -265,8 +295,24 @@
     {
         for (YDWeatherModel * Tmodel in kGD.BasicArray) {
             if ([model.city isEqualToString:Tmodel.city]) {
-                //不做操作
+                //不做操做
+                //发布前的判断
+                self.t_label = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth/2, kScreenHeight/10)];
+                self.t_label.center = CGPointMake(kScreenWidth/2, kScreenHeight/2);
+                self.t_label.layer.masksToBounds = YES;
+                self.t_label.layer.cornerRadius = 10;
+                
+                self.t_label.alpha = 1;
+                self.t_label.textColor = [UIColor whiteColor];
+                [self.t_label setTextAlignment:NSTextAlignmentCenter];
+                self.t_label.backgroundColor = [UIColor blackColor];
+                
+                
+                self.t_label.text = @"已存在,请勿重复添加";
+                [self simpleMethod];
+                //return 填写不完整,跳出
                 return;
+                
             }
             
         }

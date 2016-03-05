@@ -1001,6 +1001,7 @@
 				TargetAttributes = {
 					5498EC691C48CE2400A7D99E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = ZNZ6622SA3;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1363,7 +1364,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1380,7 +1381,7 @@
 				INFOPLIST_FILE = teamWork/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lanou3g.teamWor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
