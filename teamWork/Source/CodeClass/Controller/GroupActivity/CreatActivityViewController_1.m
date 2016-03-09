@@ -48,6 +48,7 @@
 @property(strong,nonatomic)UIButton *rightButton;//发布活动按钮
 
 @property(strong,nonatomic) UILabel * t_label;//提示用label
+@property(strong,nonatomic)UIActivityIndicatorView *activityIC;
 @end
 
 #define kGap (([UIScreen mainScreen].bounds.size.height)/15)
@@ -287,6 +288,18 @@
 
 //发布按钮点击事件
 -(void)publishActivity{
+    //关闭发布按钮的用户交互
+    self.rightButton.userInteractionEnabled = NO;
+    UIView *activityBGView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    activityBGView.alpha = 0.5;
+    activityBGView.backgroundColor =[UIColor clearColor];
+    [self.view addSubview:activityBGView];
+    //初始化activityIC
+    self.activityIC = [[UIActivityIndicatorView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.activityIC.center = activityBGView.center;
+    [activityBGView addSubview:self.activityIC];
+    [self.activityIC startAnimating];
+    //数据处理
     [self.textfieldTitle resignFirstResponder];
     [self.textViewDescription resignFirstResponder];
     [self.textfieldAddress resignFirstResponder];
@@ -310,48 +323,64 @@
         self.t_label.text = @"请填写活动标题";
         [self simpleMethod];
         //return 填写不完整,跳出
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         return;
         
     }else if ([self.textViewDescription.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写活动描述";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }else if ([self.textfieldAddress.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写地址";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }else if ([self.textfieldDistance.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写活动距离";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }else if ([self.TextFieldStartTime.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写活动开始时间";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }else if ([self.TextFieldEndTime.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写活动结束时间";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }else if ([self.textfieldPeopleCount.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写活动人数";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }else if ([self.textfieldPhone.text isEqualToString:@""])
     {
         self.t_label.text = @"请填写手机号";
         [self simpleMethod];
+        //发布失败时打开交互
+        self.rightButton.userInteractionEnabled = YES;
         //return 填写不完整,跳出
         return;
     }
@@ -397,6 +426,11 @@
             [join setObject:[AVUser currentUser] forKey:@"joinuser"];//加入者
             [join setObject:activity forKey:@"activity"];
             [join saveInBackground];
+            //终止activityIC
+            [self.activityIC stopAnimating];
+            [activityBGView removeFromSuperview];
+            //发布失败时打开交互
+            self.rightButton.userInteractionEnabled = YES;
             //保存成功
             [self.navigationController popViewControllerAnimated:YES];
         }
