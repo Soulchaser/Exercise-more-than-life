@@ -35,9 +35,11 @@
     [super viewDidLoad];
     
     //    self.navigationItem.title = @"";
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:88/255.0 green:88/255.0 blue:88/255.0 alpha:1]];
     
     //添加界面设置返回按钮
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStyleDone target:self action:@selector(backAction)];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
     
     self.flag = YES;
     
