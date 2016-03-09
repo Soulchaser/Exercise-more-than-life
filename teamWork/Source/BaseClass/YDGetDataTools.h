@@ -18,6 +18,10 @@
 //保存添加的城市的数组
 @property(strong,nonatomic) NSMutableArray * BasicArray;
 
+@property(strong,nonatomic) NSMutableDictionary * historyDic;
+
+@property(strong,nonatomic) NSMutableArray * dataArray;
+
 @property(strong,nonatomic) NSMutableArray * TempArray;
 
 @property(strong,nonatomic) NSMutableArray * AqiArray;
