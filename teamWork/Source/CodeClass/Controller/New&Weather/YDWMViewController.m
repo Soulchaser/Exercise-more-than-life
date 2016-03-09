@@ -12,7 +12,7 @@
 
 @property(strong,nonatomic) NYSegmentedControl * segmentedControl;
 
-@property(strong,nonatomic) YDWeatherViewController * WeatherVC;
+@property(strong,nonatomic)WeatherViewController * WeatherVC;
 
 @property(strong,nonatomic) NSArray * exampleViews;
 
@@ -26,6 +26,7 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         
         self.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"健康资讯" image:[UIImage imageNamed:@"news"] selectedImage:[UIImage imageNamed:@"news_selected"]];
+        
 
     }
     return self;
@@ -46,6 +47,9 @@
         self.titleColorSelected = [UIColor blackColor];
         self.titleColorNormal = [UIColor grayColor];
         self.menuItemWidth = 80;
+        
+         [self.navigationController.navigationBar setBarTintColor:[UIColor redColor]];
+        
     }
     return self;
 }
@@ -76,7 +80,7 @@
     self.navigationItem.titleView = self.segmentedControl;
 
     //初始化天气视图控制器
-    self.WeatherVC = [[YDWeatherViewController alloc] init];
+    self.WeatherVC = [[WeatherViewController alloc] init];
     //添加为子控制器
     [self addChildViewController:self.WeatherVC];
 
