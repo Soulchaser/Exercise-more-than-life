@@ -10,11 +10,57 @@
 #import "ViewController.h"
 #import "GetDataTools.h"
 #import "CBChartView.h"
-@interface WeatherViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface WeatherViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (weak, nonatomic) IBOutlet UIView *myView;
+
+//图片
+@property (weak, nonatomic) IBOutlet UIImageView *img_pic_1;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img_pic_2;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img_pic_3;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img_pic_4;
+
+@property (weak, nonatomic) IBOutlet UIImageView *img_pic_5;
+
+//日期
+
+@property (weak, nonatomic) IBOutlet UILabel *date_1;
+
+@property (weak, nonatomic) IBOutlet UILabel *date_2;
+
+@property (weak, nonatomic) IBOutlet UILabel *date_3;
+
+@property (weak, nonatomic) IBOutlet UILabel *date_4;
+
+@property (weak, nonatomic) IBOutlet UILabel *date_5;
+
+//温度
+
+@property (weak, nonatomic) IBOutlet UILabel *tem_1;
+
+@property (weak, nonatomic) IBOutlet UILabel *tem_2;
+
+@property (weak, nonatomic) IBOutlet UILabel *tem_3;
+
+@property (weak, nonatomic) IBOutlet UILabel *tem_4;
+
+@property (weak, nonatomic) IBOutlet UILabel *tem_5;
+
+//天气情况
+
+@property (weak, nonatomic) IBOutlet UILabel *type_1;
+
+@property (weak, nonatomic) IBOutlet UILabel *type_2;
+
+@property (weak, nonatomic) IBOutlet UILabel *type_3;
+
+@property (weak, nonatomic) IBOutlet UILabel *type_4;
+
+@property (weak, nonatomic) IBOutlet UILabel *type_5;
 
 //气温数组
 @property(nonatomic,strong)NSArray * temArray;
@@ -96,21 +142,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    AVUser * current = [AVUser currentUser];
-//    if (current == nil) {
-//        loginViewController * loginVC=[loginViewController new];
-//        [self presentViewController:loginVC animated:NO completion:nil];
-//    }else{
-//    
-//        entryyViewController * entryVC = [entryyViewController new];
-//
-//        entryVC.pasaaaa = ^(NSString * string){
-//        
-//            loginViewController * loginVC=[loginViewController new];
-//            [self presentViewController:loginVC animated:YES completion:nil];
-//        };
-//        [self presentViewController:entryVC animated:YES completion:nil];
-//    }
     self.cityId = @"101010100";
     self.weatherDic = [NSMutableDictionary dictionary];
     self.otherDic = [NSMutableDictionary dictionary];
@@ -131,12 +162,6 @@
     //获取数据
     [self getData];
     
-    //tableView
-    self.myTableView.delegate = self;
-    self.myTableView.dataSource = self;
-    self.myTableView.backgroundColor = [UIColor colorWithRed:50 green:50 blue:50 alpha:0.3];
-    self.myTableView.separatorStyle = NO;
-    self.myTableView.scrollEnabled = NO;
     
 }
 
@@ -157,7 +182,6 @@
             self.duringLabel.text = self.otherDic[@"temp1"];
             self.weatherImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img1"]]];
             self.weatherLabel.text = self.otherDic[@"weather1"];
-            [self.myTableView reloadData];
         });
     }];
     [[GetDataTools shareGetData]getDataWithCityID:self.cityId andOne:^(NSMutableDictionary *dict) {
@@ -175,26 +199,6 @@
     [self.cityListButton setTitle:self.weatherDic[@"city"] forState:(UIControlStateNormal)];
     self.duLabel.text = self.weatherDic[@"temp"];
     self.windowLabel.text = [NSString stringWithFormat:@"%@%@",self.weatherDic[@"WD"],self.weatherDic[@"WS"]];
-}
-
-//tableView
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-
-    return 6;
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    return self.myTableView.bounds.size.height/6;
-}
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:@"cell"];
-    }
-    cell.backgroundColor = [UIColor clearColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
-    cell.textLabel.font = [UIFont systemFontOfSize:20];
     
     NSDate * today;
     NSDate * thirdDay;
@@ -204,31 +208,43 @@
     thirdDay = [[NSDate alloc]initWithTimeInterval:24*60*60*3 sinceDate:today];
     fourthDay = [[NSDate alloc]initWithTimeInterval:24*60*60*4 sinceDate:today];
     fifthDay = [[NSDate alloc]initWithTimeInterval:24*60*60*5 sinceDate:today];
-    if (indexPath.row == 0) {
-        cell.textLabel.text = [NSString stringWithFormat:@"今天    %@ %@",self.otherDic[@"temp1"],self.otherDic[@"weather1"]];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img1"]]];
-    }
-    if (indexPath.row == 1) {
-        cell.textLabel.text = [NSString stringWithFormat:@"明天    %@ %@",self.otherDic[@"temp2"],self.otherDic[@"weather2"]];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img3"]]];
-    }
-    if (indexPath.row == 2) {
-        cell.textLabel.text = [NSString stringWithFormat:@"后天      %@ %@",self.otherDic[@"temp3"],self.otherDic[@"weather3"]];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img5"]]];
-    }
-    if (indexPath.row == 3) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@    %@ %@",[self DealWithDate:thirdDay],self.otherDic[@"temp4"],self.otherDic[@"weather4"]];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img7"]]];
-    }
-    if (indexPath.row == 4) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@    %@ %@",[self DealWithDate:fourthDay],self.otherDic[@"temp5"],self.otherDic[@"weather5"]];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img9"]]];
-    }
-    if (indexPath.row == 5) {
-        cell.textLabel.text = [NSString stringWithFormat:@"%@    %@ %@",[self DealWithDate:fifthDay],self.otherDic[@"temp6"],self.otherDic[@"weather6"]];
-        cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img11"]]];
-    }
-    return cell;
+    
+    
+    //+1
+    self.img_pic_1.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img3"]]];
+    self.date_1.text = 
+    self.tem_1.text = [NSString stringWithFormat:@"%@",self.otherDic[@"temp2"]];
+    self.type_1.text = [NSString stringWithFormat:@"%@",self.otherDic[@"weather2"]];
+    
+    
+    //+2
+    self.img_pic_2.image =[UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img5"]]];
+    self.tem_2.text = [NSString stringWithFormat:@"%@",self.otherDic[@"temp3"]];
+    self.type_2.text = [NSString stringWithFormat:@"%@",self.otherDic[@"weather3"]];
+    
+    
+    //+3
+    
+    self.img_pic_3.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img7"]]];
+    self.tem_3.text = [NSString stringWithFormat:@"%@",self.otherDic[@"temp4"]];
+    self.type_3.text = [NSString stringWithFormat:@"%@",self.otherDic[@"weather4"]];
+    self.date_3.text = [self DealWithDate:thirdDay];
+    
+    
+    //+4
+    self.img_pic_4.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img9"]]];
+    self.tem_4.text = [NSString stringWithFormat:@"%@",self.otherDic[@"temp5"]];
+    self.type_4.text = [NSString stringWithFormat:@"%@",self.otherDic[@"weather5"]];
+    self.date_4.text = [self DealWithDate:fourthDay];
+    
+    
+    //+5
+    self.img_pic_5.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@.png",self.otherDic[@"img11"]]];
+    self.tem_5.text = [NSString stringWithFormat:@"%@",self.otherDic[@"temp6"]];
+    self.type_5.text = [NSString stringWithFormat:@"%@",self.otherDic[@"weather6"]];
+    self.date_5.text = [self DealWithDate:fifthDay];
+
+    
 }
 
 -(NSString *)DealWithDate:(NSDate *)date
@@ -243,10 +259,10 @@
     [dateComponent setYear:[[str substringWithRange:NSMakeRange(0, 4)] floatValue]];
     [dateComponent setMonth:[[str substringWithRange:NSMakeRange(5, 2)] floatValue]];
     [dateComponent setDay:[[str substringWithRange:NSMakeRange(8, 2)] floatValue]];
-    gregorian =[[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    gregorian =[[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     date = [gregorian dateFromComponents:dateComponent];
     weekdayComponents =
-    [gregorian components:NSWeekdayCalendarUnit fromDate:date];
+    [gregorian components:NSCalendarUnitWeekday fromDate:date];
     return [self WeekDay:[weekdayComponents weekday]];
 }
 -(NSString *)WeekDay:(NSInteger)weekDay
@@ -279,7 +295,6 @@
     }
     return nil;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
