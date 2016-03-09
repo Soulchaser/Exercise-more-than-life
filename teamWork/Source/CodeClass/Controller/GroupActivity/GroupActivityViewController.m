@@ -41,7 +41,9 @@ static NSString * const creatTableViewCellID = @"creatTableViewCellIdentifier";
         
 
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"创建" style: UIBarButtonItemStylePlain target:self action:@selector(pushToCreatPage)];
-        self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
+        self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+        
+          
 
         
     }

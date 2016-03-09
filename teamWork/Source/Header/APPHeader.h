@@ -10,7 +10,7 @@
 #define Project_APPHeader_h
 //#import "DisplayViewController.h"
 //YDD资讯跳转控制器
-#import "YDWeatherViewController.h"
+#import "WeatherViewController.h"
 #import "YDWMViewController.h"
 #import "GroupActivityViewController.h"
 #import "TrackNaviController.h"
@@ -52,8 +52,6 @@
 #import "DogModel.h"
 //资讯类详情
 #import "DetailModel.h"
-
-#import "YDWeatherModel.h"
 //用户类
 #import "YYUserModel.h"
 
@@ -97,8 +95,6 @@
 #import "WomenTableViewController.h"
 #import "SecretTableViewController.h"
 #import "DetailViewController.h"
-#import "AddTableViewController.h"
-#import "SettingViewController.h"
 #import "CreatActivityViewController_1.h"
 #pragma mark ------------发现活动------------
 #import "YDDCarouseFigureView.h"

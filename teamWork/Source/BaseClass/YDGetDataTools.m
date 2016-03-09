@@ -59,8 +59,21 @@
     }
     return _cityArray;
 }
+-(NSMutableDictionary *)historyDic
+{
+    if (!_historyDic) {
+        _historyDic = [NSMutableDictionary dictionary];
+    }
+    return _historyDic;
+}
 
-
+-(NSMutableArray *)dataArray
+{
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
 -(NSString*)weekdayStringFromDate:(NSString*)dateString {
     
     NSArray *weekdays = [NSArray arrayWithObjects: [NSNull null], @"周日", @"周一", @"周二", @"周三", @"周四", @"周五", @"周六", nil];
