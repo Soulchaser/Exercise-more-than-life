@@ -167,6 +167,7 @@
     
     self.navigationItem.title = @"跟你走";
     //字体颜色
+    
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:88/255.0 green:88/255.0 blue:88/255.0 alpha:1]];
    // [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
@@ -183,7 +184,7 @@
     self.altitudeFlag = NO;
     //默认不开启测距模式
     self.distanceFlag = NO;
-    [self drawView];
+    
     //设置高德地图代理
     self.mapView.mapView.delegate = self;
     
@@ -895,6 +896,7 @@
     } completion:^(BOOL finished) {
         [self.mapView.promptLabel removeFromSuperview];
     }];
+
 }
 
 #pragma mark ---运动计时器----

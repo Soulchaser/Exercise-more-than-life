@@ -92,7 +92,7 @@
     
     //左滑视图
     self.leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 50, kScreenHeight)];
-    
+    self.leftView.backgroundColor = [UIColor redColor];
     //拖拽提示视图
     UIImageView *tipView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"tuodong"]];
     tipView.frame =  CGRectMake(0, kScreenHeight/3, 20, 64);
